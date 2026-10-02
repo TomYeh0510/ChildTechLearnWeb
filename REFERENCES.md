@@ -186,6 +186,62 @@
 
 費用、語言、形式、設備是依各教材官網與卡片原有說明人工判定：完全免費 12 項；含付費（部分或全部付費）4 項（台科大書、Makers Empire、Learn by Layers、Prusa Academy）；中文 8 項、英文 8 項；需要印表機操作的 2 項（Bambu Lab Academy、Prusa Academy）。新增教材時要一併填寫。
 
+## 十、幼兒階段改版的依據（無螢幕、蒙特梭利教具、3D 筆；2026-10-02）
+
+使用者決定：幼兒 3–6 歲不用螢幕、不碰印表機，只玩事先印好的教具；第一套教具是 3D 列印版蒙特梭利漸縮塔（Tom 設計並上傳 MakerWorld）；「先想再做」移到低年級；低年級加入低溫 3D 筆。
+
+### 螢幕時間
+
+| 來源 | 連結 | 採用的內容 |
+| --- | --- | --- |
+| 衛福部（國健署）近視防治新聞 | https://www.mohw.gov.tw/fp-3795-41749-1.html | 未滿 2 歲不看螢幕；2 歲以上每天不超過 1 小時 |
+| 國衛院兒童健康手冊第十三章 3C 產品的使用 | https://chrc.nhri.edu.tw/professionals/files/chapters/13_1_3C%E7%94%A2%E5%93%81%E7%9A%84%E4%BD%BF%E7%94%A8.pdf | 同上；每 30 分鐘休息 10 分鐘 |
+| 信誼基金會（引國健署） | https://parents.hsin-yi.org.tw/Library/Article/25722 | 3–4 歲每天不超過 30 分鐘、4–6 歲不超過 1 小時 |
+| WHO 2019 五歲以下指引 | https://www.ncbi.nlm.nih.gov/books/NBK541173/ | 1 歲以下不建議螢幕；2–4 歲每天不超過 1 小時 |
+| AAP Media and Young Minds | https://publications.aap.org/pediatrics/article/138/5/e20162591/60503/Media-and-Young-Minds | 2–5 歲每天不超過 1 小時高品質內容並共看 |
+| AAP 2026 更新（整理） | https://jelliesapp.com/blog/aap-screen-time-guidelines/ | 轉向強調品質與陪伴 |
+
+網頁採用：幼兒不排螢幕；低年級「螢幕一次不超過 30 分鐘、大人陪同」（標官方文件）。
+
+### 幾歲開始電腦建模
+
+| 來源 | 連結 | 採用的內容 |
+| --- | --- | --- |
+| 十二年國教課綱科技領域學習重點 | https://cirn.moe.edu.tw/WebContent/index.aspx?sid=11&mid=6576 | 科技領域國中起必修；國小由彈性課程安排 |
+| 仁愛國小、新南國小 Tinkercad 單元 | 見第一節 | 學校實際在中年級排 Tinkercad |
+| stlMotherhood | https://stlmotherhood.com/what-age-is-good-to-start-3d-printing/ | 5–7 歲選模型、看列印、上色；約三年級才自己設計（家長部落格） |
+| 3d4create | https://3d4create.com/what-age-is-appropriate-for-kids-to-start-3d-printing/ | 同上（廠商部落格） |
+| Makers Empire FAQ | https://www.makersempire.com/frequently-asked-questions/ | 廠商稱 4 歲可用（平板） |
+| 英國 D&T 課綱 | https://www.gov.uk/government/publications/national-curriculum-in-england-design-and-technology-programmes-of-study | KS1（5–7）用說、畫、模板、實物模型；KS2（7–11）才列電腦輔助設計。**依記憶引用，gov.uk 無法從工作環境開啟，待對照原文** |
+
+### 蒙特梭利粉紅塔
+
+| 來源 | 連結 | 採用的內容 |
+| --- | --- | --- |
+| Guidepost Montessori | https://guidepostmontessori.com/blog/the-montessori-pink-tower/ | 10 個立方體 1–10 cm、只有大小不同、3–6 歲；目的：視覺分辨大小、順序、手眼協調、專注 |
+| Kid Advance | https://kidadvance.com/pink-tower.html | 同上 |
+| NAMC | https://montessoritraining.blogspot.com/2024/11/exploring-montessoris-pink-tower.html | 「單一變因」原則 |
+
+網頁上粉紅塔的描述標「教學實例」；本版（8 層、5 mm、底 8 cm、0.3 mm 層高）與玩法為編者建議。
+
+### 3D 筆年齡
+
+| 來源 | 連結 | 採用的內容 |
+| --- | --- | --- |
+| 3Doodler Start+ 安全 FAQ | https://learn.the3doodler.com/faqs/is-the-3doodler-start-3d-pen-safe-for-kids/ | 無外露熱源、低溫線材 |
+| 3Doodler EDU Start+ Learning Pack | https://the3doodler.com/products/start-learning-pack-12-pens | 6–13 歲、K–8，附教案 |
+| 3Doodler EDU Create+ Learning Pack | https://the3doodler.com/products/create-learning-pack-12-pens | 14 歲以上、8–12 年級；原因是溫度與外露噴嘴 |
+| DIY.org 家長指南 | https://www.diy.org/blogs/best-3d-pen-for-kids-projects-safety-buying-guide | 低溫 PCL 筆 60–100 °C、5 歲以上；高溫 PLA 筆 175–220 °C、8 歲以上且大人全程在旁（部落格） |
+| myFirst 3D 筆 | https://us.myfirst.tech/collections/3d-pen/3d-pen | 另一低溫筆標 5 歲以上、高溫款 12 歲以上 |
+
+網頁採用：低年級用低溫 PCL 筆（官方 6–13 歲）；高溫筆 14 歲以上，不給國小。台灣沒有查到針對 3D 筆的專門規定。
+
+### 從網頁移除的內容
+
+- 幼兒：「看列印縮時影片、數一數有幾層」「印表機由大人全程操作，孩子在安全距離外觀察」「先想 → 做出來」目標與做法（畫一畫、做完對照）；原活動卡「把平面疊成立體」（紙板）改為「疊漸縮塔」。
+- 原因：數百層數不完；幼兒不看螢幕、不需要印表機在場；「先畫再做」需要國小以上的繪畫與表達能力，整組移到低年級。
+- 「知道這些是印出來的」不列為幼兒目標：重點是過程中學到的東西，孩子長大接觸列印後會自然連結。
+
 ## 九、查證狀態與尚缺來源
 
 ### 查證狀態
@@ -201,9 +257,9 @@
 - micro:bit、mBot 的價格：沒有查到官方定價。
 - 總覽矩陣裡的幼兒「分類遊戲」、「平板基本操作」，以及低年級的「語音助理」：屬於一般活動，沒有特定來源。
 - 軟體階梯的「先備能力」「成人要做什麼」欄、各階段的課堂安排、單元順序、升級訊號、活動卡：編者建議，沒有外部來源，需實際試帶驗證。
-- 幼兒「學習目標與怎麼學」的九項具體做法（摸摸看、轉一圈、找一找、疊紙板、盤泥條、疊積木塔、先說再做、畫一畫、做完對照、改一點再做一次）：編者建議，沒有外部來源，**尚待實際試帶**；「盤泥條」類比印表機一層層堆疊是常見的教學類比。
+- 幼兒「學習目標與怎麼學」的具體做法、漸縮塔規格與玩法、4 堂課表：編者建議，**尚待實際試帶**。
 - 教材資源卡片尚未標註證據類型（官方文件／教學實例／編者建議）。
-- 幼兒階段沒有教材卡（篩選顯示「整理中」）。
+- 幼兒階段沒有線上教材卡（改用印好的教具）；漸縮塔檔案待 Tom 上傳 MakerWorld 後補連結。
 
 ---
 
@@ -229,3 +285,4 @@
 | 2026-10-02 | 網站更名為「一起玩科技 · Tech Together」（避免「創客」與「階梯」）；命名過程、三輪備選與命名原則完整記錄在 `BRAND.md`。「碧華國小創客教育中心」是來源的正式名稱，保留不改 | 無新來源 |
 | 2026-10-02 | 版面調整：選取狀態改為整個反色（年齡分頁、從這裡開始、導覽列、教材圖表選取列），並新增對比檢查；無內容變更 | 無新來源 |
 | 2026-10-02 | 分齡細節幼兒卡：每個學習目標加上「怎麼學」具體做法（編者建議，尚待試帶） | 無新來源，已列入「尚缺來源」 |
+| 2026-10-02 | 幼兒階段改版：無螢幕、無印表機；第三目標改為「自己動手、專注做完」；新增 3D 列印版蒙特梭利漸縮塔教具說明、活動卡「疊漸縮塔」、4 堂課表；低年級加入低溫 3D 筆與螢幕時間規則，「先想再做」移到低年級；總覽工具表加 3D 筆 | 新增第十節（國健署、WHO、AAP、課綱、蒙特梭利、3Doodler 等） |

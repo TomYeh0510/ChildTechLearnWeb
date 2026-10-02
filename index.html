@@ -150,6 +150,8 @@ details.activity{border-left:6px solid var(--c);background:color-mix(in srgb,var
 details.activity summary{display:flex;flex-wrap:wrap;align-items:center;gap:4px 0}
 details.activity .cols{margin-top:4px}
 details.activity li b{font-weight:700}
+details.activity.lessons .tbl{margin-top:4px}
+details.activity.lessons table{font-size:.86rem;min-width:720px}
 .goals{padding-left:1.1em}
 .goals>li{margin:8px 0}
 .goals details.how{background:none;border:0;padding:0;margin-top:2px}
@@ -377,8 +379,8 @@ html{scroll-behavior:smooth}
   <div class="tbl"><table id="ovtable">
     <thead><tr><th>年齡段</th><th>3D 建模與列印</th><th>程式設計</th><th>實體運算與機器人</th><th>AI 素養</th><th>軟體應用與數位素養</th></tr></thead>
     <tbody>
-      <tr><td class="age"><span class="dot" style="background:var(--l1)"></span>幼兒 3–6</td><td>摸立體形狀、看列印過程、幫印好的件上色</td><td>不插電：指令卡、走格子</td><td>按鍵式地板機器人</td><td>分類遊戲</td><td>平板基本操作、使用時間規則</td></tr>
-      <tr><td class="age"><span class="dot" style="background:var(--l2)"></span>低年級 6–8</td><td>3–5 個形狀組合、名牌、鑰匙圈</td><td>ScratchJr、Code.org Course B–C</td><td>LEGO SPIKE Essential</td><td>語音助理、Quick, Draw!</td><td>滑鼠、小畫家、拍照錄音</td></tr>
+      <tr><td class="age"><span class="dot" style="background:var(--l1)"></span>幼兒 3–6</td><td>印好的蒙特梭利漸縮塔、平面與立體、幫印好的件上色（不用螢幕）</td><td>不插電：指令卡、走格子</td><td>按鍵式地板機器人</td><td>分類遊戲</td><td>平板基本操作、使用時間規則</td></tr>
+      <tr><td class="age"><span class="dot" style="background:var(--l2)"></span>低年級 6–8</td><td>低溫 3D 筆、3–5 個形狀組合、名牌、鑰匙圈</td><td>ScratchJr、Code.org Course B–C</td><td>LEGO SPIKE Essential</td><td>語音助理、Quick, Draw!</td><td>滑鼠、小畫家、拍照錄音</td></tr>
       <tr><td class="age"><span class="dot" style="background:var(--l3)"></span>中年級 8–10</td><td>Tinkercad 基本功：對齊、群組、挖孔</td><td>Scratch 入門、Code.org Course D–E</td><td>micro:bit 內建感測器</td><td>Teachable Machine</td><td>打字、Word、Canva、網路安全</td></tr>
       <tr><td class="age"><span class="dot" style="background:var(--l4)"></span>高年級 10–12</td><td>量尺寸再建模、切片設定、多堂專題</td><td>Scratch 遊戲專題</td><td>mBot、SPIKE Prime</td><td>教育部「和 AI 做朋友」</td><td>影音編輯、簡報、資料查證</td></tr>
       <tr><td class="age"><span class="dot" style="background:var(--l5)"></span>國中 12+</td><td>Fusion 360、Onshape、公差與迭代</td><td>Python、App Inventor</td><td>Arduino、物聯網</td><td>家長陪同使用生成式 AI</td><td>試算表、個資保護</td></tr>
@@ -390,6 +392,8 @@ html{scroll-behavior:smooth}
   <div class="tbl"><table>
     <thead><tr><th>路線</th><th>工具</th><th>年齡</th><th>費用</th><th>說明</th></tr></thead>
     <tbody>
+      <tr><td>3D 列印</td><td><b>低溫 3D 筆（PCL，如 3Doodler Start+）</b></td><td>6–13 歲</td><td><span class="status paid">需購買</span></td><td>筆頭沒有外露熱源；線材約 60–100 °C 融化，碰到不燙；教育套組附教案</td></tr>
+      <tr><td>3D 列印</td><td><b>高溫 3D 筆（PLA，如 3Doodler Create+）</b></td><td>14 歲以上</td><td><span class="status paid">需購買</span></td><td>筆頭與擠出的塑膠約 200 °C，有燙傷風險；不給國小使用</td></tr>
       <tr><td>程式</td><td><b>不插電：指令卡、走格子</b></td><td>幼兒</td><td><span class="status ok">免費</span></td><td>自製卡片和地墊即可</td></tr>
       <tr><td>程式</td><td><b>ScratchJr</b></td><td>5–7 歲</td><td><span class="status ok">免費</span></td><td>iPad、Android、Chromebook App</td></tr>
       <tr><td>程式</td><td><b>Code.org 基礎課程 Course A–F</b></td><td>A 幼兒園大班；B–C 小一–小二；D–E 小三–小四；F 小五</td><td><span class="status ok">免費</span></td><td>每門 13–17 堂、每堂約 45 分鐘</td></tr>
@@ -418,8 +422,8 @@ html{scroll-behavior:smooth}
   <p class="lead">像列印一樣由下往上疊：每一層都建立在前一層上。判斷一堂課好不好，看孩子自己設計的比例，而不是成品漂不漂亮。</p>
   <div class="stack" role="list">
     <div class="nozzle" aria-hidden="true"><svg viewBox="0 0 28 30"><rect x="4" y="0" width="20" height="14" rx="2" fill="var(--muted)"/><path d="M8 14h12l-4 12h-4z" fill="var(--ink)"/><circle cx="14" cy="28" r="2" fill="var(--warn)"/></svg></div>
-    <a class="layer" role="listitem" href="#s1" style="--c:var(--l1);--i:4"><div class="a">幼兒<small>3–6 歲 · 第 1 層</small></div><div class="d"><b>看與摸</b>：平面變立體、一層一層疊。大人操作機器，孩子上色、組裝。</div></a>
-    <a class="layer" role="listitem" href="#s2" style="--c:var(--l2);--i:3"><div class="a">低年級<small>6–8 歲 · 第 2 層</small></div><div class="d"><b>拼形狀</b>：3–5 個基本形狀做成一件作品，一堂課完成。</div></a>
+    <a class="layer" role="listitem" href="#s1" style="--c:var(--l1);--i:4"><div class="a">幼兒<small>3–6 歲 · 第 1 層</small></div><div class="d"><b>看與摸</b>：平面與立體、把印好的蒙特梭利教具一層一層疊。不用螢幕，大人事先印好。</div></a>
+    <a class="layer" role="listitem" href="#s2" style="--c:var(--l2);--i:3"><div class="a">低年級<small>6–8 歲 · 第 2 層</small></div><div class="d"><b>親手做</b>：低溫 3D 筆擠出第一件作品；3–5 個基本形狀做一件作品。</div></a>
     <a class="layer" role="listitem" href="#s3" style="--c:var(--l3);--i:2"><div class="a">中年級<small>8–10 歲 · 第 3 層</small></div><div class="d"><b>Tinkercad 基本功</b>：對齊、群組、挖孔、工作平面；認識「設計 → 切片 → 列印」。</div></a>
     <a class="layer" role="listitem" href="#s4" style="--c:var(--l4);--i:1"><div class="a">高年級<small>10–12 歲 · 第 4 層</small></div><div class="d"><b>量了再畫</b>：用尺量實物、考慮列印方向、自己調切片，做多堂專題。</div></a>
     <a class="layer" role="listitem" href="#s5" style="--c:var(--l5);--i:0"><div class="a">國中<small>12 歲以上 · 第 5 層</small></div><div class="d"><b>解決真實問題</b>：草圖與參數化建模、公差、設計迭代、估時間與成本。</div></a>
@@ -439,29 +443,56 @@ html{scroll-behavior:smooth}
   </div>
 
   <article class="stage" id="s1" style="--c:var(--l1)">
-    <header><h3>幼兒 3–6 歲</h3><span class="tag">第 1 層 · 不碰機器</span></header>
+    <header><h3>幼兒 3–6 歲</h3><span class="tag">第 1 層 · 不用螢幕、不碰機器</span></header>
     <div class="cols">
       <div><div class="k">學習目標與怎麼學<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></div><ul class="goals">
-        <li><b>知道「立體」和「平面」的差別</b><details class="how" open><summary>怎麼學</summary><ul><li><b>摸摸看：</b>同一個形狀準備一張剪紙圓（平面）和一顆球（立體）放進布袋，孩子閉眼摸，說說「哪個會滾？哪個可以站起來？」</li><li><b>轉一圈：</b>拿起立體的東西轉一圈，從旁邊看長得不一樣；紙片從旁邊看只剩薄薄一條，讓孩子比一比</li><li><b>找一找：</b>在家找 3 個「平的」（紙、貼紙、圖案）和 3 個「立體的」（杯子、積木、水果），分成兩堆</li></ul></details></li>
-        <li><b>看懂東西是一層一層疊出來的</b><details class="how" open><summary>怎麼學</summary><ul><li><b>疊紙板：</b>把同一個輪廓的紙板一片片疊起來，數一數有幾層、高度怎麼變（見下方活動卡）</li><li><b>盤泥條：</b>把黏土搓成長條，一圈一圈往上盤成杯子，這就是印表機把材料一層層堆起來的方式</li><li><b>疊積木塔：</b>用同樣大小的積木疊高，問「這是第幾層？拿掉最上面一層會怎樣？」</li></ul></details></li>
-        <li><b>建立「先想 → 做出來」的概念</b><details class="how" open><summary>怎麼學</summary><ul><li><b>先說再做：</b>動手前先問「你想做什麼？」請孩子用一句話說出來</li><li><b>畫一畫：</b>用蠟筆畫出想做的形狀，不用畫得像</li><li><b>做完對照：</b>拿作品和草圖比一比，問「跟你想的一樣嗎？哪裡不一樣？」，大人只提問、不替孩子改</li><li><b>改一點再做一次：</b>選一個不一樣的地方，再做一次</li></ul></details></li>
+        <li><b>知道「立體」和「平面」的差別</b><details class="how" open><summary>怎麼學</summary><ul><li><b>摸摸看：</b>同一個輪廓印一片薄的（平面）和一個立體的（例如一隻貓），放進布袋閉眼摸，說說「哪個會滾？哪個可以站起來？」</li><li><b>轉一圈：</b>拿起立體的轉一圈，每一面長得不一樣；薄片從旁邊看只剩一條線</li><li><b>找一找：</b>在家找 3 個「平的」和 3 個「立體的」，分成兩堆</li></ul></details></li>
+        <li><b>看懂東西是一層一層疊出來的</b><details class="how" open><summary>怎麼學</summary><ul><li><b>疊漸縮塔：</b>把印好的方形漸縮塔由大到小疊起來，疊錯一層形狀就不對（見下方教具與活動卡）</li><li><b>同輪廓疊高：</b>把一樣的薄片一片片疊，越多片越高</li><li><b>摸層紋：</b>用指甲刮教具側面，一條一條的就是一層一層</li></ul></details></li>
+        <li><b>自己動手、專注做完一件事</b><details class="how" open><summary>怎麼學</summary><ul><li><b>自己拿：</b>每一層都讓孩子自己拿、自己放，大人只示範一次</li><li><b>自己發現：</b>疊錯了不糾正，等孩子自己看出來；看不出來就問「哪一層怪怪的？」</li><li><b>自己收：</b>玩完由孩子把每一層放回盒子，這也是練習順序</li></ul></details></li>
       </ul></div>
-      <div><div class="k">活動與作品</div><ul><li>用黏土或積木先捏出形狀，再對照印好的同款模型</li><li>看列印縮時影片，數一數有幾層</li><li>幫印好的小動物上色、組裝</li></ul></div>
-      <div><div class="k">課堂安排<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></div><ul><li>每次 15–20 分鐘，以手作為主</li><li>印表機由大人全程操作，孩子在安全距離外觀察</li></ul></div>
+      <div><div class="k">教具：3D 列印版蒙特梭利漸縮塔</div>
+        <ul>
+          <li><b>原版「粉紅塔」</b><span class="ev ex" title="來自學校或教師的實際課程">教學實例</span>：10 個木製立方體，邊長 1 到 10 公分，只有大小不同、顏色一樣，給 3–6 歲用；目的是用眼睛和手分辨大小與順序，同時練手眼協調和專注</li>
+          <li><b>本版</b><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span>：方形漸縮塔 8 層，每層 5 mm 厚，底約 8 cm，單一顏色；用 0.3 mm 層高列印，側面層紋更明顯</li>
+          <li><b>玩法</b><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span>：大人由大到小疊一次 → 孩子自己疊 → 閉眼摸、排順序 → 大人抽走一層，孩子找出少了哪一層 → 進階：兩套並排比高矮</li>
+          <li><b>教具檔案</b>：即將在 MakerWorld 提供下載</li>
+        </ul>
+      </div>
+      <div><div class="k">課堂安排<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></div><ul><li>每次 15–20 分鐘，以手作為主</li><li><b>不用螢幕、不需要印表機在場</b>，教具由大人事先印好</li><li>一次只拿出一套教具，結束由孩子自己收</li><li>幫印好的小動物上色、組裝，當作品帶走</li></ul></div>
     </div>
     <details class="activity" id="act-s1">
-      <summary>活動卡：把平面疊成立體 <span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span><span class="ev ed" title="尚未實際帶孩子試用過">尚待試帶</span></summary>
-      <div class="cols"><div><div class="k">學習目標與先備能力</div><ul><li><b>目標：</b>注意到「相同的平面一層層疊起來，高度會改變」</li><li><b>先備：</b>會用手把東西疊起來、聽得懂「高、矮」；不需要識字或用電腦</li></ul></div><div><div class="k">家長準備</div><ul><li>把同一個輪廓（例如星形或圓形）剪成約 10 片大片紙板</li><li>一個真實的立體物件對照用（積木、杯子都可以）</li><li>不需要事先列印、登入或安裝</li></ul></div><div><div class="k">孩子的任務</div><ul><li>先預測：「疊起來會變成什麼？」</li><li>自己一片一片疊，比較疊 3 片和 8 片哪個比較高</li><li>把疊好的東西和對照物件比一比</li></ul></div><div><div class="k">時間安排</div><ul><li><b>親子活動：</b>約 15–20 分鐘</li><li><b>成人準備：</b>約 10 分鐘（剪紙板）</li><li><b>機器列印：</b>本活動不需要；想延伸可由大人操作機器、孩子在旁看列印縮時</li></ul></div><div><div class="k">觀察與調整</div><ul><li><b>達成：</b>能說出或比出「越多片越高」</li><li><b>太難：</b>只疊 2–3 片，只比高矮</li><li><b>太簡單：</b>混用大小不同的輪廓，預測疊起來像塔還是像圓錐</li></ul></div></div>
+      <summary>活動卡：疊漸縮塔 <span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span><span class="ev ed" title="尚未實際帶孩子試用過">尚待試帶</span></summary>
+      <div class="cols">
+        <div><div class="k">學習目標與先備能力</div><ul><li><b>目標：</b>把 8 層由大到小疊成一座塔，注意到「每一層都比下面小一點」</li><li><b>先備：</b>會用手拿起和放下東西、聽得懂「大、小」；不需要識字或用電腦</li></ul></div>
+        <div><div class="k">家長準備</div><ul><li>印好一套方形漸縮塔（8 層、每層 5 mm、單色），檔案即將提供</li><li>一個小盒子或托盤裝教具</li><li>一塊地墊或桌墊，讓孩子在固定的地方玩</li><li>不需要螢幕、不需要印表機在場</li></ul></div>
+        <div><div class="k">孩子的任務</div><ul><li>看大人疊一次</li><li>自己從最大的一層開始疊</li><li>閉上眼睛摸，把散開的層排回順序</li><li>找出大人偷偷拿走的那一層</li><li>玩完自己放回盒子</li></ul></div>
+        <div><div class="k">時間安排</div><ul><li><b>親子活動：</b>約 15 分鐘</li><li><b>成人準備：</b>第一次約 1 小時列印，之後 0 分鐘</li><li><b>機器列印：</b>事先完成，課程中不需要</li></ul></div>
+        <div><div class="k">觀察與調整</div><ul><li><b>達成：</b>能自己由大到小疊對，或疊錯後自己發現</li><li><b>太難：</b>先只用最大的 4 層</li><li><b>太簡單：</b>閉眼排序、兩套混在一起分開、找出少的一層</li></ul></div>
+      </div>
     </details>
-    <p class="next"><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span><b>升級訊號：</b>能穩定用手指或滑鼠拖曳、旋轉螢幕上的物件。</p>
+    <details class="activity lessons" id="les-s1">
+      <summary>分成 4 堂的課表 <span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span><span class="ev ed" title="尚未實際帶孩子試用過">尚待試帶</span></summary>
+      <div class="tbl"><table>
+        <thead><tr><th>堂</th><th>主題</th><th>目標</th><th>材料（事先印好）</th><th>流程（15–20 分）</th><th>觀察訊號</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>平的還是立體的</td><td>分辨立體與平面</td><td>同一輪廓的一片薄片和一個立體件；布袋</td><td>布袋摸摸看 → 轉一圈 → 在家找 3 平 3 立體分兩堆</td><td>能說出「會滾／站得起來」這類理由</td></tr>
+          <tr><td>2</td><td>疊漸縮塔</td><td>由大到小的順序</td><td>方形漸縮塔 8 層</td><td>活動卡「疊漸縮塔」</td><td>能自己疊對或疊錯後自己發現</td></tr>
+          <tr><td>3</td><td>疊高與摸層紋</td><td>一層一層疊起來</td><td>同輪廓薄片 10–15 片；一個印好的對照件</td><td>疊 3 片和 8 片比高矮 → 摸側面層紋 → 和對照件比</td><td>能說出「越多片越高」、會主動摸側面</td></tr>
+          <tr><td>4</td><td>我的作品</td><td>完成並帶走一件作品</td><td>印好的小動物或小玩具；顏料</td><td>上色 → 組裝 → 放在自己的塔旁邊合照</td><td>能專注完成、願意介紹自己的作品</td></tr>
+        </tbody>
+      </table></div>
+      <p>3–4 歲上第 1、2、4 堂就完整；5–6 歲四堂全上。每堂開場用上一堂的作品回顧 2 分鐘。</p>
+    </details>
+    <p class="next"><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span><b>升級訊號：</b>能自己把 8 層由大到小疊對並收好，開始問「這個可以做成別的形狀嗎」。</p>
   </article>
 
   <article class="stage" id="s2" style="--c:var(--l2)">
     <header><h3>低年級 6–8 歲</h3><span class="tag">第 2 層 · 單堂作品</span></header>
     <div class="cols">
-      <div><div class="k">要教的操作</div><ul><li>從形狀庫拖出方塊、圓柱、文字</li><li>移動、旋轉、縮放、改顏色</li><li>每件作品只用 3–5 個基本形狀</li></ul></div>
+<div><div class="k">不用螢幕的第一次列印：低溫 3D 筆</div><ul><li>用低溫 PCL 線材的 3D 筆（如 3Doodler Start+，官方 6–13 歲<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>），筆頭沒有外露熱源，碰到不燙</li><li>先在紙上描一條線 → 疊第二層、第三層 → 做一個小立體（例如小籃子或眼鏡）</li><li>高溫 PLA 筆（約 200 °C，官方 14 歲以上<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>）不給這個階段用</li><li>大人在旁，用完拔插頭</li></ul></div>
+      <div><div class="k">要教的操作</div><ul><li><b>先想再做：</b>先說一句想做什麼、用蠟筆畫一畫，再開始；做完和圖比一比</li><li>從形狀庫拖出方塊、圓柱、文字</li><li>移動、旋轉、縮放、改顏色</li><li>每件作品只用 3–5 個基本形狀</li></ul></div>
       <div><div class="k">第一個作品：名牌（教案參考尺寸，約 15 分鐘）</div><ul><li>底板 <span class="spec">60 × 20 × 2 mm</span></li><li>文字高度 <span class="spec">3 mm</span>，四周留邊 <span class="spec">5 mm</span></li><li>練到對齊、群組、配色三件事</li></ul><div class="k" style="margin-top:8px">之後的作品</div><ul><li>鑰匙圈、筆筒、簡單玩具車</li></ul></div>
-      <div><div class="k">課堂安排<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></div><ul><li>每週固定一次，每次約 30 分鐘設計時間</li><li>換料、調平、取件都由大人負責</li><li>目標是「印出一件完成品」，不求完美</li></ul></div>
+      <div><div class="k">課堂安排<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></div><ul><li>每週固定一次，每次約 30 分鐘設計時間；<b>螢幕一次不超過 30 分鐘、大人陪同</b><span class="ev doc" title="來自官方規範或產品文件">官方文件</span></li><li>第一、二次先用 3D 筆，之後再進螢幕</li><li>換料、調平、取件都由大人負責</li><li>目標是「印出一件完成品」，不求完美</li></ul></div>
     </div>
     <details class="activity" id="act-s2">
       <summary>活動卡：做一張名牌 <span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span><span class="ev ed" title="尚未實際帶孩子試用過">尚待試帶</span></summary>
@@ -946,8 +977,8 @@ html{scroll-behavior:smooth}
 
   /* "start here": pick the child's level, get a next step */
   var ACT = {
-    s1:{name:'幼兒', age:'3–6 歲', what:'活動卡「把平面疊成立體」，不用電腦，約 15–20 分鐘', card:true},
-    s2:{name:'低年級', age:'6–8 歲', what:'活動卡「做一張名牌」，用 3–5 個基本形狀完成一件作品', card:true},
+    s1:{name:'幼兒', age:'3–6 歲', what:'活動卡「疊漸縮塔」，印好的蒙特梭利教具，不用螢幕，約 15 分鐘', card:true},
+    s2:{name:'低年級', age:'6–8 歲', what:'先用低溫 3D 筆親手擠出第一件作品，再做活動卡「做一張名牌」', card:true},
     s3:{name:'中年級', age:'8–10 歲', what:'挑一件作品：印章、筆筒或有蓋小盒'},
     s4:{name:'高年級', age:'10–12 歲', what:'挑一件專題：手機架、依實際尺寸的收納盒或棋子'},
     s5:{name:'國中', age:'12 歲以上', what:'挑一件專題：理線器、工具架或家中損壞零件的替換件'}
@@ -1003,11 +1034,11 @@ html{scroll-behavior:smooth}
     var h = '';
     rows.forEach(function(r){
       var w = function(n){ return (n / max * 80) + '%'; }, none = r[1] + r[2] === 0;
-      h += '<button data-lvgo="' + r[0][0] + '" aria-pressed="false" aria-label="' + r[0][1] + (none ? '：整理中' : '：國內 ' + r[1] + ' 項、國外 ' + r[2] + ' 項') + '，點選篩選">' +
+      h += '<button data-lvgo="' + r[0][0] + '" aria-pressed="false" aria-label="' + r[0][1] + (none ? '：用印好的教具' : '：國內 ' + r[1] + ' 項、國外 ' + r[2] + ' 項') + '，點選篩選">' +
            '<span class="rl">' + r[0][1] + '</span><span class="rb">' +
            (r[1] ? '<i style="--c:var(--accent);width:' + w(r[1]) + '"></i>' : '') +
            (r[2] ? '<i style="--c:var(--muted);width:' + w(r[2]) + '"></i>' : '') +
-           '<em>' + (none ? '整理中' : r[1] + ' + ' + r[2]) + '</em></span></button>';
+           '<em>' + (none ? '印好的教具' : r[1] + ' + ' + r[2]) + '</em></span></button>';
     });
     document.getElementById('reschart').innerHTML = h;
     document.querySelectorAll('[data-lvgo]').forEach(function(b){
@@ -1036,7 +1067,7 @@ html{scroll-behavior:smooth}
     else {
       empty.hidden = false;
       empty.innerHTML = fstate.lv === 's1'
-        ? '幼兒階段的自編活動整理中，先從不插電的活動開始。 <button type="button" class="btn" id="to-act-s1">看幼兒活動卡</button>'
+        ? '幼兒階段用印好的教具，不需要線上教材；教具檔案即將提供下載。 <button type="button" class="btn" id="to-act-s1">看幼兒活動卡</button>'
         : '沒有符合的教材，換個篩選條件看看。';
       var bt = document.getElementById('to-act-s1');
       if (bt) bt.addEventListener('click', function(){ go('stages', 's1', {focus:true}); var d = document.getElementById('act-s1'); if (d) { d.open = true; d.scrollIntoView({block:'start'}); } });

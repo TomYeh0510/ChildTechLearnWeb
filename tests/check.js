@@ -115,7 +115,7 @@ const norm = (u) => u.replace(/&amp;/g, '&').replace(/\/$/, '');
   ok('費用＋語言可疊加', (await visible()) === (await expect(() => [...document.querySelectorAll('#resources .card')].filter((c) => c.dataset.cost === 'free' && c.dataset.lang === 'zh').length)));
   await page.click('.chip[data-f="cost"][data-v="all"]'); await page.click('.chip[data-f="lang"][data-v="all"]');
   await page.click('.chip[data-f="lv"][data-v="s1"]');
-  ok('幼兒：無教材時顯示整理中說明', (await visible()) === 0 && /整理中/.test(await page.textContent('#resempty')));
+  ok('幼兒：無教材時顯示教具說明', (await visible()) === 0 && /印好的教具/.test(await page.textContent('#resempty')));
   await page.click('.chip[data-f="lv"][data-v="all"]');
   await page.click('.chip[data-f="eq"][data-v="printer"]');
   ok('設備：需要印表機', (await visible()) === (await expect(() => [...document.querySelectorAll('#resources .card')].filter((c) => c.dataset.eq === 'printer').length)));
