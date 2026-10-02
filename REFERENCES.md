@@ -316,6 +316,32 @@
 
 上列網站的實物照片有著作權，不放進網頁、也不放進 MakerWorld 說明。可用的圖片：自己拍的成品照、自己畫的示意圖。
 
+## 十二、MakerWorld、AI 建模年齡與教具安全（2026-10-02）
+
+### MakerWorld／MakerLab 與 AI 年齡
+
+| 主題 | 來源 | 採用的內容 | 用在哪裡 |
+| --- | --- | --- | --- |
+| MakerWorld 年齡 | 使用條款 https://makerworld.com/en/user-agreement | 未滿 13 歲不得使用；13 歲至成年由法定監護人同意條款 | 中年級 AI 活動卡、國中卡片（官方文件）；`PLAN.md` |
+| UNESCO 生成式 AI 指引（2023） | https://www.unesco.org/en/articles/unesco-governments-must-quickly-regulate-generative-ai-schools ；UN News https://news.un.org/en/story/2023/09/1140477 ；Euronews https://www.euronews.com/next/2023/09/07/first-guide-on-ai-in-education-recommends-13-years-as-minimum-age | 建議課堂使用 AI 工具最低年齡 13 歲 | 同上 |
+| MakerLab 工具 | https://makerworld.com/en/makerlab ；https://33d.ch/en/blog/makerlab | Image to 3D、Image to Keychain、Lightbox Maker、Make My Sign、Make My Vase、Pixel Puzzle Maker、Parametric Model Maker 等 | `PLAN.md` |
+| PrintMon Maker、AI Scanner 停止 | https://3druck.com/en/programs/makerworld-printmon-maker-and-ai-scanner-to-be-discontinued-by-bambu-lab-on-september-20-2026-30162323/ | 2026-09-20 停止，不列入規劃 | `PLAN.md` |
+| 參數化模型 | https://all3dp.com/4/bambu-labs-parametric-model-maker-brings-openscad-to-makerworld/ ；https://makerworld.com/en/collections/3485494-customizable-parametric-models | OpenSCAD 腳本，網頁上用 Customize 調參數、即時預覽 | `PLAN.md` |
+| Image to 3D 點數 | https://makerworld.com/en/makerlab-credit-full-guide ；https://filamentpicks.com/makerworld-makerlab-credit-billing-changes/ | 帳號 2 次免費試用；之後每次約 24–45 點 | `PLAN.md` |
+| 一鍵列印 | https://blog.bambulab.com/makerworld-one-step-printing ；https://bambulab.com/en-us/download/app | Bambu Handy 選模型直接列印 | `PLAN.md` |
+| 成人內容與未成年保護 | 社群規範 https://makerworld.com/en/community-guidelines ；https://makerworld.com/en/community/post/1809058 ；論壇 https://forum.bambulab.com/t/better-makerworld-for-younger-users/228677 | NSFW 預設關閉；未成年保護模式仍在規劃 | `PLAN.md`（分齡收藏夾的理由） |
+
+### 教具安全
+
+| 主題 | 來源 | 查到的內容 | 網頁採用 |
+| --- | --- | --- | --- |
+| 小零件 | CPSC 16 CFR 1501 摘要 https://www.cpsc.gov/s3fs-public/Small-Parts-16-C-F-R-Part-1501-English.pdf | 測試筒直徑 31.7 mm、長 57.1 mm；能完全放入即為小零件，3 歲以下禁用 | 「放不進直徑 31.7 mm 的圓筒」（官方文件）；漸縮塔最小一層約 3.5 cm（編者依此推算） |
+| 銳邊 | 16 CFR 1500.49 https://www.ecfr.gov/current/title-16/chapter-II/subchapter-C/part-1500/section-1500.49 ；ASTM F963 https://law.resource.org/pub/us/cfr/ibr/003/astm.f963.2011.html ；EN 71-1 https://law.resource.org/pub/eu/toys/en.71.1.2014.html | 主要標準以「銳邊測試」判定，**沒有統一的最小 R 角**；二手資料引用的數值有 1/16 吋（約 1.6 mm，零售商規格）與 2 mm（檢測業者文章 https://www.testinglab.com/en-71-1-sharp-edge-and-pinch-point-safety-for-ride-on-toys ），均未對照標準原文 | 「圓角半徑建議 2 mm 以上」標**編者建議**（取二手資料中較保守值） |
+| 台灣玩具檢驗 | 標準檢驗局 https://www.bsmi.gov.tw/wSite/public/Attachment/f1349081753460.pdf ；常見問答 https://www.bsmi.gov.tw/bsmiGIP/wSite/fp?xItem=14207&ctNode=4308&mp=8 | 玩具為應施檢驗商品，進口或國內產製須檢驗合格始可陳列銷售；CNS 4797 含物性安全（邊緣、尖端） | 網頁寫「不是經過檢驗的玩具」；販售規定記在 `PLAN.md` |
+| 3D 列印件衛生 | Stony Brook https://you.stonybrook.edu/jadams/2025/05/09/making-your-3d-prints-mouth-safe-and-food-friendly-what-you-need-to-know/ ；NCBI https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10996589/ | 層紋縫隙易藏細菌、難以完全清潔 | 「不適合還會把東西放進嘴裡的孩子」「層紋縫隙會卡髒污」（編者建議） |
+
+強度測試（摔、扭）、清潔方式（不用熱水與洗碗機）為編者建議，沒有外部來源。
+
 ## 九、查證狀態與尚缺來源
 
 ### 查證狀態
@@ -364,3 +390,4 @@
 | 2026-10-02 | 第十一節新增實體教具商品頁連結（台灣、香港、國際賣家），供對照尺寸與手感；網頁未採用 | 新增第十一節商品頁連結 |
 | 2026-10-02 | 第十一節新增粉紅塔以外教具（棕色梯、圓柱體、幾何立體組、構成三角形、幾何圖形櫃）的實體商品頁連結；網頁未採用 | 新增第十一節商品頁連結 |
 | 2026-10-02 | 第十一節新增使用者提供的 VMI 教具示範影片（構成三角形），並記錄感官教具指南連結；影片內容尚未採用 | 新增第十一節影片與指南連結 |
+| 2026-10-02 | 幼兒卡新增「教具安全」區塊；中年級新增 AI 生成活動卡簡述；國中卡片加 13 歲起自己操作；漸縮塔最小一層約 3.5 cm；新增 `PLAN.md` 概念規劃 | 新增第十二節（MakerWorld 條款、UNESCO、MakerLab、小零件、銳邊、標準檢驗局等） |
