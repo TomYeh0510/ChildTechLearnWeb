@@ -127,7 +127,41 @@
 - 年齡建議彙整自上列來源，實際依孩子程度調整；軟體現況以 2026 年 10 月為準。
 - 版本備註：第一版只完成 3D 列印路線，其他四條路線之後依同樣格式補充，每條路線會有自己的一組分頁。
 
-## 八、尚缺來源（之後要補）
+## 八、安全與帳號條件的查證（第一階段可信度修正，2026-10-02）
+
+網頁「安全與檢查」「軟體階梯」依審查意見改寫。以下是查證結果與網頁採用的內容。官方網站多數無法從工作環境直接開啟，主要依搜尋引擎擷取的頁面摘要，標「二手」者請之後對照原文。
+
+| 主題 | 來源 | 網頁採用的內容 | 查證程度 |
+| --- | --- | --- | --- |
+| 通風、機殼、局部排氣 | NIOSH 3D 列印安全指南（報導）https://www.additivemanufacturing.media/articles/niosh-publishes-3d-printing-safety-guide-for-nonindustrial-settings ；AIHA https://www.aiha.org/news/231109-niosh-publishes-guide-to-safe-3d-printing ；NIOSH 學校 11 處排放評估 https://pubmed.ncbi.nlm.nih.gov/39844363/ ；NIOSH 通報 https://cdc.gov/niosh/bulletin/2018/3d-printing.html | 放在通風良好的空間；有排氣的機殼或局部排氣比單純稀釋通風有效；減少近距離長時間停留。報導中提到建議每小時至少換氣 4 次，網頁**不放**這個數字（避免被當成安全保證） | 二手報導＋摘要，NIOSH 原文未直接開啟 |
+| 機殼擋住孩子碰熱區 | Prusa 機殼說明 https://help.prusa3d.com/article/enclosure-guidepost_366332 | 機殼可擋住小手、不讓孩子或寵物碰到高溫部件 | 搜尋摘要 |
+| 線材：環境需求與排放風險 | Printpal 安全指南 https://printpal.io/wiki/3d-printing-safety-guide ；Prusa 論壇／說明 https://forum.prusa3d.com/forum/original-prusa-i3-mk3s-mk3-user-mods-octoprint-enclosures-nozzles/optimal-enclosure-temps-for-pla-petg-abs/ | PLA 排放風險較低、不需機殼但仍要通風；ABS、ASA 排放風險高，需機殼並排氣到室外；把「防翹曲的環境需求」與「人員暴露控制」分開寫 | 二手（非製造商正式規範） |
+| 牆厚 | Prusa Layers and perimeters https://help.prusa3d.com/article/layers-and-perimeters_1748 | 薄壁厚度應是擠出寬度的倍數（例：0.45 mm 擠出寬度，兩圈約 0.86 mm）；Prusa 預設至少兩圈外牆。因此網頁不寫「小於 2 mm 一定不能印」，改成「入門作品建議 2 mm 以上，更薄的壁用切片預覽確認」 | 搜尋摘要 |
+| Autodesk（Fusion）帳號年齡 | https://damassets.autodesk.net/content/dam/autodesk/www/Company/legal-notices-trademarks/education-special-terms/minimum-age-requirements-for-education-community-and-education-access.pdf ；https://forums.autodesk.com/t5/fusion-educators-read-only/minimum-age-of-13-years-old-to-use-fusion/td-p/12697645 | 教育帳號須滿 13 歲，未滿 13 歲不能被指派教育授權；未滿 13 歲先用 Tinkercad 或 Onshape | 已於第五節查證 |
+| Tinkercad 未滿 13 歲 | https://www.autodesk.com/company/legal-notices-trademarks/terms-of-service-autodesk360-web-services/terms-of-service-for-tinkercad | 家長同意，或由老師建立班級、學生用班級代碼登入 | 已於第五節查證 |
+| Onshape 未滿 13 歲 | https://forum.onshape.com/discussion/11128/can-children-create-onshape-accounts ；https://www.onshape.com/en/education/plans | 13 歲以下由大人協助建立帳號；教育版文件不公開、免費方案文件公開 | 論壇答覆＋摘要（非正式條款） |
+| 生成式 AI 未滿 13 歲 | OpenAI https://help.openai.com/en/articles/8313401-is-chatgpt-safe-for-all-ages ；EdSurge https://www.edsurge.com/news/2023-11-02-teens-need-parent-permission-to-use-chatgpt-could-that-slow-its-use-in-schools | 未滿 13 歲不應自行使用；13–17 歲需家長同意；網頁寫「如需接觸請由成人操作」（編者建議）。OpenAI 對未滿 13 歲教育情境的細則尚未查證，AI 路線建立時再補 | 搜尋摘要 |
+
+### 網頁上的證據標籤對應
+
+- **官方文件**：帳號與授權條件、費用與限制、熱區與通風原則、線材環境需求、CREATE 清單。
+- **教學實例**：預留給學校或教師實際課程（如各校教材）。目前主要出現在標籤圖例；單元順序等仍屬編者建議。
+- **編者建議**：成人責任、冷卻取件、第一層注意事項、檢查表、入門設定值、先備能力、成人要做什麼、建議學習階段、課堂安排、建議單元順序、升級訊號。
+
+### 這次從網頁移除或改寫的內容
+
+| 原本 | 改成 | 原因 |
+| --- | --- | --- |
+| 孩子在離機器約 60 cm 外觀察 | 不給固定距離，改寫隔離熱區原則 | 固定距離容易被當成安全保證（原值來自 Nozzle Down 家長指南） |
+| 印完等 10–15 分鐘再取件 | 依設備說明確認降溫後由成人取件 | 冷卻時間依機型而異（原值來自 Nozzle Down） |
+| 噴頭 200–220 °C 大字卡片 | 併入「熱區」說明，寫成 PLA 常見約 200 °C 以上 | 溫度依線材與機型而異 |
+| 只用 PLA；ABS、PETG 需要密閉機殼與良好通風 | 拆成「列印環境需求」與「人員暴露控制」兩件事 | 混在一起會讓人以為選 PLA 就不用通風 |
+| 所有牆面至少 2 mm、牆太薄（小於 2 mm）一拿就斷 | 入門作品建議 2 mm 以上，更薄用切片預覽確認 | 薄壁可否列印取決於擠出寬度與圈數 |
+| 建議的入門列印設定 | 本入門教案的保守設定（編者建議） | 設定值只適用入門小件 |
+| Fusion「教育版免費」、軟體「全部都能免費使用」 | 學習年齡、帳號資格、成人要做什麼分欄 | 學得會不等於能申請帳號 |
+| 新興國中教材卡的「手指虎」專題 | 改列咖啡外帶杯、工具筆等生活用品專題 | 兒童頁面不推薦武器題材（教材本身仍保留在連結中） |
+
+## 九、尚缺來源（之後要補）
 
 - SketchUp 10 歲以上、切片軟體 8 歲以上：目前是依學校實例與本路線安排，沒有官方年齡建議。
 - Quick, Draw!、Teachable Machine、App Inventor、不插電活動的年齡：官方沒有標示，是本路線的安排（見第七節）。
@@ -150,3 +184,4 @@
 | 2026-10-02 | 網頁移除所有備註與來源說明（來源行、查詢日期、價格與費用標籤說明、「本路線建議」、頁尾、版本說明），統一只記在本檔；「規劃中」改為「即將推出」；首頁文案改為產品介紹 | 無新來源；新增第七節收錄原本寫在網頁上的備註 |
 | 2026-10-02 | 網站定名「小小創客階梯 · MakerSteps」，原名改為副標；備選名單與理由記在 `BRAND.md` | 無新來源 |
 | 2026-10-02 | 收錄外部審查意見到 `REVIEW.md`（尚未修改網頁內容）。審查提到 NIOSH、Prusa、Autodesk、OpenAI 的資料，尚未逐一查證，評估採用時再補進來源 | 暫無新來源 |
+| 2026-10-02 | 第一階段可信度修正：安全頁改寫為原則與責任分工；軟體階梯拆出「建議學習階段／先備能力／帳號授權條件／成人要做什麼／費用與限制」；加上證據標籤；移除固定距離與冷卻時間；教材卡改非武器專題 | 新增第八節（NIOSH、Prusa、Printpal、OpenAI、EdSurge、Onshape 論壇等） |

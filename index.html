@@ -114,6 +114,16 @@ li{margin:2px 0}
 .spec{font-family:var(--f-mono);font-size:.85rem;background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:0 5px;white-space:nowrap}
 .stage details.create{background:var(--bg)}
 .stage details.create summary small{font-weight:400;color:var(--muted);margin-left:6px}
+.ev{display:inline-block;font-family:var(--f-body);font-size:.68rem;font-weight:500;line-height:1.5;padding:0 7px;border-radius:999px;margin-left:6px;vertical-align:.12em;border:1px solid var(--line);color:var(--muted);background:var(--bg);white-space:nowrap;letter-spacing:0}
+li .ev{margin-right:6px}
+.ev.doc{color:var(--accent);border-color:var(--accent)}
+.ev.ex{color:var(--l3);border-color:var(--l3)}
+.ev.ed{border-style:dashed}
+.k .ev,.next .ev{margin-left:0;margin-right:6px}
+.k .ev{margin-left:6px;margin-right:0}
+.evkey{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:.8rem;color:var(--muted)}
+.evkey .ev{margin-left:0;margin-right:4px}
+.tbl th .ev{margin-left:4px}
 .next{font-size:.9rem;border-top:1px dashed var(--line);padding-top:10px;color:var(--muted)}
 .next b{color:var(--ink)}
 .src{font-size:.8rem;color:var(--muted)}
@@ -366,7 +376,7 @@ html{scroll-behavior:smooth}
       <tr><td>AI</td><td><b>Quick, Draw!</b></td><td>低年級起</td><td><span class="status ok">免費</span></td><td>免帳號、免下載</td></tr>
       <tr><td>AI</td><td><b>Teachable Machine</b></td><td>中年級起</td><td><span class="status ok">免費</span></td><td>免帳號，在瀏覽器訓練圖片、聲音、姿勢辨識</td></tr>
       <tr><td>AI</td><td><b>教育部「和 AI 做朋友」系列</b></td><td>國小版《我和AI一起學》為三至六年級</td><td><span class="status ok">免費</span></td><td>教育大市集免費下載</td></tr>
-      <tr><td>AI</td><td><b>生成式 AI（ChatGPT、Gemini）</b></td><td>13 歲以上；13–17 歲需家長同意</td><td><span class="status mix">部分免費</span></td><td>有免費版；未滿 18 歲自動套用青少年保護</td></tr>
+      <tr><td>AI</td><td><b>生成式 AI（ChatGPT、Gemini）</b></td><td>13 歲以上；13–17 歲需家長同意；未滿 13 歲不適合自行使用，如需接觸請由成人操作</td><td><span class="status mix">部分免費</span></td><td>有免費版；未滿 18 歲自動套用青少年保護</td></tr>
       <tr><td>軟體應用</td><td><b>Canva 教育版</b></td><td>中小學</td><td><span class="status ok">免費</span></td><td>中小學師生免費含進階功能；學生需由老師邀請加入</td></tr>
       <tr><td>軟體應用</td><td><b>Word、Excel、PowerPoint</b></td><td>中小學</td><td><span class="status mix">部分免費</span></td><td>學校教育帳號可免費用網頁版（Office 365 A1）；桌面版另購</td></tr>
     </tbody>
@@ -405,26 +415,26 @@ html{scroll-behavior:smooth}
     <div class="cols">
       <div><div class="k">學習目標</div><ul><li>知道「立體」和「平面」的差別</li><li>看懂東西是一層一層疊出來的</li><li>建立「先想 → 做出來」的概念</li></ul></div>
       <div><div class="k">活動與作品</div><ul><li>用黏土或積木先捏出形狀，再對照印好的同款模型</li><li>看列印縮時影片，數一數有幾層</li><li>幫印好的小動物上色、組裝</li></ul></div>
-      <div><div class="k">課堂安排</div><ul><li>每次 15–20 分鐘，以手作為主</li><li>印表機由大人全程操作，孩子在安全距離外觀察</li></ul></div>
+      <div><div class="k">課堂安排<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></div><ul><li>每次 15–20 分鐘，以手作為主</li><li>印表機由大人全程操作，孩子在安全距離外觀察</li></ul></div>
     </div>
-    <p class="next"><b>升級訊號：</b>能穩定用手指或滑鼠拖曳、旋轉螢幕上的物件。</p>
+    <p class="next"><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span><b>升級訊號：</b>能穩定用手指或滑鼠拖曳、旋轉螢幕上的物件。</p>
   </article>
 
   <article class="stage" id="s2" style="--c:var(--l2)">
     <header><h3>低年級 6–8 歲</h3><span class="tag">第 2 層 · 單堂作品</span></header>
     <div class="cols">
       <div><div class="k">要教的操作</div><ul><li>從形狀庫拖出方塊、圓柱、文字</li><li>移動、旋轉、縮放、改顏色</li><li>每件作品只用 3–5 個基本形狀</li></ul></div>
-      <div><div class="k">第一個作品：名牌（約 15 分鐘）</div><ul><li>底板 <span class="spec">60 × 20 × 2 mm</span></li><li>文字高度 <span class="spec">3 mm</span>，四周留邊 <span class="spec">5 mm</span></li><li>練到對齊、群組、配色三件事</li></ul><div class="k" style="margin-top:8px">之後的作品</div><ul><li>鑰匙圈、筆筒、簡單玩具車</li></ul></div>
-      <div><div class="k">課堂安排</div><ul><li>每週固定一次，每次約 30 分鐘設計時間</li><li>換料、調平、取件都由大人負責</li><li>目標是「印出一件完成品」，不求完美</li></ul></div>
+      <div><div class="k">第一個作品：名牌（教案參考尺寸，約 15 分鐘）</div><ul><li>底板 <span class="spec">60 × 20 × 2 mm</span></li><li>文字高度 <span class="spec">3 mm</span>，四周留邊 <span class="spec">5 mm</span></li><li>練到對齊、群組、配色三件事</li></ul><div class="k" style="margin-top:8px">之後的作品</div><ul><li>鑰匙圈、筆筒、簡單玩具車</li></ul></div>
+      <div><div class="k">課堂安排<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></div><ul><li>每週固定一次，每次約 30 分鐘設計時間</li><li>換料、調平、取件都由大人負責</li><li>目標是「印出一件完成品」，不求完美</li></ul></div>
     </div>
-    <p class="next"><b>升級訊號：</b>不看示範就能組合出想要的形狀，開始問「怎麼挖洞」。</p>
+    <p class="next"><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span><b>升級訊號：</b>不看示範就能組合出想要的形狀，開始問「怎麼挖洞」。</p>
   </article>
 
   <article class="stage" id="s3" style="--c:var(--l3)">
     <header><h3>中年級 8–10 歲</h3><span class="tag">第 3 層 · Tinkercad 基本功</span></header>
     <div class="cols">
       <div><div class="k">Tinkercad 核心功能</div><ul><li><b>對齊工具</b>（快捷鍵 <span class="spec">L</span>）：讓物件中心對中心</li><li><b>群組</b>（<span class="spec">Ctrl+G</span>）：多個形狀合成一個</li><li><b>挖孔</b>：放圓柱 → 設為「孔」→ 對齊 → 和實體群組</li><li><b>工作平面</b>：在斜面或側面上加東西</li></ul></div>
-      <div><div class="k">建議單元順序</div><ol style="margin:0;padding-left:1.3em"><li>介面、視角與主要工作區</li><li>基本形狀與屬性</li><li>多個物件的操作與對齊</li><li>群組與挖孔</li><li>文字與印章（文字要鏡像）</li><li>完成作品並匯出 STL</li></ol></div>
+      <div><div class="k">建議單元順序<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></div><ol style="margin:0;padding-left:1.3em"><li>介面、視角與主要工作區</li><li>基本形狀與屬性</li><li>多個物件的操作與對齊</li><li>群組與挖孔</li><li>文字與印章（文字要鏡像）</li><li>完成作品並匯出 STL</li></ol></div>
       <div><div class="k">作品</div><ul><li>印章、筆筒、有蓋小盒</li></ul><div class="k" style="margin-top:8px">認識列印流程</div><ul><li>設計 → 切片 → 列印三步驟</li><li>三種檔案：<span class="spec">STL</span> 模型、<span class="spec">G-code</span> 列印指令、專案檔</li><li>用切片軟體看每一層的樣子</li></ul></div>
     </div>
     <div class="flow" role="img" aria-label="列印流程：設計匯出 STL，切片產生 G-code，再交給印表機列印">
@@ -434,7 +444,7 @@ html{scroll-behavior:smooth}
       <span class="fa">G-code</span>
       <div class="fs"><b><svg class="ico"><use href="#i-printer"/></svg>3 列印</b><span>大人操作機器</span><small>孩子在旁觀察</small></div>
     </div>
-    <p class="next"><b>升級訊號：</b>想做「要剛好放得下某樣東西」的作品，開始需要量尺寸。</p>
+    <p class="next"><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span><b>升級訊號：</b>想做「要剛好放得下某樣東西」的作品，開始需要量尺寸。</p>
   </article>
 
   <article class="stage" id="s4" style="--c:var(--l4)">
@@ -451,20 +461,20 @@ html{scroll-behavior:smooth}
       <div class="fs"><b><svg class="ico"><use href="#i-printer"/></svg>試裝</b><span>放得下嗎？</span></div>
     </div>
     <details class="create">
-      <summary>CREATE 基礎級完整清單 <small>小六–國一，有經驗的小五可提前</small></summary>
+      <summary>CREATE 基礎級完整清單 <small>小六–國一，有經驗的小五可提前</small><span class="ev doc" title="來自官方規範或產品文件">官方文件</span></summary>
       <div class="cols">
         <div><div class="k">積層製造與列印流程</div><ul><li>什麼是積層製造、和切削加工的差別</li><li>FDM 原理</li><li>設計 → 切片 → 列印</li><li>STL / OBJ / G-code</li><li>安全守則</li><li>開始與中止列印、取件</li></ul></div>
         <div><div class="k">列印設計與切片</div><ul><li>匯入、縮放、擺放方向</li><li>多件排版</li><li>Brim / Raft</li><li>層檢視</li><li>存檔與輸出 G-code</li><li>2D 圖片擠出</li></ul></div>
         <div><div class="k">3D 建模</div><ul><li>介面與視角</li><li>用基本形體組合</li><li>簡單草圖與尺寸</li><li>圓角、陣列</li><li>存成可列印的封閉 STL</li><li>分享設計</li></ul></div>
       </div>
     </details>
-    <p class="next"><b>升級訊號：</b>覺得 Tinkercad「做不出想要的形狀」，通常是規律使用 8–12 個月後。</p>
+    <p class="next"><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span><b>升級訊號：</b>覺得 Tinkercad「做不出想要的形狀」，通常是規律使用 8–12 個月後。</p>
   </article>
 
   <article class="stage" id="s5" style="--c:var(--l5)">
     <header><h3>國中 12 歲以上</h3><span class="tag">第 5 層 · 解決真實問題</span></header>
     <div class="cols">
-      <div><div class="k">建模（Fusion 360 / Onshape）</div><ul><li>草圖、尺寸與約束、圓角、陣列</li><li>鏡像、合併實體、拆成零件</li><li>參考照片建模、曲線</li><li>管理設計版本，做「設計 → 測試 → 修改」</li><li>想做生物或造型類：改學 Blender 雕塑</li></ul></div>
+      <div><div class="k">建模（Fusion 360 / Onshape）</div><ul><li>草圖、尺寸與約束、圓角、陣列</li><li>鏡像、合併實體、拆成零件</li><li>參考照片建模、曲線</li><li>管理設計版本，做「設計 → 測試 → 修改」</li><li>想做生物或造型類：改學 Blender 雕塑</li><li>Fusion 的 Autodesk 帳號須滿 13 歲；未滿 13 歲先用 Tinkercad 或 Onshape（由大人協助開帳號）</li></ul></div>
       <div><div class="k">切片與機器（對應 CREATE 中級）</div><ul><li>支撐材何時需要、怎麼減少</li><li>懸空與架橋、用擺放方向減少支撐</li><li>外殼厚度與填充率對強度的影響</li><li>層高、噴嘴、設定對時間與品質的影響</li><li>估算列印成本</li><li>換料、處理不黏床；平台校正</li></ul></div>
       <div><div class="k">專題作品</div><ul><li>理線器、工具架</li><li>家中損壞零件的替換件</li><li>會動的機構（鉸鏈、齒輪）</li></ul></div>
     </div>
@@ -475,7 +485,7 @@ html{scroll-behavior:smooth}
       <div class="loop"><svg class="ico"><use href="#i-cycle"/></svg> 再回到設計，存成新版本 v2、v3…</div>
     </div>
     <details class="create">
-      <summary>CREATE 中級完整清單 <small>國二–國三</small></summary>
+      <summary>CREATE 中級完整清單 <small>國二–國三</small><span class="ev doc" title="來自官方規範或產品文件">官方文件</span></summary>
       <div class="cols">
         <div><div class="k">積層製造與列印流程</div><ul><li>環境與永續</li><li>七種積層製造製程</li><li>雙噴頭</li><li>PLA 特性與保存</li><li>換料</li><li>不黏床排除</li><li>平台校正</li><li>暫停與續印</li><li>檔案版本管理</li></ul></div>
         <div><div class="k">列印設計與切片</div><ul><li>支撐材與減少支撐</li><li>懸空與架橋</li><li>擺放方向</li><li>外殼與填充</li><li>層高、噴嘴等設定</li><li>時間與品質取捨</li><li>成本計算</li></ul></div>
@@ -483,7 +493,7 @@ html{scroll-behavior:smooth}
       </div>
     </details>
     <details class="create">
-      <summary>延伸：CREATE 進階級 <small>國三以上、高中</small></summary>
+      <summary>延伸：CREATE 進階級 <small>國三以上、高中</small><span class="ev doc" title="來自官方規範或產品文件">官方文件</span></summary>
       <div class="cols">
         <div><div class="k">積層製造與列印流程</div><ul><li>對產業與社會的影響</li><li>製程選擇</li><li>客製化量產</li><li>其他線材</li><li>換噴嘴、保養、故障排除</li></ul></div>
         <div><div class="k">列印設計與切片</div><ul><li>速度、回抽、冷卻、溫度</li><li>雙色切片</li><li>公差</li><li>擺放方向與結構強度</li><li>為積層製造而設計（DfAM）</li></ul></div>
@@ -496,25 +506,26 @@ html{scroll-behavior:smooth}
 <!-- ============ SOFTWARE ============ -->
 <section id="software">
   <h2>軟體階梯</h2>
-  <p class="lead">主線是 Tinkercad → Fusion / Onshape，全部都能免費使用。部分舊軟體已經停止更新，排新課時建議改用表格裡的替代品。</p>
+  <p class="lead">主線是 Tinkercad → Onshape / Fusion。「適合學習的年齡」和「能不能申請帳號」是兩件事，請一併看表格右側的帳號與授權條件。部分舊軟體已經停止更新，排新課時建議改用表格裡的替代品。</p>
+  <div class="evkey" aria-label="標籤說明"><span><span class="ev doc" title="來自官方規範或產品文件">官方文件</span> 官方規範或產品文件</span><span><span class="ev ex" title="來自學校或教師的實際課程">教學實例</span> 學校或教師的實際課程</span><span><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span> 編者整理，尚待實作驗證</span></div>
   <div class="chart">
-    <h3>各軟體適合的年齡</h3>
+    <h3>各軟體的建議學習階段<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></h3>
     <div class="legend"><span><i style="--c:var(--accent)"></i>主線</span><span><i style="--c:var(--muted)"></i>其他選擇</span><span>色條淡出 = 該年齡以上都適用</span></div>
     <div class="ax" id="swchart"></div>
   </div>
-  <div class="tbl"><table>
-    <thead><tr><th>軟體</th><th>類型</th><th>適合</th><th>費用</th><th>免費與付費的差別、限制</th><th>現況</th></tr></thead>
+  <div class="tbl"><table style="min-width:880px">
+    <thead><tr><th>軟體</th><th>建議學習階段<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></th><th>先備能力<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></th><th>帳號／授權條件<span class="ev doc" title="來自官方規範或產品文件">官方文件</span></th><th>成人要做什麼<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></th><th>費用與限制<span class="ev doc" title="來自官方規範或產品文件">官方文件</span></th></tr></thead>
     <tbody>
-      <tr><td><b>Tinkercad</b></td><td>積木式建模（網頁）</td><td>6–12 歲</td><td><span class="status ok">免費</span></td><td>完全免費、無廣告。13 歲以下要由家長同意，或由老師開班級、學生用班級代碼登入。</td><td><span class="status ok">持續更新</span></td></tr>
-      <tr><td><b>Makers Empire</b></td><td>兒童建模 App</td><td>5–14 歲（幼兒園到國二）</td><td><span class="status mix">部分免費</span></td><td>個人在家免費。學校方案年費：30 人 US$329、100 人 US$824、全校 US$1,149 起；付費才有 150 份以上教案、班級管理與評量。學校可免費試用 2 週。</td><td><span class="status ok">持續更新</span></td></tr>
-      <tr><td><b>Fusion</b></td><td>參數化 CAD</td><td>12 歲以上（帳號須滿 13 歲）</td><td><span class="status mix">部分免費</span></td><td>教育版：學生、老師免費、功能完整，資格維持就能續用。個人版：免費但限非商業、年收入低於 US$1,000，同時只能有 10 個可編輯文件，沒有模擬、生成式設計等進階功能，3 年到期可續。<b>Autodesk 教育帳號須滿 13 歲</b>，國一生日前可先用 Onshape。</td><td><span class="status ok">持續更新</span></td></tr>
-      <tr><td><b>Onshape</b></td><td>參數化 CAD（網頁）</td><td>12 歲以上</td><td><span class="status mix">部分免費</span></td><td>教育版免費，文件只分享給指定的人。一般 Free 方案也免費，但所有文件都會公開、不能建私人文件。13 歲以下由大人協助建立帳號。</td><td><span class="status ok">持續更新</span></td></tr>
-      <tr><td><b>Blender</b></td><td>雕塑、造型</td><td>12 歲以上</td><td><span class="status ok">免費</span></td><td>開源軟體（GPL），任何用途都免費，包括教學與商業，沒有付費版。</td><td><span class="status ok">持續更新</span></td></tr>
-      <tr><td><b>SketchUp</b></td><td>快速建模</td><td>10 歲以上</td><td><span class="status mix">部分免費</span></td><td>學校版 SketchUp for Schools：中小學用 Google 或 Microsoft 教育帳號免費使用，符合兒童隱私規範（COPPA）。個人 SketchUp Free 免費但不符合 COPPA、不能裝外掛、限非商業；完整功能要買 Go / Pro。</td><td><span class="status ok">網頁版可用</span></td></tr>
-      <tr><td><b>Cura / Bambu Studio</b></td><td>切片</td><td>8 歲以上（大人陪同）</td><td><span class="status ok">免費</span></td><td>都是開源免費軟體（Cura：LGPLv3；Bambu Studio：AGPL），沒有付費版。依印表機品牌選擇。</td><td><span class="status ok">持續更新</span></td></tr>
-      <tr><td><b>123D Design</b></td><td>建模</td><td>—</td><td><span class="status old">已下架</span></td><td>Autodesk 在 2017-03-31 停止並下架。新課改用 Tinkercad 或 Fusion。</td><td><span class="status old">已停止</span></td></tr>
-      <tr><td><b>Meshmixer</b></td><td>模型修復、拆件</td><td>—</td><td><span class="status ok">免費</span></td><td>仍可免費下載使用，但 Autodesk 已停止開發與支援。拆件、卡榫可改在 Tinkercad 或 Fusion 做。</td><td><span class="status old">停止開發</span></td></tr>
-      <tr><td><b>Sculptris</b></td><td>雕塑</td><td>—</td><td><span class="status old">已下架</span></td><td>官網已導向 ZBrushCoreMini（免費、限非商業）。也可改用 Blender。</td><td><span class="status old">已停止</span></td></tr>
+      <tr><td><b>Tinkercad</b><br><span class="muted">積木式建模（網頁）</span><br><span class="status ok">持續更新</span></td><td>6–12 歲</td><td>會用滑鼠或觸控拖曳、旋轉物件</td><td>未滿 13 歲：家長同意，或由老師建立班級、學生用班級代碼登入</td><td>建立教師帳號與班級，或陪孩子建立帳號</td><td><span class="status ok">免費</span><br>完全免費、無廣告</td></tr>
+      <tr><td><b>Makers Empire</b><br><span class="muted">兒童建模 App</span><br><span class="status ok">持續更新</span></td><td>5–14 歲（幼兒園到國二）</td><td>能用平板或滑鼠操作，不需要先會建模</td><td>個人在家可直接使用；學校方案需購買授權</td><td>安裝 App；學校使用需採購訂閱</td><td><span class="status mix">部分免費</span><br>個人在家免費；學校方案年費 US$329（30 人）起，才有教案、班級管理與評量</td></tr>
+      <tr><td><b>Onshape</b><br><span class="muted">參數化 CAD（網頁）</span><br><span class="status ok">持續更新</span></td><td>12 歲以上</td><td>已熟悉 Tinkercad 基本功，看得懂尺寸與草圖</td><td>教育版免費、文件不公開；一般免費方案的文件一律公開；13 歲以下由大人協助建立帳號</td><td>替孩子建立教育版帳號，確認用的不是公開的免費方案</td><td><span class="status mix">部分免費</span><br>教育版免費；免費方案不能建私人文件</td></tr>
+      <tr><td><b>Fusion</b><br><span class="muted">參數化 CAD</span><br><span class="status ok">持續更新</span></td><td>12 歲以上</td><td>已熟悉 Tinkercad 基本功，會量尺寸、看懂草圖</td><td>Autodesk 帳號須滿 13 歲；教育版需符合教育機構或教師的資格；個人版限非商業</td><td>確認孩子已滿 13 歲與資格；未滿 13 歲先用 Tinkercad 或 Onshape</td><td><span class="status mix">部分免費</span><br>教育版功能完整、免費；個人版同時只能有 10 個可編輯文件，沒有模擬與生成式設計等進階功能</td></tr>
+      <tr><td><b>Blender</b><br><span class="muted">雕塑、造型</span><br><span class="status ok">持續更新</span></td><td>12 歲以上</td><td>熟悉 3D 視角操作，有耐心學習較複雜的介面</td><td>不需要帳號；開源（GPL）</td><td>協助安裝在電腦上</td><td><span class="status ok">免費</span><br>任何用途都免費，沒有付費版</td></tr>
+      <tr><td><b>SketchUp</b><br><span class="muted">快速建模</span><br><span class="status ok">網頁版可用</span></td><td>10 歲以上</td><td>看得懂平面圖與基本形體</td><td>學校版：中小學用 Google 或 Microsoft 教育帳號，符合兒童隱私規範（COPPA）；個人免費版不符合 COPPA</td><td>由學校管理員開通教育帳號；在家使用請自行評估隱私</td><td><span class="status mix">部分免費</span><br>學校版免費；個人免費版不能裝外掛、限非商業，完整功能要買 Go / Pro</td></tr>
+      <tr><td><b>Cura / Bambu Studio</b><br><span class="muted">切片</span><br><span class="status ok">持續更新</span></td><td>8 歲以上（大人陪同）</td><td>知道「設計 → 切片 → 列印」三個步驟</td><td>不需要帳號；開源</td><td>安裝、選對機型與線材、操作列印</td><td><span class="status ok">免費</span><br>開源免費，沒有付費版</td></tr>
+      <tr><td><b>123D Design</b><br><span class="muted">建模</span><br><span class="status old">已停止</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="status old">已下架</span><br>Autodesk 在 2017-03-31 停止並下架；新課改用 Tinkercad 或 Fusion</td></tr>
+      <tr><td><b>Meshmixer</b><br><span class="muted">模型修復、拆件</span><br><span class="status old">停止開發</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="status ok">免費</span><br>仍可免費下載使用，但 Autodesk 已停止開發與支援；拆件、卡榫可改在 Tinkercad 或 Fusion 做</td></tr>
+      <tr><td><b>Sculptris</b><br><span class="muted">雕塑</span><br><span class="status old">已停止</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="status old">已下架</span><br>官網已導向 ZBrushCoreMini（免費、限非商業）；也可改用 Blender</td></tr>
     </tbody>
   </table></div>
 </section>
@@ -522,37 +533,37 @@ html{scroll-behavior:smooth}
 <!-- ============ SAFETY ============ -->
 <section id="safety">
   <h2>安全守則與列印前檢查</h2>
+  <p class="lead">3D 印表機有高溫、運動部件，運轉時也會產生排放物。安全靠的是「成人負責、隔離熱區、通風、冷卻後取件」，而不是某一個固定數字。</p>
+  <div class="evkey" aria-label="標籤說明"><span><span class="ev doc" title="來自官方規範或產品文件">官方文件</span> 官方規範或產品文件</span><span><span class="ev ex" title="來自學校或教師的實際課程">教學實例</span> 學校或教師的實際課程</span><span><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span> 編者整理，尚待實作驗證</span></div>
   <div class="facts">
-    <div class="fact"><svg class="ico"><use href="#i-temp"/></svg><b>200–220 °C</b><span>PLA 列印時的噴頭溫度</span></div>
-    <div class="fact"><svg class="ico"><use href="#i-ruler"/></svg><b>60 cm</b><span>孩子觀察時離機器的距離</span></div>
-    <div class="fact"><svg class="ico"><use href="#i-clock"/></svg><b>10–15 分</b><span>印完等冷卻再取件</span></div>
-    <div class="fact"><svg class="ico"><use href="#i-adult"/></svg><b>全程</b><span>不論幾歲，列印時都要有大人在場</span></div>
+    <div class="fact"><svg class="ico"><use href="#i-adult"/></svg><b>成人負責</b><span>列印全程有成人在場，換料、調平、取件由成人做</span></div>
+    <div class="fact"><svg class="ico"><use href="#i-temp"/></svg><b>隔離熱區</b><span>噴頭、熱床與運動部件不讓孩子接觸</span></div>
+    <div class="fact"><svg class="ico"><use href="#i-gauge"/></svg><b>保持通風</b><span>放在通風良好的空間，減少近距離長時間停留</span></div>
+    <div class="fact"><svg class="ico"><use href="#i-clock"/></svg><b>冷卻後取件</b><span>依設備說明確認降溫，由成人取件</span></div>
   </div>
   <div class="box">
-    <div class="dist" role="img" aria-label="示意：大人在印表機旁操作，孩子站在 60 公分外觀察">
-      <figure><svg class="ico" style="color:var(--warn)"><use href="#i-printer"/></svg><figcaption>印表機</figcaption></figure>
+    <div class="dist" role="img" aria-label="示意：大人在印表機旁操作，孩子與熱區之間有隔離，在旁觀察">
+      <figure><svg class="ico" style="color:var(--warn)"><use href="#i-printer"/></svg><figcaption>印表機（熱區）</figcaption></figure>
       <figure><svg class="ico" style="color:var(--ink)"><use href="#i-adult"/></svg><figcaption>大人操作</figcaption></figure>
-      <div class="gap">≥ 60 cm</div>
+      <div class="gap">隔開・不伸手</div>
       <figure><svg class="ico" style="color:var(--accent)"><use href="#i-child"/></svg><figcaption>孩子觀察</figcaption></figure>
     </div>
   </div>
   <div class="two">
     <div class="box warn">
-      <h3>安全守則</h3>
+      <h3>安全原則</h3>
       <ul>
-        <li>PLA 列印時噴頭約 <span class="spec">200–220 °C</span>，碰到會立刻燙傷</li>
-        <li>不論幾歲，列印時都要有大人在場</li>
-        <li>換料、調平、取件由大人負責</li>
-        <li>孩子在離機器約 <span class="spec">60 cm</span> 外觀察</li>
-        <li>印完等 <span class="spec">10–15 分鐘</span> 冷卻再取件</li>
-        <li>只用 PLA；ABS、PETG 等需要密閉機殼與良好通風</li>
-        <li>第一層印的時候盯著看有沒有黏好，手不要伸進去</li>
+        <li><b>成人責任</b><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span>列印全程有成人在場；換料、調平、取件、處理卡料都由成人負責</li>
+        <li><b>熱區與運動部件</b><span class="ev doc" title="來自官方規範或產品文件">官方文件</span>噴頭與熱床溫度很高（PLA 常見約 200 °C 以上），運轉時還有移動的部件；孩子不要伸手，可用機殼或隔板擋住小手</li>
+        <li><b>通風</b><span class="ev doc" title="來自官方規範或產品文件">官方文件</span>放在通風良好的空間；有條件時用有排氣的機殼或局部排氣，並減少孩子在機器旁近距離長時間停留</li>
+        <li><b>冷卻</b><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span>依設備說明確認噴頭與熱床都已降溫，再由成人取件</li>
+        <li><b>第一層</b><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span>列印第一層時盯著看有沒有黏好，手不要伸進去</li>
       </ul>
     </div>
     <div class="box">
-      <h3>可列印設計檢查表</h3>
+      <h3>可列印設計檢查表<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></h3>
       <div class="check" id="checklist">
-        <label><input type="checkbox" id="c1"><span>所有牆面至少 2 mm 厚</span></label>
+        <label><input type="checkbox" id="c1"><span>牆面夠厚（入門作品建議 2 mm 以上，更薄的壁要用切片預覽確認印得出來）</span></label>
         <label><input type="checkbox" id="c2"><span>底部是平的，貼在工作平面上</span></label>
         <label><input type="checkbox" id="c3"><span>沒有懸空、沒接到主體的零件</span></label>
         <label><input type="checkbox" id="c4"><span>形狀都對齊好，並已群組</span></label>
@@ -563,13 +574,24 @@ html{scroll-behavior:smooth}
       <div class="progress" id="prog" aria-live="polite">已完成 0 / 6 項</div>
     </div>
   </div>
-  <div class="box">
-    <h3>建議的入門列印設定</h3>
-    <div class="settings">
-      <div><svg class="ico"><use href="#i-layers"/></svg><b>0.2 mm</b><span>層高</span></div>
-      <div><svg class="ico"><use href="#i-cube"/></svg><b>20 %</b><span>填充率</span></div>
-      <div><svg class="ico"><use href="#i-gauge"/></svg><b>50 mm/s</b><span>列印速度</span></div>
-      <div><svg class="ico"><use href="#i-spool"/></svg><b>PLA</b><span>線材</span></div>
+  <div class="two">
+    <div class="box">
+      <h3>線材：環境需求和人員暴露要分開看</h3>
+      <ul>
+        <li><b>列印環境需求</b><span class="ev doc" title="來自官方規範或產品文件">官方文件</span>PLA 在一般室溫環境下較容易列印；ABS、ASA 比較需要穩定的高溫環境，常搭配機殼</li>
+        <li><b>人員暴露控制</b><span class="ev doc" title="來自官方規範或產品文件">官方文件</span>不論哪種線材都要通風；ABS、ASA 的排放風險較高，要把排氣導到室外</li>
+        <li><b>入門教學</b><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span>用 PLA 起步，是因為比較好印，不代表可以不通風</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>本入門教案的保守設定<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></h3>
+      <div class="settings">
+        <div><svg class="ico"><use href="#i-layers"/></svg><b>0.2 mm</b><span>層高</span></div>
+        <div><svg class="ico"><use href="#i-cube"/></svg><b>20 %</b><span>填充率</span></div>
+        <div><svg class="ico"><use href="#i-gauge"/></svg><b>50 mm/s</b><span>列印速度</span></div>
+        <div><svg class="ico"><use href="#i-spool"/></svg><b>PLA</b><span>線材</span></div>
+      </div>
+      <p>適合入門、小件作品的起始值，實際依機型、線材與作品調整。</p>
     </div>
   </div>
   <details>
@@ -578,9 +600,9 @@ html{scroll-behavior:smooth}
       <li>零件懸空，沒有支撐</li>
       <li>沒對齊就群組，結果歪掉</li>
       <li>底部不平，印不起來</li>
-      <li>牆太薄（小於 2 mm），一拿就斷</li>
+      <li>牆太薄，切片預覽就印不出來，或印出來一拿就斷</li>
       <li>讓孩子自己操作印表機</li>
-      <li>入門就用難印的線材</li>
+      <li>以為選了 PLA 就不用通風</li>
     </ul>
   </details>
 </section>
@@ -618,7 +640,7 @@ html{scroll-behavior:smooth}
     <a class="card" data-region="tw" data-lv="s3" href="https://sites.google.com/view/raeseclass/%E5%9B%9B%E5%B9%B4%E7%B4%9A/3d%E5%88%97%E5%8D%B0/tinkercad%E6%95%99%E5%AD%B8"><span class="t">仁愛國小四年級 3D 列印</span><span class="m">電腦教室教材網 · 圖文 · 免費</span><span class="d">四年級資訊課的 Tinkercad、123D Design 單元，可以看出學校實際排在哪個年級。</span><span class="tags"><i>中年級</i></span></a>
     <a class="card" data-region="tw" data-lv="s3" href="https://www.youtube.com/playlist?list=PLvd9ZUvYuLVrCCKaI2ikVRcstCscwqPfz"><span class="t">Tinkercad 教學（蔡依帆）</span><span class="m">YouTube · 8 部 · 免費</span><span class="d">中文影片，適合孩子跟著做，或老師課前看。</span><span class="tags"><i>中年級</i></span></a>
     <a class="card" data-region="tw" data-lv="s3 s4 s5" href="https://sites.google.com/bhes.ntpc.edu.tw/maker/3d%E5%88%97%E5%8D%B0%E8%88%873d%E5%BB%BA%E6%A8%A1"><span class="t">碧華國小創客教育中心</span><span class="m">新北碧華國小 · 影片與圖文 · 免費</span><span class="d">列印原理影片、Cura 4.7/4.8、Meshmixer 拆件與卡榫、SketchUp。部分軟體已停止更新，取「原理」和「拆件觀念」來用。</span><span class="tags"><i>中年級</i><i>高年級</i><i>國中</i></span></a>
-    <a class="card" data-region="tw" data-lv="s5" href="https://maker.hhjh.tn.edu.tw/modules/tad_book3/index.php?op=list_docs&amp;tbsn=17"><span class="t">新興國中 Fusion 360 教學</span><span class="m">臺南新興自造教育及科技中心 · 圖文 · 免費</span><span class="d">41 單元，用三個專題帶完：手指虎、咖啡外帶杯（杯身、杯蓋、組裝）、工具筆組件（筆身、起子、筆蓋）。適合已會 Tinkercad、要升到參數化建模的孩子。</span><span class="tags"><i>國中</i></span></a>
+    <a class="card" data-region="tw" data-lv="s5" href="https://maker.hhjh.tn.edu.tw/modules/tad_book3/index.php?op=list_docs&amp;tbsn=17"><span class="t">新興國中 Fusion 360 教學</span><span class="m">臺南新興自造教育及科技中心 · 圖文 · 免費</span><span class="d">41 單元，專題包括咖啡外帶杯（杯身、杯蓋、組裝）、工具筆組件（筆身、起子、筆蓋）等；建議挑選適合孩子的生活用品類專題使用。適合已會 Tinkercad、要升到參數化建模的孩子。</span><span class="tags"><i>國中</i></span></a>
     <a class="card" data-region="tw" data-lv="s3 s4" href="https://tkdbook.jyic.net/PN059"><span class="t">《從 3D 列印輕鬆動手玩創意》</span><span class="m">台科大圖書「輕課程」第二版 · 書籍 · 付費</span><span class="d">Tinkercad、123D Design、Paint.NET，有評量。123D 已停止，買前留意書中比例。</span><span class="tags"><i>中年級</i><i>高年級</i></span></a>
     <a class="card" data-region="tw" data-lv="s2 s3" href="https://hackmd.io/@webduino/ctrlp_fbpost"><span class="t">Webduino 3D 列印小學堂</span><span class="m">文章集 · 免費</span><span class="d">3D 列印應用新聞、設計思維故事、3D 筆安全，適合當課堂開場的閱讀素材。</span><span class="tags"><i>低年級</i><i>中年級</i></span></a>
   </div>
