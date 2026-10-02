@@ -154,6 +154,22 @@ details.activity.lessons .tbl{margin-top:4px}
 details.activity.lessons table{font-size:.86rem;min-width:720px}
 .toysafe ul{display:grid;gap:4px}
 .toysafe li .ev{margin-left:4px;margin-right:0}
+.secs{display:grid;gap:8px}
+.sec{padding:8px 14px}
+.sec>summary{display:flex;flex-wrap:wrap;align-items:center;gap:2px 10px}
+.sec>summary .k{font-size:.98rem;letter-spacing:0;color:var(--ink);margin:0;font-weight:700;display:inline-flex;align-items:center;gap:4px}
+.sec>summary .k .ev{margin-left:6px}
+.sec[open]>summary{margin-bottom:6px}
+.sec ul{margin-top:2px}
+.sec .legend{margin-bottom:6px}
+.goalsk{margin:6px 0 -2px;font-size:.8rem;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.swtype{font-size:.82rem}
+.swmeta{margin-left:auto;display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;font-size:.85rem}
+.swage{font-family:var(--f-mono);font-size:.82rem}
+.swrow dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;margin:0;font-size:.9rem}
+.swrow dt{font-weight:700;color:var(--muted);white-space:nowrap}
+.swrow dd{margin:0}
+@media (max-width:560px){.swrow dl{grid-template-columns:1fr;gap:0}.swrow dd{margin-bottom:6px}.swmeta{margin-left:0}}
 .goals{list-style:none;padding-left:0}
 .goals>li{margin:6px 0}
 .goals details.how{background:none;border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin:0}
@@ -447,22 +463,19 @@ html{scroll-behavior:smooth}
 
   <article class="stage" id="s1" style="--c:var(--l1)">
     <header><h3>幼兒 3–6 歲</h3><span class="tag">第 1 層 · 不用螢幕、不碰機器</span></header>
-    <div class="cols">
-      <div><div class="k">學習目標<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></div><ul class="goals">
-        <li><details class="how"><summary>知道「立體」和「平面」的差別</summary><ul><li><b>摸摸看：</b>同一個輪廓印一片薄的（平面）和一個立體的（例如一隻貓），放進布袋閉眼摸，說說「哪個會滾？哪個可以站起來？」</li><li><b>轉一圈：</b>拿起立體的轉一圈，每一面長得不一樣；薄片從旁邊看只剩一條線</li><li><b>找一找：</b>在家找 3 個「平的」和 3 個「立體的」，分成兩堆</li></ul></details></li>
-        <li><details class="how"><summary>看懂東西是一層一層疊出來的</summary><ul><li><b>疊漸縮塔：</b>把印好的方形漸縮塔由大到小疊起來，疊錯一層形狀就不對（見下方教具與活動卡）</li><li><b>同輪廓疊高：</b>把一樣的薄片一片片疊，越多片越高</li><li><b>摸層紋：</b>用指甲刮教具側面，一條一條的就是一層一層</li></ul></details></li>
-        <li><details class="how"><summary>自己動手、專注做完一件事</summary><ul><li><b>自己拿：</b>每一層都讓孩子自己拿、自己放，大人只示範一次</li><li><b>自己發現：</b>疊錯了不糾正，等孩子自己看出來；看不出來就問「哪一層怪怪的？」</li><li><b>自己收：</b>玩完由孩子把每一層放回盒子，這也是練習順序</li></ul></details></li>
-      </ul></div>
-      <div><div class="k">教具：3D 列印版蒙特梭利漸縮塔</div>
-        <ul>
+    <div class="secs">
+      <div class="k goalsk">學習目標<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></div>
+      <details class="sec"><summary>知道「立體」和「平面」的差別</summary><ul><li><b>摸摸看：</b>同一個輪廓印一片薄的（平面）和一個立體的（例如一隻貓），放進布袋閉眼摸，說說「哪個會滾？哪個可以站起來？」</li><li><b>轉一圈：</b>拿起立體的轉一圈，每一面長得不一樣；薄片從旁邊看只剩一條線</li><li><b>找一找：</b>在家找 3 個「平的」和 3 個「立體的」，分成兩堆</li></ul></details>
+      <details class="sec"><summary>看懂東西是一層一層疊出來的</summary><ul><li><b>疊漸縮塔：</b>把印好的方形漸縮塔由大到小疊起來，疊錯一層形狀就不對（見下方教具與活動卡）</li><li><b>同輪廓疊高：</b>把一樣的薄片一片片疊，越多片越高</li><li><b>摸層紋：</b>用指甲刮教具側面，一條一條的就是一層一層</li></ul></details>
+      <details class="sec"><summary>自己動手、專注做完一件事</summary><ul><li><b>自己拿：</b>每一層都讓孩子自己拿、自己放，大人只示範一次</li><li><b>自己發現：</b>疊錯了不糾正，等孩子自己看出來；看不出來就問「哪一層怪怪的？」</li><li><b>自己收：</b>玩完由孩子把每一層放回盒子，這也是練習順序</li></ul></details>
+      <details class="sec"><summary><span class="k">教具：3D 列印版蒙特梭利漸縮塔</span></summary><ul>
           <li><b>原版「粉紅塔」</b><span class="ev ex" title="來自學校或教師的實際課程">教學實例</span>：10 個木製立方體，邊長 1 到 10 公分，只有大小不同、顏色一樣，給 3–6 歲用；目的是用眼睛和手分辨大小與順序，同時練手眼協調和專注</li>
           <li><b>適用年齡</b>：發展上適合約 3–6 歲正在發展大小、順序概念的幼兒（原版在蒙特梭利教室的使用年齡，部分教室另有簡化版給更小的孩子）<span class="ev ex" title="來自學校或教師的實際課程">教學實例</span>；本 3D 列印版<b>只建議 3 歲以上</b>，因為美國玩具的小零件規範以 3 歲為分界<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>，而 3D 列印件沒有經過玩具檢驗</li>
           <li><b>本版</b><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span>：方形漸縮塔 8 層，每層 5 mm 厚，底約 8 cm、最小一層約 3.5 cm，單一顏色；用 0.3 mm 層高列印，側面層紋更明顯</li>
           <li><b>玩法</b><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span>：大人由大到小疊一次 → 孩子自己疊 → 閉眼摸、排順序 → 大人抽走一層，孩子找出少了哪一層 → 進階：兩套並排比高矮</li>
           <li><b>教具檔案</b>：即將在 MakerWorld 提供下載</li>
-        </ul>
-      </div>
-      <div><div class="k">課堂安排<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></div><ul><li>每次 15–20 分鐘，以手作為主</li><li><b>不用螢幕、不需要印表機在場</b>，教具由大人事先印好</li><li>一次只拿出一套教具，結束由孩子自己收</li><li>幫印好的小動物上色、組裝，當作品帶走</li></ul></div>
+        </ul></details>
+      <details class="sec"><summary><span class="k">課堂安排<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></span></summary><ul><li>每次 15–20 分鐘，以手作為主</li><li><b>不用螢幕、不需要印表機在場</b>，教具由大人事先印好</li><li>一次只拿出一套教具，結束由孩子自己收</li><li>幫印好的小動物上色、組裝，當作品帶走</li></ul></details>
     </div>
     <div class="box warn toysafe" id="toysafe-s1">
       <h3>教具安全：交給孩子之前</h3>
@@ -503,11 +516,11 @@ html{scroll-behavior:smooth}
 
   <article class="stage" id="s2" style="--c:var(--l2)">
     <header><h3>低年級 6–8 歲</h3><span class="tag">第 2 層 · 單堂作品</span></header>
-    <div class="cols">
-<div><div class="k">不用螢幕的第一次列印：低溫 3D 筆</div><ul><li>用低溫 PCL 線材的 3D 筆（如 3Doodler Start+，官方 6–13 歲<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>），筆頭沒有外露熱源，碰到不燙</li><li>先在紙上描一條線 → 疊第二層、第三層 → 做一個小立體（例如小籃子或眼鏡）</li><li>高溫 PLA 筆（約 200 °C，官方 14 歲以上<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>）不給這個階段用</li><li>大人在旁，用完拔插頭</li></ul></div>
-      <div><div class="k">要教的操作</div><ul><li><b>先想再做：</b>先說一句想做什麼、用蠟筆畫一畫，再開始；做完和圖比一比</li><li>從形狀庫拖出方塊、圓柱、文字</li><li>移動、旋轉、縮放、改顏色</li><li>每件作品只用 3–5 個基本形狀</li></ul></div>
-      <div><div class="k">第一個作品：名牌（教案參考尺寸，約 15 分鐘）</div><ul><li>底板 <span class="spec">60 × 20 × 2 mm</span></li><li>文字高度 <span class="spec">3 mm</span>，四周留邊 <span class="spec">5 mm</span></li><li>練到對齊、群組、配色三件事</li></ul><div class="k" style="margin-top:8px">之後的作品</div><ul><li>鑰匙圈、筆筒、簡單玩具車</li></ul></div>
-      <div><div class="k">課堂安排<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></div><ul><li>每週固定一次，每次約 30 分鐘設計時間；<b>螢幕一次不超過 30 分鐘、大人陪同</b><span class="ev doc" title="來自官方規範或產品文件">官方文件</span></li><li>第一、二次先用 3D 筆，之後再進螢幕</li><li>換料、調平、取件都由大人負責</li><li>目標是「印出一件完成品」，不求完美</li></ul></div>
+    <div class="secs">
+      <details class="sec"><summary><span class="k">不用螢幕的第一次列印：低溫 3D 筆</span></summary><ul><li>用低溫 PCL 線材的 3D 筆（如 3Doodler Start+，官方 6–13 歲<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>），筆頭沒有外露熱源，碰到不燙</li><li>先在紙上描一條線 → 疊第二層、第三層 → 做一個小立體（例如小籃子或眼鏡）</li><li>高溫 PLA 筆（約 200 °C，官方 14 歲以上<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>）不給這個階段用</li><li>大人在旁，用完拔插頭</li></ul></details>
+      <details class="sec"><summary><span class="k">要教的操作</span></summary><ul><li><b>先想再做：</b>先說一句想做什麼、用蠟筆畫一畫，再開始；做完和圖比一比</li><li>從形狀庫拖出方塊、圓柱、文字</li><li>移動、旋轉、縮放、改顏色</li><li>每件作品只用 3–5 個基本形狀</li></ul></details>
+      <details class="sec"><summary><span class="k">第一個作品：名牌（教案參考尺寸，約 15 分鐘）</span></summary><ul><li>底板 <span class="spec">60 × 20 × 2 mm</span></li><li>文字高度 <span class="spec">3 mm</span>，四周留邊 <span class="spec">5 mm</span></li><li>練到對齊、群組、配色三件事</li></ul><div class="k" style="margin-top:8px">之後的作品</div><ul><li>鑰匙圈、筆筒、簡單玩具車</li></ul></details>
+      <details class="sec"><summary><span class="k">課堂安排<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></span></summary><ul><li>每週固定一次，每次約 30 分鐘設計時間；<b>螢幕一次不超過 30 分鐘、大人陪同</b><span class="ev doc" title="來自官方規範或產品文件">官方文件</span></li><li>第一、二次先用 3D 筆，之後再進螢幕</li><li>換料、調平、取件都由大人負責</li><li>目標是「印出一件完成品」，不求完美</li></ul></details>
     </div>
     <details class="activity" id="act-s2">
       <summary>活動卡：做一張名牌 <span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span><span class="ev ed" title="尚未實際帶孩子試用過">尚待試帶</span></summary>
@@ -518,10 +531,10 @@ html{scroll-behavior:smooth}
 
   <article class="stage" id="s3" style="--c:var(--l3)">
     <header><h3>中年級 8–10 歲</h3><span class="tag">第 3 層 · Tinkercad 基本功</span></header>
-    <div class="cols">
-      <div><div class="k">Tinkercad 核心功能</div><ul><li><b>對齊工具</b>（快捷鍵 <span class="spec">L</span>）：讓物件中心對中心</li><li><b>群組</b>（<span class="spec">Ctrl+G</span>）：多個形狀合成一個</li><li><b>挖孔</b>：放圓柱 → 設為「孔」→ 對齊 → 和實體群組</li><li><b>工作平面</b>：在斜面或側面上加東西</li></ul></div>
-      <div><div class="k">建議單元順序<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></div><ol style="margin:0;padding-left:1.3em"><li>介面、視角與主要工作區</li><li>基本形狀與屬性</li><li>多個物件的操作與對齊</li><li>群組與挖孔</li><li>文字與印章（文字要鏡像）</li><li>完成作品並匯出 STL</li></ol></div>
-      <div><div class="k">作品</div><ul><li>印章、筆筒、有蓋小盒</li></ul><div class="k" style="margin-top:8px">認識列印流程</div><ul><li>設計 → 切片 → 列印三步驟</li><li>三種檔案：<span class="spec">STL</span> 模型、<span class="spec">G-code</span> 列印指令、專案檔</li><li>用切片軟體看每一層的樣子</li></ul></div>
+    <div class="secs">
+      <details class="sec"><summary><span class="k">Tinkercad 核心功能</span></summary><ul><li><b>對齊工具</b>（快捷鍵 <span class="spec">L</span>）：讓物件中心對中心</li><li><b>群組</b>（<span class="spec">Ctrl+G</span>）：多個形狀合成一個</li><li><b>挖孔</b>：放圓柱 → 設為「孔」→ 對齊 → 和實體群組</li><li><b>工作平面</b>：在斜面或側面上加東西</li></ul></details>
+      <details class="sec"><summary><span class="k">建議單元順序<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></span></summary><ol style="margin:0;padding-left:1.3em"><li>介面、視角與主要工作區</li><li>基本形狀與屬性</li><li>多個物件的操作與對齊</li><li>群組與挖孔</li><li>文字與印章（文字要鏡像）</li><li>完成作品並匯出 STL</li></ol></details>
+      <details class="sec"><summary><span class="k">作品</span></summary><ul><li>印章、筆筒、有蓋小盒</li></ul><div class="k" style="margin-top:8px">認識列印流程</div><ul><li>設計 → 切片 → 列印三步驟</li><li>三種檔案：<span class="spec">STL</span> 模型、<span class="spec">G-code</span> 列印指令、專案檔</li><li>用切片軟體看每一層的樣子</li></ul></details>
     </div>
     <div class="flow" role="img" aria-label="列印流程：設計匯出 STL，切片產生 G-code，再交給印表機列印">
       <div class="fs"><b><svg class="ico"><use href="#i-cube"/></svg>1 設計</b><span>Tinkercad</span><small>存成專案檔</small></div>
@@ -546,10 +559,10 @@ html{scroll-behavior:smooth}
 
   <article class="stage" id="s4" style="--c:var(--l4)">
     <header><h3>高年級 10–12 歲</h3><span class="tag">第 4 層 · 量了再畫</span></header>
-    <div class="cols">
-      <div><div class="k">建模</div><ul><li>用尺或卡尺量實物，用 Tinkercad 尺規工具精準標尺寸</li><li>多零件設計：拆件、卡榫、組裝</li><li>2D 圖片轉成立體浮雕</li></ul></div>
-      <div><div class="k">切片（對應 CREATE 基礎級）</div><ul><li>匯入模型，調整大小、位置、方向</li><li>多個模型排版、複製</li><li>平台附著：何時加 Brim 或 Raft</li><li>用層檢視確認每一層</li><li>初步認識：懸空、支撐材、填充率</li></ul></div>
-      <div><div class="k">專題作品（多堂完成）</div><ul><li>手機架、客製桌遊棋子</li><li>依實際尺寸做的收納盒</li><li>幫機器人或 micro:bit 做外殼（串接其他路線）</li></ul></div>
+    <div class="secs">
+      <details class="sec"><summary><span class="k">建模</span></summary><ul><li>用尺或卡尺量實物，用 Tinkercad 尺規工具精準標尺寸</li><li>多零件設計：拆件、卡榫、組裝</li><li>2D 圖片轉成立體浮雕</li></ul></details>
+      <details class="sec"><summary><span class="k">切片（對應 CREATE 基礎級）</span></summary><ul><li>匯入模型，調整大小、位置、方向</li><li>多個模型排版、複製</li><li>平台附著：何時加 Brim 或 Raft</li><li>用層檢視確認每一層</li><li>初步認識：懸空、支撐材、填充率</li></ul></details>
+      <details class="sec"><summary><span class="k">專題作品（多堂完成）</span></summary><ul><li>手機架、客製桌遊棋子</li><li>依實際尺寸做的收納盒</li><li>幫機器人或 micro:bit 做外殼（串接其他路線）</li></ul></details>
     </div>
     <div class="flow" role="img" aria-label="量了再畫：量實物、建模、切片調整、列印試裝">
       <div class="fs"><b><svg class="ico"><use href="#i-ruler"/></svg>量</b><span>尺、卡尺量實物</span></div><span class="fa">尺寸</span>
@@ -570,10 +583,10 @@ html{scroll-behavior:smooth}
 
   <article class="stage" id="s5" style="--c:var(--l5)">
     <header><h3>國中 12 歲以上</h3><span class="tag">第 5 層 · 解決真實問題</span></header>
-    <div class="cols">
-      <div><div class="k">建模（Fusion 360 / Onshape）</div><ul><li>草圖、尺寸與約束、圓角、陣列</li><li>鏡像、合併實體、拆成零件</li><li>參考照片建模、曲線</li><li>管理設計版本，做「設計 → 測試 → 修改」</li><li>想做生物或造型類：改學 Blender 雕塑</li><li>Fusion 的 Autodesk 帳號須滿 13 歲；未滿 13 歲先用 Tinkercad 或 Onshape（由大人協助開帳號）</li><li>滿 13 歲可在家長同意下用自己的 MakerWorld 帳號，自己操作 AI 生成，並學著檢查、修改 AI 做出來的模型<span class="ev doc" title="來自官方規範或產品文件">官方文件</span></li></ul></div>
-      <div><div class="k">切片與機器（對應 CREATE 中級）</div><ul><li>支撐材何時需要、怎麼減少</li><li>懸空與架橋、用擺放方向減少支撐</li><li>外殼厚度與填充率對強度的影響</li><li>層高、噴嘴、設定對時間與品質的影響</li><li>估算列印成本</li><li>換料、處理不黏床；平台校正</li></ul></div>
-      <div><div class="k">專題作品</div><ul><li>理線器、工具架</li><li>家中損壞零件的替換件</li><li>會動的機構（鉸鏈、齒輪）</li></ul></div>
+    <div class="secs">
+      <details class="sec"><summary><span class="k">建模（Fusion 360 / Onshape）</span></summary><ul><li>草圖、尺寸與約束、圓角、陣列</li><li>鏡像、合併實體、拆成零件</li><li>參考照片建模、曲線</li><li>管理設計版本，做「設計 → 測試 → 修改」</li><li>想做生物或造型類：改學 Blender 雕塑</li><li>Fusion 的 Autodesk 帳號須滿 13 歲；未滿 13 歲先用 Tinkercad 或 Onshape（由大人協助開帳號）</li><li>滿 13 歲可在家長同意下用自己的 MakerWorld 帳號，自己操作 AI 生成，並學著檢查、修改 AI 做出來的模型<span class="ev doc" title="來自官方規範或產品文件">官方文件</span></li></ul></details>
+      <details class="sec"><summary><span class="k">切片與機器（對應 CREATE 中級）</span></summary><ul><li>支撐材何時需要、怎麼減少</li><li>懸空與架橋、用擺放方向減少支撐</li><li>外殼厚度與填充率對強度的影響</li><li>層高、噴嘴、設定對時間與品質的影響</li><li>估算列印成本</li><li>換料、處理不黏床；平台校正</li></ul></details>
+      <details class="sec"><summary><span class="k">專題作品</span></summary><ul><li>理線器、工具架</li><li>家中損壞零件的替換件</li><li>會動的機構（鉸鏈、齒輪）</li></ul></details>
     </div>
     <div class="flow" role="img" aria-label="設計迭代循環：設計、測試、修改，再回到設計">
       <div class="fs"><b><svg class="ico"><use href="#i-cube"/></svg>設計</b><span>草圖、約束、公差</span></div><span class="fa">v1</span>
@@ -609,10 +622,7 @@ html{scroll-behavior:smooth}
     <div class="legend"><span><i style="--c:var(--accent)"></i>主線</span><span><i style="--c:var(--muted)"></i>其他選擇</span><span>色條淡出 = 該年齡以上都適用</span></div>
     <div class="ax" id="swchart"></div>
   </div>
-  <div class="tbl"><table style="min-width:880px">
-    <thead><tr><th>軟體</th><th>建議學習階段</th><th>先備能力<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></th><th>帳號／授權條件<span class="ev doc" title="來自官方規範或產品文件">官方文件</span></th><th>成人要做什麼<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></th><th>費用與限制<span class="ev doc" title="來自官方規範或產品文件">官方文件</span></th></tr></thead>
-    <tbody id="swbody"></tbody>
-  </table></div>
+  <div class="secs" id="swlist"></div>
 </section>
 
 <!-- ============ SAFETY ============ -->
@@ -634,7 +644,7 @@ html{scroll-behavior:smooth}
       <figure><svg class="ico" style="color:var(--accent)"><use href="#i-child"/></svg><figcaption>孩子觀察</figcaption></figure>
     </div>
   </div>
-  <div class="two">
+  <div class="secs">
     <div class="box warn">
       <h3>安全原則</h3>
       <ul>
@@ -645,9 +655,7 @@ html{scroll-behavior:smooth}
         <li><b>第一層</b><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span>列印第一層時盯著看有沒有黏好，手不要伸進去</li>
       </ul>
     </div>
-    <div class="box">
-      <h3>可列印設計檢查表<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></h3>
-      <div class="check" id="checklist">
+    <details class="sec"><summary><span class="k">可列印設計檢查表<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></span></summary><div class="check" id="checklist">
         <label><input type="checkbox" id="c1"><span>牆面夠厚（入門作品建議 2 mm 以上，更薄的壁要用切片預覽確認印得出來）</span></label>
         <label><input type="checkbox" id="c2"><span>底部是平的，貼在工作平面上</span></label>
         <label><input type="checkbox" id="c3"><span>沒有懸空、沒接到主體的零件</span></label>
@@ -656,31 +664,21 @@ html{scroll-behavior:smooth}
         <label><input type="checkbox" id="c6"><span>匯出成 STL 並在切片軟體看過層檢視</span></label>
       </div>
       <div class="pbar" aria-hidden="true"><i id="pbar"></i></div>
-      <div class="progress" id="prog" aria-live="polite">已完成 0 / 6 項</div>
-    </div>
-  </div>
-  <div class="two">
-    <div class="box">
-      <h3>線材：環境需求和人員暴露要分開看</h3>
-      <ul>
+      <div class="progress" id="prog" aria-live="polite">已完成 0 / 6 項</div></details>
+    <details class="sec"><summary><span class="k">線材：環境需求和人員暴露要分開看</span></summary><ul>
         <li><b>列印環境需求</b><span class="ev doc" title="來自官方規範或產品文件">官方文件</span>PLA 在一般室溫環境下較容易列印；ABS、ASA 比較需要穩定的高溫環境，常搭配機殼</li>
         <li><b>人員暴露控制</b><span class="ev doc" title="來自官方規範或產品文件">官方文件</span>不論哪種線材都要通風；ABS、ASA 的排放風險較高，要把排氣導到室外</li>
         <li><b>入門教學</b><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span>用 PLA 起步，是因為比較好印，不代表可以不通風</li>
-      </ul>
-    </div>
-    <div class="box">
-      <h3>本入門教案的保守設定<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></h3>
-      <div class="settings">
+      </ul></details>
+    <details class="sec"><summary><span class="k">本入門教案的保守設定<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></span></summary><div class="settings">
         <div><svg class="ico"><use href="#i-layers"/></svg><b>0.2 mm</b><span>層高</span></div>
         <div><svg class="ico"><use href="#i-cube"/></svg><b>20 %</b><span>填充率</span></div>
         <div><svg class="ico"><use href="#i-gauge"/></svg><b>50 mm/s</b><span>列印速度</span></div>
         <div><svg class="ico"><use href="#i-spool"/></svg><b>PLA</b><span>線材</span></div>
       </div>
-      <p>適合入門、小件作品的起始值，實際依機型、線材與作品調整。</p>
-    </div>
-  </div>
-  <details>
-    <summary>常見錯誤</summary>
+      <p>適合入門、小件作品的起始值，實際依機型、線材與作品調整。</p></details>
+    <details class="sec">
+    <summary><span class="k">常見錯誤</span></summary>
     <ul>
       <li>零件懸空，沒有支撐</li>
       <li>沒對齊就群組，結果歪掉</li>
@@ -690,17 +688,18 @@ html{scroll-behavior:smooth}
       <li>以為選了 PLA 就不用通風</li>
     </ul>
   </details>
+  </div>
 </section>
 
 <!-- ============ RESOURCES ============ -->
 <section id="resources">
   <h2>3D 列印教材資源</h2>
   <p class="lead">國內以學校自編的 Tinkercad 和 Cura 教材為主，中文、免費，大多停在國小程度。國外資源補上教案庫、兒童建模 App，以及給大人學機器操作的課程。</p>
-  <div class="chart">
-    <h3>各對象有幾項教材</h3>
+  <details class="sec">
+    <summary><span class="k">各對象有幾項教材</span></summary>
     <div class="legend"><span><i style="--c:var(--accent)"></i>國內</span><span><i style="--c:var(--muted)"></i>國外</span><span>點一列可直接篩選</span></div>
     <div class="rc" id="reschart"></div>
-  </div>
+  </details>
   <div class="filters" role="group" aria-label="篩選教材">
     <div class="fgroup"><span class="k">對象</span>
       <button class="chip" data-f="lv" data-v="all" aria-pressed="true">全部</button>
@@ -711,28 +710,30 @@ html{scroll-behavior:smooth}
       <button class="chip" data-f="lv" data-v="s5" aria-pressed="false">國中</button>
       <button class="chip" data-f="lv" data-v="adult" aria-pressed="false">老師與家長</button>
     </div>
+    <details class="sec morefilters"><summary><span class="k">更多篩選：費用、語言、形式、設備</span></summary>
     <div class="fgroup"><span class="k">費用</span>
-      <button class="chip" data-f="cost" data-v="all" aria-pressed="true">全部</button>
-      <button class="chip" data-f="cost" data-v="free" aria-pressed="false">完全免費</button>
-      <button class="chip" data-f="cost" data-v="paid" aria-pressed="false">含付費項目</button>
-    </div>
-    <div class="fgroup"><span class="k">語言</span>
-      <button class="chip" data-f="lang" data-v="all" aria-pressed="true">全部</button>
-      <button class="chip" data-f="lang" data-v="zh" aria-pressed="false">中文</button>
-      <button class="chip" data-f="lang" data-v="en" aria-pressed="false">英文</button>
-    </div>
-    <div class="fgroup"><span class="k">形式</span>
-      <button class="chip" data-f="fmt" data-v="all" aria-pressed="true">全部</button>
-      <button class="chip" data-f="fmt" data-v="video" aria-pressed="false">影片</button>
-      <button class="chip" data-f="fmt" data-v="text" aria-pressed="false">圖文文章</button>
-      <button class="chip" data-f="fmt" data-v="plan" aria-pressed="false">教案課程</button>
-      <button class="chip" data-f="fmt" data-v="other" aria-pressed="false">書籍與 App</button>
-    </div>
-    <div class="fgroup"><span class="k">設備</span>
-      <button class="chip" data-f="eq" data-v="all" aria-pressed="true">全部</button>
-      <button class="chip" data-f="eq" data-v="noprinter" aria-pressed="false">不需要印表機</button>
-      <button class="chip" data-f="eq" data-v="printer" aria-pressed="false">需要印表機</button>
-    </div>
+        <button class="chip" data-f="cost" data-v="all" aria-pressed="true">全部</button>
+        <button class="chip" data-f="cost" data-v="free" aria-pressed="false">完全免費</button>
+        <button class="chip" data-f="cost" data-v="paid" aria-pressed="false">含付費項目</button>
+      </div>
+      <div class="fgroup"><span class="k">語言</span>
+        <button class="chip" data-f="lang" data-v="all" aria-pressed="true">全部</button>
+        <button class="chip" data-f="lang" data-v="zh" aria-pressed="false">中文</button>
+        <button class="chip" data-f="lang" data-v="en" aria-pressed="false">英文</button>
+      </div>
+      <div class="fgroup"><span class="k">形式</span>
+        <button class="chip" data-f="fmt" data-v="all" aria-pressed="true">全部</button>
+        <button class="chip" data-f="fmt" data-v="video" aria-pressed="false">影片</button>
+        <button class="chip" data-f="fmt" data-v="text" aria-pressed="false">圖文文章</button>
+        <button class="chip" data-f="fmt" data-v="plan" aria-pressed="false">教案課程</button>
+        <button class="chip" data-f="fmt" data-v="other" aria-pressed="false">書籍與 App</button>
+      </div>
+      <div class="fgroup"><span class="k">設備</span>
+        <button class="chip" data-f="eq" data-v="all" aria-pressed="true">全部</button>
+        <button class="chip" data-f="eq" data-v="noprinter" aria-pressed="false">不需要印表機</button>
+        <button class="chip" data-f="eq" data-v="printer" aria-pressed="false">需要印表機</button>
+      </div>
+    </details>
   </div>
   <p class="progress" id="rescount" aria-live="polite"></p>
 
@@ -873,10 +874,13 @@ html{scroll-behavior:smooth}
   var EVTXT = {doc:'官方文件', ex:'教學實例', ed:'編者建議'};
   (function(){
     function ageText(d){ return d.from == null ? '—' : (d.to ? d.from + '–' + d.to + ' 歲' : d.from + ' 歲以上') + (d.stageNote || ''); }
-    document.getElementById('swbody').innerHTML = SOFTWARE.map(function(d){
-      return '<tr><td><b>' + esc(d.name) + '</b><br><span class="muted">' + esc(d.type) + '</span><br><span class="status ' + d.status.tag + '">' + esc(d.status.text) + '</span></td>' +
-        '<td>' + esc(ageText(d)) + (d.basis ? '<br>' + EV[d.basis] : '') + '</td><td>' + esc(d.prereq) + '</td><td>' + esc(d.account) + '</td><td>' + esc(d.adult) + '</td>' +
-        '<td><span class="status ' + d.cost.tag + '">' + esc(d.cost.text) + '</span><br>' + esc(d.costNote) + '</td></tr>';
+    document.getElementById('swlist').innerHTML = SOFTWARE.map(function(d){
+      var row = function(label, tag, text){ return '<dt>' + label + (tag ? EV[tag] : '') + '</dt><dd>' + esc(text) + '</dd>'; };
+      return '<details class="sec swrow"><summary><span class="k">' + esc(d.name) + '</span>' +
+        '<span class="muted swtype">' + esc(d.type) + '</span>' +
+        '<span class="swmeta"><span class="swage">' + esc(ageText(d)) + '</span>' + (d.basis ? EV[d.basis] : '') +
+        '<span class="status ' + d.cost.tag + '">' + esc(d.cost.text) + '</span><span class="status ' + d.status.tag + '">' + esc(d.status.text) + '</span></span></summary>' +
+        '<dl>' + row('先備能力', 'ed', d.prereq) + row('帳號／授權條件', 'doc', d.account) + row('成人要做什麼', 'ed', d.adult) + row('費用與限制', 'doc', d.costNote) + '</dl></details>';
     }).join('');
     /* groups keep the order they first appear in SOFTWARE; bars inside a group are sorted by starting age */
     var order = [], byGroup = {};

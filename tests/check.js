@@ -53,7 +53,7 @@ const norm = (u) => u.replace(/&amp;/g, '&').replace(/\/$/, '');
 
   /* ---- 軟體資料單一來源 ---- */
   const sw = await page.evaluate(() => {
-    const rows = document.querySelectorAll('#swbody tr').length;
+    const rows = document.querySelectorAll('#swlist details').length;
     const bars = document.querySelectorAll('#swchart .b').length;
     return { rows, bars };
   });
@@ -69,6 +69,23 @@ const norm = (u) => u.replace(/&amp;/g, '&').replace(/\/$/, '');
     return out;
   });
   ok('證據標籤都有實際使用（官方文件 ' + tagUse.doc + '、教學實例 ' + tagUse.ex + '、編者建議 ' + tagUse.ed + '）', tagUse.doc > 0 && tagUse.ex > 0 && tagUse.ed > 0);
+
+  /* ---- 預設收折：階段卡片、軟體、安全頁、教材的區塊一開始都是收起的（教具安全例外，必須看得到） ---- */
+  const folded = await page.evaluate(() => {
+    const out = {};
+    for (const id of ['s1', 's2', 's3', 's4', 's5']) {
+      const d = [...document.querySelectorAll('#' + id + ' details.sec')];
+      out[id] = { n: d.length, open: d.filter((x) => x.open).length };
+    }
+    out.sw = { n: document.querySelectorAll('#swlist details').length, open: document.querySelectorAll('#swlist details[open]').length };
+    out.safety = { n: document.querySelectorAll('#safety details.sec').length, open: document.querySelectorAll('#safety details.sec[open]').length };
+    out.res = { n: document.querySelectorAll('#resources details.sec').length, open: document.querySelectorAll('#resources details.sec[open]').length };
+    out.toysafeVisible = !!document.querySelector('#toysafe-s1') && !document.querySelector('#toysafe-s1').closest('details');
+    return out;
+  });
+  const unfolded = Object.entries(folded).filter(([k, v]) => typeof v === 'object' && (v.n === 0 || v.open > 0)).map(([k, v]) => k + ':' + v.open + '/' + v.n);
+  ok('階段卡片、軟體、安全頁、教材的區塊都有、且預設收折', unfolded.length === 0, unfolded.join(', '));
+  ok('幼兒「教具安全」不收折，直接看得到', folded.toysafeVisible);
 
   /* ---- 網址、返回鍵 ---- */
   await page.goto(url + '#s1'); await page.waitForTimeout(300);
@@ -109,6 +126,7 @@ const norm = (u) => u.replace(/&amp;/g, '&').replace(/\/$/, '');
   await page.click('[data-tab="resources"]');
   const visible = () => page.evaluate(() => [...document.querySelectorAll('#resources .card')].filter((c) => !c.hidden).length);
   const expect = (fn) => page.evaluate(fn);
+  await page.evaluate(() => { document.querySelector('.morefilters').open = true; });
   await page.click('.chip[data-f="cost"][data-v="free"]');
   ok('費用：完全免費', (await visible()) === (await expect(() => [...document.querySelectorAll('#resources .card')].filter((c) => c.dataset.cost === 'free').length)));
   await page.click('.chip[data-f="lang"][data-v="zh"]');
