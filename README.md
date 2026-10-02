@@ -1,4 +1,4 @@
-# 小小創客階梯 MakerSteps
+# 一起玩科技 Tech Together
 
 兒童科技學習路線圖。
 
@@ -26,7 +26,7 @@
 | `index.html` | 網頁本體，單一檔案，直接用瀏覽器打開即可 |
 | `CLAUDE.md` | 給 Claude Code 的專案說明、驗收規則與待辦 |
 | `REFERENCES.md` | 所有參考資料與來源連結、更新紀錄 |
-| `BRAND.md` | 網站名稱的定案與備選、命名理由 |
+| `BRAND.md` | 網站名稱定案、命名原則、所有備選與命名過程 |
 | `REVIEW.md` | 外部審查意見與逐項評估追蹤 |
 | `tests/check.js` | 自動檢查（給 Claude 在每次修改後執行） |
 
