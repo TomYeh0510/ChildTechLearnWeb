@@ -86,6 +86,11 @@ const norm = (u) => u.replace(/&amp;/g, '&').replace(/\/$/, '');
   const unfolded = Object.entries(folded).filter(([k, v]) => typeof v === 'object' && (v.n === 0 || v.open > 0)).map(([k, v]) => k + ':' + v.open + '/' + v.n);
   ok('階段卡片、軟體、安全頁、教材的區塊都有、且預設收折', unfolded.length === 0, unfolded.join(', '));
   ok('幼兒「教具安全」不收折，直接看得到', folded.toysafeVisible);
+  const bare = await page.evaluate(() => ({
+    cols: document.querySelectorAll('article.stage > .cols').length,
+    wideTables: [...document.querySelectorAll('section .tbl table')].filter((t) => !t.closest('details')).length,
+  }));
+  ok('階段卡片沒有直接攤開的多欄區塊（.cols），表格都收在可展開區塊裡', bare.cols === 0 && bare.wideTables === 0, '.cols ' + bare.cols + '、未收折的表格 ' + bare.wideTables);
 
   /* ---- 網址、返回鍵 ---- */
   await page.goto(url + '#s1'); await page.waitForTimeout(300);
