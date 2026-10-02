@@ -170,14 +170,6 @@ footer{padding-top:40px;font-size:.85rem;color:var(--muted);display:grid;gap:6px
 .route small{font-size:.75rem;color:var(--muted)}
 .route.done small{color:var(--accent);font-weight:700}
 
-/* age ruler */
-.ruler{display:grid;gap:4px}
-.ruler .bar{display:flex;gap:2px;height:30px}
-.ruler .seg{background:var(--c);border-radius:4px;color:#fff;font-size:.8rem;font-weight:700;display:grid;place-items:center;overflow:hidden;white-space:nowrap;min-width:0}
-.ruler .ticks{position:relative;height:18px;font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
-.ruler .ticks span{position:absolute;transform:translateX(-50%)}
-.ruler .ticks span:first-child{transform:none}
-.ruler .ticks span:last-child{transform:translateX(-100%)}
 
 /* overview matrix */
 .mx-wrap{overflow-x:auto;border-radius:10px}
@@ -266,7 +258,6 @@ footer{padding-top:40px;font-size:.85rem;color:var(--muted);display:grid;gap:6px
 
 @media (max-width:560px){
   .ax{--lw:88px}
-  .ruler .seg{font-size:.68rem}
   .layer{grid-template-columns:1fr;gap:4px;margin-inline:0}
   .stage{padding:16px}
 }
@@ -336,16 +327,6 @@ html{scroll-behavior:smooth}
 <section id="overview">
   <h2>總覽：年齡段 × 路線</h2>
   <p class="lead">幼兒以不插電和動手為主，三年級開始用電腦，高年級用專題把各條路線串起來。年齡只是參考，實際看識字量和會不會用鍵盤滑鼠。</p>
-  <div class="ruler" aria-label="年齡軸：3 到 15 歲分成五段">
-    <div class="bar">
-      <span class="seg" style="--c:var(--l1);flex:3">幼兒</span>
-      <span class="seg" style="--c:var(--l2);flex:2">低年級</span>
-      <span class="seg" style="--c:var(--l3);flex:2">中年級</span>
-      <span class="seg" style="--c:var(--l4);flex:2">高年級</span>
-      <span class="seg" style="--c:var(--l5);flex:3">國中</span>
-    </div>
-    <div class="ticks"><span style="left:0">3 歲</span><span style="left:25%">6</span><span style="left:41.67%">8</span><span style="left:58.33%">10</span><span style="left:75%">12</span><span style="left:100%">15</span></div>
-  </div>
   <div class="mx-wrap"><div class="mx" id="matrix"></div></div>
   <p class="mx-note">3D 列印那一列可以點，會跳到該年齡段的細節。窄螢幕可左右滑動。</p>
   <details>
