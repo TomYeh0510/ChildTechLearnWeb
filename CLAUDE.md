@@ -16,11 +16,14 @@ Tom 規劃的「小小創客階梯 MakerSteps」（副標：兒童科技學習�
 - `BRAND.md`：網站名稱定案、備選名單與理由。改名或加標語時先看這裡。
 - `index.html`：全部 HTML、CSS、JS 都在這一個檔案，不使用建置工具。
   - 導覽分兩層：第一層是路線（`總覽` + `[data-route="print3d"]` 3D 建模與列印）；選到 3D 時出現第二層 `#sub-print3d`。
+  - 導覽狀態只由 `go(tab, stage, {push, focus})` 改變，它同步畫面、網址與 localStorage；網址片段：分頁 id，或在「分齡細節」時直接用 `s1`–`s5`。切換分頁與年齡會 `pushState`（上一頁回到上一個學習頁）；方向鍵切換與資源篩選不留歷史紀錄。不要另外直接改 hidden 或網址。
   - 所有分頁按鈕都是 `nav.top [data-tab]`，切換 `<section>`：overview（總覽），以及 3D 路線底下的 print3d、stages、software、safety、resources。
   - 之後新增其他路線時，比照 3D：加一個 `data-route` 按鈕和一列子分頁。
   - 圖表（總覽矩陣、軟體年齡圖、教材數量圖）都由 JS 依頁面資料產生，不用外部函式庫。
   - 「分齡細節」內有年齡子分頁（`[data-stage]` → `#s1`–`#s5`）。CREATE 能力框架只涵蓋 10 歲以上，所以不另開分頁，改放在 s4（基礎級）、s5（中級＋延伸進階級）的 `details.create` 裡，年級用台灣學制。
-  - 「教材資源」卡片用 `data-region`（tw / intl）與 `data-lv`（s2–s5、adult）篩選。
+  - 「教材資源」卡片用 `data-region`（tw / intl，只用於分組標題）與 `data-lv`（s1–s5、adult）、`data-cost`（free / mixed / paid）、`data-lang`（zh / en）、`data-fmt`（video / text / plan / other）、`data-eq`（pc / printer）篩選。新增卡片必須填齊這些屬性。幼兒目前沒有教材卡，篩選會顯示「整理中」。
+  - 活動卡：`details.activity#act-sN`，放在分齡細節各階段卡片裡；固定五個欄位（目標與先備能力／家長準備／孩子的任務／時間安排／觀察與調整），要標「編者建議」，實際試帶前加「尚待試帶」。目前有 s1、s2。
+  - 總覽的「從這裡開始」（`#start`）依 `ACT` 表和各階段的 `.next` 文字產生結果，新增活動卡時要同步更新 `ACT`。
   - 顏色全部是 `:root` 上的 CSS 變數，含深色模式；年齡段顏色 `--l1`–`--l5`。
   - 必須保留 `[hidden]{display:none!important}`，否則分頁在某些檢視器不會切換。
   - `history.replaceState` 要包在 try/catch（`setHash()`），沙盒 iframe 會拒絕。

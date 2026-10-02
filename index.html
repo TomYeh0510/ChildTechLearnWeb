@@ -106,7 +106,7 @@ td.age{white-space:nowrap;font-weight:700}
 .stage{background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:10px;padding:20px;display:grid;gap:14px;scroll-margin-top:60px}
 .stage header{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
 .stage header .tag{font-family:var(--f-mono);font-size:.8rem;color:var(--c);font-weight:600}
-.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px 24px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px 24px}
 .cols > div{min-width:0}
 .k{font-size:.8rem;letter-spacing:.08em;color:var(--muted);font-weight:700;margin-bottom:4px}
 ul{margin:0;padding-left:1.2em}
@@ -124,12 +124,29 @@ li .ev{margin-right:6px}
 .evkey{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:.8rem;color:var(--muted)}
 .evkey .ev{margin-left:0;margin-right:4px}
 .tbl th .ev{margin-left:4px}
+/* start here */
+.start{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:10px;padding:18px 20px;display:grid;gap:12px}
+.start-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:8px}
+.start-opts button{font:inherit;text-align:left;cursor:pointer;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-left:6px solid var(--c);border-radius:8px;padding:8px 12px;display:grid;gap:2px;line-height:1.4;font-size:.92rem}
+.start-opts button small{color:var(--muted);font-size:.76rem}
+.start-opts button[aria-checked="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c);font-weight:700;background:color-mix(in srgb,var(--c) 10%,var(--surface))}
+.start-out{display:grid;gap:8px;border-top:1px dashed var(--line);padding-top:12px}
+.start-out .so-h{font-family:var(--f-display);font-size:1.15rem}
+.start-out p{max-width:none}
+.so-btns{display:flex;flex-wrap:wrap;gap:8px}
+.btn{font:inherit;font-size:.9rem;cursor:pointer;padding:6px 14px;border-radius:999px;border:1px solid var(--accent);background:var(--surface);color:var(--accent);font-weight:700}
+.btn.primary{background:var(--accent);color:var(--surface)}
+/* activity card */
+details.activity{border-left:6px solid var(--c);background:color-mix(in srgb,var(--c) 6%,var(--surface))}
+details.activity summary{display:flex;flex-wrap:wrap;align-items:center;gap:4px 0}
+details.activity .cols{margin-top:4px}
+details.activity li b{font-weight:700}
 .next{font-size:.9rem;border-top:1px dashed var(--line);padding-top:10px;color:var(--muted)}
 .next b{color:var(--ink)}
 .src{font-size:.8rem;color:var(--muted)}
 
 /* checklist + safety */
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
 .box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;display:grid;gap:10px;min-width:0}
 .box.warn{background:var(--warn-soft);border-color:transparent}
 .box.warn h3{color:var(--warn)}
@@ -151,7 +168,7 @@ li .ev{margin-right:6px}
 .paid{background:var(--ink);color:var(--surface)}
 
 /* resources */
-.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px}
 .res a.card{display:grid;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;text-decoration:none;color:inherit;min-width:0}
 .res a.card:hover{border-color:var(--accent)}
 .res .t{font-weight:700;color:var(--accent)}
@@ -175,15 +192,6 @@ footer{padding-top:40px;font-size:.85rem;color:var(--muted);display:grid;gap:6px
 .ico{width:1.15em;height:1.15em;vertical-align:-.2em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .k .ico{margin-right:4px;color:var(--c,var(--accent))}
 
-/* hero route chips */
-.routes{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px}
-.route{display:flex;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
-.route .ri{width:38px;height:38px;border-radius:9px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);flex:none}
-.route .ri .ico{width:22px;height:22px}
-.route.todo .ri{background:var(--bg);color:var(--muted)}
-.route b{display:block;font-size:.92rem;line-height:1.3}
-.route small{font-size:.75rem;color:var(--muted)}
-.route.done small{color:var(--accent);font-weight:700}
 
 
 /* overview matrix */
@@ -314,13 +322,6 @@ html{scroll-behavior:smooth}
   <div class="tagline">兒童科技學習路線圖</div>
   <p>從幼兒到國中，陪孩子一步一步學會科技：3D 建模與列印、程式設計、實體運算與機器人、AI、軟體應用。每個年齡段都有清楚的學習目標、動手作品與教材資源。</p>
   <div class="stats"><span><b>5</b> 個年齡段</span><span><b>5</b> 條路線</span><span><b>16</b> 項 3D 列印教材</span></div>
-  <div class="routes" aria-label="五條路線">
-    <div class="route done"><span class="ri"><svg class="ico"><use href="#i-cube"/></svg></span><div><b>3D 建模與列印</b><small>✓ 已推出</small></div></div>
-    <div class="route todo"><span class="ri"><svg class="ico"><use href="#i-code"/></svg></span><div><b>程式設計</b><small>即將推出</small></div></div>
-    <div class="route todo"><span class="ri"><svg class="ico"><use href="#i-robot"/></svg></span><div><b>實體運算與機器人</b><small>即將推出</small></div></div>
-    <div class="route todo"><span class="ri"><svg class="ico"><use href="#i-ai"/></svg></span><div><b>AI 素養</b><small>即將推出</small></div></div>
-    <div class="route todo"><span class="ri"><svg class="ico"><use href="#i-app"/></svg></span><div><b>軟體應用與數位素養</b><small>即將推出</small></div></div>
-  </div>
 </header>
 </div>
 
@@ -343,6 +344,17 @@ html{scroll-behavior:smooth}
 <section id="overview">
   <h2>總覽：年齡段 × 路線</h2>
   <p class="lead">幼兒以不插電和動手為主，三年級開始用電腦，高年級用專題把各條路線串起來。年齡只是參考，實際看識字量和會不會用鍵盤滑鼠。</p>
+  <div class="start" id="start">
+    <h3>從這裡開始：孩子現在到哪一步？</h3>
+    <div class="start-opts" role="radiogroup" aria-label="孩子目前的程度">
+      <button type="button" role="radio" aria-checked="false" data-start="s1" style="--c:var(--l1)">還沒用過電腦<small>多半是 3–6 歲</small></button>
+      <button type="button" role="radio" aria-checked="false" data-start="s2" style="--c:var(--l2)">能用滑鼠或觸控拖曳、旋轉<small>多半是 6–8 歲</small></button>
+      <button type="button" role="radio" aria-checked="false" data-start="s3" style="--c:var(--l3)">會對齊、群組、挖孔等基本功<small>多半是 8–10 歲</small></button>
+      <button type="button" role="radio" aria-checked="false" data-start="s4" style="--c:var(--l4)">想量實物尺寸，做出真的能用的東西<small>多半是 10–12 歲</small></button>
+      <button type="button" role="radio" aria-checked="false" data-start="s5" style="--c:var(--l5)">能獨立完成多零件作品，想學參數化建模<small>多半是 12 歲以上</small></button>
+    </div>
+    <div class="start-out" id="startout" aria-live="polite" hidden></div>
+  </div>
   <div class="mx-wrap"><div class="mx" id="matrix"></div></div>
   <details>
   <summary>表格檢視</summary>
@@ -417,6 +429,10 @@ html{scroll-behavior:smooth}
       <div><div class="k">活動與作品</div><ul><li>用黏土或積木先捏出形狀，再對照印好的同款模型</li><li>看列印縮時影片，數一數有幾層</li><li>幫印好的小動物上色、組裝</li></ul></div>
       <div><div class="k">課堂安排<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></div><ul><li>每次 15–20 分鐘，以手作為主</li><li>印表機由大人全程操作，孩子在安全距離外觀察</li></ul></div>
     </div>
+    <details class="activity" id="act-s1">
+      <summary>活動卡：把平面疊成立體 <span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span><span class="ev ed" title="尚未實際帶孩子試用過">尚待試帶</span></summary>
+      <div class="cols"><div><div class="k">學習目標與先備能力</div><ul><li><b>目標：</b>注意到「相同的平面一層層疊起來，高度會改變」</li><li><b>先備：</b>會用手把東西疊起來、聽得懂「高、矮」；不需要識字或用電腦</li></ul></div><div><div class="k">家長準備</div><ul><li>把同一個輪廓（例如星形或圓形）剪成約 10 片大片紙板</li><li>一個真實的立體物件對照用（積木、杯子都可以）</li><li>不需要事先列印、登入或安裝</li></ul></div><div><div class="k">孩子的任務</div><ul><li>先預測：「疊起來會變成什麼？」</li><li>自己一片一片疊，比較疊 3 片和 8 片哪個比較高</li><li>把疊好的東西和對照物件比一比</li></ul></div><div><div class="k">時間安排</div><ul><li><b>親子活動：</b>約 15–20 分鐘</li><li><b>成人準備：</b>約 10 分鐘（剪紙板）</li><li><b>機器列印：</b>本活動不需要；想延伸可由大人操作機器、孩子在旁看列印縮時</li></ul></div><div><div class="k">觀察與調整</div><ul><li><b>達成：</b>能說出或比出「越多片越高」</li><li><b>太難：</b>只疊 2–3 片，只比高矮</li><li><b>太簡單：</b>混用大小不同的輪廓，預測疊起來像塔還是像圓錐</li></ul></div></div>
+    </details>
     <p class="next"><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span><b>升級訊號：</b>能穩定用手指或滑鼠拖曳、旋轉螢幕上的物件。</p>
   </article>
 
@@ -427,6 +443,10 @@ html{scroll-behavior:smooth}
       <div><div class="k">第一個作品：名牌（教案參考尺寸，約 15 分鐘）</div><ul><li>底板 <span class="spec">60 × 20 × 2 mm</span></li><li>文字高度 <span class="spec">3 mm</span>，四周留邊 <span class="spec">5 mm</span></li><li>練到對齊、群組、配色三件事</li></ul><div class="k" style="margin-top:8px">之後的作品</div><ul><li>鑰匙圈、筆筒、簡單玩具車</li></ul></div>
       <div><div class="k">課堂安排<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></div><ul><li>每週固定一次，每次約 30 分鐘設計時間</li><li>換料、調平、取件都由大人負責</li><li>目標是「印出一件完成品」，不求完美</li></ul></div>
     </div>
+    <details class="activity" id="act-s2">
+      <summary>活動卡：做一張名牌 <span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span><span class="ev ed" title="尚未實際帶孩子試用過">尚待試帶</span></summary>
+      <div class="cols"><div><div class="k">學習目標與先備能力</div><ul><li><b>目標：</b>用 3–5 個基本形狀組合出一件作品，練到對齊、群組、配色</li><li><b>先備：</b>會用滑鼠或觸控拖曳、旋轉物件；認得自己的名字</li></ul></div><div><div class="k">家長準備</div><ul><li>Tinkercad 帳號（未滿 13 歲：家長同意，或由老師班級帳號登入）</li><li>先自己做一次名牌，確認尺寸</li><li>確認印表機與 PLA 已就緒；列印前用切片軟體預覽</li></ul></div><div><div class="k">孩子的任務</div><ul><li>拖出底板（參考 <span class="spec">60 × 20 × 2 mm</span>）</li><li>輸入自己的名字（文字高度參考 <span class="spec">3 mm</span>，四周留邊 <span class="spec">5 mm</span>）</li><li>換顏色、移動、旋轉、對齊；可加一個小裝飾形狀</li></ul></div><div><div class="k">時間安排</div><ul><li><b>孩子設計：</b>約 15–30 分鐘</li><li><b>成人準備：</b>約 20 分鐘（含自己先做一次）</li><li><b>機器列印：</b>依機型與尺寸而異，以切片軟體的預估時間為準，由成人操作</li></ul></div><div><div class="k">觀察與調整</div><ul><li><b>達成：</b>文字貼在底板上、沒有超出邊</li><li><b>太難：</b>用做好的底板，只放文字</li><li><b>太簡單：</b>加挖孔做成鑰匙圈，或加第二層文字</li></ul></div></div>
+    </details>
     <p class="next"><span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span><b>升級訊號：</b>不看示範就能組合出想要的形狀，開始問「怎麼挖洞」。</p>
   </article>
 
@@ -617,46 +637,64 @@ html{scroll-behavior:smooth}
     <div class="rc" id="reschart"></div>
   </div>
   <div class="filters" role="group" aria-label="篩選教材">
-    <div class="fgroup"><span class="k">地區</span>
-      <button class="chip" data-f="region" data-v="all" aria-pressed="true">全部</button>
-      <button class="chip" data-f="region" data-v="tw" aria-pressed="false">國內</button>
-      <button class="chip" data-f="region" data-v="intl" aria-pressed="false">國外</button>
-    </div>
     <div class="fgroup"><span class="k">對象</span>
       <button class="chip" data-f="lv" data-v="all" aria-pressed="true">全部</button>
+      <button class="chip" data-f="lv" data-v="s1" aria-pressed="false">幼兒</button>
       <button class="chip" data-f="lv" data-v="s2" aria-pressed="false">低年級</button>
       <button class="chip" data-f="lv" data-v="s3" aria-pressed="false">中年級</button>
       <button class="chip" data-f="lv" data-v="s4" aria-pressed="false">高年級</button>
       <button class="chip" data-f="lv" data-v="s5" aria-pressed="false">國中</button>
       <button class="chip" data-f="lv" data-v="adult" aria-pressed="false">老師與家長</button>
     </div>
+    <div class="fgroup"><span class="k">費用</span>
+      <button class="chip" data-f="cost" data-v="all" aria-pressed="true">全部</button>
+      <button class="chip" data-f="cost" data-v="free" aria-pressed="false">完全免費</button>
+      <button class="chip" data-f="cost" data-v="paid" aria-pressed="false">含付費項目</button>
+    </div>
+    <div class="fgroup"><span class="k">語言</span>
+      <button class="chip" data-f="lang" data-v="all" aria-pressed="true">全部</button>
+      <button class="chip" data-f="lang" data-v="zh" aria-pressed="false">中文</button>
+      <button class="chip" data-f="lang" data-v="en" aria-pressed="false">英文</button>
+    </div>
+    <div class="fgroup"><span class="k">形式</span>
+      <button class="chip" data-f="fmt" data-v="all" aria-pressed="true">全部</button>
+      <button class="chip" data-f="fmt" data-v="video" aria-pressed="false">影片</button>
+      <button class="chip" data-f="fmt" data-v="text" aria-pressed="false">圖文文章</button>
+      <button class="chip" data-f="fmt" data-v="plan" aria-pressed="false">教案課程</button>
+      <button class="chip" data-f="fmt" data-v="other" aria-pressed="false">書籍與 App</button>
+    </div>
+    <div class="fgroup"><span class="k">設備</span>
+      <button class="chip" data-f="eq" data-v="all" aria-pressed="true">全部</button>
+      <button class="chip" data-f="eq" data-v="noprinter" aria-pressed="false">不需要印表機</button>
+      <button class="chip" data-f="eq" data-v="printer" aria-pressed="false">需要印表機</button>
+    </div>
   </div>
   <p class="progress" id="rescount" aria-live="polite"></p>
 
   <h3 class="rh" data-region-head="tw">國內</h3>
   <div class="res" data-region-grid="tw">
-    <a class="card" data-region="tw" data-lv="s3 s4" href="https://learn.hnps.tn.edu.tw/modules/tad_book3/page.php?tbsn=21&amp;tbdsn=513"><span class="t">新南國小 Tinkercad 3D 軟體</span><span class="m">臺南新南國小 · 圖文 · 免費</span><span class="d">16 節：登入與加入班級 → 鑰匙圈、馬克杯與筆筒、齒輪與南瓜燈、容器、獎盃、匯入 SVG → Cura 切片與 CR-20 列印。從建模到列印最完整的中文國小教材。</span><span class="tags"><i>中年級</i><i>高年級</i></span></a>
-    <a class="card" data-region="tw" data-lv="s3 s4" href="https://sites.google.com/ssps.tp.edu.tw/mobile-learning/%E8%87%AA%E9%80%A0%E6%95%99%E8%82%B2/3d%E5%BB%BA%E6%A8%A1%E5%8F%8A%E5%88%97%E5%8D%B0"><span class="t">松山國小 3D 建模及列印</span><span class="m">臺北松山國小 · 影片清單 · 免費</span><span class="d">Tinkercad、Cura；作品有單手閱讀神器、雪人、南瓜糖果盒，主題涵蓋教具、物品維修、人物建模。另介紹 AI 影片轉 3D 模型，以及 Printables、MakerWorld 等模型庫。</span><span class="tags"><i>中年級</i><i>高年級</i></span></a>
-    <a class="card" data-region="tw" data-lv="s3" href="https://sites.google.com/view/raeseclass/%E5%9B%9B%E5%B9%B4%E7%B4%9A/3d%E5%88%97%E5%8D%B0/tinkercad%E6%95%99%E5%AD%B8"><span class="t">仁愛國小四年級 3D 列印</span><span class="m">電腦教室教材網 · 圖文 · 免費</span><span class="d">四年級資訊課的 Tinkercad、123D Design 單元，可以看出學校實際排在哪個年級。</span><span class="tags"><i>中年級</i></span></a>
-    <a class="card" data-region="tw" data-lv="s3" href="https://www.youtube.com/playlist?list=PLvd9ZUvYuLVrCCKaI2ikVRcstCscwqPfz"><span class="t">Tinkercad 教學（蔡依帆）</span><span class="m">YouTube · 8 部 · 免費</span><span class="d">中文影片，適合孩子跟著做，或老師課前看。</span><span class="tags"><i>中年級</i></span></a>
-    <a class="card" data-region="tw" data-lv="s3 s4 s5" href="https://sites.google.com/bhes.ntpc.edu.tw/maker/3d%E5%88%97%E5%8D%B0%E8%88%873d%E5%BB%BA%E6%A8%A1"><span class="t">碧華國小創客教育中心</span><span class="m">新北碧華國小 · 影片與圖文 · 免費</span><span class="d">列印原理影片、Cura 4.7/4.8、Meshmixer 拆件與卡榫、SketchUp。部分軟體已停止更新，取「原理」和「拆件觀念」來用。</span><span class="tags"><i>中年級</i><i>高年級</i><i>國中</i></span></a>
-    <a class="card" data-region="tw" data-lv="s5" href="https://maker.hhjh.tn.edu.tw/modules/tad_book3/index.php?op=list_docs&amp;tbsn=17"><span class="t">新興國中 Fusion 360 教學</span><span class="m">臺南新興自造教育及科技中心 · 圖文 · 免費</span><span class="d">41 單元，專題包括咖啡外帶杯（杯身、杯蓋、組裝）、工具筆組件（筆身、起子、筆蓋）等；建議挑選適合孩子的生活用品類專題使用。適合已會 Tinkercad、要升到參數化建模的孩子。</span><span class="tags"><i>國中</i></span></a>
-    <a class="card" data-region="tw" data-lv="s3 s4" href="https://tkdbook.jyic.net/PN059"><span class="t">《從 3D 列印輕鬆動手玩創意》</span><span class="m">台科大圖書「輕課程」第二版 · 書籍 · 付費</span><span class="d">Tinkercad、123D Design、Paint.NET，有評量。123D 已停止，買前留意書中比例。</span><span class="tags"><i>中年級</i><i>高年級</i></span></a>
-    <a class="card" data-region="tw" data-lv="s2 s3" href="https://hackmd.io/@webduino/ctrlp_fbpost"><span class="t">Webduino 3D 列印小學堂</span><span class="m">文章集 · 免費</span><span class="d">3D 列印應用新聞、設計思維故事、3D 筆安全，適合當課堂開場的閱讀素材。</span><span class="tags"><i>低年級</i><i>中年級</i></span></a>
+    <a class="card" data-region="tw" data-lv="s3 s4" data-cost="free" data-lang="zh" data-fmt="text" data-eq="pc" href="https://learn.hnps.tn.edu.tw/modules/tad_book3/page.php?tbsn=21&amp;tbdsn=513"><span class="t">新南國小 Tinkercad 3D 軟體</span><span class="m">臺南新南國小 · 圖文 · 免費</span><span class="d">16 節：登入與加入班級 → 鑰匙圈、馬克杯與筆筒、齒輪與南瓜燈、容器、獎盃、匯入 SVG → Cura 切片與 CR-20 列印。從建模到列印最完整的中文國小教材。</span><span class="tags"><i>中年級</i><i>高年級</i></span></a>
+    <a class="card" data-region="tw" data-lv="s3 s4" data-cost="free" data-lang="zh" data-fmt="video" data-eq="pc" href="https://sites.google.com/ssps.tp.edu.tw/mobile-learning/%E8%87%AA%E9%80%A0%E6%95%99%E8%82%B2/3d%E5%BB%BA%E6%A8%A1%E5%8F%8A%E5%88%97%E5%8D%B0"><span class="t">松山國小 3D 建模及列印</span><span class="m">臺北松山國小 · 影片清單 · 免費</span><span class="d">Tinkercad、Cura；作品有單手閱讀神器、雪人、南瓜糖果盒，主題涵蓋教具、物品維修、人物建模。另介紹 AI 影片轉 3D 模型，以及 Printables、MakerWorld 等模型庫。</span><span class="tags"><i>中年級</i><i>高年級</i></span></a>
+    <a class="card" data-region="tw" data-lv="s3" data-cost="free" data-lang="zh" data-fmt="text" data-eq="pc" href="https://sites.google.com/view/raeseclass/%E5%9B%9B%E5%B9%B4%E7%B4%9A/3d%E5%88%97%E5%8D%B0/tinkercad%E6%95%99%E5%AD%B8"><span class="t">仁愛國小四年級 3D 列印</span><span class="m">電腦教室教材網 · 圖文 · 免費</span><span class="d">四年級資訊課的 Tinkercad、123D Design 單元，可以看出學校實際排在哪個年級。</span><span class="tags"><i>中年級</i></span></a>
+    <a class="card" data-region="tw" data-lv="s3" data-cost="free" data-lang="zh" data-fmt="video" data-eq="pc" href="https://www.youtube.com/playlist?list=PLvd9ZUvYuLVrCCKaI2ikVRcstCscwqPfz"><span class="t">Tinkercad 教學（蔡依帆）</span><span class="m">YouTube · 8 部 · 免費</span><span class="d">中文影片，適合孩子跟著做，或老師課前看。</span><span class="tags"><i>中年級</i></span></a>
+    <a class="card" data-region="tw" data-lv="s3 s4 s5" data-cost="free" data-lang="zh" data-fmt="video text" data-eq="pc" href="https://sites.google.com/bhes.ntpc.edu.tw/maker/3d%E5%88%97%E5%8D%B0%E8%88%873d%E5%BB%BA%E6%A8%A1"><span class="t">碧華國小創客教育中心</span><span class="m">新北碧華國小 · 影片與圖文 · 免費</span><span class="d">列印原理影片、Cura 4.7/4.8、Meshmixer 拆件與卡榫、SketchUp。部分軟體已停止更新，取「原理」和「拆件觀念」來用。</span><span class="tags"><i>中年級</i><i>高年級</i><i>國中</i></span></a>
+    <a class="card" data-region="tw" data-lv="s5" data-cost="free" data-lang="zh" data-fmt="text" data-eq="pc" href="https://maker.hhjh.tn.edu.tw/modules/tad_book3/index.php?op=list_docs&amp;tbsn=17"><span class="t">新興國中 Fusion 360 教學</span><span class="m">臺南新興自造教育及科技中心 · 圖文 · 免費</span><span class="d">41 單元，專題包括咖啡外帶杯（杯身、杯蓋、組裝）、工具筆組件（筆身、起子、筆蓋）等；建議挑選適合孩子的生活用品類專題使用。適合已會 Tinkercad、要升到參數化建模的孩子。</span><span class="tags"><i>國中</i></span></a>
+    <a class="card" data-region="tw" data-lv="s3 s4" data-cost="paid" data-lang="zh" data-fmt="other" data-eq="pc" href="https://tkdbook.jyic.net/PN059"><span class="t">《從 3D 列印輕鬆動手玩創意》</span><span class="m">台科大圖書「輕課程」第二版 · 書籍 · 付費</span><span class="d">Tinkercad、123D Design、Paint.NET，有評量。123D 已停止，買前留意書中比例。</span><span class="tags"><i>中年級</i><i>高年級</i></span></a>
+    <a class="card" data-region="tw" data-lv="s2 s3" data-cost="free" data-lang="zh" data-fmt="text" data-eq="pc" href="https://hackmd.io/@webduino/ctrlp_fbpost"><span class="t">Webduino 3D 列印小學堂</span><span class="m">文章集 · 免費</span><span class="d">3D 列印應用新聞、設計思維故事、3D 筆安全，適合當課堂開場的閱讀素材。</span><span class="tags"><i>低年級</i><i>中年級</i></span></a>
   </div>
 
   <h3 class="rh" data-region-head="intl">國外</h3>
   <div class="res" data-region-grid="intl">
-    <a class="card" data-region="intl" data-lv="s3 s4" href="https://www.tinkercad.com/teachers/3d-printing"><span class="t">Tinkercad 官方 3D 列印課程</span><span class="m">Autodesk · 英文（介面有中文）· 免費</span><span class="d">官方逐步課程，可開班級帳號讓孩子登入。</span><span class="tags"><i>中年級</i><i>高年級</i></span></a>
-    <a class="card" data-region="intl" data-lv="s3 s4 s5" href="https://www.thingiverse.com/education"><span class="t">Thingiverse Education</span><span class="m">英文 · 免費</span><span class="d">600 個以上跨科教案（數學、科學、歷史、藝術），附可下載模型。MakerBot 另有免費的教師指南 PDF。</span><span class="tags"><i>中年級</i><i>高年級</i><i>國中</i></span></a>
-    <a class="card" data-region="intl" data-lv="s2 s3 s4" href="https://www.makersempire.com/"><span class="t">Makers Empire</span><span class="m">App · 英文 · 免費教案＋付費訂閱</span><span class="d">專為幼兒園到國二設計的建模 App 和對齊課綱的教案，有月賽和挑戰關卡。比 Tinkercad 更適合低年級。</span><span class="tags"><i>低年級</i><i>中年級</i><i>高年級</i></span></a>
-    <a class="card" data-region="intl" data-lv="s4 s5" href="https://www.learnbylayers.com/"><span class="t">Learn by Layers</span><span class="m">英文 · 有免費樣本，完整版付費</span><span class="d">約 430 份可下載的完整教案，使用 Tinkercad、Fusion 360、Onshape，也有 Bambu Lab 印表機專用課程。</span><span class="tags"><i>高年級</i><i>國中</i></span></a>
-    <a class="card" data-region="intl" data-lv="adult" href="https://makerworld.com/en/community/post/1761645"><span class="t">Bambu Lab Academy</span><span class="m">MakerWorld · 免費</span><span class="d">初、中、高級課程：第一次列印、線材、軟體設定、保養。給大人先把機器摸熟。</span><span class="tags"><i>老師與家長</i></span></a>
-    <a class="card" data-region="intl" data-lv="adult" href="https://www.prusa3d.com/category/prusa-academy/"><span class="t">Prusa Academy</span><span class="m">英文 · 付費（入門課約 5 美元起）</span><span class="d">PrusaSlicer 切片、Fusion 建模、列印件設計原則、後處理上色。</span><span class="tags"><i>老師與家長</i></span></a>
-    <a class="card" data-region="intl" data-lv="adult s4 s5" href="https://www.createeducation.com/wp-content/uploads/2024/09/3D-Printing-Skills-Progression.pdf"><span class="t">CREATE Education 能力進程框架</span><span class="m">PDF · 英文 · 免費</span><span class="d">排課時對照用；各等級清單放在「分齡細節」的高年級、國中。</span><span class="tags"><i>老師與家長</i></span></a>
-    <a class="card" data-region="intl" data-lv="adult s2 s3 s4" href="https://nozzledown.com/tinkercad-kids-tutorial-parent-guide/"><span class="t">Nozzle Down 家長指南</span><span class="m">英文 · 免費</span><span class="d">分齡建議、名牌作品尺寸、安全守則與入門列印設定。</span><span class="tags"><i>老師與家長</i></span></a>
+    <a class="card" data-region="intl" data-lv="s3 s4" data-cost="free" data-lang="en" data-fmt="plan" data-eq="pc" href="https://www.tinkercad.com/teachers/3d-printing"><span class="t">Tinkercad 官方 3D 列印課程</span><span class="m">Autodesk · 英文（介面有中文）· 免費</span><span class="d">官方逐步課程，可開班級帳號讓孩子登入。</span><span class="tags"><i>中年級</i><i>高年級</i></span></a>
+    <a class="card" data-region="intl" data-lv="s3 s4 s5" data-cost="free" data-lang="en" data-fmt="plan" data-eq="pc" href="https://www.thingiverse.com/education"><span class="t">Thingiverse Education</span><span class="m">英文 · 免費</span><span class="d">600 個以上跨科教案（數學、科學、歷史、藝術），附可下載模型。MakerBot 另有免費的教師指南 PDF。</span><span class="tags"><i>中年級</i><i>高年級</i><i>國中</i></span></a>
+    <a class="card" data-region="intl" data-lv="s2 s3 s4" data-cost="mixed" data-lang="en" data-fmt="plan other" data-eq="pc" href="https://www.makersempire.com/"><span class="t">Makers Empire</span><span class="m">App · 英文 · 免費教案＋付費訂閱</span><span class="d">專為幼兒園到國二設計的建模 App 和對齊課綱的教案，有月賽和挑戰關卡。比 Tinkercad 更適合低年級。</span><span class="tags"><i>低年級</i><i>中年級</i><i>高年級</i></span></a>
+    <a class="card" data-region="intl" data-lv="s4 s5" data-cost="mixed" data-lang="en" data-fmt="plan" data-eq="pc" href="https://www.learnbylayers.com/"><span class="t">Learn by Layers</span><span class="m">英文 · 有免費樣本，完整版付費</span><span class="d">約 430 份可下載的完整教案，使用 Tinkercad、Fusion 360、Onshape，也有 Bambu Lab 印表機專用課程。</span><span class="tags"><i>高年級</i><i>國中</i></span></a>
+    <a class="card" data-region="intl" data-lv="adult" data-cost="free" data-lang="en" data-fmt="plan" data-eq="printer" href="https://makerworld.com/en/community/post/1761645"><span class="t">Bambu Lab Academy</span><span class="m">MakerWorld · 免費</span><span class="d">初、中、高級課程：第一次列印、線材、軟體設定、保養。給大人先把機器摸熟。</span><span class="tags"><i>老師與家長</i></span></a>
+    <a class="card" data-region="intl" data-lv="adult" data-cost="paid" data-lang="en" data-fmt="plan" data-eq="printer" href="https://www.prusa3d.com/category/prusa-academy/"><span class="t">Prusa Academy</span><span class="m">英文 · 付費（入門課約 5 美元起）</span><span class="d">PrusaSlicer 切片、Fusion 建模、列印件設計原則、後處理上色。</span><span class="tags"><i>老師與家長</i></span></a>
+    <a class="card" data-region="intl" data-lv="adult s4 s5" data-cost="free" data-lang="en" data-fmt="text" data-eq="pc" href="https://www.createeducation.com/wp-content/uploads/2024/09/3D-Printing-Skills-Progression.pdf"><span class="t">CREATE Education 能力進程框架</span><span class="m">PDF · 英文 · 免費</span><span class="d">排課時對照用；各等級清單放在「分齡細節」的高年級、國中。</span><span class="tags"><i>老師與家長</i></span></a>
+    <a class="card" data-region="intl" data-lv="adult s2 s3 s4" data-cost="free" data-lang="en" data-fmt="text" data-eq="pc" href="https://nozzledown.com/tinkercad-kids-tutorial-parent-guide/"><span class="t">Nozzle Down 家長指南</span><span class="m">英文 · 免費</span><span class="d">分齡建議、名牌作品尺寸、安全守則與入門列印設定。</span><span class="tags"><i>老師與家長</i></span></a>
   </div>
-  <p class="empty" id="resempty" hidden>沒有符合的教材，換個篩選條件看看。</p>
+  <p class="empty" id="resempty" hidden></p>
   <details>
     <summary>其他路線的資源</summary>
     <ul>
@@ -784,69 +822,141 @@ html{scroll-behavior:smooth}
   document.addEventListener('mouseout', tipOff); document.addEventListener('focusout', tipOff);
   window.addEventListener('scroll', function(){ tip.hidden = true; }, {passive:true});
 
-  /* hash update: some viewers (sandboxed srcdoc frames) refuse history changes */
-  function setHash(h){ try { history.replaceState(null, '', '#' + h); } catch(e){} }
-
-  /* main tabs */
+  /* ---- routing: one place decides tab + age stage, keeps screen, URL and memory in sync ----
+     Back button: switching a tab or an age stage adds a history entry (Back returns to the previous
+     learning page). Arrow-key switching and resource filters do not add entries. */
+  var STAGE_IDS = ['s1','s2','s3','s4','s5'];
+  var STAGE_RE = /^s[1-5]$/;
   var tabs = Array.prototype.slice.call(document.querySelectorAll('nav.top [data-tab]'));
   var ids = tabs.map(function(t){ return t.dataset.tab; });
   var panels = ids.map(function(id){ var p = document.getElementById(id); p.setAttribute('role','tabpanel'); p.setAttribute('aria-labelledby','t-'+id); p.tabIndex = -1; return p; });
+  tabs.forEach(function(t){ t.setAttribute('aria-controls', t.dataset.tab); });
   var routeBtn = document.querySelector('nav.top [data-route="print3d"]');
   var subRow = document.getElementById('sub-print3d');
-  function show(id, focus){
-    if (ids.indexOf(id) < 0) id = 'overview';
-    var in3d = id !== 'overview';
+  var sbtn = Array.prototype.slice.call(document.querySelectorAll('[data-stage]'));
+  sbtn.forEach(function(b){
+    var id = b.dataset.stage, p = document.getElementById(id);
+    b.id = 'st-' + id; b.setAttribute('aria-controls', id);
+    p.setAttribute('role','tabpanel'); p.setAttribute('aria-labelledby','st-' + id); p.tabIndex = -1;
+  });
+  var cur = {tab:'overview', stage:'s3'};
+
+  function hashNow(){ return cur.tab === 'stages' ? cur.stage : cur.tab; }
+  /* history changes can be refused in sandboxed frames, so every call is guarded */
+  function syncUrl(push){
+    var h = '#' + hashNow();
+    if (location.hash === h) return;
+    try { if (push) history.pushState(null, '', h); else history.replaceState(null, '', h); } catch(e){}
+  }
+  function render(focus){
+    var id = cur.tab, in3d = id !== 'overview';
     routeBtn.setAttribute('aria-selected', in3d); routeBtn.tabIndex = in3d ? 0 : -1;
     subRow.hidden = !in3d;
-    if (in3d) try { localStorage.setItem('sub3d', id); } catch(e){}
     tabs.forEach(function(t){ var on = t.dataset.tab === id; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; if (on) t.scrollIntoView({block:'nearest',inline:'nearest'}); });
     panels.forEach(function(p){ p.hidden = p.id !== id; });
-    try { localStorage.setItem('tab', id); } catch(e){}
+    sbtn.forEach(function(b){ var on = b.dataset.stage === cur.stage; b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1; });
+    STAGE_IDS.forEach(function(s){ document.getElementById(s).hidden = s !== cur.stage; });
+    try { localStorage.setItem('tab', id); localStorage.setItem('stage', cur.stage); if (in3d) localStorage.setItem('sub3d', id); } catch(e){}
     if (focus) { var nav = document.querySelector('nav.top'); if (nav.getBoundingClientRect().top < 0 || window.scrollY > nav.offsetTop) window.scrollTo({top: nav.offsetTop}); }
   }
-  routeBtn.addEventListener('click', function(){
-    var last = null; try { last = localStorage.getItem('sub3d'); } catch(e){}
-    var id = last && last !== 'overview' && ids.indexOf(last) >= 0 ? last : 'print3d';
-    show(id, true); setHash(id);
-  });
-  /* arrow keys move within one row: [總覽, 3D] or the 3D sub-tabs */
+  /* opts: push (default true) adds a history entry; focus scrolls back to the nav */
+  function go(tab, stg, opts){
+    opts = opts || {};
+    if (ids.indexOf(tab) < 0) tab = 'overview';
+    if (stg && STAGE_RE.test(stg)) cur.stage = stg;
+    cur.tab = tab;
+    render(opts.focus);
+    syncUrl(opts.push !== false);
+  }
+  function fromHash(){
+    var h = location.hash.slice(1);
+    if (STAGE_RE.test(h)) { cur.tab = 'stages'; cur.stage = h; }
+    else if (ids.indexOf(h) >= 0) cur.tab = h;
+    else cur.tab = 'overview';
+  }
+  window.addEventListener('popstate', function(){ fromHash(); render(false); });
+
+  function activate(t, push){
+    if (t.dataset.tab) go(t.dataset.tab, null, {focus:true, push:push});
+    else {
+      var last = null; try { last = localStorage.getItem('sub3d'); } catch(e){}
+      go(last && last !== 'overview' && ids.indexOf(last) >= 0 ? last : 'print3d', null, {focus:true, push:push});
+    }
+  }
+  /* Tabs pattern: Left/Right (and Home/End) move within one row; arrow keys do not add history entries */
   Array.prototype.slice.call(document.querySelectorAll('nav.top [role="tablist"]')).forEach(function(list){
     var row = Array.prototype.slice.call(list.querySelectorAll('[role="tab"]'));
     row.forEach(function(t, i){
-      if (t.dataset.tab) t.addEventListener('click', function(){ show(t.dataset.tab, true); setHash(t.dataset.tab); });
+      t.addEventListener('click', function(){ activate(t, true); });
       t.addEventListener('keydown', function(e){
-        var k = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-        if (!k) return; e.preventDefault();
-        var n = row[(i + k + row.length) % row.length]; n.focus(); n.click();
+        var n = e.key === 'ArrowRight' ? row[(i + 1) % row.length] : e.key === 'ArrowLeft' ? row[(i - 1 + row.length) % row.length] :
+                e.key === 'Home' ? row[0] : e.key === 'End' ? row[row.length - 1] : null;
+        if (!n) return; e.preventDefault(); n.focus(); activate(n, false);
       });
     });
   });
-
-  /* stage sub-tabs */
-  var sbtn = Array.prototype.slice.call(document.querySelectorAll('[data-stage]'));
-  function stage(id){
-    sbtn.forEach(function(b){ b.setAttribute('aria-selected', b.dataset.stage === id); });
-    ['s1','s2','s3','s4','s5'].forEach(function(s){ document.getElementById(s).hidden = s !== id; });
-    try { localStorage.setItem('stage', id); } catch(e){}
-  }
-  sbtn.forEach(function(b){ b.addEventListener('click', function(){ stage(b.dataset.stage); }); });
-
-  /* layer stack jumps into a stage */
-  document.querySelectorAll('.layer').forEach(function(a){
-    a.addEventListener('click', function(e){
-      e.preventDefault(); var s = a.getAttribute('href').slice(1);
-      stage(s); show('stages', true); setHash(s);
+  /* age stage tabs: same keyboard behavior */
+  sbtn.forEach(function(b, i){
+    b.addEventListener('click', function(){ go('stages', b.dataset.stage); });
+    b.addEventListener('keydown', function(e){
+      var n = e.key === 'ArrowRight' ? sbtn[(i + 1) % sbtn.length] : e.key === 'ArrowLeft' ? sbtn[(i - 1 + sbtn.length) % sbtn.length] :
+              e.key === 'Home' ? sbtn[0] : e.key === 'End' ? sbtn[sbtn.length - 1] : null;
+      if (!n) return; e.preventDefault(); n.focus(); go('stages', n.dataset.stage, {push:false});
     });
   });
 
+  /* layer stack and matrix jump into a stage */
+  document.querySelectorAll('.layer').forEach(function(a){
+    a.addEventListener('click', function(e){ e.preventDefault(); go('stages', a.getAttribute('href').slice(1), {focus:true}); });
+  });
   document.querySelectorAll('#matrix [data-go]').forEach(function(b){
-    b.addEventListener('click', function(){ stage(b.dataset.go); show('stages', true); setHash(b.dataset.go); });
+    b.addEventListener('click', function(){ go('stages', b.dataset.go, {focus:true}); });
+  });
+
+  /* "start here": pick the child's level, get a next step */
+  var ACT = {
+    s1:{name:'幼兒', age:'3–6 歲', what:'活動卡「把平面疊成立體」，不用電腦，約 15–20 分鐘', card:true},
+    s2:{name:'低年級', age:'6–8 歲', what:'活動卡「做一張名牌」，用 3–5 個基本形狀完成一件作品', card:true},
+    s3:{name:'中年級', age:'8–10 歲', what:'挑一件作品：印章、筆筒或有蓋小盒'},
+    s4:{name:'高年級', age:'10–12 歲', what:'挑一件專題：手機架、依實際尺寸的收納盒或棋子'},
+    s5:{name:'國中', age:'12 歲以上', what:'挑一件專題：理線器、工具架或家中損壞零件的替換件'}
+  };
+  var startBtns = Array.prototype.slice.call(document.querySelectorAll('[data-start]'));
+  var startOut = document.getElementById('startout');
+  function startPick(id){
+    var a = ACT[id], nextTxt = document.querySelector('#' + id + ' .next');
+    startBtns.forEach(function(b){ b.setAttribute('aria-checked', b.dataset.start === id); b.tabIndex = b.dataset.start === id ? 0 : -1; });
+    var up = nextTxt ? nextTxt.textContent.replace(/^\s*編者建議\s*/, '') : '';
+    startOut.innerHTML = '<div class="so-h">適合從<b>' + a.name + '（' + a.age + '）</b>開始</div>' +
+      '<p><b>今天可以做：</b>' + esc(a.what) + '</p>' + (up ? '<p class="muted">' + esc(up) + '</p>' : '') +
+      '<div class="so-btns">' + (a.card ? '<button type="button" class="btn primary" data-so="card">打開活動卡</button>' : '') +
+      '<button type="button" class="btn' + (a.card ? '' : ' primary') + '" data-so="stage">看這個階段的細節</button>' +
+      '<button type="button" class="btn" data-so="res">找適合的教材</button></div>';
+    startOut.hidden = false;
+    startOut.querySelectorAll('[data-so]').forEach(function(b){
+      b.addEventListener('click', function(){
+        if (b.dataset.so === 'res') { setFilter('lv', id); go('resources', null, {focus:true}); }
+        else {
+          go('stages', id, {focus:true});
+          if (b.dataset.so === 'card') { var d = document.getElementById('act-' + id); if (d) { d.open = true; d.scrollIntoView({block:'start'}); } }
+        }
+      });
+    });
+  }
+  startBtns.forEach(function(b, i){
+    b.tabIndex = i === 0 ? 0 : -1;
+    b.addEventListener('click', function(){ startPick(b.dataset.start); });
+    b.addEventListener('keydown', function(e){
+      var n = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? startBtns[(i + 1) % startBtns.length] :
+              e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? startBtns[(i - 1 + startBtns.length) % startBtns.length] : null;
+      if (!n) return; e.preventDefault(); n.focus(); startPick(n.dataset.start);
+    });
   });
 
   /* resource filters */
-  var fstate = {region:'all', lv:'all'};
+  var fstate = {lv:'all', cost:'all', lang:'all', fmt:'all', eq:'all'};
   var cards = Array.prototype.slice.call(document.querySelectorAll('#resources .card'));
-  var LV = [['s2','低年級','var(--l2)'],['s3','中年級','var(--l3)'],['s4','高年級','var(--l4)'],['s5','國中','var(--l5)'],['adult','老師與家長','var(--muted)']];
+  var LV = [['s1','幼兒','var(--l1)'],['s2','低年級','var(--l2)'],['s3','中年級','var(--l3)'],['s4','高年級','var(--l4)'],['s5','國中','var(--l5)'],['adult','老師與家長','var(--muted)']];
   var lvColor = {}; LV.forEach(function(l){ lvColor[l[1]] = l[2]; });
   cards.forEach(function(c){
     c.querySelectorAll('.tags i').forEach(function(i){ if (lvColor[i.textContent]) i.style.setProperty('--c', lvColor[i.textContent]); });
@@ -861,26 +971,27 @@ html{scroll-behavior:smooth}
     });
     var h = '';
     rows.forEach(function(r){
-      var w = function(n){ return (n / max * 80) + '%'; };
-      h += '<button data-lvgo="' + r[0][0] + '" aria-pressed="false" aria-label="' + r[0][1] + '：國內 ' + r[1] + ' 項、國外 ' + r[2] + ' 項，點選篩選">' +
+      var w = function(n){ return (n / max * 80) + '%'; }, none = r[1] + r[2] === 0;
+      h += '<button data-lvgo="' + r[0][0] + '" aria-pressed="false" aria-label="' + r[0][1] + (none ? '：整理中' : '：國內 ' + r[1] + ' 項、國外 ' + r[2] + ' 項') + '，點選篩選">' +
            '<span class="rl">' + r[0][1] + '</span><span class="rb">' +
            (r[1] ? '<i style="--c:var(--accent);width:' + w(r[1]) + '"></i>' : '') +
            (r[2] ? '<i style="--c:var(--muted);width:' + w(r[2]) + '"></i>' : '') +
-           '<em>' + r[1] + ' + ' + r[2] + '</em></span></button>';
+           '<em>' + (none ? '整理中' : r[1] + ' + ' + r[2]) + '</em></span></button>';
     });
     document.getElementById('reschart').innerHTML = h;
     document.querySelectorAll('[data-lvgo]').forEach(function(b){
-      b.addEventListener('click', function(){
-        var v = b.getAttribute('aria-pressed') === 'true' ? 'all' : b.dataset.lvgo;
-        document.querySelector('.chip[data-f="lv"][data-v="' + v + '"]').click();
-      });
+      b.addEventListener('click', function(){ setFilter('lv', b.getAttribute('aria-pressed') === 'true' ? 'all' : b.dataset.lvgo); });
     });
   })();
+  function has(c, key, v){ return (c.dataset[key] || '').split(' ').indexOf(v) >= 0; }
   function filter(){
     var n = 0;
     cards.forEach(function(c){
-      var ok = (fstate.region === 'all' || c.dataset.region === fstate.region) &&
-               (fstate.lv === 'all' || c.dataset.lv.split(' ').indexOf(fstate.lv) >= 0);
+      var ok = (fstate.lv === 'all' || has(c, 'lv', fstate.lv)) &&
+               (fstate.cost === 'all' || (fstate.cost === 'free' ? c.dataset.cost === 'free' : c.dataset.cost !== 'free')) &&
+               (fstate.lang === 'all' || c.dataset.lang === fstate.lang) &&
+               (fstate.fmt === 'all' || has(c, 'fmt', fstate.fmt)) &&
+               (fstate.eq === 'all' || (fstate.eq === 'printer' ? c.dataset.eq === 'printer' : c.dataset.eq !== 'printer'));
       c.hidden = !ok; if (ok) n++;
     });
     ['tw','intl'].forEach(function(r){
@@ -889,23 +1000,35 @@ html{scroll-behavior:smooth}
       document.querySelector('[data-region-grid="'+r+'"]').hidden = !any;
     });
     document.getElementById('rescount').textContent = '顯示 ' + n + ' / ' + cards.length + ' 項';
-    document.getElementById('resempty').hidden = n > 0;
+    var empty = document.getElementById('resempty');
+    if (n > 0) empty.hidden = true;
+    else {
+      empty.hidden = false;
+      empty.innerHTML = fstate.lv === 's1'
+        ? '幼兒階段的自編活動整理中，先從不插電的活動開始。 <button type="button" class="btn" id="to-act-s1">看幼兒活動卡</button>'
+        : '沒有符合的教材，換個篩選條件看看。';
+      var bt = document.getElementById('to-act-s1');
+      if (bt) bt.addEventListener('click', function(){ go('stages', 's1', {focus:true}); var d = document.getElementById('act-s1'); if (d) { d.open = true; d.scrollIntoView({block:'start'}); } });
+    }
     document.querySelectorAll('[data-lvgo]').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.lvgo === fstate.lv); });
-  }
-  document.querySelectorAll('.chip').forEach(function(b){
-    b.addEventListener('click', function(){
-      fstate[b.dataset.f] = b.dataset.v;
-      document.querySelectorAll('.chip[data-f="'+b.dataset.f+'"]').forEach(function(x){ x.setAttribute('aria-pressed', x === b); });
-      filter();
+    Object.keys(fstate).forEach(function(k){
+      document.querySelectorAll('.chip[data-f="' + k + '"]').forEach(function(x){ x.setAttribute('aria-pressed', x.dataset.v === fstate[k]); });
     });
+  }
+  function setFilter(k, v){ fstate[k] = v; filter(); }
+  document.querySelectorAll('.chip').forEach(function(b){
+    b.addEventListener('click', function(){ setFilter(b.dataset.f, b.dataset.v); });
   });
   filter();
 
-  /* initial state: hash > remembered > default */
-  var h = location.hash.slice(1), savedTab = null, savedStage = null;
+  /* initial state: hash > remembered > default; the first history entry always carries a hash */
+  var savedTab = null, savedStage = null;
   try { savedTab = localStorage.getItem('tab'); savedStage = localStorage.getItem('stage'); } catch(e){}
-  if (/^s[1-5]$/.test(h)) { stage(h); show('stages'); }
-  else { stage(savedStage && /^s[1-5]$/.test(savedStage) ? savedStage : 's3'); show(ids.indexOf(h) >= 0 ? h : (savedTab || 'overview')); }
+  if (savedStage && STAGE_RE.test(savedStage)) cur.stage = savedStage;
+  var h0 = location.hash.slice(1);
+  if (STAGE_RE.test(h0) || ids.indexOf(h0) >= 0) fromHash();
+  else cur.tab = ids.indexOf(savedTab) >= 0 ? savedTab : 'overview';
+  render(false); syncUrl(false);
 })();
 </script>
 
