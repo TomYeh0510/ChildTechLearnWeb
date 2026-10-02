@@ -154,12 +154,13 @@ details.activity.lessons .tbl{margin-top:4px}
 details.activity.lessons table{font-size:.86rem;min-width:720px}
 .toysafe ul{display:grid;gap:4px}
 .toysafe li .ev{margin-left:4px;margin-right:0}
-.goals{padding-left:1.1em}
-.goals>li{margin:8px 0}
-.goals details.how{background:none;border:0;padding:0;margin-top:2px}
-.goals details.how summary{font-weight:500;color:var(--accent);font-size:.86rem}
-.goals details.how[open] summary{margin-bottom:2px}
-.goals details.how ul{font-size:.92rem;padding-left:1.1em}
+.goals{list-style:none;padding-left:0}
+.goals>li{margin:6px 0}
+.goals details.how{background:none;border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin:0}
+.goals details.how[open]{background:var(--bg)}
+.goals details.how summary{font-weight:700;color:var(--ink);font-size:1rem}
+.goals details.how[open] summary{margin-bottom:4px}
+.goals details.how ul{font-size:.92rem;padding-left:1.1em;margin-top:4px}
 .next{font-size:.9rem;border-top:1px dashed var(--line);padding-top:10px;color:var(--muted)}
 .next b{color:var(--ink)}
 .src{font-size:.8rem;color:var(--muted)}
@@ -447,10 +448,10 @@ html{scroll-behavior:smooth}
   <article class="stage" id="s1" style="--c:var(--l1)">
     <header><h3>幼兒 3–6 歲</h3><span class="tag">第 1 層 · 不用螢幕、不碰機器</span></header>
     <div class="cols">
-      <div><div class="k">學習目標與怎麼學<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></div><ul class="goals">
-        <li><b>知道「立體」和「平面」的差別</b><details class="how" open><summary>怎麼學</summary><ul><li><b>摸摸看：</b>同一個輪廓印一片薄的（平面）和一個立體的（例如一隻貓），放進布袋閉眼摸，說說「哪個會滾？哪個可以站起來？」</li><li><b>轉一圈：</b>拿起立體的轉一圈，每一面長得不一樣；薄片從旁邊看只剩一條線</li><li><b>找一找：</b>在家找 3 個「平的」和 3 個「立體的」，分成兩堆</li></ul></details></li>
-        <li><b>看懂東西是一層一層疊出來的</b><details class="how" open><summary>怎麼學</summary><ul><li><b>疊漸縮塔：</b>把印好的方形漸縮塔由大到小疊起來，疊錯一層形狀就不對（見下方教具與活動卡）</li><li><b>同輪廓疊高：</b>把一樣的薄片一片片疊，越多片越高</li><li><b>摸層紋：</b>用指甲刮教具側面，一條一條的就是一層一層</li></ul></details></li>
-        <li><b>自己動手、專注做完一件事</b><details class="how" open><summary>怎麼學</summary><ul><li><b>自己拿：</b>每一層都讓孩子自己拿、自己放，大人只示範一次</li><li><b>自己發現：</b>疊錯了不糾正，等孩子自己看出來；看不出來就問「哪一層怪怪的？」</li><li><b>自己收：</b>玩完由孩子把每一層放回盒子，這也是練習順序</li></ul></details></li>
+      <div><div class="k">學習目標<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></div><ul class="goals">
+        <li><details class="how"><summary>知道「立體」和「平面」的差別</summary><ul><li><b>摸摸看：</b>同一個輪廓印一片薄的（平面）和一個立體的（例如一隻貓），放進布袋閉眼摸，說說「哪個會滾？哪個可以站起來？」</li><li><b>轉一圈：</b>拿起立體的轉一圈，每一面長得不一樣；薄片從旁邊看只剩一條線</li><li><b>找一找：</b>在家找 3 個「平的」和 3 個「立體的」，分成兩堆</li></ul></details></li>
+        <li><details class="how"><summary>看懂東西是一層一層疊出來的</summary><ul><li><b>疊漸縮塔：</b>把印好的方形漸縮塔由大到小疊起來，疊錯一層形狀就不對（見下方教具與活動卡）</li><li><b>同輪廓疊高：</b>把一樣的薄片一片片疊，越多片越高</li><li><b>摸層紋：</b>用指甲刮教具側面，一條一條的就是一層一層</li></ul></details></li>
+        <li><details class="how"><summary>自己動手、專注做完一件事</summary><ul><li><b>自己拿：</b>每一層都讓孩子自己拿、自己放，大人只示範一次</li><li><b>自己發現：</b>疊錯了不糾正，等孩子自己看出來；看不出來就問「哪一層怪怪的？」</li><li><b>自己收：</b>玩完由孩子把每一層放回盒子，這也是練習順序</li></ul></details></li>
       </ul></div>
       <div><div class="k">教具：3D 列印版蒙特梭利漸縮塔</div>
         <ul>

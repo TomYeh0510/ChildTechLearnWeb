@@ -396,3 +396,4 @@
 | 2026-10-02 | 幼兒卡教具說明加「適用年齡」：發展上約 3–6 歲（粉紅塔教學實例，部分教室有給更小孩子的簡化版：Guidepost https://guidepostmontessori.com/blog/the-montessori-pink-tower/ 、Kid Advance https://kidadvance.com/pink-tower.html ）；本版只建議 3 歲以上（CPSC 16 CFR 1501 以 3 歲為分界，見第十二節）；`PLAN.md` 新增 MakerWorld 中英文年齡文案 | 沿用第十、十二節來源 |
 | 2026-10-02 | `PLAN.md`：確認「從玩到做」為主軸、MakerWorld 授權用 Standard Digital File License；新增教學影片評估 | 第十二節新增授權來源 |
 | 2026-10-02 | `PLAN.md`：教學影片定位為給家長看的大人示範影片，幼兒不看影片 | 無新來源 |
+| 2026-10-02 | 幼兒卡「學習目標」版面調整：取消「怎麼學」，點目標展開細節、預設收折；無內容變更 | 無新來源 |
