@@ -344,6 +344,16 @@
 
 強度測試（摔、扭）、清潔方式（不用熱水與洗碗機）為編者建議，沒有外部來源。
 
+## 十三、學齡兒童（6–8 歲）螢幕使用依據（2026-10-02，討論用，網頁尚未依此修改）
+
+| 來源 | 連結 | 內容 |
+| --- | --- | --- |
+| 衛福部 愛眼六大守則 | https://www.mohw.gov.tw/cp-4628-55393-1.html | 未滿 2 歲避免看螢幕，2 歲以上每日不超過 1 小時；用眼 30 分鐘休息 10 分鐘（未標示年齡上限） |
+| 教育部「護眼 123」（報導） | https://udn.com/news/story/6885/9740919 ；衛福部 https://www.mohw.gov.tw/cp-16-41061-1.html | 每半年眼科檢查、每天戶外 2 小時、3C 用眼 30 分鐘休息 10 分鐘（3010）；3C 總使用時間 ≥ 1 小時者近視風險為 < 1 小時者的 2.34 倍 |
+| WHO 2020（5–17 歲） | https://www.ncbi.nlm.nih.gov/books/NBK566045/ ；https://pmc.ncbi.nlm.nih.gov/articles/PMC7691077/ | 限制久坐與休閒性螢幕時間（摘要未見具體時數）；每天平均至少 60 分鐘中高強度活動 |
+| AAP 2026 更新 | https://www.edsurge.com/news/2026-02-05-new-aap-screen-time-recommendations-focus-less-on-screens-more-on-family-time ；https://publications.aap.org/pediatrics/article/157/2/e2025075320/206129/Digital-Ecosystems-Children-and-Adolescents-Policy | 6 歲以上不設統一時數，改用「家庭媒體計畫」，重品質與情境；報導提到學齡兒童非學校用的娛樂媒體約 1–2 小時以上為參考（二手） |
+| 創作型與被動消費型螢幕 | https://kidslox.com/guide-to/active-screen-time-vs-passive/ ；https://pmc.ncbi.nlm.nih.gov/articles/PMC11913343/ | 2023 JAMA Pediatrics 研究（8–12 歲）：以被動消費為主者執行功能分數較低，以互動與創作為主者與低螢幕者無顯著差異（二手整理，未對照原文）；建議共同使用 |
+
 ## 九、查證狀態與尚缺來源
 
 ### 查證狀態
@@ -400,3 +410,4 @@
 | 2026-10-02 | 版面簡化：階段卡片、軟體、安全頁、教材的區塊改為預設收折的可展開列；軟體表格改為可展開清單；無內容變更 | 無新來源 |
 | 2026-10-02 | `CLAUDE.md` 把「簡化、預設收折」升為頂層版面原則並加入驗收規則；`tests/check.js` 新增「階段卡片無直接攤開的多欄區塊、表格都在收折區塊內」檢查；無內容變更 | 無新來源 |
 | 2026-10-02 | `PLAN.md` 新增第十節「網頁與規劃對照檢查」；網頁未改 | 無新來源 |
+| 2026-10-02 | 新增第十三節：學齡兒童螢幕使用依據（國健署、教育部護眼 123、WHO、AAP、創作型螢幕研究），供討論低年級是否用 Tinkercad；網頁未改 | 新增第十三節來源 |
