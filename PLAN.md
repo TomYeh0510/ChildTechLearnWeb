@@ -70,6 +70,20 @@
 - 中性清潔劑清洗、自然晾乾，不用熱水或洗碗機。
 - 若要**販售**實體列印品：台灣玩具屬應施檢驗商品，須經標準檢驗局檢驗合格（CNS 4797）。只分享檔案不在此限。
 
+### 適用年齡的固定寫法（已確認，網頁與 MakerWorld 都要寫）
+
+每套給幼兒的教具都要同時寫兩件事：**發展上適合的年齡**，以及**依美國小零件規範只建議 3 歲以上**。
+
+網頁（已上，幼兒卡教具說明與「教具安全」區塊）。
+
+MakerWorld 說明（上傳時直接貼在說明最前面）：
+
+> **適用年齡**：適合約 3–6 歲、正在發展大小與順序概念的幼兒（蒙特梭利教室中粉紅塔的常見使用年齡）。本 3D 列印版依美國玩具小零件規範（16 CFR 1501）以 3 歲為分界，**僅建議 3 歲以上使用**；不適合仍會把物品放進嘴裡的孩子。本作品為家庭教學用，並非經過檢驗的玩具，使用時請大人在旁。
+
+> **Age**: Designed for developing children around ages 3–6 who are learning size and order (the typical age range for the Montessori Pink Tower). Following the U.S. small parts rule (16 CFR 1501), which uses age 3 as the threshold, this 3D-printed version is **recommended for ages 3 and up only**. Not suitable for children who still put objects in their mouths. This is a home-learning material, not a certified toy. Adult supervision required.
+
+說明中的「設計重點」也要寫：每一片都比小零件測試筒（直徑 31.7 mm）大，最小一層約 3.5 cm；圓角、砂磨；交付前測強度。
+
 ## 七、MakerWorld 經營（已確認部分）
 
 - **分齡收藏夾（Tom 同意建立）**：例如「6–8 歲可以挑的模型」「8–10 歲可以調的參數化模型」，孩子只從收藏夾裡挑。MakerWorld 的未成年保護模式尚未推出，收藏夾就是篩選。
