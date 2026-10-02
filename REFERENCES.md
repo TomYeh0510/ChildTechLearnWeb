@@ -288,6 +288,23 @@
 
 **編者建議**：做 3D 列印版之前，先借或買一個實體粉紅塔或棕色梯對照尺寸、手感、重量，比只看規格數字準；實物照片仍不可放進網頁或 MakerWorld。
 
+### 粉紅塔以外的實體教具商品頁（2026-10-02，搜尋結果，商品頁本身尚未逐一開啟；價格以官網為準）
+
+| 教具 | 地區 | 連結 | 備註 |
+| --- | --- | --- | --- |
+| 棕色梯 | 香港 | http://gc.hk/products/9324/%E8%92%99%E7%89%B9%E6%A2%AD%E5%88%A9%E6%84%9F%E5%AE%98%E6%95%99%E5%85%B7-%E6%A3%95%E8%89%B2%E6%A2%AF/ | 約 HK$429（搜尋摘要） |
+| 棕色梯 | 台灣 | 蒙特梭利兒童教育學會 http://www.asia-montessori.com.tw/public/index_prod.php?mseq=003&main=4&sub=1&ssub=11 | 「小套棕色梯」約 2500 元（搜尋摘要） |
+| 棕色梯 | 國際 | https://www.alisonsmontessori.com/Natural_Brown_Stairs_Premium_Quality_p/ps03.n.htm | 玩法說明 https://montessorimom.com/brown-stair/ |
+| 圓柱體（有柄） | 國際 | Alison's https://www.alisonsmontessori.com/Montessori_Knobbed_Cylinder_Blocks_p/ps01.htm 、https://www.alisonsmontessori.com/Knobbed_Cylinders_4_Cylinder_Blocks_Set_of_4_p/i03.htm | 四個木座，約 US$311；教學說明 https://www.montessorialbum.com/montessori/index.php/Knobbed_Cylinders 、https://amshq.org/blog/uncategorized/2023-01-20-montessori-knobbed-cylinders-introduction/ |
+| 圓柱體（無柄） | 國際 | Alison's https://www.alisonsmontessori.com/Knobless_Cylinders_p/s04.htm ；Nienhuis https://www.nienhuis.com/us/en/set-of-knobless-cylinders-nienhuis-montessori-usa/product/4968/ ；Wintergreen https://www.wintergreen.ca/nienhuis-set-of-knobless-cylinders-002300 ；https://www.montessorimaterials.net/sensorial/knobless-cylinders | 四盒、每盒山毛櫸木盒；Alison's 約 US$112 |
+| 圓柱體（投入盒） | 台灣 | 蒙特梭利兒童教育學會（同上列表） | 小、大圓柱體投入盒各約 900 元（搜尋摘要） |
+| 幾何立體組 | 香港 | http://gc.hk/products/9349/%E8%92%99%E7%89%B9%E6%A2%AD%E5%88%A9%E6%84%9F%E5%AE%98%E6%95%99%E5%85%B7-%E5%B9%BE%E4%BD%95%E7%AB%8B%E9%AB%94%E7%B5%84/ | 10 個立體加 11 片投影板；中文說明 |
+| 幾何立體組 | 國際 | https://teiaeducation.ch/product/the-geometric-solids-nienhuis-montessori/ ；https://handsonmontessori.ca/product/montessori-geometric-solids-sensorial-material/ | Nienhuis 版、手作版 |
+| 構成三角形 | 香港 | https://www.myschoolbus.com.hk/products/niehuis-montessori-constructive-triangles-004900 | Nienhuis 版 |
+| 構成三角形 | 國際 | https://www.alisonsmontessori.com/Constructive_Triangles_p/s16.htm ；https://www.montessorimaterials.net/sensorial/constructive-triangles | 5 盒 |
+| 幾何圖形櫃（嵌板） | 國際 | Nienhuis 2025 價目表 https://publications-hg.cld.bz/Price-list-2025-USA-Nienhuis/4/ ；說明 https://montessorimom.com/geometric-cabinet/ | 價目表列有幾何圖形櫃 |
+| 各種教具 | 台灣／中國大陸 | Pinkoi https://www.pinkoi.com/search?q=%E8%92%99%E7%89%B9%E6%A2%AD%E5%88%A9+%E6%95%99%E5%85%B7 ；京東 https://www.jd.com/chanpin/1545279.html ；1688 https://tw.1688.com/item/-D7D8C9ABCCDDC3C9CACFBDCCBEDF.html | 大陸平台價格低、品質與尺寸差異大，只適合當外型參考，不建議當尺寸基準 |
+
 ### 圖片使用
 
 上列網站的實物照片有著作權，不放進網頁、也不放進 MakerWorld 說明。可用的圖片：自己拍的成品照、自己畫的示意圖。
@@ -338,3 +355,4 @@
 | 2026-10-02 | 幼兒階段改版：無螢幕、無印表機；第三目標改為「自己動手、專注做完」；新增 3D 列印版蒙特梭利漸縮塔教具說明、活動卡「疊漸縮塔」、4 堂課表；低年級加入低溫 3D 筆與螢幕時間規則，「先想再做」移到低年級；總覽工具表加 3D 筆 | 新增第十節（國健署、WHO、AAP、課綱、蒙特梭利、3Doodler 等） |
 | 2026-10-02 | 新增第十一節：其他蒙特梭利教具（幾何立體、彩色圓柱、棕色梯、構成三角形、嵌板）規格與 Printables／Cults3D／MakerWorld 現有列印檔；網頁尚未採用 | 新增第十一節來源 |
 | 2026-10-02 | 第十一節新增實體教具商品頁連結（台灣、香港、國際賣家），供對照尺寸與手感；網頁未採用 | 新增第十一節商品頁連結 |
+| 2026-10-02 | 第十一節新增粉紅塔以外教具（棕色梯、圓柱體、幾何立體組、構成三角形、幾何圖形櫃）的實體商品頁連結；網頁未採用 | 新增第十一節商品頁連結 |
