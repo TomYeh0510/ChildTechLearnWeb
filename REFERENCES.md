@@ -71,13 +71,56 @@
 | AI | 均一 AI 課 | https://www.junyiacademy.org/topics/cs-ai | — | 2026-10 |
 | AI | AI4K12 年級進程表 | https://ai4k12.org/gradeband-progression-charts/ | — | 2026-10 |
 
-## 五、尚缺來源（之後要補）
+## 五、3D 軟體的費用、限制與現況（「軟體階梯」表格與年齡圖）
 
-以下內容目前在網頁上，但還沒有附上原始連結：
+2026-10-02 查詢。部分官方網站無法從工作環境直接開啟，內容依搜尋引擎擷取的官方頁面摘要整理。
 
-- 軟體階梯的軟體現況：123D Design 已停止；Meshmixer、Sculptris 停止更新；SketchUp 網頁版可用。
-- 軟體階梯的適合年齡：Tinkercad 6–12 歲、Makers Empire 5–14 歲、SketchUp 10 歲以上、Fusion 360 / Onshape / Blender 12 歲以上、Cura / Bambu Studio 8 歲以上。
-- 總覽矩陣中程式、機器人、AI、軟體應用四條路線各年齡段的項目，例如 LEGO SPIKE Essential、mBot、SPIKE Prime、Arduino、App Inventor。
+| 軟體 | 來源 | 採用的內容 |
+| --- | --- | --- |
+| Tinkercad | Tinkercad 服務條款 https://www.autodesk.com/company/legal-notices-trademarks/terms-of-service-autodesk360-web-services/terms-of-service-for-tinkercad ；官網 https://www.tinkercad.com/ | 完全免費、無廣告、kidSAFE 認證；13 歲以下需家長同意，或由老師開班級、學生用班級代碼登入 |
+| Makers Empire | 價格 https://www.makersempire.com/pricing/ ；FAQ https://www.makersempire.com/frequently-asked-questions/ ；Common Sense 評論 https://www.commonsense.org/education/reviews/makers-empire | 個人在家免費；學校 Class 30 人 US$329/年、Maker 100 人 US$824/年、School US$1,149/年起、District 每生 US$3；付費含 150 份以上教案、班級管理、評量；學校可試用 2 週；對象幼兒園到國二（K–8） |
+| Fusion | 個人版比較 https://www.autodesk.com/products/fusion-360/personal ；訂閱類型 https://www.autodesk.com/products/fusion-360/blog/subscription-types/ ；續約說明 https://help.autodesk.com/view/fusion360/ENU/?caas=caas%2Fsfdcarticles%2Fsfdcarticles%2FHow-to-renew-your-hobbyist-enthusiast-license-for-Fusion-360.html ；教育版 https://www.autodesk.com/education/edu-software/fusion ；教育帳號年齡規定 https://damassets.autodesk.net/content/dam/autodesk/www/Company/legal-notices-trademarks/education-special-terms/minimum-age-requirements-for-education-community-and-education-access.pdf | 教育版：學生、老師免費、功能完整，資格維持可續用。個人版：非商業、年收入低於 US$1,000；同時 10 個可編輯文件；無模擬、生成式設計、多軸加工；3 年到期可續。Autodesk 教育帳號須滿 13 歲 |
+| Onshape | 教育方案 https://www.onshape.com/en/education/plans ；價格 https://www.onshape.com/en/pricing ；教育訂閱說明 https://cad.onshape.com/help/Content/manage_edu_account.htm | 教育版免費，文件不公開、只分享給指定的人；Free 方案所有文件公開、不能建私人文件；13 歲以下由大人協助建立帳號 |
+| Blender | 授權 https://www.blender.org/about/license/ | GPL 開源，任何用途（含教學、商業）都免費 |
+| SketchUp | SketchUp for Schools FAQ https://help.sketchup.com/en/sketchup-education/sketchup-schools-faq ；下載頁 https://sketchup.trimble.com/en/try-sketchup | 學校版：中小學透過 Google 或 Microsoft 教育帳號免費、符合 COPPA；SketchUp Free 不符合 COPPA、不支援外掛、限非商業 |
+| Cura | https://en.wikipedia.org/wiki/Cura_(software) | LGPLv3 開源免費（2017-09-28 由 AGPL 改為 LGPL） |
+| Bambu Studio | https://blog.bambulab.com/agpl-compliance-of-bambu-studio/ | AGPL 開源免費 |
+| 123D Design | https://en.wikipedia.org/wiki/Autodesk_123D ；Autodesk 替代方案 https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Alternatives-to-123D.html | 2017-03-31 停止並下架 |
+| Meshmixer | Autodesk App Store https://apps.autodesk.com/FUSION/en/Detail/Index?id=4108920185261935100&appLang=en&os=Win64 | 停止開發與支援，但仍可免費下載使用 |
+| Sculptris | CG Channel https://www.cgchannel.com/2020/06/pixologic-launches-free-zbrushcoremini-edition-of-zbrush/ | 已停止，官網導向 ZBrushCoreMini（免費、限非商業） |
+
+年齡依據：Tinkercad 6–12 歲、Fusion / Onshape 12 歲以上取自 Nozzle Down（第一節）；Makers Empire 取自官方（K–8）；SketchUp 10 歲以上依碧華國小的國小教學實例；切片 8 歲以上是本路線的建議。
+
+## 六、總覽各路線工具的費用與年齡（總覽「工具費用與年齡依據」）
+
+2026-10-02 查詢；價格為官方美元定價。
+
+| 路線 | 工具 | 來源 | 採用的內容 |
+| --- | --- | --- | --- |
+| 程式 | ScratchJr | https://www.scratchjr.org/ | 5–7 歲，免費 |
+| 程式 | Code.org CS Fundamentals | https://code.org/curriculum/csf ；https://support.code.org/hc/en-us/articles/26001058366093-Teaching-Computer-Science-Fundamentals-Courses-A-F | Course A＝幼兒園、B＝1 年級、C＝2 年級、D＝3 年級、E＝4 年級、F＝5 年級；每門 13–17 堂、每堂 45 分鐘；免費 |
+| 程式 | Scratch | https://scratch.mit.edu/ | 8–16 歲，免費 |
+| 程式 | MIT App Inventor | https://appinventor.mit.edu/FAQ ；https://raise.mit.edu/resources/mit-app-inventor/ | 免費 |
+| 機器人 | Bee-Bot | https://www.lakeshorelearning.com/products/stem/building-engineering/bee-botsup-sup-programmable-robot/p/BT363/ | 3 歲以上；約 US$100–130 |
+| 機器人 | LEGO SPIKE Essential | https://education.lego.com/en-us/products/lego-education-spike-essential-set/45345/ | 6 歲以上；US$359.95 |
+| 機器人 | LEGO SPIKE Prime | https://education.lego.com/en-us/products/lego-education-spike-prime-set/45678/ | 10 歲以上；US$429.95 |
+| 機器人 | micro:bit | https://microbit.org/get-started/what-is-the-microbit/ ；https://microbit.org/uk-primary/ | 8 歲以上；小學教案從 8–9 歲開始；MakeCode 與教案免費，板子需購買 |
+| 機器人 | mBot | https://www.amazon.com/Makeblock-Robotics-Scratch-Arduino-Coding/dp/B00SK5RUQY | Makeblock 標示 8 歲以上 |
+| 機器人 | Arduino | 教育入門套件 FAQ https://content.arduino.cc/assets/Arduino%20Education%20Starter%20Kit%20FAQ_v2.pdf ；UNO https://store-usa.arduino.cc/products/arduino-uno-rev3 ；IDE https://github.com/arduino/Arduino | 教育入門套件為 11–14 歲；IDE 開源免費；UNO 約 US$27.6 |
+| AI | Quick, Draw! | https://en.wikipedia.org/wiki/Quick,_Draw! | 免費、免帳號 |
+| AI | Teachable Machine | https://teachablemachine.withgoogle.com/ ；https://www.techlearning.com/how-to/what-is-teachable-machine-how-to-use-it-to-teach | 免費、免帳號 |
+| AI | 教育部「和 AI 做朋友」 | https://market.cloud.edu.tw/resources/web/1798164 ；教育部新聞 https://www.edu.tw/News_Content.aspx?n=9E7AC85F1954DDA8&s=785274C9C54578B3 ；自由時報 https://news.ltn.com.tw/news/life/breakingnews/2882786 | 免費；國小版《我和AI一起學》為三至六年級 |
+| AI | ChatGPT | https://help.openai.com/en/articles/8313401-is-chatgpt-safe-for-all-ages | 13 歲以上；13–17 歲需家長同意 |
+| AI | Gemini | https://workspaceupdates.googleblog.com/2024/10/gemini-app-access-for-teen-students-workspace-education.html | 13 歲以上（各國規定可能不同）；13–17 歲套用青少年保護 |
+| 軟體應用 | Canva 教育版 | https://www.canva.com/help/about-canva-for-education/ ；https://www.canva.com/education/eligibility-guidelines/ | 中小學師生免費含進階功能；學生需老師邀請 |
+| 軟體應用 | Microsoft Office 365 A1 | https://www.microsoft.com/en-us/education/products/office | 教育帳號免費使用網頁版 Word、Excel、PowerPoint |
+
+## 七、尚缺來源（之後要補）
+
+- SketchUp 10 歲以上、切片軟體 8 歲以上：目前是依學校實例與本路線安排，沒有官方年齡建議。
+- Quick, Draw!、Teachable Machine、App Inventor、不插電活動的年齡：官方沒有標示，網頁上已標「本路線建議」。
+- micro:bit、mBot 的價格：沒有查到官方定價。
+- 總覽矩陣裡的幼兒「分類遊戲」、「平板基本操作」，以及低年級的「語音助理」：屬於一般活動，沒有特定來源。
 
 ---
 
@@ -90,3 +133,4 @@
 | 2026-10-02 | 程式建模移出 3D 路線 | Tinkercad Codeblocks、BlocksCAD 改列到程式設計路線 |
 | 2026-10-02 | 能力框架分頁併入分齡細節（高年級、國中卡片） | CREATE Education 框架改放在分齡細節 |
 | 2026-10-02 | 建立本檔案，整理所有來源 | — |
+| 2026-10-02 | 補上尚缺來源；軟體階梯加「費用」與「免費與付費的差別、限制」；總覽加「工具費用與年齡依據」 | 新增第五、六節所有來源；發現 Autodesk 教育帳號須滿 13 歲，已寫進軟體階梯 |

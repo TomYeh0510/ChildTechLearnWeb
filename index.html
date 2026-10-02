@@ -136,6 +136,8 @@ li{margin:2px 0}
 .status{display:inline-block;font-size:.75rem;padding:1px 8px;border-radius:999px;white-space:nowrap;font-weight:500}
 .ok{background:var(--accent-soft);color:var(--accent)}
 .old{background:var(--warn-soft);color:var(--warn)}
+.mix{background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+.paid{background:var(--ink);color:var(--surface)}
 
 /* resources */
 .res{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
@@ -343,6 +345,32 @@ html{scroll-behavior:smooth}
     </tbody>
   </table></div>
   </details>
+  <details>
+  <summary>工具費用與年齡依據</summary>
+  <div class="tbl"><table>
+    <thead><tr><th>路線</th><th>工具</th><th>年齡</th><th>費用</th><th>說明</th><th>來源</th></tr></thead>
+    <tbody>
+      <tr><td>程式</td><td><b>不插電：指令卡、走格子</b></td><td>幼兒（本路線建議）</td><td><span class="status ok">免費</span></td><td>自製卡片和地墊即可</td><td></td></tr>
+      <tr><td>程式</td><td><b>ScratchJr</b></td><td>5–7 歲</td><td><span class="status ok">免費</span></td><td>iPad、Android、Chromebook App</td><td><a href="https://www.scratchjr.org/">ScratchJr</a></td></tr>
+      <tr><td>程式</td><td><b>Code.org 基礎課程 Course A–F</b></td><td>A 幼兒園大班；B–C 小一–小二；D–E 小三–小四；F 小五</td><td><span class="status ok">免費</span></td><td>每門 13–17 堂、每堂約 45 分鐘</td><td><a href="https://code.org/curriculum/csf">Code.org CSF</a>、<a href="https://support.code.org/hc/en-us/articles/26001058366093-Teaching-Computer-Science-Fundamentals-Courses-A-F">說明</a></td></tr>
+      <tr><td>程式</td><td><b>Scratch</b></td><td>8–16 歲</td><td><span class="status ok">免費</span></td><td>網頁版免安裝</td><td><a href="https://scratch.mit.edu/">Scratch</a></td></tr>
+      <tr><td>程式</td><td><b>MIT App Inventor</b></td><td>國中（本路線建議）</td><td><span class="status ok">免費</span></td><td>積木做 Android / iOS App</td><td><a href="https://appinventor.mit.edu/FAQ">App Inventor FAQ</a></td></tr>
+      <tr><td>機器人</td><td><b>按鍵式地板機器人（如 Bee-Bot）</b></td><td>3 歲以上</td><td><span class="status paid">需購買</span></td><td>單台約 US$100–130</td><td><a href="https://www.lakeshorelearning.com/products/stem/building-engineering/bee-botsup-sup-programmable-robot/p/BT363/">Bee-Bot</a></td></tr>
+      <tr><td>機器人</td><td><b>LEGO SPIKE Essential</b></td><td>6 歲以上</td><td><span class="status paid">需購買</span></td><td>教育套組 US$359.95；需搭配免費 App</td><td><a href="https://education.lego.com/en-us/products/lego-education-spike-essential-set/45345/">LEGO Education</a></td></tr>
+      <tr><td>機器人</td><td><b>micro:bit</b></td><td>8 歲以上（官方教案從 8–9 歲開始）</td><td><span class="status mix">部分免費</span></td><td>板子需購買；MakeCode 編輯器與教案免費</td><td><a href="https://microbit.org/get-started/what-is-the-microbit/">micro:bit</a>、<a href="https://microbit.org/uk-primary/">小學教案</a></td></tr>
+      <tr><td>機器人</td><td><b>mBot</b></td><td>8 歲以上</td><td><span class="status paid">需購買</span></td><td>整台機器人需購買；mBlock 軟體免費</td><td><a href="https://www.amazon.com/Makeblock-Robotics-Scratch-Arduino-Coding/dp/B00SK5RUQY">Makeblock 商品頁</a></td></tr>
+      <tr><td>機器人</td><td><b>LEGO SPIKE Prime</b></td><td>10 歲以上</td><td><span class="status paid">需購買</span></td><td>教育套組 US$429.95</td><td><a href="https://education.lego.com/en-us/products/lego-education-spike-prime-set/45678/">LEGO Education</a></td></tr>
+      <tr><td>機器人</td><td><b>Arduino</b></td><td>11–14 歲（教育入門套件）</td><td><span class="status mix">部分免費</span></td><td>Arduino IDE 開源免費；UNO 板約 US$27.6，套件另購</td><td><a href="https://content.arduino.cc/assets/Arduino%20Education%20Starter%20Kit%20FAQ_v2.pdf">Arduino 教育套件 FAQ</a>、<a href="https://store-usa.arduino.cc/products/arduino-uno-rev3">UNO</a></td></tr>
+      <tr><td>AI</td><td><b>Quick, Draw!</b></td><td>低年級起（本路線建議）</td><td><span class="status ok">免費</span></td><td>免帳號、免下載</td><td><a href="https://en.wikipedia.org/wiki/Quick,_Draw!">Quick, Draw!</a></td></tr>
+      <tr><td>AI</td><td><b>Teachable Machine</b></td><td>中年級起（本路線建議）</td><td><span class="status ok">免費</span></td><td>免帳號，在瀏覽器訓練圖片、聲音、姿勢辨識</td><td><a href="https://teachablemachine.withgoogle.com/">Teachable Machine</a>、<a href="https://www.techlearning.com/how-to/what-is-teachable-machine-how-to-use-it-to-teach">介紹</a></td></tr>
+      <tr><td>AI</td><td><b>教育部「和 AI 做朋友」系列</b></td><td>國小版《我和AI一起學》為三至六年級</td><td><span class="status ok">免費</span></td><td>教育大市集免費下載</td><td><a href="https://market.cloud.edu.tw/resources/web/1798164">教育大市集</a>、<a href="https://www.edu.tw/News_Content.aspx?n=9E7AC85F1954DDA8&amp;s=785274C9C54578B3">教育部新聞</a></td></tr>
+      <tr><td>AI</td><td><b>生成式 AI（ChatGPT、Gemini）</b></td><td>13 歲以上；13–17 歲需家長同意</td><td><span class="status mix">部分免費</span></td><td>有免費版；未滿 18 歲自動套用青少年保護</td><td><a href="https://help.openai.com/en/articles/8313401-is-chatgpt-safe-for-all-ages">OpenAI</a>、<a href="https://workspaceupdates.googleblog.com/2024/10/gemini-app-access-for-teen-students-workspace-education.html">Google</a></td></tr>
+      <tr><td>軟體應用</td><td><b>Canva 教育版</b></td><td>中小學</td><td><span class="status ok">免費</span></td><td>中小學師生免費含進階功能；學生需由老師邀請加入</td><td><a href="https://www.canva.com/help/about-canva-for-education/">Canva Education</a></td></tr>
+      <tr><td>軟體應用</td><td><b>Word、Excel、PowerPoint</b></td><td>中小學</td><td><span class="status mix">部分免費</span></td><td>學校教育帳號可免費用網頁版（Office 365 A1）；桌面版另購</td><td><a href="https://www.microsoft.com/en-us/education/products/office">Microsoft 教育版</a></td></tr>
+    </tbody>
+  </table></div>
+  <p class="src">2026-10-02 查詢；價格為官方美元定價，台灣代理價可能不同。「免費」＝完全免費；「部分免費」＝有免費版或軟體免費但有限制、硬體另購；「需購買」＝要買硬體或授權。標「本路線建議」的年齡是本網頁的安排，其餘來自官方。</p>
+  </details>
   <p class="src">其他四條路線的細節之後依同樣格式補充，每條路線會像 3D 列印一樣，在上方有自己的一組分頁。</p>
 </section>
 
@@ -473,7 +501,7 @@ html{scroll-behavior:smooth}
 <!-- ============ SOFTWARE ============ -->
 <section id="software">
   <h2>軟體階梯</h2>
-  <p class="lead">主線是 Tinkercad → Fusion 360 / Onshape。碧華國小網站介紹的部分軟體已經停止更新，排新課時建議用右欄的替代品。</p>
+  <p class="lead">主線是 Tinkercad → Fusion / Onshape，全部都能免費使用。碧華國小網站介紹的部分軟體已經停止更新，排新課時建議用表格裡的替代品。</p>
   <div class="chart">
     <h3>各軟體適合的年齡</h3>
     <div class="legend"><span><i style="--c:var(--accent)"></i>主線</span><span><i style="--c:var(--muted)"></i>其他選擇</span><span>色條淡出 = 該年齡以上都適用</span></div>
@@ -481,20 +509,21 @@ html{scroll-behavior:smooth}
     <p class="src">只畫有年齡建議、且仍在更新的軟體；已停止的見下表。用程式產生模型的工具（Tinkercad Codeblocks、BlocksCAD）歸到程式設計路線。滑鼠移到色條上看說明。</p>
   </div>
   <div class="tbl"><table>
-    <thead><tr><th>軟體</th><th>類型</th><th>適合</th><th>現況</th><th>說明</th></tr></thead>
+    <thead><tr><th>軟體</th><th>類型</th><th>適合</th><th>費用</th><th>免費與付費的差別、限制</th><th>現況</th></tr></thead>
     <tbody>
-      <tr><td><b>Tinkercad</b></td><td>積木式建模（網頁）</td><td>6–12 歲</td><td><span class="status ok">持續更新</span></td><td>主力入門工具，免安裝、有中文介面</td></tr>
-      <tr><td><b>Makers Empire</b></td><td>兒童建模 App</td><td>5–14 歲</td><td><span class="status ok">持續更新</span></td><td>比 Tinkercad 更好上手，適合低年級；進階功能需訂閱</td></tr>
-      <tr><td><b>Fusion 360</b></td><td>參數化 CAD</td><td>12 歲以上</td><td><span class="status ok">持續更新</span></td><td>教育版免費；CREATE 框架的範例軟體</td></tr>
-      <tr><td><b>Onshape</b></td><td>參數化 CAD（網頁）</td><td>12 歲以上</td><td><span class="status ok">持續更新</span></td><td>瀏覽器即可用，適合學校電腦</td></tr>
-      <tr><td><b>Blender</b></td><td>雕塑、造型</td><td>12 歲以上</td><td><span class="status ok">持續更新</span></td><td>做角色、生物等有機造型</td></tr>
-      <tr><td><b>SketchUp</b></td><td>快速建模</td><td>10 歲以上</td><td><span class="status ok">網頁版可用</span></td><td>碧華國小用於平面圖、建築、螺旋梯</td></tr>
-      <tr><td><b>Cura / Bambu Studio</b></td><td>切片</td><td>8 歲以上（大人陪同）</td><td><span class="status ok">持續更新</span></td><td>依印表機品牌選擇</td></tr>
-      <tr><td><b>123D Design</b></td><td>建模</td><td>—</td><td><span class="status old">已停止</span></td><td>碧華國小有收納盒、高跟鞋、摩艾範例；新課改用 Tinkercad 或 Fusion 360</td></tr>
-      <tr><td><b>Meshmixer</b></td><td>模型修復、拆件</td><td>—</td><td><span class="status old">停止更新</span></td><td>碧華國小教布林運算、拆件、卡榫；拆件可改在 Tinkercad 或 Fusion 360 做</td></tr>
-      <tr><td><b>Sculptris</b></td><td>雕塑</td><td>—</td><td><span class="status old">停止更新</span></td><td>可改用 Blender</td></tr>
+      <tr><td><b>Tinkercad</b></td><td>積木式建模（網頁）</td><td>6–12 歲</td><td><span class="status ok">免費</span></td><td>完全免費、無廣告。13 歲以下要由家長同意，或由老師開班級、學生用班級代碼登入。</td><td><span class="status ok">持續更新</span></td></tr>
+      <tr><td><b>Makers Empire</b></td><td>兒童建模 App</td><td>5–14 歲（幼兒園到國二）</td><td><span class="status mix">部分免費</span></td><td>個人在家免費。學校方案年費：30 人 US$329、100 人 US$824、全校 US$1,149 起；付費才有 150 份以上教案、班級管理與評量。學校可免費試用 2 週。</td><td><span class="status ok">持續更新</span></td></tr>
+      <tr><td><b>Fusion</b></td><td>參數化 CAD</td><td>12 歲以上（帳號須滿 13 歲）</td><td><span class="status mix">部分免費</span></td><td>教育版：學生、老師免費、功能完整，資格維持就能續用。個人版：免費但限非商業、年收入低於 US$1,000，同時只能有 10 個可編輯文件，沒有模擬、生成式設計等進階功能，3 年到期可續。<b>Autodesk 教育帳號須滿 13 歲</b>，國一生日前可先用 Onshape。</td><td><span class="status ok">持續更新</span></td></tr>
+      <tr><td><b>Onshape</b></td><td>參數化 CAD（網頁）</td><td>12 歲以上</td><td><span class="status mix">部分免費</span></td><td>教育版免費，文件只分享給指定的人。一般 Free 方案也免費，但所有文件都會公開、不能建私人文件。13 歲以下由大人協助建立帳號。</td><td><span class="status ok">持續更新</span></td></tr>
+      <tr><td><b>Blender</b></td><td>雕塑、造型</td><td>12 歲以上</td><td><span class="status ok">免費</span></td><td>開源軟體（GPL），任何用途都免費，包括教學與商業，沒有付費版。</td><td><span class="status ok">持續更新</span></td></tr>
+      <tr><td><b>SketchUp</b></td><td>快速建模</td><td>10 歲以上</td><td><span class="status mix">部分免費</span></td><td>學校版 SketchUp for Schools：中小學用 Google 或 Microsoft 教育帳號免費使用，符合兒童隱私規範（COPPA）。個人 SketchUp Free 免費但不符合 COPPA、不能裝外掛、限非商業；完整功能要買 Go / Pro。</td><td><span class="status ok">網頁版可用</span></td></tr>
+      <tr><td><b>Cura / Bambu Studio</b></td><td>切片</td><td>8 歲以上（大人陪同）</td><td><span class="status ok">免費</span></td><td>都是開源免費軟體（Cura：LGPLv3；Bambu Studio：AGPL），沒有付費版。依印表機品牌選擇。</td><td><span class="status ok">持續更新</span></td></tr>
+      <tr><td><b>123D Design</b></td><td>建模</td><td>—</td><td><span class="status old">已下架</span></td><td>Autodesk 在 2017-03-31 停止並下架。碧華國小有收納盒、高跟鞋、摩艾範例；新課改用 Tinkercad 或 Fusion。</td><td><span class="status old">已停止</span></td></tr>
+      <tr><td><b>Meshmixer</b></td><td>模型修復、拆件</td><td>—</td><td><span class="status ok">免費</span></td><td>仍可免費下載使用，但 Autodesk 已停止開發與支援。碧華國小教布林運算、拆件、卡榫；拆件可改在 Tinkercad 或 Fusion 做。</td><td><span class="status old">停止開發</span></td></tr>
+      <tr><td><b>Sculptris</b></td><td>雕塑</td><td>—</td><td><span class="status old">已下架</span></td><td>官網已導向 ZBrushCoreMini（免費、限非商業）。也可改用 Blender。</td><td><span class="status old">已停止</span></td></tr>
     </tbody>
   </table></div>
+  <p class="src">費用與限制來源（2026-10-02 查詢）：<a href="https://www.autodesk.com/company/legal-notices-trademarks/terms-of-service-autodesk360-web-services/terms-of-service-for-tinkercad">Tinkercad 服務條款</a>、<a href="https://www.makersempire.com/pricing/">Makers Empire 價格</a>、<a href="https://www.autodesk.com/products/fusion-360/personal">Fusion 個人版比較</a>、<a href="https://damassets.autodesk.net/content/dam/autodesk/www/Company/legal-notices-trademarks/education-special-terms/minimum-age-requirements-for-education-community-and-education-access.pdf">Autodesk 教育帳號年齡規定</a>、<a href="https://www.onshape.com/en/education/plans">Onshape 教育方案</a>、<a href="https://www.onshape.com/en/pricing">Onshape 價格</a>、<a href="https://www.blender.org/about/license/">Blender 授權</a>、<a href="https://help.sketchup.com/en/sketchup-education/sketchup-schools-faq">SketchUp for Schools FAQ</a>、<a href="https://en.wikipedia.org/wiki/Cura_(software)">Cura</a>、<a href="https://blog.bambulab.com/agpl-compliance-of-bambu-studio/">Bambu Studio 授權</a>、<a href="https://en.wikipedia.org/wiki/Autodesk_123D">Autodesk 123D</a>、<a href="https://apps.autodesk.com/FUSION/en/Detail/Index?id=4108920185261935100&amp;appLang=en&amp;os=Win64">Meshmixer</a>、<a href="https://www.cgchannel.com/2020/06/pixologic-launches-free-zbrushcoremini-edition-of-zbrush/">Sculptris → ZBrushCoreMini</a>。價格為官方美元定價，台灣代理價可能不同。<br>年齡依據：Tinkercad、Fusion / Onshape 12 歲以上取自 <a href="https://nozzledown.com/tinkercad-kids-tutorial-parent-guide/">Nozzle Down</a>；Makers Empire 取自官方（幼兒園到國二）；SketchUp 10 歲以上依碧華國小的國小教學實例；切片 8 歲以上是本路線的建議（中年級開始認識切片，機器由大人操作）。</p>
 </section>
 
 <!-- ============ SAFETY ============ -->
@@ -720,15 +749,15 @@ html{scroll-behavior:smooth}
   }
   axisChart(document.getElementById('swchart'), 3, 17, [
     {group:'建模入門'},
-    sw('Makers Empire', '兒童建模 App', 5, 14, false, '比 Tinkercad 更好上手，適合低年級'),
-    sw('Tinkercad', '積木式建模', 6, 12, true, '主力入門工具，免安裝、有中文介面'),
-    sw('SketchUp', '快速建模', 10, 0, false, '平面圖、建築、螺旋梯'),
+    sw('Makers Empire', '兒童建模 App', 5, 14, false, '比 Tinkercad 更好上手；個人免費，學校方案付費'),
+    sw('Tinkercad', '積木式建模', 6, 12, true, '完全免費；13 歲以下由家長或老師班級帳號登入'),
+    sw('SketchUp', '快速建模', 10, 0, false, '學校版用教育帳號免費'),
     {group:'進階建模'},
-    sw('Fusion 360', '參數化 CAD', 12, 0, true, '教育版免費；CREATE 框架的範例軟體'),
-    sw('Onshape', '參數化 CAD（網頁）', 12, 0, true, '瀏覽器即可用，適合學校電腦'),
-    sw('Blender', '雕塑、造型', 12, 0, false, '做角色、生物等有機造型'),
+    sw('Fusion', '參數化 CAD', 12, 0, true, '教育版免費；Autodesk 帳號須滿 13 歲'),
+    sw('Onshape', '參數化 CAD（網頁）', 12, 0, true, '教育版免費；13 歲以下由大人協助開帳號'),
+    sw('Blender', '雕塑、造型', 12, 0, false, '開源，完全免費'),
     {group:'切片'},
-    sw('Cura / Bambu', '切片軟體', 8, 0, false, '8 歲以上，大人陪同；依印表機品牌選擇')
+    sw('Cura / Bambu', '切片軟體', 8, 0, false, '開源，完全免費；大人陪同')
   ]);
 
   /* tooltip for chart bars (hover + keyboard focus) */
