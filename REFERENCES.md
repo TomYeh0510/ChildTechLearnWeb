@@ -242,6 +242,39 @@
 - 原因：數百層數不完；幼兒不看螢幕、不需要印表機在場；「先畫再做」需要國小以上的繪畫與表達能力，整組移到低年級。
 - 「知道這些是印出來的」不列為幼兒目標：重點是過程中學到的東西，孩子長大接觸列印後會自然連結。
 
+## 十一、其他蒙特梭利教具的規格與現有列印檔（2026-10-02，尚未用於網頁）
+
+2026-10-02 為評估「第二套、第三套教具」查證。**網頁尚未採用**；決定製作後再引用，並標證據標籤。
+
+### 原版教具規格
+
+| 教具 | 規格 | 來源 |
+| --- | --- | --- |
+| 粉紅塔（第一套的原型） | 10 個立方體，邊長 1–10 cm，單色，3–6 歲 | https://guidepostmontessori.com/blog/the-montessori-pink-tower/ |
+| 幾何立體組 | 10 個立體：三角柱、長方柱、立方體、圓柱、圓錐、三角錐、方錐、球、橢圓體、蛋形體；高約 10 cm；底座 21 × 21 × 5 cm；全部藍色以隔離顏色變因；3–6 歲 | https://reachformontessori.com/geometric-solids/ ；https://handsonmontessori.ca/product/montessori-geometric-solids-sensorial-material/ ；https://en.wikipedia.org/wiki/Montessori_sensorial_materials |
+| 彩色圓柱（無柄） | 4 盒各 10 個。紅：直徑 1–5.5 cm、高固定 5.5 cm；黃：直徑與高一起由 1 增至 5.5 cm；綠：直徑增、高減；藍：直徑固定、高由 1 增至 5.5 cm。盒子約 15 × 11.8 × 6.8 cm（各廠略有差異） | https://absorbentminds.co.uk/products/knobless-cylinders-1 ；https://kidadvance.com/knobless-cylinders.html |
+| 有柄圓柱 | 4 塊木座各 10 個洞，圓柱粗細或高度漸變，頂端有小柄；談變化維度 | https://amshq.org/blog/uncategorized/2023-01-20-montessori-knobbed-cylinders-introduction/ |
+| 棕色梯 | 10 根長條，截面由 1 × 1 cm 到 10 × 10 cm，長度固定 20 cm；約 2.5–5 歲；變化兩個維度 | https://montessorimom.com/brown-stair/ ；https://reachformontessori.com/the-montessori-brown-stair-activity-and-extensions/ |
+| 構成三角形 | 5 盒（2 個長方形盒、1 個三角形盒、1 個大六角形盒、1 個小六角形盒）；先用幾何圖形櫃再用本教具 | https://reachformontessori.com/constructive-triangles/ ；https://www.montessorialbum.com/montessori/index.php/Constructive_Triangles_-_Rectangular_Box |
+| 幾何圖形櫃（嵌板） | 平面形狀嵌板，介紹平面形與幾何語彙 | https://montessorimom.com/geometric-cabinet/ |
+
+### 已有的 3D 列印檔（上傳前先看，找出差異化）
+
+| 檔案 | 平台 | 備註 |
+| --- | --- | --- |
+| Montessori Cylinder Blocks（Chileo） | Printables https://www.printables.com/model/637331-montessori-cylinder-blocks | 同高、同直徑、直徑與高同時變化等配置 |
+| Montessori Blocks and Barrels（zoltanf） | Printables https://www.printables.com/model/86940-montessori-blocks-and-barrels | 方塊與桶的大小配對 |
+| Pink Montessori Tower（DDC3D、dagomafr） | Cults3D https://cults3d.com/en/3d-model/game/tour-rose-montessori ；https://cults3d.com/en/3d-model/game/torre-rosa-montessori | 免費 STL，粉紅塔 |
+| Montessori Pink Tower（雷切版） | Thingiverse https://www.thingiverse.com/thing:2763806/files | 立方體 2–10，雷射切割 |
+| Montessori Tower（QuiqueCrimson） | MakerWorld https://makerworld.com/en/models/2481642-montessori-tower | 約 15 cm 高、約 4.8 小時；偏遊戲式塔，不是傳統粉紅塔 |
+| Stacking tower game | MakerWorld https://makerworld.com/en/models/114643-stacking-tower-game-for-children-baby-montessori | 12 個月以上疊疊樂 |
+
+**判斷（編者）**：粉紅塔、圓柱體組在 Printables、Cults3D 已有檔案；MakerWorld 上沒有看到「方形漸縮塔＋中文課程卡＋年齡規劃」的完整組合，差異化在整套教學，不在單一檔案。
+
+### 圖片使用
+
+上列網站的實物照片有著作權，不放進網頁、也不放進 MakerWorld 說明。可用的圖片：自己拍的成品照、自己畫的示意圖。
+
 ## 九、查證狀態與尚缺來源
 
 ### 查證狀態
@@ -286,3 +319,4 @@
 | 2026-10-02 | 版面調整：選取狀態改為整個反色（年齡分頁、從這裡開始、導覽列、教材圖表選取列），並新增對比檢查；無內容變更 | 無新來源 |
 | 2026-10-02 | 分齡細節幼兒卡：每個學習目標加上「怎麼學」具體做法（編者建議，尚待試帶） | 無新來源，已列入「尚缺來源」 |
 | 2026-10-02 | 幼兒階段改版：無螢幕、無印表機；第三目標改為「自己動手、專注做完」；新增 3D 列印版蒙特梭利漸縮塔教具說明、活動卡「疊漸縮塔」、4 堂課表；低年級加入低溫 3D 筆與螢幕時間規則，「先想再做」移到低年級；總覽工具表加 3D 筆 | 新增第十節（國健署、WHO、AAP、課綱、蒙特梭利、3Doodler 等） |
+| 2026-10-02 | 新增第十一節：其他蒙特梭利教具（幾何立體、彩色圓柱、棕色梯、構成三角形、嵌板）規格與 Printables／Cults3D／MakerWorld 現有列印檔；網頁尚未採用 | 新增第十一節來源 |
