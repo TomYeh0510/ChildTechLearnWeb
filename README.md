@@ -18,6 +18,7 @@
 | `CLAUDE.md` | 給 Claude Code 的專案說明與待辦 |
 | `REFERENCES.md` | 所有參考資料與來源連結、更新紀錄 |
 | `BRAND.md` | 網站名稱的定案與備選、命名理由 |
+| `REVIEW.md` | 外部審查意見與逐項評估追蹤 |
 
 ## 怎麼看
 
