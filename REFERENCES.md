@@ -271,6 +271,23 @@
 
 **判斷（編者）**：粉紅塔、圓柱體組在 Printables、Cults3D 已有檔案；MakerWorld 上沒有看到「方形漸縮塔＋中文課程卡＋年齡規劃」的完整組合，差異化在整套教學，不在單一檔案。
 
+### 實體教具商品頁（看實物、量尺寸、對照用；2026-10-02，搜尋結果，商品頁本身尚未逐一開啟）
+
+| 地區 | 賣家 | 連結 | 備註 |
+| --- | --- | --- | --- |
+| 台灣 | 蒙特梭利兒童教育學會 | 粉紅塔 https://www.asia-montessori.com.tw/public/view.php?mseq=003&main=4&sub=1&id=116 ；教具列表 http://www.asia-montessori.com.tw/public/index_prod.php?mseq=003&main=4&sub=1&ssub=11 | 搜尋摘要顯示粉紅塔約 1800 元、小套棕色梯約 2500 元、圓柱體投入盒約 900 元（**價格未確認，以官網為準**）；可電話聯絡訂購 |
+| 台灣 | Pinkoi（設計與手作平台） | https://en.pinkoi.com/search?q=%E8%92%99%E7%89%B9%E6%A2%AD%E5%88%A9%E6%95%99%E5%85%B7 | 搜尋「蒙特梭利教具」，商品與賣家不固定 |
+| 台灣 | ABCiz | https://abciz.com/tw/m/goods/goodsdetail?id=d53a06697ee740ad8d1ca256fe4c1e56 | 粉紅塔商品頁 |
+| 香港 | 幼兒語文教材（gc.hk） | 粉紅塔 http://gc.hk/products/4517/%E8%92%99%E7%89%B9%E6%A2%AD%E5%88%A9%E6%84%9F%E5%AE%98%E6%95%99%E5%85%B7%EF%BC%8D%E7%B2%89%E7%B4%85%E5%A1%94-pink-tower/ ；幾何立體組 http://www.gc.hk/products/9349/蒙特梭利感官教具-幾何立體組/ ；分類 https://gc.hk/categories/montessori/ | 中文說明完整，幾何立體組附 11 片投影板說明，可看中文教具描述 |
+| 國際（AMI 認證） | Nienhuis | 粉紅塔 https://www.nienhuis.com/us/product/the-pink-tower/500_002400/ ；感官教具分類 https://www.nienhuis.com/us/a/assortment/sensorial/ ；3–6 歲網路商店 https://www.nienhuis.com/us/en/sensorial-3-6-webshop/page/1239/?CPI=2 | 山毛櫸木、1–1000 cm³、3 歲以上；規格最標準，適合當尺寸對照 |
+| 國際 | Alison's Montessori | 粉紅塔 https://www.alisonsmontessori.com/Pink_Tower_p/ps02.htm ；構成三角形 https://www.alisonsmontessori.com/Constructive_Triangles_p/s16.htm ；棕色梯 https://www.alisonsmontessori.com/Natural_Brown_Stairs_Premium_Quality_p/ps03.n.htm | 粉紅塔約 US$136（搜尋摘要） |
+| 國際 | Montessori Services | 感官卡片 https://www.montessoriservices.com/sensorial-cards | 另有配套卡片 |
+| 國際 | Pink Montessori | https://www.pinkmontessori.com/products/sensorial-classroom-package-1-13-premium-montessori-materials | 整班套組 |
+| 國際 | Jack Montessori | https://www.jackmontessorimaterial.com/collections/all/pink-tower | 粉紅塔 |
+| 購買建議 | Living Montessori Now | https://livingmontessorinow.com/montessori-sensorial-materials-i-recommend-buying/ | 家長推薦清單（部落格） |
+
+**編者建議**：做 3D 列印版之前，先借或買一個實體粉紅塔或棕色梯對照尺寸、手感、重量，比只看規格數字準；實物照片仍不可放進網頁或 MakerWorld。
+
 ### 圖片使用
 
 上列網站的實物照片有著作權，不放進網頁、也不放進 MakerWorld 說明。可用的圖片：自己拍的成品照、自己畫的示意圖。
@@ -320,3 +337,4 @@
 | 2026-10-02 | 分齡細節幼兒卡：每個學習目標加上「怎麼學」具體做法（編者建議，尚待試帶） | 無新來源，已列入「尚缺來源」 |
 | 2026-10-02 | 幼兒階段改版：無螢幕、無印表機；第三目標改為「自己動手、專注做完」；新增 3D 列印版蒙特梭利漸縮塔教具說明、活動卡「疊漸縮塔」、4 堂課表；低年級加入低溫 3D 筆與螢幕時間規則，「先想再做」移到低年級；總覽工具表加 3D 筆 | 新增第十節（國健署、WHO、AAP、課綱、蒙特梭利、3Doodler 等） |
 | 2026-10-02 | 新增第十一節：其他蒙特梭利教具（幾何立體、彩色圓柱、棕色梯、構成三角形、嵌板）規格與 Printables／Cults3D／MakerWorld 現有列印檔；網頁尚未採用 | 新增第十一節來源 |
+| 2026-10-02 | 第十一節新增實體教具商品頁連結（台灣、香港、國際賣家），供對照尺寸與手感；網頁未採用 | 新增第十一節商品頁連結 |
