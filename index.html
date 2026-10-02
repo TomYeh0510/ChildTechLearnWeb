@@ -181,7 +181,8 @@ footer{padding-top:40px;font-size:.85rem;color:var(--muted);display:grid;gap:6px
 .mx .h{background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:8px;padding:6px 10px;line-height:1.3}
 .mx .h b{display:block;font-family:var(--f-display);font-size:1.02rem}
 .mx .h small{font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
-.mx .rh2{position:sticky;left:0;z-index:1;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px;display:grid;align-content:start;gap:4px;font-weight:700;font-size:.9rem;line-height:1.3}
+.mx .corner{position:sticky;left:0;z-index:2;background:var(--bg);box-shadow:0 0 0 4px var(--bg)}
+.mx .rh2{position:sticky;left:0;z-index:1;box-shadow:0 0 0 4px var(--bg);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px;display:grid;align-content:start;gap:4px;font-weight:700;font-size:.9rem;line-height:1.3}
 .mx .rh2 .ico{width:24px;height:24px;color:var(--accent)}
 .mx .rh2 small{font-weight:400;font-size:.72rem;color:var(--muted)}
 .mx .rh2.done small{color:var(--accent);font-weight:700}
@@ -696,7 +697,7 @@ html{scroll-behavior:smooth}
     var heads = Array.prototype.slice.call(document.querySelectorAll('#ovtable thead th')).slice(1);
     var rows = Array.prototype.slice.call(document.querySelectorAll('#ovtable tbody tr'));
     var icons = ['cube','code','robot','ai','app'];
-    var h = '<div></div>';
+    var h = '<div class="corner" aria-hidden="true"></div>';
     STAGES.forEach(function(s, i){ h += '<div class="h" style="--c:var(--l' + (i+1) + ')"><b>' + s.name + '</b><small>' + s.age + '</small></div>'; });
     heads.forEach(function(th, r){
       var done = r === 0;
