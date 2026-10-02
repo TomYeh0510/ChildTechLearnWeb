@@ -374,6 +374,26 @@
 - 教材資源卡片尚未標註證據類型（官方文件／教學實例／編者建議）。
 - 幼兒階段沒有線上教材卡（改用印好的教具）；漸縮塔檔案待 Tom 上傳 MakerWorld 後補連結。
 
+
+## 十四、其他路線在低年級（6–8 歲）的螢幕時間與課程安排檢查（2026-10-02）
+
+目的：確認程式、機器人、AI、軟體應用在低年級的來源，有沒有提到螢幕時間或實際課程安排。**本機連不到 code.org、sites.bc.edu、education.lego.com**，以下是搜尋摘要，尚待對照原文。
+
+| 路線／工具 | 來源 | 有提到的課程安排 | 有沒有提到螢幕時間 |
+| --- | --- | --- | --- |
+| ScratchJr | 波士頓學院 Coding as Another Language 課程 https://sites.bc.edu/codingasanotherlanguage/curricula/scratchjr-curricula/1st-grade-scratchjr/ ；Tufts DevTech Games 課程 https://sites.bc.edu/devtech/scratchjr/scratchjr-games-curricula/ | 幼兒園與二年級課程各約 18 小時，每堂約 45 分鐘；Games 課程 8 堂、每堂 45 分鐘；適用 K–2 | 沒有看到螢幕時間建議；課程以 45 分鐘為單位，超過本站「一次 30 分鐘」的規則 |
+| Code.org Course B–C | https://code.org/curriculum/csf ；https://code.org/curriculum/unplugged | 每門 13–17 堂、每堂 45 分鐘；課程內含不插電（unplugged）活動，例如「Move It, Move It」「Getting Loopy」 | 沒有看到螢幕時間建議；不插電活動可以降低螢幕時間，各堂中不插電的比例尚待對照原文 |
+| LEGO SPIKE Essential | LEGO Education 產品頁與常見問題 https://education.lego.com/en-us/product-resources/45345-spike-essential-resource-page/troubleshooting/spike-essential-faqs/ ；Teachwire https://www.teachwire.net/products/lego-education-spike-essential-set/ | 每個單元 7–8 堂、每堂 45 分鐘（含開放專題 2 × 45 分鐘）；每個單元約 6–10 小時；5 個單元對應 1–5 年級；每堂另有 30 分鐘以上的語文或數學延伸 | 需搭配 SPIKE App（平板或電腦）；沒有看到螢幕時間建議；積木組裝和機器人動手為主，螢幕只用於寫積木式程式 |
+| Quick, Draw!（AI） | 第三方評論 https://www.aitoolsforkids.com/ai-tools/quick-draw ；https://newliteracies.ai/guides/google-quick-draw/ | 第三方建議 5 歲以上由家長讀題、7 歲以上可自己玩、10 歲以上探索 AI 資料集概念；沒有帳號 | 沒有官方年齡或螢幕時間建議；年齡來自第三方，不是 Google 官方 |
+| 語音助理（Google Assistant、Alexa） | Google Family Link 說明 https://guidebooks.google.com/family-link/manage-apps/set-up-google-assistant?hl=en-us ；Alexa Kids https://developer.amazon.com/en-US/alexa/alexa-skills-kit/kids | 未滿 13 歲須由家長用 Family Link 加入孩子帳號；家長可選擇孩子能用的裝置與時段；Alexa 兒童技能指未滿 13 歲（美國）；Amazon 要求家長許可 | 家長可設定時段；沒有螢幕時間建議（語音助理本身不一定有螢幕） |
+| 軟體應用（滑鼠、小畫家、拍照錄音） | 沒有找到專門的課程或來源 | 沒有 | 沒有 |
+| 台灣課綱 | 108 課綱資訊網 https://12basic.edu.tw/108course/index.html ；教育部新聞 https://www.edu.tw/News_Content.aspx?n=9E7AC85F1954DDA8&s=7075025911FF0ACF ；翻轉教育 https://flipedu.parenting.com.tw/article/005378 | 國小沒有訂科技領綱，以「科技教育」「資訊教育」議題融入各領域；各縣市多從三年級開始排資訊課，例如新北三至六年級每週一節；三年級先認識資訊科技、輸入法與網際網路 | 沒有 |
+
+結論：
+- 所有查到的來源都沒有提到螢幕時間建議；課程單位是 45 分鐘，比本站低年級「一次 30 分鐘」的規則長。台灣課綱也沒有要求低年級上資訊課。
+- 低年級的程式與機器人，建議年齡和課程時長各有來源，螢幕時間的限制要由本站依 §13（國健署、護眼 123、WHO、AAP）自己定。
+- 要不要把 45 分鐘拆成兩段 20–30 分鐘，或把不插電活動放前面，是編者建議，不是來源的建議。
+
 ---
 
 ## 更新紀錄
@@ -419,3 +439,4 @@
 | 2026-10-02 | 首頁拿掉「16 項 3D 列印教材」統計（REVIEW B-8） | 無新來源 |
 | 2026-10-02 | 頁面移除「尚待試帶」標籤與標籤提示文字的「尚待實作驗證」；試帶狀態改只記在 md（`REFERENCES.md` 尚缺來源、`CLAUDE.md` 待辦） | 無新來源 |
 | 2026-10-02 | 第二次審查 B-1～B-7：手機總覽年齡卡、「孩子現在到哪一步」上移、標籤去重、各階段安全重點卡、低年級流程圖；安全重點引用既有來源（3Doodler 年齡 §8、MakerWorld 13 歲 §12、螢幕時間 §13） | 無新來源；安全重點中未標官方文件的條目為編者建議 |
+| 2026-10-02 | 新增第十四節：其他路線在低年級的螢幕時間與課程安排檢查（ScratchJr、Code.org、SPIKE Essential、Quick, Draw!、語音助理、台灣課綱）；網頁未改 | 新增來源見第十四節，原站連不到，尚待對照原文 |
