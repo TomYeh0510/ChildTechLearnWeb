@@ -305,6 +305,13 @@
 | 幾何圖形櫃（嵌板） | 國際 | Nienhuis 2025 價目表 https://publications-hg.cld.bz/Price-list-2025-USA-Nienhuis/4/ ；說明 https://montessorimom.com/geometric-cabinet/ | 價目表列有幾何圖形櫃 |
 | 各種教具 | 台灣／中國大陸 | Pinkoi https://www.pinkoi.com/search?q=%E8%92%99%E7%89%B9%E6%A2%AD%E5%88%A9+%E6%95%99%E5%85%B7 ；京東 https://www.jd.com/chanpin/1545279.html ；1688 https://tw.1688.com/item/-D7D8C9ABCCDDC3C9CACFBDCCBEDF.html | 大陸平台價格低、品質與尺寸差異大，只適合當外型參考，不建議當尺寸基準 |
 
+### 教具操作示範影片（使用者提供，2026-10-02）
+
+| 名稱 | 連結 | 備註 |
+| --- | --- | --- |
+| [VMI] SENSORIAL - Constructive Triangles : Triangular box - Discrimination of Shape（Vietnam Montessori Institute） | https://youtu.be/AJjvzQUqjp4 （https://www.youtube.com/watch?v=AJjvzQUqjp4） | 構成三角形（三角形盒）的操作示範。依搜尋結果，該機構頻道有多支感官教具影片。**影片內容工作環境無法觀看，只確認標題與頻道；使用者表示頻道內有許多教具的使用方式，需由 Tom 看過後指出要採用的部分** |
+| 感官教具指南 | https://himontessori.com/sensorial/ ；https://reachformontessori.com/montessori-sensorial-materials-by-age/ ；https://montepedia.com/wiki/Sensorial_Materials_(Montessori) | 各感官教具的依年齡列表與說明（搜尋結果，未逐一開啟） |
+
 ### 圖片使用
 
 上列網站的實物照片有著作權，不放進網頁、也不放進 MakerWorld 說明。可用的圖片：自己拍的成品照、自己畫的示意圖。
@@ -356,3 +363,4 @@
 | 2026-10-02 | 新增第十一節：其他蒙特梭利教具（幾何立體、彩色圓柱、棕色梯、構成三角形、嵌板）規格與 Printables／Cults3D／MakerWorld 現有列印檔；網頁尚未採用 | 新增第十一節來源 |
 | 2026-10-02 | 第十一節新增實體教具商品頁連結（台灣、香港、國際賣家），供對照尺寸與手感；網頁未採用 | 新增第十一節商品頁連結 |
 | 2026-10-02 | 第十一節新增粉紅塔以外教具（棕色梯、圓柱體、幾何立體組、構成三角形、幾何圖形櫃）的實體商品頁連結；網頁未採用 | 新增第十一節商品頁連結 |
+| 2026-10-02 | 第十一節新增使用者提供的 VMI 教具示範影片（構成三角形），並記錄感官教具指南連結；影片內容尚未採用 | 新增第十一節影片與指南連結 |
