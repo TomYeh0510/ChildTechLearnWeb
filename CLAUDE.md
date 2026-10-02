@@ -11,10 +11,10 @@ Tom 規劃的「兒童科技學習路線圖」：幼兒到國中的科技教材�
 ## 檔案結構
 - `index.html`：全部 HTML、CSS、JS 都在這一個檔案，不使用建置工具。
   - 導覽分兩層：第一層是路線（`總覽` + `[data-route="print3d"]` 3D 建模與列印）；選到 3D 時出現第二層 `#sub-print3d`。
-  - 所有分頁按鈕都是 `nav.top [data-tab]`，切換 `<section>`：overview（總覽），以及 3D 路線底下的 print3d、stages、framework、software、safety、resources。
+  - 所有分頁按鈕都是 `nav.top [data-tab]`，切換 `<section>`：overview（總覽），以及 3D 路線底下的 print3d、stages、software、safety、resources。
   - 之後新增其他路線時，比照 3D：加一個 `data-route` 按鈕和一列子分頁。
-  - 圖表（總覽矩陣、能力框架對照圖、軟體年齡圖、教材數量圖）都由 JS 依頁面資料產生，不用外部函式庫。
-  - 「分齡細節」內有年齡子分頁（`[data-stage]` → `#s1`–`#s5`）。
+  - 圖表（總覽矩陣、軟體年齡圖、教材數量圖）都由 JS 依頁面資料產生，不用外部函式庫。
+  - 「分齡細節」內有年齡子分頁（`[data-stage]` → `#s1`–`#s5`）。CREATE 能力框架只涵蓋 10 歲以上，所以不另開分頁，改放在 s4（基礎級）、s5（中級＋延伸進階級）的 `details.create` 裡，年級用台灣學制。
   - 「教材資源」卡片用 `data-region`（tw / intl）與 `data-lv`（s2–s5、adult）篩選。
   - 顏色全部是 `:root` 上的 CSS 變數，含深色模式；年齡段顏色 `--l1`–`--l5`。
   - 必須保留 `[hidden]{display:none!important}`，否則分頁在某些檢視器不會切換。
