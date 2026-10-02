@@ -186,6 +186,7 @@ details.activity.lessons table{font-size:.86rem;min-width:720px}
 .box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;display:grid;gap:10px;min-width:0}
 .box.warn{background:var(--warn-soft);border-color:transparent}
 .box.warn h3{color:var(--warn)}
+.principle{background:var(--accent-soft);border-left:6px solid var(--accent);border-radius:8px;padding:10px 14px;margin:0 0 12px;max-width:none}
 details.safecard{background:var(--warn-soft);border-color:var(--warn)}
 details.safecard summary .k{color:var(--warn)}
 .check{display:grid;gap:6px}
@@ -393,16 +394,16 @@ html{scroll-behavior:smooth}
   <div class="start" id="start">
     <h3>孩子現在到哪一步？點一個，直接看適合的路線</h3>
     <div class="start-opts" role="radiogroup" aria-label="孩子目前的程度">
-      <button type="button" role="radio" aria-checked="false" data-start="s1" style="--c:var(--l1)">還沒用過電腦<small>多半是 3–6 歲</small></button>
-      <button type="button" role="radio" aria-checked="false" data-start="s2" style="--c:var(--l2)">能用滑鼠或觸控拖曳、旋轉<small>多半是 6–8 歲</small></button>
-      <button type="button" role="radio" aria-checked="false" data-start="s3" style="--c:var(--l3)">會對齊、群組、挖孔等基本功<small>多半是 8–10 歲</small></button>
-      <button type="button" role="radio" aria-checked="false" data-start="s4" style="--c:var(--l4)">想量實物尺寸，做出真的能用的東西<small>多半是 10–12 歲</small></button>
+      <button type="button" role="radio" aria-checked="false" data-start="s1" style="--c:var(--l1)">在玩教具，還沒用過電腦<small>多半是 3–6 歲</small></button>
+      <button type="button" role="radio" aria-checked="false" data-start="s2" style="--c:var(--l2)">會用手做小東西，還不自己用電腦<small>多半是 6–8 歲</small></button>
+      <button type="button" role="radio" aria-checked="false" data-start="s3" style="--c:var(--l3)">能用滑鼠或觸控拖曳、旋轉，準備用電腦<small>多半是 8–10 歲</small></button>
+      <button type="button" role="radio" aria-checked="false" data-start="s4" style="--c:var(--l4)">會對齊、群組、挖孔，想量實物尺寸做能用的東西<small>多半是 10–12 歲</small></button>
       <button type="button" role="radio" aria-checked="false" data-start="s5" style="--c:var(--l5)">能獨立完成多零件作品，想學參數化建模<small>多半是 12 歲以上</small></button>
     </div>
     <div class="start-out" id="startout" aria-live="polite" hidden></div>
   </div>
   <h2>總覽：年齡段 × 路線</h2>
-  <p class="lead">幼兒以不插電和動手為主，三年級開始用電腦，高年級用專題把各條路線串起來。<b>低年級盡量減少螢幕時間</b>，能用實物做的先用實物，要用螢幕時一次 30 分鐘內、大人陪同。年齡只是參考，實際看識字量和會不會用鍵盤滑鼠。</p>
+  <p class="lead">幼兒以不插電和動手為主，三年級開始用電腦，高年級用專題把各條路線串起來。<b>低年級最多只做到家長操作、孩子旁觀</b>，孩子用實物和動手做；孩子自己用螢幕從中年級開始，一次 30 分鐘內、大人陪同。年齡只是參考，實際看識字量和會不會用鍵盤滑鼠。</p>
   <div class="mx-wrap"><div class="mx" id="matrix"></div></div>
   <div class="mxcards" id="mxcards"></div>
   <details>
@@ -411,8 +412,8 @@ html{scroll-behavior:smooth}
     <thead><tr><th>年齡段</th><th>3D 建模與列印</th><th>程式設計</th><th>實體運算與機器人</th><th>AI 素養</th><th>軟體應用與數位素養</th></tr></thead>
     <tbody>
       <tr><td class="age"><span class="dot" style="background:var(--l1)"></span>幼兒 3–6</td><td>印好的蒙特梭利漸縮塔、平面與立體、幫印好的件上色（不用螢幕）</td><td>不插電：指令卡、走格子</td><td>按鍵式地板機器人</td><td>分類遊戲</td><td>平板基本操作、使用時間規則</td></tr>
-      <tr><td class="age"><span class="dot" style="background:var(--l2)"></span>低年級 6–8</td><td>低溫 3D 筆；選配：短時間 Tinkercad 名牌（有螢幕）</td><td>不插電活動優先；ScratchJr、Code.org Course B–C（有螢幕）</td><td>LEGO SPIKE Essential（積木為主，程式用平板）</td><td>語音助理、Quick, Draw!（有螢幕）</td><td>滑鼠、小畫家、拍照錄音（有螢幕）</td></tr>
-      <tr><td class="age"><span class="dot" style="background:var(--l3)"></span>中年級 8–10</td><td>Tinkercad 基本功：對齊、群組、挖孔</td><td>Scratch 入門、Code.org Course D–E</td><td>micro:bit 內建感測器</td><td>Teachable Machine</td><td>打字、Word、Canva、網路安全</td></tr>
+      <tr><td class="age"><span class="dot" style="background:var(--l2)"></span>低年級 6–8</td><td>低溫 3D 筆；用實物挑與調（家長操作、孩子旁觀）</td><td>不插電：指令卡、走格子</td><td>LEGO 積木動手搭、按鍵式地板機器人</td><td>不插電：分類遊戲、猜猜看</td><td>紙筆畫畫、口頭說明自己做了什麼</td></tr>
+      <tr><td class="age"><span class="dot" style="background:var(--l3)"></span>中年級 8–10</td><td>Tinkercad 基本功：對齊、群組、挖孔；名牌</td><td>ScratchJr、Scratch 入門、Code.org Course B–E</td><td>LEGO SPIKE Essential、micro:bit 內建感測器</td><td>語音助理、Quick, Draw!、Teachable Machine</td><td>滑鼠、小畫家、拍照錄音、打字、Word、Canva、網路安全</td></tr>
       <tr><td class="age"><span class="dot" style="background:var(--l4)"></span>高年級 10–12</td><td>量尺寸再建模、切片設定、多堂專題</td><td>Scratch 遊戲專題</td><td>mBot、SPIKE Prime</td><td>教育部「和 AI 做朋友」</td><td>影音編輯、簡報、資料查證</td></tr>
       <tr><td class="age"><span class="dot" style="background:var(--l5)"></span>國中 12+</td><td>Fusion 360、Onshape、公差與迭代</td><td>Python、App Inventor</td><td>Arduino、物聯網</td><td>家長陪同使用生成式 AI</td><td>試算表、個資保護</td></tr>
     </tbody>
@@ -426,17 +427,17 @@ html{scroll-behavior:smooth}
       <tr><td>3D 列印</td><td><b>低溫 3D 筆（PCL，如 3Doodler Start+）</b></td><td>6–13 歲</td><td><span class="status paid">需購買</span></td><td>筆頭沒有外露熱源；線材約 60–100 °C 融化，碰到不燙；教育套組附教案</td></tr>
       <tr><td>3D 列印</td><td><b>高溫 3D 筆（PLA，如 3Doodler Create+）</b></td><td>14 歲以上</td><td><span class="status paid">需購買</span></td><td>筆頭與擠出的塑膠約 200 °C，有燙傷風險；不給國小使用</td></tr>
       <tr><td>程式</td><td><b>不插電：指令卡、走格子</b></td><td>幼兒</td><td><span class="status ok">免費</span></td><td>自製卡片和地墊即可</td></tr>
-      <tr><td>程式</td><td><b>ScratchJr</b></td><td>5–7 歲</td><td><span class="status ok">免費</span></td><td>iPad、Android、Chromebook App</td></tr>
-      <tr><td>程式</td><td><b>Code.org 基礎課程 Course A–F</b></td><td>A 幼兒園大班；B–C 小一–小二；D–E 小三–小四；F 小五</td><td><span class="status ok">免費</span></td><td>每門 13–17 堂、每堂約 45 分鐘</td></tr>
+      <tr><td>程式</td><td><b>ScratchJr</b></td><td>官方 5–7 歲；本站安排中年級起</td><td><span class="status ok">免費</span></td><td>iPad、Android、Chromebook App</td></tr>
+      <tr><td>程式</td><td><b>Code.org 基礎課程 Course A–F</b></td><td>官方：A 幼兒園大班；B–C 小一–小二；D–E 小三–小四；F 小五。本站安排中年級起</td><td><span class="status ok">免費</span></td><td>每門 13–17 堂、每堂約 45 分鐘；不插電活動可在低年級玩</td></tr>
       <tr><td>程式</td><td><b>Scratch</b></td><td>8–16 歲</td><td><span class="status ok">免費</span></td><td>網頁版免安裝</td></tr>
       <tr><td>程式</td><td><b>MIT App Inventor</b></td><td>國中</td><td><span class="status ok">免費</span></td><td>積木做 Android / iOS App</td></tr>
       <tr><td>機器人</td><td><b>按鍵式地板機器人（如 Bee-Bot）</b></td><td>3 歲以上</td><td><span class="status paid">需購買</span></td><td>單台約 US$100–130</td></tr>
-      <tr><td>機器人</td><td><b>LEGO SPIKE Essential</b></td><td>6 歲以上</td><td><span class="status paid">需購買</span></td><td>教育套組 US$359.95；需搭配免費 App</td></tr>
+      <tr><td>機器人</td><td><b>LEGO SPIKE Essential</b></td><td>官方 6 歲以上；本站安排中年級起</td><td><span class="status paid">需購買</span></td><td>教育套組 US$359.95；需搭配免費 App（平板或電腦）</td></tr>
       <tr><td>機器人</td><td><b>micro:bit</b></td><td>8 歲以上（官方教案從 8–9 歲開始）</td><td><span class="status mix">部分免費</span></td><td>板子需購買；MakeCode 編輯器與教案免費</td></tr>
       <tr><td>機器人</td><td><b>mBot</b></td><td>8 歲以上</td><td><span class="status paid">需購買</span></td><td>整台機器人需購買；mBlock 軟體免費</td></tr>
       <tr><td>機器人</td><td><b>LEGO SPIKE Prime</b></td><td>10 歲以上</td><td><span class="status paid">需購買</span></td><td>教育套組 US$429.95</td></tr>
       <tr><td>機器人</td><td><b>Arduino</b></td><td>11–14 歲（教育入門套件）</td><td><span class="status mix">部分免費</span></td><td>Arduino IDE 開源免費；UNO 板約 US$27.6，套件另購</td></tr>
-      <tr><td>AI</td><td><b>Quick, Draw!</b></td><td>低年級起</td><td><span class="status ok">免費</span></td><td>免帳號、免下載</td></tr>
+      <tr><td>AI</td><td><b>Quick, Draw!</b></td><td>中年級起（本站安排）</td><td><span class="status ok">免費</span></td><td>免帳號、免下載</td></tr>
       <tr><td>AI</td><td><b>Teachable Machine</b></td><td>中年級起</td><td><span class="status ok">免費</span></td><td>免帳號，在瀏覽器訓練圖片、聲音、姿勢辨識</td></tr>
       <tr><td>AI</td><td><b>教育部「和 AI 做朋友」系列</b></td><td>國小版《我和AI一起學》為三至六年級</td><td><span class="status ok">免費</span></td><td>教育大市集免費下載</td></tr>
       <tr><td>AI</td><td><b>生成式 AI（ChatGPT、Gemini）</b></td><td>13 歲以上；13–17 歲需家長同意；未滿 13 歲不適合自行使用，如需接觸請由成人操作</td><td><span class="status mix">部分免費</span></td><td>有免費版；未滿 18 歲自動套用青少年保護</td></tr>
@@ -454,8 +455,8 @@ html{scroll-behavior:smooth}
   <div class="stack" role="list">
     <div class="nozzle" aria-hidden="true"><svg viewBox="0 0 28 30"><rect x="4" y="0" width="20" height="14" rx="2" fill="var(--muted)"/><path d="M8 14h12l-4 12h-4z" fill="var(--ink)"/><circle cx="14" cy="28" r="2" fill="var(--warn)"/></svg></div>
     <a class="layer" role="listitem" href="#s1" style="--c:var(--l1);--i:4"><div class="a">幼兒<small>3–6 歲 · 第 1 層</small></div><div class="d"><b>看與摸</b>：平面與立體、把印好的蒙特梭利教具一層一層疊。不用螢幕，大人事先印好。</div></a>
-    <a class="layer" role="listitem" href="#s2" style="--c:var(--l2);--i:3"><div class="a">低年級<small>6–8 歲 · 第 2 層</small></div><div class="d"><b>親手做</b>：低溫 3D 筆擠出第一件作品；Tinkercad 是選配，要注意螢幕時間。</div></a>
-    <a class="layer" role="listitem" href="#s3" style="--c:var(--l3);--i:2"><div class="a">中年級<small>8–10 歲 · 第 3 層</small></div><div class="d"><b>Tinkercad 基本功</b>：對齊、群組、挖孔、工作平面；認識「設計 → 切片 → 列印」。</div></a>
+    <a class="layer" role="listitem" href="#s2" style="--c:var(--l2);--i:3"><div class="a">低年級<small>6–8 歲 · 第 2 層</small></div><div class="d"><b>親手做</b>：低溫 3D 筆擠出第一件作品；用實物挑與調，孩子不自己操作螢幕。</div></a>
+    <a class="layer" role="listitem" href="#s3" style="--c:var(--l3);--i:2"><div class="a">中年級<small>8–10 歲 · 第 3 層</small></div><div class="d"><b>孩子第一次自己用螢幕建模</b>：Tinkercad 基本功，對齊、群組、挖孔；認識「設計 → 切片 → 列印」。</div></a>
     <a class="layer" role="listitem" href="#s4" style="--c:var(--l4);--i:1"><div class="a">高年級<small>10–12 歲 · 第 4 層</small></div><div class="d"><b>量了再畫</b>：用尺量實物、考慮列印方向、自己調切片，做多堂專題。</div></a>
     <a class="layer" role="listitem" href="#s5" style="--c:var(--l5);--i:0"><div class="a">國中<small>12 歲以上 · 第 5 層</small></div><div class="d"><b>解決真實問題</b>：草圖與參數化建模、公差、設計迭代、估時間與成本。</div></a>
   </div>
@@ -528,36 +529,32 @@ html{scroll-behavior:smooth}
 
   <article class="stage" id="s2" style="--c:var(--l2)">
     <header><h3>低年級 6–8 歲</h3><span class="tag">第 2 層 · 單堂作品</span></header>
-        <div class="flow" role="img" aria-label="低年級路徑：挑模型、調名字與顏色、3D 筆動手做、選配 Tinkercad、列印">
-      <div class="fs"><b><svg class="ico"><use href="#i-cube"/></svg>挑</b><span>MakerWorld</span><small>孩子選、大人按</small></div>
+    <p class="principle"><b>本站原則：低年級最多只做到家長操作、孩子旁觀。</b>孩子自己動手用的是實物和 3D 筆，不自己操作螢幕；旁觀的時間也要短。孩子自己用螢幕從中年級開始。</p>
+    <div class="flow" role="img" aria-label="低年級路徑：挑實物、調名字與顏色、3D 筆動手做，孩子不自己操作螢幕">
+      <div class="fs"><b><svg class="ico"><use href="#i-cube"/></svg>挑</b><span>印好的實物</span><small>孩子選、大人備</small></div>
       <span class="fa"></span>
-      <div class="fs"><b><svg class="ico"><use href="#i-sliders"/></svg>調</b><span>MakerLab</span><small>決定名字與顏色</small></div>
+      <div class="fs"><b><svg class="ico"><use href="#i-sliders"/></svg>調</b><span>口頭決定</span><small>家長操作、孩子旁觀</small></div>
       <span class="fa"></span>
-      <div class="fs"><b><svg class="ico"><use href="#i-hand"/></svg>蓋</b><span>3D 筆</span><small>不用螢幕</small></div>
-      <span class="fa"></span>
-      <div class="fs"><b><svg class="ico"><use href="#i-app"/></svg>選配</b><span>Tinkercad</span><small>有螢幕時間</small></div>
+      <div class="fs"><b><svg class="ico"><use href="#i-hand"/></svg>蓋</b><span>3D 筆</span><small>孩子動手</small></div>
     </div>
-<div class="secs">
-      <details class="sec safecard"><summary><span class="k">這個階段的安全重點</span></summary><ul><li>3D 筆只用低溫 PCL 款（官方 6–13 歲）<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>；用的時候大人在旁，用完拔插頭</li><li>印出來的東西不是檢驗合格的玩具，不給還會放進嘴裡的孩子<span class="ev ed" title="編者整理的建議">編者建議</span></li><li>MakerWorld、Tinkercad 的帳號和操作都由大人負責，孩子負責決定<span class="ev doc" title="來自官方規範或產品文件">官方文件</span></li><li>螢幕一次 30 分鐘內、大人陪同，做完就休息<span class="ev ed" title="編者整理的建議">編者建議</span></li></ul></details>
-      <details class="sec"><summary><span class="k">挑：從大人選好的模型裡挑一個<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul><li>大人先在 MakerWorld 挑好 3–5 個簡單模型（小動物、名牌底座、鑰匙圈），列印時間短、沒有小零件</li><li>孩子選一個、選顏色，說說為什麼選它</li><li>大人用 Bambu Handy 或 Bambu Studio 送出列印；13 歲以前 MakerWorld 帳號和操作都是大人的<span class="ev doc" title="來自官方規範或產品文件">官方文件</span></li><li>印好後一起看：和螢幕上的一樣嗎？哪裡不一樣？</li></ul></details>
-      <details class="sec"><summary><span class="k">調：決定名字和顏色，大人動手<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul><li>用 MakerLab 的名牌、鑰匙圈範本（Make My Sign、Image to Keychain）</li><li>孩子決定要寫什麼字、用什麼顏色；大人登入、輸入、按送出</li><li>孩子看預覽，說「要不要再大一點」；一次改一樣就好</li><li>這一段不算孩子的螢幕時間：孩子在旁邊看，大人操作，幾分鐘就結束</li></ul></details>
-      <details class="sec"><summary><span class="k">蓋：不用螢幕的第一次列印，低溫 3D 筆</span></summary><ul><li>用低溫 PCL 線材的 3D 筆（如 3Doodler Start+，官方 6–13 歲<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>），筆頭沒有外露熱源，碰到不燙</li><li>先在紙上描一條線 → 疊第二層、第三層 → 做一個小立體（例如小籃子或眼鏡）</li><li>高溫 PLA 筆（約 200 °C，官方 14 歲以上<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>）不給這個階段用</li><li>大人在旁，用完拔插頭</li></ul></details>
-      <details class="sec"><summary><span class="k">螢幕時間怎麼抓（Tinkercad 是選配）<span class="ev doc" title="來自官方規範或產品文件">官方文件</span></span></summary><ul><li><b>本站原則：</b>低年級盡量減少螢幕時間，能用實物做的先用實物；螢幕是選配，不是主線<span class="ev ed" title="編者整理的建議">編者建議</span></li><li><b>台灣國健署：</b>2 歲以上每天螢幕時間不超過 1 小時，每用 30 分鐘休息 10 分鐘；學校用掉的時間也算進去</li><li><b>教育部「護眼 123」：</b>每天戶外活動累計 2 小時，用眼 30 分鐘、休息 10 分鐘</li><li><b>國際：</b>世界衛生組織建議限制休閒性螢幕時間；美國兒科醫學會建議全家訂媒體使用計畫，重視內容品質，不只看時數</li><li><b>這個階段的做法：</b>主線是 3D 筆和在 MakerWorld 挑模型，不需要螢幕建模；Tinkercad 是選配，家長覺得孩子有餘裕再用</li><li>用的話：一次 30 分鐘內、大人陪同、做完就休息；有創作的使用，比被動看影片好</li></ul></details>
-      <details class="sec"><summary><span class="k">選配 Tinkercad：要教的操作（螢幕）</span></summary><ul><li><b>先想再做：</b>先說一句想做什麼、用蠟筆畫一畫，再開始；做完和圖比一比</li><li>從形狀庫拖出方塊、圓柱、文字</li><li>移動、旋轉、縮放、改顏色</li><li>每件作品只用 3–5 個基本形狀</li></ul></details>
-      <details class="sec"><summary><span class="k">選配第一個作品：名牌（螢幕，約 15 分鐘）</span></summary><ul><li>底板 <span class="spec">60 × 20 × 2 mm</span></li><li>文字高度 <span class="spec">3 mm</span>，四周留邊 <span class="spec">5 mm</span></li><li>練到對齊、群組、配色三件事</li></ul><div class="k" style="margin-top:8px">之後的作品</div><ul><li>鑰匙圈、筆筒、簡單玩具車</li></ul></details>
-      <details class="sec"><summary><span class="k">課堂安排<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul><li>每週固定一次，每次約 30 分鐘設計時間；<b>螢幕一次不超過 30 分鐘、大人陪同</b><span class="ev doc" title="來自官方規範或產品文件">官方文件</span></li><li>先用 3D 筆；要不要進螢幕由家長決定，每週螢幕時間總量要先算好</li><li>換料、調平、取件都由大人負責</li><li>目標是「印出一件完成品」，不求完美</li></ul></details>
+    <div class="secs">
+      <details class="sec safecard"><summary><span class="k">這個階段的安全重點</span></summary><ul><li>3D 筆只用低溫 PCL 款（官方 6–13 歲）<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>；用的時候大人在旁，用完拔插頭</li><li>印出來的東西不是檢驗合格的玩具，不給還會放進嘴裡的孩子<span class="ev ed" title="編者整理的建議">編者建議</span></li><li>MakerWorld 的帳號和操作都由大人負責，孩子負責決定<span class="ev doc" title="來自官方規範或產品文件">官方文件</span></li><li>這個階段孩子不自己操作螢幕；家長操作時孩子最多旁觀，時間要短<span class="ev ed" title="編者整理的建議">編者建議</span></li></ul></details>
+      <details class="sec"><summary><span class="k">為什麼低年級最多只旁觀螢幕<span class="ev doc" title="來自官方規範或產品文件">官方文件</span></span></summary><ul><li><b>本站原則：</b>低年級最多只做到家長操作、孩子旁觀，能用實物做的先用實物；孩子自己用螢幕從中年級開始<span class="ev ed" title="編者整理的建議">編者建議</span></li><li><b>台灣國健署：</b>2 歲以上每天螢幕時間不超過 1 小時，每用 30 分鐘休息 10 分鐘；學校用掉的時間也算進去</li><li><b>教育部「護眼 123」：</b>每天戶外活動累計 2 小時，用眼 30 分鐘、休息 10 分鐘</li><li><b>國際：</b>世界衛生組織建議限制休閒性螢幕時間；美國兒科醫學會建議全家訂媒體使用計畫，重視內容品質，不只看時數</li><li><b>台灣課綱：</b>國小沒有訂科技領綱，多數縣市從三年級才排資訊課</li></ul></details>
+      <details class="sec"><summary><span class="k">挑：從印好的實物裡挑一個<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul><li>大人事先在 MakerWorld 找好 3–5 個簡單模型（小動物、名牌底座、鑰匙圈），印好放在桌上；沒有小零件</li><li>孩子拿起來看、摸、比一比，選一個，說說為什麼選它</li><li>13 歲以前 MakerWorld 的帳號和操作都是大人的<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>；選模型、送出列印由家長操作，孩子可以在旁看，但不自己操作</li><li>想要的顏色，從線材色卡或實際的線材裡挑</li></ul></details>
+      <details class="sec"><summary><span class="k">調：說出想改什麼，大人動手<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul><li>孩子決定名牌上要寫什麼字、用什麼顏色、大一點還是小一點</li><li>家長用 MakerLab 的名牌、鑰匙圈範本照著做，孩子可以旁觀，不自己操作</li><li>印出來後一起看：和想的一樣嗎？下次想改哪一個？一次只改一樣</li></ul></details>
+      <details class="sec"><summary><span class="k">蓋：第一次列印，低溫 3D 筆</span></summary><ul><li>用低溫 PCL 線材的 3D 筆（如 3Doodler Start+，官方 6–13 歲<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>），筆頭沒有外露熱源，碰到不燙</li><li>先在紙上描一條線 → 疊第二層、第三層 → 做一個小立體（例如小籃子或眼鏡）</li><li>高溫 PLA 筆（約 200 °C，官方 14 歲以上<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>）不給這個階段用</li><li>大人在旁，用完拔插頭</li></ul></details>
+      <details class="sec"><summary><span class="k">先想再做<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul><li>先說一句想做什麼，用蠟筆在紙上畫一畫，再開始做</li><li>做完和圖比一比：哪裡一樣、哪裡不一樣</li><li>每件作品用 3–5 個簡單形狀組成</li></ul></details>
+      <details class="sec"><summary><span class="k">課堂安排<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul><li>每週固定一次，每次約 30 分鐘，以手作為主，<b>孩子不自己操作螢幕</b></li><li>先用 3D 筆；換料、取件都由大人負責</li><li>目標是「做出一件完成品」，不求完美</li></ul></details>
     </div>
-    <details class="activity" id="act-s2">
-      <summary>選配活動卡：做一張名牌（會用到螢幕） <span class="ev ed" title="編者整理的建議">編者建議</span></summary>
-      <div class="cols"><div><div class="k">學習目標與先備能力</div><ul><li><b>目標：</b>用 3–5 個基本形狀組合出一件作品，練到對齊、群組、配色</li><li><b>先備：</b>會用滑鼠或觸控拖曳、旋轉物件；認得自己的名字</li></ul></div><div><div class="k">家長準備</div><ul><li>Tinkercad 帳號（未滿 13 歲：家長同意，或由老師班級帳號登入）</li><li>先自己做一次名牌，確認尺寸</li><li>確認印表機與 PLA 已就緒；列印前用切片軟體預覽</li></ul></div><div><div class="k">孩子的任務</div><ul><li>拖出底板（參考 <span class="spec">60 × 20 × 2 mm</span>）</li><li>輸入自己的名字（文字高度參考 <span class="spec">3 mm</span>，四周留邊 <span class="spec">5 mm</span>）</li><li>換顏色、移動、旋轉、對齊；可加一個小裝飾形狀</li></ul></div><div><div class="k">時間安排</div><ul><li><b>孩子設計：</b>約 15–30 分鐘</li><li><b>成人準備：</b>約 20 分鐘（含自己先做一次）</li><li><b>機器列印：</b>依機型與尺寸而異，以切片軟體的預估時間為準，由成人操作</li></ul></div><div><div class="k">觀察與調整</div><ul><li><b>達成：</b>文字貼在底板上、沒有超出邊</li><li><b>太難：</b>用做好的底板，只放文字</li><li><b>太簡單：</b>加挖孔做成鑰匙圈，或加第二層文字</li></ul></div></div>
-    </details>
-    <p class="next"><span class="ev ed" title="編者整理的建議">編者建議</span><b>升級訊號：</b>不看示範就能組合出想要的形狀，開始問「怎麼挖洞」。</p>
+    <p class="next"><span class="ev ed" title="編者整理的建議">編者建議</span><b>升級訊號：</b>能把想做的東西說清楚、用 3D 筆做出三層以上的立體，開始問「可不可以用電腦做」。</p>
   </article>
 
   <article class="stage" id="s3" style="--c:var(--l3)">
     <header><h3>中年級 8–10 歲</h3><span class="tag">第 3 層 · Tinkercad 基本功</span></header>
-    <div class="secs">
+        <p class="principle"><b>本站原則：</b>低年級最多只是家長操作、孩子旁觀；從這個階段開始，孩子自己操作螢幕：一次 30 分鐘內、大人陪同。</p>
+<div class="secs">
       <details class="sec safecard"><summary><span class="k">這個階段的安全重點</span></summary><ul><li>機器運轉時，孩子不碰熱端與運動部件；列印由大人操作並設隔離<span class="ev ed" title="編者整理的建議">編者建議</span></li><li>網路上的模型與 AI 生成的結果，由大人先看過、判斷能不能印<span class="ev ed" title="編者整理的建議">編者建議</span></li><li>MakerWorld 與 AI 工具的帳號須滿 13 歲，13 歲前由大人登入<span class="ev doc" title="來自官方規範或產品文件">官方文件</span></li><li>螢幕一次 30 分鐘內、大人陪同<span class="ev ed" title="編者整理的建議">編者建議</span></li></ul></details>
+      <details class="sec"><summary><span class="k">螢幕時間怎麼抓<span class="ev doc" title="來自官方規範或產品文件">官方文件</span></span></summary><ul><li><b>本站原則：</b>低年級最多只做到家長操作、孩子旁觀，中年級開始孩子自己用，但仍要有限度；能用實物做的先用實物<span class="ev ed" title="編者整理的建議">編者建議</span></li><li><b>台灣國健署：</b>2 歲以上每天螢幕時間不超過 1 小時，每用 30 分鐘休息 10 分鐘；學校用掉的時間也算進去</li><li><b>教育部「護眼 123」：</b>每天戶外活動累計 2 小時，用眼 30 分鐘、休息 10 分鐘</li><li><b>國際：</b>世界衛生組織建議限制休閒性螢幕時間；美國兒科醫學會建議全家訂媒體使用計畫，重視內容品質，不只看時數</li><li><b>做法：</b>一次 30 分鐘內、大人陪同、做完就休息；有創作的使用，比被動看影片好</li></ul></details>
       <details class="sec"><summary><span class="k">挑與調：拉滑桿，印兩種尺寸比較<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul><li>挑：孩子自己在大人開好的 MakerWorld 頁面上挑模型，說出為什麼適合印（有沒有懸空、會不會太小）</li><li>調：用 MakerWorld 參數化模型的「Customize」拉滑桿，孩子決定數值，大人操作與送出；13 歲以前帳號是大人的<span class="ev doc" title="來自官方規範或產品文件">官方文件</span></li><li>同一個模型印兩種尺寸，放在一起比較：哪個好拿、哪個比較快印完</li><li>這是進 Tinkercad 之前先認識「尺寸」的方法，不需要會建模</li></ul></details>
       <details class="sec"><summary><span class="k">蓋：Tinkercad 核心功能</span></summary><ul><li><b>對齊工具</b>（快捷鍵 <span class="spec">L</span>）：讓物件中心對中心</li><li><b>群組</b>（<span class="spec">Ctrl+G</span>）：多個形狀合成一個</li><li><b>挖孔</b>：放圓柱 → 設為「孔」→ 對齊 → 和實體群組</li><li><b>工作平面</b>：在斜面或側面上加東西</li></ul></details>
       <details class="sec"><summary><span class="k">建議單元順序<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ol style="margin:0;padding-left:1.3em"><li>介面、視角與主要工作區</li><li>基本形狀與屬性</li><li>多個物件的操作與對齊</li><li>群組與挖孔</li><li>文字與印章（文字要鏡像）</li><li>完成作品並匯出 STL</li></ol></details>
@@ -570,6 +567,10 @@ html{scroll-behavior:smooth}
       <span class="fa">G-code</span>
       <div class="fs"><b><svg class="ico"><use href="#i-printer"/></svg>3 列印</b><span>大人操作機器</span><small>孩子在旁觀察</small></div>
     </div>
+    <details class="activity" id="act-s3">
+      <summary>活動卡：做一張名牌 <span class="ev ed" title="編者整理的建議">編者建議</span></summary>
+      <div class="cols"><div><div class="k">學習目標與先備能力</div><ul><li><b>目標：</b>用 3–5 個基本形狀組合出一件作品，練到對齊、群組、配色</li><li><b>先備：</b>會用滑鼠或觸控拖曳、旋轉物件；認得自己的名字</li></ul></div><div><div class="k">家長準備</div><ul><li>Tinkercad 帳號（未滿 13 歲：家長同意，或由老師班級帳號登入）</li><li>先自己做一次名牌，確認尺寸</li><li>確認印表機與 PLA 已就緒；列印前用切片軟體預覽</li></ul></div><div><div class="k">孩子的任務</div><ul><li>拖出底板（參考 <span class="spec">60 × 20 × 2 mm</span>）</li><li>輸入自己的名字（文字高度參考 <span class="spec">3 mm</span>，四周留邊 <span class="spec">5 mm</span>）</li><li>換顏色、移動、旋轉、對齊；可加一個小裝飾形狀</li></ul></div><div><div class="k">時間安排</div><ul><li><b>孩子設計：</b>約 15–30 分鐘（一次 30 分鐘內、大人陪同）</li><li><b>成人準備：</b>約 20 分鐘（含自己先做一次）</li><li><b>機器列印：</b>依機型與尺寸而異，以切片軟體的預估時間為準，由成人操作</li></ul></div><div><div class="k">觀察與調整</div><ul><li><b>達成：</b>文字貼在底板上、沒有超出邊</li><li><b>太難：</b>用做好的底板，只放文字</li><li><b>太簡單：</b>加挖孔做成鑰匙圈，或加第二層文字</li></ul></div></div>
+    </details>
     <details class="activity" id="act-s3-ai">
       <summary>活動卡：把圖變成 3D（孩子畫或找圖，大人用 AI 生成） <span class="ev ed" title="編者整理的建議">編者建議</span><span class="ev ed" title="完整內容整理中">即將推出</span></summary>
       <ul>
@@ -783,12 +784,12 @@ html{scroll-behavior:smooth}
   <div class="res" data-region-grid="intl">
     <a class="card" data-region="intl" data-lv="s3 s4" data-cost="free" data-lang="en" data-fmt="plan" data-eq="pc" href="https://www.tinkercad.com/teachers/3d-printing"><span class="t">Tinkercad 官方 3D 列印課程</span><span class="m">Autodesk · 英文（介面有中文）· 免費</span><span class="d">官方逐步課程，可開班級帳號讓孩子登入。</span><span class="tags"><i>中年級</i><i>高年級</i></span></a>
     <a class="card" data-region="intl" data-lv="s3 s4 s5" data-cost="free" data-lang="en" data-fmt="plan" data-eq="pc" href="https://www.thingiverse.com/education"><span class="t">Thingiverse Education</span><span class="m">英文 · 免費</span><span class="d">600 個以上跨科教案（數學、科學、歷史、藝術），附可下載模型。MakerBot 另有免費的教師指南 PDF。</span><span class="tags"><i>中年級</i><i>高年級</i><i>國中</i></span></a>
-    <a class="card" data-region="intl" data-lv="s2 s3 s4" data-cost="mixed" data-lang="en" data-fmt="plan other" data-eq="pc" href="https://www.makersempire.com/"><span class="t">Makers Empire</span><span class="m">App · 英文 · 免費教案＋付費訂閱</span><span class="d">專為幼兒園到國二設計的建模 App 和對齊課綱的教案，有月賽和挑戰關卡。比 Tinkercad 更適合低年級。</span><span class="tags"><i>低年級</i><i>中年級</i><i>高年級</i></span></a>
+    <a class="card" data-region="intl" data-lv="s3 s4" data-cost="mixed" data-lang="en" data-fmt="plan other" data-eq="pc" href="https://www.makersempire.com/"><span class="t">Makers Empire</span><span class="m">App · 英文 · 免費教案＋付費訂閱</span><span class="d">專為幼兒園到國二設計的建模 App 和對齊課綱的教案，有月賽和挑戰關卡。比 Tinkercad 更適合低年級。</span><span class="tags"><i>低年級</i><i>中年級</i><i>高年級</i></span></a>
     <a class="card" data-region="intl" data-lv="s4 s5" data-cost="mixed" data-lang="en" data-fmt="plan" data-eq="pc" href="https://www.learnbylayers.com/"><span class="t">Learn by Layers</span><span class="m">英文 · 有免費樣本，完整版付費</span><span class="d">約 430 份可下載的完整教案，使用 Tinkercad、Fusion 360、Onshape，也有 Bambu Lab 印表機專用課程。</span><span class="tags"><i>高年級</i><i>國中</i></span></a>
     <a class="card" data-region="intl" data-lv="adult" data-cost="free" data-lang="en" data-fmt="plan" data-eq="printer" href="https://makerworld.com/en/community/post/1761645"><span class="t">Bambu Lab Academy</span><span class="m">MakerWorld · 免費</span><span class="d">初、中、高級課程：第一次列印、線材、軟體設定、保養。給大人先把機器摸熟。</span><span class="tags"><i>老師與家長</i></span></a>
     <a class="card" data-region="intl" data-lv="adult" data-cost="paid" data-lang="en" data-fmt="plan" data-eq="printer" href="https://www.prusa3d.com/category/prusa-academy/"><span class="t">Prusa Academy</span><span class="m">英文 · 付費（入門課約 5 美元起）</span><span class="d">PrusaSlicer 切片、Fusion 建模、列印件設計原則、後處理上色。</span><span class="tags"><i>老師與家長</i></span></a>
     <a class="card" data-region="intl" data-lv="adult s4 s5" data-cost="free" data-lang="en" data-fmt="text" data-eq="pc" href="https://www.createeducation.com/wp-content/uploads/2024/09/3D-Printing-Skills-Progression.pdf"><span class="t">CREATE Education 能力進程框架</span><span class="m">PDF · 英文 · 免費</span><span class="d">排課時對照用；各等級清單放在「分齡細節」的高年級、國中。</span><span class="tags"><i>老師與家長</i></span></a>
-    <a class="card" data-region="intl" data-lv="adult s2 s3 s4" data-cost="free" data-lang="en" data-fmt="text" data-eq="pc" href="https://nozzledown.com/tinkercad-kids-tutorial-parent-guide/"><span class="t">Nozzle Down 家長指南</span><span class="m">英文 · 免費</span><span class="d">分齡建議、名牌作品尺寸、安全守則與入門列印設定。</span><span class="tags"><i>老師與家長</i></span></a>
+    <a class="card" data-region="intl" data-lv="adult s3 s4" data-cost="free" data-lang="en" data-fmt="text" data-eq="pc" href="https://nozzledown.com/tinkercad-kids-tutorial-parent-guide/"><span class="t">Nozzle Down 家長指南</span><span class="m">英文 · 免費</span><span class="d">分齡建議、名牌作品尺寸、安全守則與入門列印設定。</span><span class="tags"><i>老師與家長</i></span></a>
   </div>
   <p class="empty" id="resempty" hidden></p>
   <details>
@@ -904,15 +905,15 @@ html{scroll-behavior:smooth}
 
   /* software: the single source for both the chart and the table (from/to = suggested learning age; checked = last verified) */
   var SOFTWARE = [
-    {"basis":"ex","name":"Tinkercad", "type": "積木式建模（網頁）", "status": {"tag": "ok", "text": "持續更新"}, "from": 6, "to": 12, "prereq": "會用滑鼠或觸控拖曳、旋轉物件", "account": "未滿 13 歲：家長同意，或由老師建立班級、學生用班級代碼登入", "adult": "建立教師帳號與班級，或陪孩子建立帳號", "cost": {"tag": "ok", "text": "免費"}, "costNote": "完全免費、無廣告", "main": true, "checked": "2026-10-02", "group": "建模入門", "short": "Tinkercad", "tip": "完全免費；13 歲以下由家長或老師班級帳號登入"},
-    {"basis":"doc","name":"Makers Empire", "type": "兒童建模 App", "status": {"tag": "ok", "text": "持續更新"}, "from": 5, "to": 14, "stageNote": "（幼兒園到國二）", "prereq": "能用平板或滑鼠操作，不需要先會建模", "account": "個人在家可直接使用；學校方案需購買授權", "adult": "安裝 App；學校使用需採購訂閱", "cost": {"tag": "mix", "text": "部分免費"}, "costNote": "個人在家免費；學校方案年費 US$329（30 人）起，才有教案、班級管理與評量", "main": false, "checked": "2026-10-02", "group": "建模入門", "short": "Makers Empire", "tip": "比 Tinkercad 更好上手；個人免費，學校方案付費"},
+    {"basis":"ex","name":"Tinkercad", "type": "積木式建模（網頁）", "status": {"tag": "ok", "text": "持續更新"}, "from": 8, "to": 12, "prereq": "會用滑鼠或觸控拖曳、旋轉物件", "account": "未滿 13 歲：家長同意，或由老師建立班級、學生用班級代碼登入", "adult": "建立教師帳號與班級，或陪孩子建立帳號", "cost": {"tag": "ok", "text": "免費"}, "costNote": "完全免費、無廣告", "main": true, "checked": "2026-10-02", "group": "建模入門", "short": "Tinkercad", "tip": "完全免費；13 歲以下由家長或老師班級帳號登入"},
+    {"basis":"ed","name":"Makers Empire", "type": "兒童建模 App", "status": {"tag": "ok", "text": "持續更新"}, "from": 8, "to": 14, "stageNote": "（官方標示幼兒園到國二；本站安排中年級起）", "prereq": "能用平板或滑鼠操作，不需要先會建模", "account": "個人在家可直接使用；學校方案需購買授權", "adult": "安裝 App；學校使用需採購訂閱", "cost": {"tag": "mix", "text": "部分免費"}, "costNote": "個人在家免費；學校方案年費 US$329（30 人）起，才有教案、班級管理與評量", "main": false, "checked": "2026-10-02", "group": "建模入門", "short": "Makers Empire", "tip": "比 Tinkercad 更好上手；個人免費，學校方案付費"},
     {"basis":"ed","name":"Onshape", "type": "參數化 CAD（網頁）", "status": {"tag": "ok", "text": "持續更新"}, "from": 12, "to": null, "prereq": "已熟悉 Tinkercad 基本功，看得懂尺寸與草圖", "account": "教育版免費、文件不公開；一般免費方案的文件一律公開；13 歲以下由大人協助建立帳號", "adult": "替孩子建立教育版帳號，確認用的不是公開的免費方案", "cost": {"tag": "mix", "text": "部分免費"}, "costNote": "教育版免費；免費方案不能建私人文件", "main": true, "checked": "2026-10-02", "group": "進階建模", "short": "Onshape", "tip": "教育版免費；13 歲以下由大人協助開帳號"},
     {"basis":"ex","name":"Fusion", "type": "參數化 CAD", "status": {"tag": "ok", "text": "持續更新"}, "from": 12, "to": null, "prereq": "已熟悉 Tinkercad 基本功，會量尺寸、看懂草圖", "account": "Autodesk 帳號須滿 13 歲；教育版需符合教育機構或教師的資格；個人版限非商業", "adult": "確認孩子已滿 13 歲與資格；未滿 13 歲先用 Tinkercad 或 Onshape", "cost": {"tag": "mix", "text": "部分免費"}, "costNote": "教育版功能完整、免費；個人版同時只能有 10 個可編輯文件，沒有模擬與生成式設計等進階功能", "main": true, "checked": "2026-10-02", "group": "進階建模", "short": "Fusion", "tip": "教育版免費；Autodesk 帳號須滿 13 歲"},
     {"basis":"ed","name":"Blender", "type": "雕塑、造型", "status": {"tag": "ok", "text": "持續更新"}, "from": 12, "to": null, "prereq": "熟悉 3D 視角操作，有耐心學習較複雜的介面", "account": "不需要帳號；開源（GPL）", "adult": "協助安裝在電腦上", "cost": {"tag": "ok", "text": "免費"}, "costNote": "任何用途都免費，沒有付費版", "main": false, "checked": "2026-10-02", "group": "進階建模", "short": "Blender", "tip": "開源，完全免費"},
     {"basis":"ex","name":"SketchUp", "type": "快速建模", "status": {"tag": "ok", "text": "網頁版可用"}, "from": 10, "to": null, "prereq": "看得懂平面圖與基本形體", "account": "學校版：中小學用 Google 或 Microsoft 教育帳號，符合兒童隱私規範（COPPA）；個人免費版不符合 COPPA", "adult": "由學校管理員開通教育帳號；在家使用請自行評估隱私", "cost": {"tag": "mix", "text": "部分免費"}, "costNote": "學校版免費；個人免費版不能裝外掛、限非商業，完整功能要買 Go / Pro", "main": false, "checked": "2026-10-02", "group": "建模入門", "short": "SketchUp", "tip": "學校版用教育帳號免費"},
     {"basis":"ex","name":"Cura", "type": "切片", "status": {"tag": "ok", "text": "持續更新"}, "from": 8, "to": null, "stageNote": "（大人陪同）", "prereq": "知道「設計 → 切片 → 列印」三個步驟", "account": "不需要帳號；開源", "adult": "安裝、選對機型與線材、操作列印", "cost": {"tag": "ok", "text": "免費"}, "costNote": "開源免費，沒有付費版", "main": false, "checked": "2026-10-02", "group": "切片", "short": "Cura", "tip": "開源，完全免費；大人陪同"},
     {"basis":"ed","name":"Bambu Studio", "type": "切片（Bambu Lab 機器）", "status": {"tag": "ok", "text": "持續更新"}, "from": 10, "to": null, "stageNote": "（大人陪同；8–10 歲只旁觀）", "prereq": "知道「設計 → 切片 → 列印」三個步驟，看得懂預覽裡的每一層；8–10 歲只在旁邊看大人操作，不自己動", "account": "切片本身不需要帳號；連線到 MakerWorld、雲端列印才需要帳號，須滿 13 歲", "adult": "安裝、選對機型與線材、送出列印；孩子負責看預覽、決定擺放與顏色", "cost": {"tag": "ok", "text": "免費"}, "costNote": "開源免費，沒有付費版", "main": false, "checked": "2026-10-02", "group": "切片", "short": "Bambu Studio", "tip": "Bambu Lab 機器專用；開源免費；帳號須滿 13 歲"},
-    {"basis":"doc","name":"MakerLab", "type": "範本調整與 AI 工具（網頁）", "status": {"tag": "ok", "text": "持續更新"}, "from": 6, "to": null, "stageNote": "（13 歲前由大人操作）", "prereq": "不需要會建模；能說出想改什麼（名字、顏色、尺寸）；AI 生成從 8 歲起", "account": "用 MakerWorld 帳號，須滿 13 歲；13 歲前由大人登入，孩子決定", "adult": "登入、操作網頁，孩子在旁邊決定文字、顏色與尺寸；Image to 3D 要先判斷生成結果能不能印", "cost": {"tag": "mix", "text": "部分免費"}, "costNote": "名牌、鑰匙圈等範本工具可直接用；Image to 3D 等 AI 工具有免費試用次數，之後要點數", "main": false, "checked": "2026-10-02", "group": "挑與調", "short": "MakerLab", "tip": "拉滑桿改範本；13 歲前大人登入，孩子決定"}
+    {"basis":"doc","name":"MakerLab", "type": "範本調整與 AI 工具（網頁）", "status": {"tag": "ok", "text": "持續更新"}, "from": 8, "to": null, "stageNote": "（13 歲前由大人操作）", "prereq": "不需要會建模；能說出想改什麼（名字、顏色、尺寸）；6–8 歲由家長用範本照孩子說的做，孩子最多旁觀", "account": "用 MakerWorld 帳號，須滿 13 歲；13 歲前由大人登入，孩子決定", "adult": "登入、操作網頁，孩子在旁邊決定文字、顏色與尺寸；Image to 3D 要先判斷生成結果能不能印", "cost": {"tag": "mix", "text": "部分免費"}, "costNote": "名牌、鑰匙圈等範本工具可直接用；Image to 3D 等 AI 工具有免費試用次數，之後要點數", "main": false, "checked": "2026-10-02", "group": "挑與調", "short": "MakerLab", "tip": "拉滑桿改範本；13 歲前大人登入，孩子決定"}
   ];
   var EV = {
     doc:'<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>',
@@ -1056,8 +1057,8 @@ html{scroll-behavior:smooth}
   /* "start here": pick the child's level, get a next step */
   var ACT = {
     s1:{name:'幼兒', age:'3–6 歲', what:'活動卡「疊漸縮塔」，印好的蒙特梭利教具，不用螢幕，約 15 分鐘', card:true},
-    s2:{name:'低年級', age:'6–8 歲', what:'先用低溫 3D 筆親手擠出第一件作品；選配活動卡「做一張名牌」會用到螢幕，30 分鐘內', card:true},
-    s3:{name:'中年級', age:'8–10 歲', what:'挑一件作品：印章、筆筒或有蓋小盒'},
+    s2:{name:'低年級', age:'6–8 歲', what:'用低溫 3D 筆親手擠出第一件作品，用實物挑與調，孩子不自己操作螢幕', card:false},
+    s3:{name:'中年級', age:'8–10 歲', what:'活動卡「做一張名牌」，第一次用 Tinkercad，一次 30 分鐘內', card:true},
     s4:{name:'高年級', age:'10–12 歲', what:'挑一件專題：手機架、依實際尺寸的收納盒或棋子'},
     s5:{name:'國中', age:'12 歲以上', what:'挑一件專題：理線器、工具架或家中損壞零件的替換件'}
   };
