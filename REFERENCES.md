@@ -331,6 +331,8 @@
 | 一鍵列印 | https://blog.bambulab.com/makerworld-one-step-printing ；https://bambulab.com/en-us/download/app | Bambu Handy 選模型直接列印 | `PLAN.md` |
 | 成人內容與未成年保護 | 社群規範 https://makerworld.com/en/community-guidelines ；https://makerworld.com/en/community/post/1809058 ；論壇 https://forum.bambulab.com/t/better-makerworld-for-younger-users/228677 | NSFW 預設關閉；未成年保護模式仍在規劃 | `PLAN.md`（分齡收藏夾的理由） |
 
+| MakerWorld Standard Digital File License | 說明 https://modelrover.com/g/makerworld-standard-digital-file-license ；論壇 https://forum.bambulab.com/t/standard-digital-file-license-question/103998 ；會員協議 https://makerworld.com/en/commercial-license-membership-agreement | 僅供下載者自行列印個人使用；禁止商用（含販售列印品）、禁止改作再發布、禁止在 MakerWorld 以外散布檔案（依二手說明整理，條款原文未直接開啟） | `PLAN.md` 第七節 |
+
 ### 教具安全
 
 | 主題 | 來源 | 查到的內容 | 網頁採用 |
@@ -392,3 +394,4 @@
 | 2026-10-02 | 第十一節新增使用者提供的 VMI 教具示範影片（構成三角形），並記錄感官教具指南連結；影片內容尚未採用 | 新增第十一節影片與指南連結 |
 | 2026-10-02 | 幼兒卡新增「教具安全」區塊；中年級新增 AI 生成活動卡簡述；國中卡片加 13 歲起自己操作；漸縮塔最小一層約 3.5 cm；新增 `PLAN.md` 概念規劃 | 新增第十二節（MakerWorld 條款、UNESCO、MakerLab、小零件、銳邊、標準檢驗局等） |
 | 2026-10-02 | 幼兒卡教具說明加「適用年齡」：發展上約 3–6 歲（粉紅塔教學實例，部分教室有給更小孩子的簡化版：Guidepost https://guidepostmontessori.com/blog/the-montessori-pink-tower/ 、Kid Advance https://kidadvance.com/pink-tower.html ）；本版只建議 3 歲以上（CPSC 16 CFR 1501 以 3 歲為分界，見第十二節）；`PLAN.md` 新增 MakerWorld 中英文年齡文案 | 沿用第十、十二節來源 |
+| 2026-10-02 | `PLAN.md`：確認「從玩到做」為主軸、MakerWorld 授權用 Standard Digital File License；新增教學影片評估 | 第十二節新增授權來源 |
