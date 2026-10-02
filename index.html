@@ -52,6 +52,13 @@ nav.top button{flex:none;padding:13px 14px 11px;color:var(--muted);background:no
   font:inherit;font-size:.95rem;white-space:nowrap;cursor:pointer}
 nav.top button:hover{color:var(--ink)}
 nav.top button[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent);font-weight:700}
+nav.top .route-tab{display:inline-flex;align-items:center;gap:6px}
+nav.top .soon{flex:none;align-self:center;display:inline-flex;align-items:center;gap:4px;margin-left:8px;font-size:.8rem;color:var(--muted);white-space:nowrap;opacity:.8}
+nav.top .soon .ico{width:15px;height:15px}
+nav.top .sub{border-top:1px solid var(--line);background:color-mix(in srgb,var(--accent-soft) 55%,transparent)}
+nav.top .sub .in{gap:2px;padding-block:6px}
+nav.top .sub button{padding:4px 12px;border:0;border-radius:999px;font-size:.88rem}
+nav.top .sub button[aria-selected="true"]{background:var(--accent);color:var(--surface)}
 
 /* stage sub-tabs */
 .subtabs{display:flex;flex-wrap:wrap;gap:8px}
@@ -298,7 +305,7 @@ html{scroll-behavior:smooth}
   <div class="eyebrow">幼兒到國中 · 3–15 歲</div>
   <h1>兒童科技學習路線圖</h1>
   <p>五個年齡段、五條路線：3D 建模與列印、程式設計、實體運算與機器人、AI、軟體應用。這一版先把 3D 列印路線補齊到可以直接排課的程度。</p>
-  <div class="stats"><span><b>5</b> 個年齡段</span><span><b>5</b> 條路線</span><span><b>18</b> 項 3D 列印教材</span><span>整理於 <b class="mono">2026-10</b></span></div>
+  <div class="stats"><span><b>5</b> 個年齡段</span><span><b>5</b> 條路線</span><span><b>16</b> 項 3D 列印教材</span><span>整理於 <b class="mono">2026-10</b></span></div>
   <div class="routes" aria-label="五條路線">
     <div class="route done"><span class="ri"><svg class="ico"><use href="#i-cube"/></svg></span><div><b>3D 建模與列印</b><small>✓ 已整理到可排課</small></div></div>
     <div class="route todo"><span class="ri"><svg class="ico"><use href="#i-code"/></svg></span><div><b>程式設計</b><small>規劃中</small></div></div>
@@ -311,13 +318,17 @@ html{scroll-behavior:smooth}
 
 <nav class="top" aria-label="分頁"><div class="in" role="tablist">
   <button role="tab" id="t-overview" data-tab="overview">總覽</button>
-  <button role="tab" id="t-print3d" data-tab="print3d">3D 列印路線</button>
+  <button role="tab" class="route-tab" data-route="print3d"><svg class="ico"><use href="#i-cube"/></svg>3D 建模與列印</button>
+  <span class="soon"><svg class="ico"><use href="#i-code"/></svg><svg class="ico"><use href="#i-robot"/></svg><svg class="ico"><use href="#i-ai"/></svg><svg class="ico"><use href="#i-app"/></svg>其他四條路線規劃中</span>
+</div>
+<div class="sub" id="sub-print3d"><div class="in" role="tablist" aria-label="3D 建模與列印">
+  <button role="tab" id="t-print3d" data-tab="print3d">五層路線</button>
   <button role="tab" id="t-stages" data-tab="stages">分齡細節</button>
   <button role="tab" id="t-framework" data-tab="framework">能力框架</button>
   <button role="tab" id="t-software" data-tab="software">軟體階梯</button>
   <button role="tab" id="t-safety" data-tab="safety">安全與檢查</button>
   <button role="tab" id="t-resources" data-tab="resources">教材資源</button>
-</div></nav>
+</div></div></nav>
 
 <div class="wrap">
 
@@ -350,7 +361,7 @@ html{scroll-behavior:smooth}
     </tbody>
   </table></div>
   </details>
-  <p class="src">其他四條路線的細節之後依同樣格式補充，每條路線會是一個分頁。</p>
+  <p class="src">其他四條路線的細節之後依同樣格式補充，每條路線會像 3D 列印一樣，在上方有自己的一組分頁。</p>
 </section>
 
 <!-- ============ 3D ROUTE ============ -->
@@ -416,7 +427,7 @@ html{scroll-behavior:smooth}
       <div class="fs"><b><svg class="ico"><use href="#i-printer"/></svg>3 列印</b><span>大人操作機器</span><small>孩子在旁觀察</small></div>
     </div>
     <p class="next"><b>升級訊號：</b>想做「要剛好放得下某樣東西」的作品，開始需要量尺寸。</p>
-    <p class="src">搭配：<a href="https://www.youtube.com/playlist?list=PLvd9ZUvYuLVrCCKaI2ikVRcstCscwqPfz">蔡依帆「Tinkercad 教學」播放清單</a>（8 部）、<a href="https://sites.google.com/view/raeseclass/%E5%9B%9B%E5%B9%B4%E7%B4%9A/3d%E5%88%97%E5%8D%B0/tinkercad%E6%95%99%E5%AD%B8">仁愛國小四年級 Tinkercad 單元</a>、<a href="https://learn.hnps.tn.edu.tw/modules/tad_book3/page.php?tbsn=21&amp;tbdsn=513">新南國小 Tinkercad 教材</a>（鑰匙圈、筆筒、齒輪、獎盃等作品）；想結合程式可試 <a href="https://www.scopesdf.org/scopesdf_lesson/coding-3d-models-using-tinkercad-codeblocks/">Tinkercad Codeblocks</a></p>
+    <p class="src">搭配：<a href="https://www.youtube.com/playlist?list=PLvd9ZUvYuLVrCCKaI2ikVRcstCscwqPfz">蔡依帆「Tinkercad 教學」播放清單</a>（8 部）、<a href="https://sites.google.com/view/raeseclass/%E5%9B%9B%E5%B9%B4%E7%B4%9A/3d%E5%88%97%E5%8D%B0/tinkercad%E6%95%99%E5%AD%B8">仁愛國小四年級 Tinkercad 單元</a>、<a href="https://learn.hnps.tn.edu.tw/modules/tad_book3/page.php?tbsn=21&amp;tbdsn=513">新南國小 Tinkercad 教材</a>（鑰匙圈、筆筒、齒輪、獎盃等作品）</p>
   </article>
 
   <article class="stage" id="s4" style="--c:var(--l4)">
@@ -493,15 +504,13 @@ html{scroll-behavior:smooth}
     <h3>各軟體適合的年齡</h3>
     <div class="legend"><span><i style="--c:var(--accent)"></i>主線</span><span><i style="--c:var(--muted)"></i>其他選擇</span><span>色條淡出 = 該年齡以上都適用</span></div>
     <div class="ax" id="swchart"></div>
-    <p class="src">只畫有年齡建議、且仍在更新的軟體；已停止的見下表。滑鼠移到色條上看說明。</p>
+    <p class="src">只畫有年齡建議、且仍在更新的軟體；已停止的見下表。用程式產生模型的工具（Tinkercad Codeblocks、BlocksCAD）歸到程式設計路線。滑鼠移到色條上看說明。</p>
   </div>
   <div class="tbl"><table>
     <thead><tr><th>軟體</th><th>類型</th><th>適合</th><th>現況</th><th>說明</th></tr></thead>
     <tbody>
       <tr><td><b>Tinkercad</b></td><td>積木式建模（網頁）</td><td>6–12 歲</td><td><span class="status ok">持續更新</span></td><td>主力入門工具，免安裝、有中文介面</td></tr>
       <tr><td><b>Makers Empire</b></td><td>兒童建模 App</td><td>5–14 歲</td><td><span class="status ok">持續更新</span></td><td>比 Tinkercad 更好上手，適合低年級；進階功能需訂閱</td></tr>
-      <tr><td><b>Tinkercad Codeblocks</b></td><td>程式建模（積木）</td><td>8–11 歲起</td><td><span class="status ok">持續更新</span></td><td>用迴圈、變數產生形狀，串接程式路線</td></tr>
-      <tr><td><b>BlocksCAD</b></td><td>程式建模（積木）</td><td>8 歲以上</td><td><span class="status ok">持續更新</span></td><td>教案涵蓋三年級到高三，教育版付費</td></tr>
       <tr><td><b>Fusion 360</b></td><td>參數化 CAD</td><td>12 歲以上</td><td><span class="status ok">持續更新</span></td><td>教育版免費；CREATE 框架的範例軟體</td></tr>
       <tr><td><b>Onshape</b></td><td>參數化 CAD（網頁）</td><td>12 歲以上</td><td><span class="status ok">持續更新</span></td><td>瀏覽器即可用，適合學校電腦</td></tr>
       <tr><td><b>Blender</b></td><td>雕塑、造型</td><td>12 歲以上</td><td><span class="status ok">持續更新</span></td><td>做角色、生物等有機造型</td></tr>
@@ -584,7 +593,7 @@ html{scroll-behavior:smooth}
 <!-- ============ RESOURCES ============ -->
 <section id="resources">
   <h2>3D 列印教材資源</h2>
-  <p class="lead">國內以學校自編的 Tinkercad 和 Cura 教材為主，中文、免費，大多停在國小程度。國外資源補上教案庫、程式結合建模，以及給大人學機器操作的課程。</p>
+  <p class="lead">國內以學校自編的 Tinkercad 和 Cura 教材為主，中文、免費，大多停在國小程度。國外資源補上教案庫、兒童建模 App，以及給大人學機器操作的課程。</p>
   <div class="chart">
     <h3>各對象有幾項教材</h3>
     <div class="legend"><span><i style="--c:var(--accent)"></i>國內</span><span><i style="--c:var(--muted)"></i>國外</span><span>點一列可直接篩選</span></div>
@@ -622,8 +631,6 @@ html{scroll-behavior:smooth}
   <h3 class="rh" data-region-head="intl">國外</h3>
   <div class="res" data-region-grid="intl">
     <a class="card" data-region="intl" data-lv="s3 s4" href="https://www.tinkercad.com/teachers/3d-printing"><span class="t">Tinkercad 官方 3D 列印課程</span><span class="m">Autodesk · 英文（介面有中文）· 免費</span><span class="d">官方逐步課程，可開班級帳號讓孩子登入。</span><span class="tags"><i>中年級</i><i>高年級</i></span></a>
-    <a class="card" data-region="intl" data-lv="s3 s4" href="https://www.scopesdf.org/scopesdf_lesson/coding-3d-models-using-tinkercad-codeblocks/"><span class="t">Tinkercad Codeblocks 教案</span><span class="m">SCOPES-DF · 英文 · 免費</span><span class="d">用積木程式產生 3D 模型，8–11 歲。迴圈、變數直接變成形狀，是 3D 路線和程式路線的交會點。</span><span class="tags"><i>中年級</i><i>高年級</i></span></a>
-    <a class="card" data-region="intl" data-lv="s3 s4 s5" href="https://www.blockscad3d.com/educators"><span class="t">BlocksCAD</span><span class="m">英文 · 基本免費，教育版付費（30 天試用）</span><span class="d">積木式程式建模，教案涵蓋三年級到高三，附教師筆記、學生講義和解答，對齊數學課綱。</span><span class="tags"><i>中年級</i><i>高年級</i><i>國中</i></span></a>
     <a class="card" data-region="intl" data-lv="s3 s4 s5" href="https://www.thingiverse.com/education"><span class="t">Thingiverse Education</span><span class="m">英文 · 免費</span><span class="d">600 個以上跨科教案（數學、科學、歷史、藝術），附可下載模型。MakerBot 另有免費的教師指南 PDF。</span><span class="tags"><i>中年級</i><i>高年級</i><i>國中</i></span></a>
     <a class="card" data-region="intl" data-lv="s2 s3 s4" href="https://www.makersempire.com/"><span class="t">Makers Empire</span><span class="m">App · 英文 · 免費教案＋付費訂閱</span><span class="d">專為幼兒園到國二設計的建模 App 和對齊課綱的教案，有月賽和挑戰關卡。比 Tinkercad 更適合低年級。</span><span class="tags"><i>低年級</i><i>中年級</i><i>高年級</i></span></a>
     <a class="card" data-region="intl" data-lv="s4 s5" href="https://www.learnbylayers.com/"><span class="t">Learn by Layers</span><span class="m">英文 · 有免費樣本，完整版付費</span><span class="d">約 430 份可下載的完整教案，使用 Tinkercad、Fusion 360、Onshape，也有 Bambu Lab 印表機專用課程。</span><span class="tags"><i>高年級</i><i>國中</i></span></a>
@@ -636,7 +643,7 @@ html{scroll-behavior:smooth}
   <details>
     <summary>其他路線的資源</summary>
     <ul>
-      <li>程式：<a href="https://www.scratchjr.org/">ScratchJr</a>（5–7 歲）、<a href="https://scratch.mit.edu/">Scratch</a>（8–16 歲）、<a href="https://code.org/student/elementary">Code.org 基礎課程</a></li>
+      <li>程式：<a href="https://www.scratchjr.org/">ScratchJr</a>（5–7 歲）、<a href="https://scratch.mit.edu/">Scratch</a>（8–16 歲）、<a href="https://code.org/student/elementary">Code.org 基礎課程</a>；用程式產生 3D 模型：<a href="https://www.scopesdf.org/scopesdf_lesson/coding-3d-models-using-tinkercad-codeblocks/">Tinkercad Codeblocks 教案</a>（8–11 歲）、<a href="https://www.blockscad3d.com/educators">BlocksCAD</a>（三年級到高三）</li>
       <li>實體運算：<a href="https://microbit.org/">micro:bit</a></li>
       <li>AI：<a href="https://teachablemachine.withgoogle.com/">Teachable Machine</a>、<a href="https://market.cloud.edu.tw/resources/web/1798164">教育部「和 AI 做朋友」</a>、<a href="https://www.junyiacademy.org/topics/cs-ai">均一 AI 課</a>、<a href="https://ai4k12.org/gradeband-progression-charts/">AI4K12 年級進程表</a></li>
       <li>綜合：<a href="https://sites.google.com/view/raeseclass">仁愛國小電腦教室教材網</a></li>
@@ -750,9 +757,6 @@ html{scroll-behavior:smooth}
     sw('Makers Empire', '兒童建模 App', 5, 14, false, '比 Tinkercad 更好上手，適合低年級'),
     sw('Tinkercad', '積木式建模', 6, 12, true, '主力入門工具，免安裝、有中文介面'),
     sw('SketchUp', '快速建模', 10, 0, false, '平面圖、建築、螺旋梯'),
-    {group:'程式建模'},
-    sw('Codeblocks', 'Tinkercad 程式建模', 8, 0, false, '8–11 歲起；用迴圈、變數產生形狀'),
-    sw('BlocksCAD', '積木程式建模', 8, 0, false, '教案涵蓋三年級到高三'),
     {group:'進階建模'},
     sw('Fusion 360', '參數化 CAD', 12, 0, true, '教育版免費；CREATE 框架的範例軟體'),
     sw('Onshape', '參數化 CAD（網頁）', 12, 0, true, '瀏覽器即可用，適合學校電腦'),
@@ -782,19 +786,34 @@ html{scroll-behavior:smooth}
   var tabs = Array.prototype.slice.call(document.querySelectorAll('nav.top [data-tab]'));
   var ids = tabs.map(function(t){ return t.dataset.tab; });
   var panels = ids.map(function(id){ var p = document.getElementById(id); p.setAttribute('role','tabpanel'); p.setAttribute('aria-labelledby','t-'+id); p.tabIndex = -1; return p; });
+  var routeBtn = document.querySelector('nav.top [data-route="print3d"]');
+  var subRow = document.getElementById('sub-print3d');
   function show(id, focus){
     if (ids.indexOf(id) < 0) id = 'overview';
+    var in3d = id !== 'overview';
+    routeBtn.setAttribute('aria-selected', in3d); routeBtn.tabIndex = in3d ? 0 : -1;
+    subRow.hidden = !in3d;
+    if (in3d) try { localStorage.setItem('sub3d', id); } catch(e){}
     tabs.forEach(function(t){ var on = t.dataset.tab === id; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; if (on) t.scrollIntoView({block:'nearest',inline:'nearest'}); });
     panels.forEach(function(p){ p.hidden = p.id !== id; });
     try { localStorage.setItem('tab', id); } catch(e){}
     if (focus) { var nav = document.querySelector('nav.top'); if (nav.getBoundingClientRect().top < 0 || window.scrollY > nav.offsetTop) window.scrollTo({top: nav.offsetTop}); }
   }
-  tabs.forEach(function(t, i){
-    t.addEventListener('click', function(){ show(t.dataset.tab, true); setHash(t.dataset.tab); });
-    t.addEventListener('keydown', function(e){
-      var k = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-      if (!k) return; e.preventDefault();
-      var n = tabs[(i + k + tabs.length) % tabs.length]; n.focus(); n.click();
+  routeBtn.addEventListener('click', function(){
+    var last = null; try { last = localStorage.getItem('sub3d'); } catch(e){}
+    var id = last && last !== 'overview' && ids.indexOf(last) >= 0 ? last : 'print3d';
+    show(id, true); setHash(id);
+  });
+  /* arrow keys move within one row: [總覽, 3D] or the 3D sub-tabs */
+  Array.prototype.slice.call(document.querySelectorAll('nav.top [role="tablist"]')).forEach(function(list){
+    var row = Array.prototype.slice.call(list.querySelectorAll('[role="tab"]'));
+    row.forEach(function(t, i){
+      if (t.dataset.tab) t.addEventListener('click', function(){ show(t.dataset.tab, true); setHash(t.dataset.tab); });
+      t.addEventListener('keydown', function(e){
+        var k = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!k) return; e.preventDefault();
+        var n = row[(i + k + row.length) % row.length]; n.focus(); n.click();
+      });
     });
   });
 

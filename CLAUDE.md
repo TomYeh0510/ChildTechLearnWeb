@@ -10,7 +10,10 @@ Tom 規劃的「兒童科技學習路線圖」：幼兒到國中的科技教材�
 
 ## 檔案結構
 - `index.html`：全部 HTML、CSS、JS 都在這一個檔案，不使用建置工具。
-  - 頂部分頁（`nav.top [data-tab]`）切換 `<section>`：overview、print3d、stages、framework、software、safety、resources。
+  - 導覽分兩層：第一層是路線（`總覽` + `[data-route="print3d"]` 3D 建模與列印）；選到 3D 時出現第二層 `#sub-print3d`。
+  - 所有分頁按鈕都是 `nav.top [data-tab]`，切換 `<section>`：overview（總覽），以及 3D 路線底下的 print3d、stages、framework、software、safety、resources。
+  - 之後新增其他路線時，比照 3D：加一個 `data-route` 按鈕和一列子分頁。
+  - 圖表（總覽矩陣、能力框架對照圖、軟體年齡圖、教材數量圖）都由 JS 依頁面資料產生，不用外部函式庫。
   - 「分齡細節」內有年齡子分頁（`[data-stage]` → `#s1`–`#s5`）。
   - 「教材資源」卡片用 `data-region`（tw / intl）與 `data-lv`（s2–s5、adult）篩選。
   - 顏色全部是 `:root` 上的 CSS 變數，含深色模式；年齡段顏色 `--l1`–`--l5`。
@@ -34,7 +37,7 @@ Tom 規劃的「兒童科技學習路線圖」：幼兒到國中的科技教材�
 - 新南國小 Tinkercad 教材、新興國中 Fusion 360 教學（臺南）
 
 ## 待辦
-- [ ] 程式設計路線：補成和 3D 列印一樣的分頁細節
+- [ ] 程式設計路線：補成和 3D 列印一樣的分頁細節（程式建模工具 Tinkercad Codeblocks、BlocksCAD 已從 3D 路線移出，歸到這條）
 - [ ] 實體運算與機器人路線
 - [ ] AI 路線
 - [ ] 軟體應用與數位素養路線
