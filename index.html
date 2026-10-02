@@ -150,6 +150,12 @@ details.activity{border-left:6px solid var(--c);background:color-mix(in srgb,var
 details.activity summary{display:flex;flex-wrap:wrap;align-items:center;gap:4px 0}
 details.activity .cols{margin-top:4px}
 details.activity li b{font-weight:700}
+.goals{padding-left:1.1em}
+.goals>li{margin:8px 0}
+.goals details.how{background:none;border:0;padding:0;margin-top:2px}
+.goals details.how summary{font-weight:500;color:var(--accent);font-size:.86rem}
+.goals details.how[open] summary{margin-bottom:2px}
+.goals details.how ul{font-size:.92rem;padding-left:1.1em}
 .next{font-size:.9rem;border-top:1px dashed var(--line);padding-top:10px;color:var(--muted)}
 .next b{color:var(--ink)}
 .src{font-size:.8rem;color:var(--muted)}
@@ -435,7 +441,11 @@ html{scroll-behavior:smooth}
   <article class="stage" id="s1" style="--c:var(--l1)">
     <header><h3>幼兒 3–6 歲</h3><span class="tag">第 1 層 · 不碰機器</span></header>
     <div class="cols">
-      <div><div class="k">學習目標</div><ul><li>知道「立體」和「平面」的差別</li><li>看懂東西是一層一層疊出來的</li><li>建立「先想 → 做出來」的概念</li></ul></div>
+      <div><div class="k">學習目標與怎麼學<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></div><ul class="goals">
+        <li><b>知道「立體」和「平面」的差別</b><details class="how" open><summary>怎麼學</summary><ul><li><b>摸摸看：</b>同一個形狀準備一張剪紙圓（平面）和一顆球（立體）放進布袋，孩子閉眼摸，說說「哪個會滾？哪個可以站起來？」</li><li><b>轉一圈：</b>拿起立體的東西轉一圈，從旁邊看長得不一樣；紙片從旁邊看只剩薄薄一條，讓孩子比一比</li><li><b>找一找：</b>在家找 3 個「平的」（紙、貼紙、圖案）和 3 個「立體的」（杯子、積木、水果），分成兩堆</li></ul></details></li>
+        <li><b>看懂東西是一層一層疊出來的</b><details class="how" open><summary>怎麼學</summary><ul><li><b>疊紙板：</b>把同一個輪廓的紙板一片片疊起來，數一數有幾層、高度怎麼變（見下方活動卡）</li><li><b>盤泥條：</b>把黏土搓成長條，一圈一圈往上盤成杯子，這就是印表機把材料一層層堆起來的方式</li><li><b>疊積木塔：</b>用同樣大小的積木疊高，問「這是第幾層？拿掉最上面一層會怎樣？」</li></ul></details></li>
+        <li><b>建立「先想 → 做出來」的概念</b><details class="how" open><summary>怎麼學</summary><ul><li><b>先說再做：</b>動手前先問「你想做什麼？」請孩子用一句話說出來</li><li><b>畫一畫：</b>用蠟筆畫出想做的形狀，不用畫得像</li><li><b>做完對照：</b>拿作品和草圖比一比，問「跟你想的一樣嗎？哪裡不一樣？」，大人只提問、不替孩子改</li><li><b>改一點再做一次：</b>選一個不一樣的地方，再做一次</li></ul></details></li>
+      </ul></div>
       <div><div class="k">活動與作品</div><ul><li>用黏土或積木先捏出形狀，再對照印好的同款模型</li><li>看列印縮時影片，數一數有幾層</li><li>幫印好的小動物上色、組裝</li></ul></div>
       <div><div class="k">課堂安排<span class="ev ed" title="編者整理的建議，尚待實作驗證">編者建議</span></div><ul><li>每次 15–20 分鐘，以手作為主</li><li>印表機由大人全程操作，孩子在安全距離外觀察</li></ul></div>
     </div>
