@@ -222,6 +222,8 @@ footer{padding-top:40px;font-size:.85rem;color:var(--muted);display:grid;gap:6px
 .ax .b.mute{--c:var(--muted)}
 .ax .scale{position:relative;height:18px;font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
 .ax .scale span{position:absolute;transform:translateX(-50%)}
+.ax .scale.grades{height:38px}
+.ax .scale .sch{top:18px;transform:none;text-align:center;border-top:1px solid var(--line);padding-top:1px;font-family:var(--f-body);white-space:nowrap;overflow:hidden}
 .ax .grp{grid-column:1/-1;font-size:.75rem;letter-spacing:.08em;color:var(--muted);font-weight:700;border-top:1px solid var(--line);padding-top:6px;margin-top:2px}
 #tip{position:fixed;z-index:20;pointer-events:none;background:var(--ink);color:var(--bg);font-size:.82rem;line-height:1.5;padding:6px 10px;border-radius:6px;max-width:260px;transform:translate(-50%,calc(-100% - 8px))}
 #tip b{display:block}
@@ -454,19 +456,30 @@ html{scroll-behavior:smooth}
 <!-- ============ FRAMEWORK ============ -->
 <section id="framework">
   <h2>能力框架對照：CREATE Education</h2>
-  <p class="lead">英國 CREATE Education 把 3D 列印能力分成三條主軸、三個等級。英國 Year 7 約等於台灣小六到國一，所以基礎級對應到本路線的高年級到國中。</p>
+  <p class="lead">英國 CREATE Education 把 3D 列印能力分成三條主軸、三個等級。英國孩子比台灣早一年上小學，換算時<b>英國 Year N ≈ 台灣 N−1 年級</b>（例如 Year 7 ≈ 小六、Year 8 ≈ 國一），所以基礎級對應到本路線的高年級到國中。</p>
   <div class="chart">
     <h3>年齡對照圖</h3>
-    <div class="legend"><span><i style="--c:var(--accent)"></i>CREATE 等級</span><span><i class="dash" style="--c:var(--accent)"></i>有經驗的小學高年級可提前</span><span><i style="--c:var(--l3)"></i>本路線年齡段</span></div>
+    <div class="legend"><span><i style="--c:var(--accent)"></i>CREATE 等級</span><span><i class="dash" style="--c:var(--accent)"></i>有經驗的小五可提前</span><span><i style="--c:var(--l3)"></i>本路線年齡段</span></div>
     <div class="ax" id="fwchart" style="--lw:110px"></div>
-    <p class="src">英國學年對應年齡：Year 6 約 10–11 歲、Year 7 約 11–12 歲、Year 9 約 13–14 歲、Year 10 約 14–15 歲。滑鼠移到色條上看說明。</p>
+    <div class="tbl"><table class="conv" style="min-width:0">
+      <thead><tr><th>英國學年</th><th>年齡</th><th>台灣學制</th><th>CREATE 等級</th></tr></thead>
+      <tbody>
+        <tr><td>Year 6（KS2 最後一年）</td><td class="mono">10–11</td><td>小五</td><td>基礎級（有經驗者提前）</td></tr>
+        <tr><td>Year 7</td><td class="mono">11–12</td><td>小六</td><td>基礎級</td></tr>
+        <tr><td>Year 8</td><td class="mono">12–13</td><td>國一</td><td>基礎級</td></tr>
+        <tr><td>Year 9</td><td class="mono">13–14</td><td>國二</td><td>中級</td></tr>
+        <tr><td>Year 10</td><td class="mono">14–15</td><td>國三</td><td>中級、進階級起點</td></tr>
+        <tr><td>Year 11 以上</td><td class="mono">15+</td><td>高一以上</td><td>進階級</td></tr>
+      </tbody>
+    </table></div>
+    <p class="src">換算依據：英國學年 9 月開學，Year 6 為 10–11 歲、Year 7 為 11–12 歲（<a href="https://www.gov.uk/national-curriculum">GOV.UK National curriculum</a>）；台灣以入學當年 9 月 1 日滿 6 歲進小一（<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0070011">強迫入學條例施行細則</a>），所以同齡的孩子在台灣低一個年級。滑鼠移到色條上看說明。</p>
   </div>
   <div class="tbl"><table>
-    <thead><tr><th>等級（英國學制）</th><th>對應本路線</th><th>積層製造與列印流程</th><th>列印設計與切片</th><th>3D 建模</th></tr></thead>
+    <thead><tr><th>等級（英國 → 台灣學制）</th><th>對應本路線</th><th>積層製造與列印流程</th><th>列印設計與切片</th><th>3D 建模</th></tr></thead>
     <tbody>
-      <tr><td class="age">基礎級<br><span class="muted mono" style="font-weight:400">Year 7–8，<br>有經驗的 KS2 高年級</span></td><td>高年級 → 國中</td><td>什麼是積層製造、和切削加工的差別；FDM 原理；設計→切片→列印；STL/OBJ/G-code；安全守則；開始與中止列印、取件</td><td>匯入、縮放、擺放方向；多件排版；Brim/Raft；層檢視；存檔與輸出 G-code；2D 圖片擠出</td><td>介面與視角；用基本形體組合；簡單草圖與尺寸；圓角、陣列；存成可列印的封閉 STL；分享設計</td></tr>
-      <tr><td class="age">中級<br><span class="muted mono" style="font-weight:400">Year 9–10</span></td><td>國中</td><td>環境與永續；七種積層製造製程；雙噴頭；PLA 特性與保存；換料；不黏床排除；平台校正；暫停與續印；檔案版本管理</td><td>支撐材與減少支撐；懸空與架橋；擺放方向；外殼與填充；層高、噴嘴等設定；時間與品質取捨；成本計算</td><td>草圖約束；參考圖；曲線；雕塑與對稱；鏡像；合併與拆件；設計迭代</td></tr>
-      <tr><td class="age">進階級<br><span class="muted mono" style="font-weight:400">Year 10 以上</span></td><td>高中以後（延伸）</td><td>對產業與社會的影響；製程選擇；客製化量產；其他線材；換噴嘴、保養、故障排除</td><td>速度、回抽、冷卻、溫度；雙色切片；公差；擺放方向與結構強度；為積層製造而設計（DfAM）</td><td>組件與組裝；材質外觀；渲染、工程圖、爆炸圖；雙色模型；應力模擬；生成式設計</td></tr>
+      <tr><td class="age">基礎級<br><span class="muted mono" style="font-weight:400">Year 7–8 ≈ 小六–國一<br>有經驗的 Year 6（小五）可提前</span></td><td>高年級 → 國中</td><td>什麼是積層製造、和切削加工的差別；FDM 原理；設計→切片→列印；STL/OBJ/G-code；安全守則；開始與中止列印、取件</td><td>匯入、縮放、擺放方向；多件排版；Brim/Raft；層檢視；存檔與輸出 G-code；2D 圖片擠出</td><td>介面與視角；用基本形體組合；簡單草圖與尺寸；圓角、陣列；存成可列印的封閉 STL；分享設計</td></tr>
+      <tr><td class="age">中級<br><span class="muted mono" style="font-weight:400">Year 9–10 ≈ 國二–國三</span></td><td>國中</td><td>環境與永續；七種積層製造製程；雙噴頭；PLA 特性與保存；換料；不黏床排除；平台校正；暫停與續印；檔案版本管理</td><td>支撐材與減少支撐；懸空與架橋；擺放方向；外殼與填充；層高、噴嘴等設定；時間與品質取捨；成本計算</td><td>草圖約束；參考圖；曲線；雕塑與對稱；鏡像；合併與拆件；設計迭代</td></tr>
+      <tr><td class="age">進階級<br><span class="muted mono" style="font-weight:400">Year 10 以上 ≈ 國三以上</span></td><td>高中以後（延伸）</td><td>對產業與社會的影響；製程選擇；客製化量產；其他線材；換噴嘴、保養、故障排除</td><td>速度、回抽、冷卻、溫度；雙色切片；公差；擺放方向與結構強度；為積層製造而設計（DfAM）</td><td>組件與組裝；材質外觀；渲染、工程圖、爆炸圖；雙色模型；應力模擬；生成式設計</td></tr>
     </tbody>
   </table></div>
   <p class="src">來源：<a href="https://www.createeducation.com/wp-content/uploads/2024/09/3D-Printing-Skills-Progression.pdf">CREATE Education, 3D Printing Knowledge &amp; Skills Progression Framework</a>（以 Cura 和 Fusion 360 為例，其他軟體大致可通用）</p>
@@ -706,17 +719,25 @@ html{scroll-behavior:smooth}
     var sc = '';
     for (var a = min; a <= max; a++) if (a === min || (a % 2 === 0 && a > min + 1) || a === max) sc += '<span style="left:' + x(a) + '">' + a + (a === max ? '+' : '') + '</span>';
     h += '<div class="lab muted"><small>年齡（歲）</small></div><div class="scale">' + sc + '</div>';
+    /* Taiwan grade row: 小一 starts at 6 (Sept 1 cutoff), so grade g spans age 5+g to 6+g */
+    var g = '', school = '';
+    [['幼兒園', 3, 6, 0], ['國小', 6, 12, 6], ['國中', 12, 15, 3], ['高中', 15, 18, 3]].forEach(function(sc2){
+      var f = Math.max(sc2[1], min), t = Math.min(sc2[2], max); if (t <= f) return;
+      school += '<span class="sch" style="left:' + x(f) + ';width:calc(' + x(t) + ' - ' + x(f) + ')">' + sc2[0] + '</span>';
+      for (var n = 1; n <= sc2[3]; n++) { var a0 = sc2[1] + n - 1; if (a0 >= min && a0 < max) g += '<span style="left:calc((' + x(a0) + ' + ' + x(a0 + 1) + ') / 2)">' + n + '</span>'; }
+    });
+    h += '<div class="lab muted"><small>台灣學制</small></div><div class="scale grades">' + g + school + '</div>';
     el.innerHTML = h;
   }
 
   var A = 'var(--accent)';
   axisChart(document.getElementById('fwchart'), 3, 17, [
     {label:'本路線', bars: STAGES.map(function(s, i){ return {from:s.from, to:s.to, color:'var(--l' + (i+1) + ')', text:s.name, tip:'<b>' + s.name + '</b>' + s.age}; })},
-    {label:'基礎級', sub:'Year 7–8', bars:[
-      {from:10, to:11, cls:'dash', color:A, tip:'<b>基礎級（提前）</b>有經驗的 KS2 高年級，約 10–11 歲，相當於小五、小六'},
-      {from:11, to:13, color:A, text:'基礎', tip:'<b>基礎級</b>Year 7–8，約 11–13 歲；對應本路線高年級 → 國中'}]},
-    {label:'中級', sub:'Year 9–10', bars:[{from:13, to:15, color:A, text:'中級', tip:'<b>中級</b>Year 9–10，約 13–15 歲；對應國中'}]},
-    {label:'進階級', sub:'Year 10 以上', bars:[{from:14, open:true, color:A, text:'進階', tip:'<b>進階級</b>Year 10 以上，約 14 歲起；高中以後的延伸'}]}
+    {label:'基礎級', sub:'小六–國一', bars:[
+      {from:10, to:11, cls:'dash', color:A, tip:'<b>基礎級（提前）</b>有經驗的 Year 6，約 10–11 歲，相當於小五'},
+      {from:11, to:13, color:A, text:'基礎', tip:'<b>基礎級</b>Year 7–8，約 11–13 歲，相當於小六–國一'}]},
+    {label:'中級', sub:'國二–國三', bars:[{from:13, to:15, color:A, text:'中級', tip:'<b>中級</b>Year 9–10，約 13–15 歲，相當於國二–國三'}]},
+    {label:'進階級', sub:'國三以上', bars:[{from:14, open:true, color:A, text:'進階', tip:'<b>進階級</b>Year 10 以上，約 14 歲起，相當於國三以上；本路線當作高中延伸'}]}
   ]);
 
   var M = 'var(--muted)';
