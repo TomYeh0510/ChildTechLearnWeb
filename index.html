@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>兒童科技學習路線圖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a single reading column on a faint build-plate grid; the 3D route is drawn as a stack of print layers, youngest at the bottom. */
+:root{
+  --bg:#f4f6f4; --surface:#ffffff; --ink:#1c2420; --muted:#5a6560; --line:#d6ddd8; --grid:rgba(28,36,32,.05);
+  --accent:#0d7a69; --accent-soft:#dcefe9; --warn:#b4471f; --warn-soft:#fbe9e1;
+  --l1:#e2a93b; --l2:#e0735a; --l3:#3a8fd6; --l4:#0d7a69; --l5:#6a55a3;
+  --f-display:"LXGW WenKai TC","Kaiti TC","STKaiti",serif;
+  --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141a17; --surface:#1c2420; --ink:#e7ece9; --muted:#9aa7a0; --line:#2f3a35; --grid:rgba(231,236,233,.05);
+  --accent:#4cc3ac; --accent-soft:#1d3a33; --warn:#f08a62; --warn-soft:#3a2219;
+  --l1:#f0bf5a; --l2:#f08d74; --l3:#6aaef0; --l4:#4cc3ac; --l5:#9a86d6; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141a17; --surface:#1c2420; --ink:#e7ece9; --muted:#9aa7a0; --line:#2f3a35; --grid:rgba(231,236,233,.05);
+  --accent:#4cc3ac; --accent-soft:#1d3a33; --warn:#f08a62; --warn-soft:#3a2219;
+  --l1:#f0bf5a; --l2:#f08d74; --l3:#6aaef0; --l4:#4cc3ac; --l5:#9a86d6; color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.75;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px}
+.wrap{max-width:980px;margin:0 auto;padding-inline:20px;padding-block:0 64px}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;text-wrap:balance;line-height:1.3;margin:0}
+h1{font-size:clamp(2rem,6vw,3rem)}
+h2{font-size:clamp(1.5rem,4vw,2rem)}
+h3{font-size:1.25rem}
+p{margin:0;max-width:65ch}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.78rem;letter-spacing:.12em;color:var(--muted);font-weight:500}
+
+/* nav */
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);
+  backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav.top .in{max-width:980px;margin:0 auto;padding-inline:20px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav.top button{flex:none;padding:13px 14px 11px;color:var(--muted);background:none;border:0;border-bottom:3px solid transparent;
+  font:inherit;font-size:.95rem;white-space:nowrap;cursor:pointer}
+nav.top button:hover{color:var(--ink)}
+nav.top button[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent);font-weight:700}
+
+/* stage sub-tabs */
+.subtabs{display:flex;flex-wrap:wrap;gap:8px}
+.subtabs button{font:inherit;font-size:.92rem;cursor:pointer;background:var(--surface);color:var(--ink);
+  border:1px solid var(--line);border-left:6px solid var(--c);border-radius:6px;padding:6px 12px;display:grid;line-height:1.35;text-align:left}
+.subtabs button small{font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
+.subtabs button[aria-selected="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c);font-weight:700}
+
+/* hero */
+header.hero{padding-block:40px 24px;display:grid;gap:16px}
+header.hero p{font-size:1.08rem;color:var(--muted)}
+.stats{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:.9rem;color:var(--muted)}
+.stats b{color:var(--ink);font-family:var(--f-mono);font-weight:600}
+
+section{padding-block:32px 8px;display:grid;gap:20px}
+section[role="tabpanel"]:focus{outline:none}
+.lead{font-size:1.05rem}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:640px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-weight:700;font-size:.82rem;color:var(--muted);background:var(--bg);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.age{white-space:nowrap;font-weight:700}
+.dot{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:baseline}
+
+/* layer stack */
+.stack{display:flex;flex-direction:column-reverse;gap:6px;position:relative;padding-top:34px}
+.nozzle{position:absolute;top:0;left:50%;transform:translateX(-50%);width:28px;height:30px}
+.nozzle svg{width:100%;height:100%}
+.layer{display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:center;background:var(--surface);
+  border:1px solid var(--line);border-left:10px solid var(--c);border-radius:6px;padding:12px 14px;text-decoration:none;color:inherit;
+  margin-inline:calc(var(--i) * 3%)}
+.layer:hover{border-color:var(--c)}
+.layer .a{font-family:var(--f-display);font-size:1.1rem;font-weight:700;line-height:1.25}
+.layer .a small{display:block;font-family:var(--f-mono);font-size:.75rem;color:var(--muted);font-weight:400}
+.layer .d{font-size:.92rem;min-width:0}
+.layer .d b{font-weight:700}
+.plate{height:10px;border-radius:3px;background:var(--line);margin-top:2px}
+.stack-cap{font-size:.85rem;color:var(--muted);text-align:center}
+
+/* stage cards */
+.stage{background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:10px;padding:20px;display:grid;gap:14px;scroll-margin-top:60px}
+.stage header{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.stage header .tag{font-family:var(--f-mono);font-size:.8rem;color:var(--c);font-weight:600}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px 24px}
+.cols > div{min-width:0}
+.k{font-size:.8rem;letter-spacing:.08em;color:var(--muted);font-weight:700;margin-bottom:4px}
+ul{margin:0;padding-left:1.2em}
+li{margin:2px 0}
+.spec{font-family:var(--f-mono);font-size:.85rem;background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:0 5px;white-space:nowrap}
+.next{font-size:.9rem;border-top:1px dashed var(--line);padding-top:10px;color:var(--muted)}
+.next b{color:var(--ink)}
+.src{font-size:.8rem;color:var(--muted)}
+
+/* checklist + safety */
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;display:grid;gap:10px;min-width:0}
+.box.warn{background:var(--warn-soft);border-color:transparent}
+.box.warn h3{color:var(--warn)}
+.check{display:grid;gap:6px}
+.check label{display:flex;gap:10px;align-items:flex-start;cursor:pointer;font-size:.95rem}
+.check input{margin-top:6px;accent-color:var(--accent);width:16px;height:16px;flex:none}
+.check input:checked + span{color:var(--muted);text-decoration:line-through}
+.progress{font-size:.85rem;color:var(--muted)}
+.settings{display:flex;flex-wrap:wrap;gap:8px}
+.settings div{background:var(--accent-soft);border-radius:6px;padding:8px 12px;display:grid}
+.settings b{font-family:var(--f-mono);font-size:1.15rem;color:var(--accent)}
+.settings span{font-size:.78rem;color:var(--muted)}
+
+/* software ladder */
+.status{display:inline-block;font-size:.75rem;padding:1px 8px;border-radius:999px;white-space:nowrap;font-weight:500}
+.ok{background:var(--accent-soft);color:var(--accent)}
+.old{background:var(--warn-soft);color:var(--warn)}
+
+/* resources */
+.res{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.res a.card{display:grid;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;text-decoration:none;color:inherit;min-width:0}
+.res a.card:hover{border-color:var(--accent)}
+.res .t{font-weight:700;color:var(--accent)}
+.res .m{font-size:.82rem;color:var(--muted)}
+.res .d{font-size:.9rem;line-height:1.6}
+.res .tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.res .tags i{font-style:normal;font-size:.72rem;padding:1px 8px;border-radius:999px;background:var(--bg);border:1px solid var(--line);color:var(--muted)}
+.rh{margin-top:4px}
+.filters{display:grid;gap:8px}
+.fgroup{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.fgroup .k{margin:0 6px 0 0;min-width:2.5em}
+.chip{font:inherit;font-size:.88rem;cursor:pointer;padding:4px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface);font-weight:700}
+.empty{color:var(--muted)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+summary{cursor:pointer;font-weight:700}
+details[open] summary{margin-bottom:10px}
+footer{padding-top:40px;font-size:.85rem;color:var(--muted);display:grid;gap:6px}
+
+@media (max-width:560px){
+  .layer{grid-template-columns:1fr;gap:4px;margin-inline:0}
+  .stage{padding:16px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">幼兒到國中 · 3–15 歲</div>
+  <h1>兒童科技學習路線圖</h1>
+  <p>五個年齡段、五條路線：3D 建模與列印、程式設計、實體運算與機器人、AI、軟體應用。這一版先把 3D 列印路線補齊到可以直接排課的程度。</p>
+  <div class="stats"><span><b>5</b> 個年齡段</span><span><b>5</b> 條路線</span><span><b>18</b> 項 3D 列印教材</span><span>整理於 <b class="mono">2026-10</b></span></div>
+</header>
+</div>
+
+<nav class="top" aria-label="分頁"><div class="in" role="tablist">
+  <button role="tab" id="t-overview" data-tab="overview">總覽</button>
+  <button role="tab" id="t-print3d" data-tab="print3d">3D 列印路線</button>
+  <button role="tab" id="t-stages" data-tab="stages">分齡細節</button>
+  <button role="tab" id="t-framework" data-tab="framework">能力框架</button>
+  <button role="tab" id="t-software" data-tab="software">軟體階梯</button>
+  <button role="tab" id="t-safety" data-tab="safety">安全與檢查</button>
+  <button role="tab" id="t-resources" data-tab="resources">教材資源</button>
+</div></nav>
+
+<div class="wrap">
+
+<!-- ============ OVERVIEW ============ -->
+<section id="overview">
+  <h2>總覽：年齡段 × 路線</h2>
+  <p class="lead">幼兒以不插電和動手為主，三年級開始用電腦，高年級用專題把各條路線串起來。年齡只是參考，實際看識字量和會不會用鍵盤滑鼠。</p>
+  <div class="tbl"><table>
+    <thead><tr><th>年齡段</th><th>3D 建模與列印</th><th>程式設計</th><th>實體運算與機器人</th><th>AI 素養</th><th>軟體應用與數位素養</th></tr></thead>
+    <tbody>
+      <tr><td class="age"><span class="dot" style="background:var(--l1)"></span>幼兒 3–6</td><td>摸立體形狀、看列印過程、幫印好的件上色</td><td>不插電：指令卡、走格子</td><td>按鍵式地板機器人</td><td>分類遊戲</td><td>平板基本操作、使用時間規則</td></tr>
+      <tr><td class="age"><span class="dot" style="background:var(--l2)"></span>低年級 6–8</td><td>3–5 個形狀組合、名牌、鑰匙圈</td><td>ScratchJr、Code.org Course B–C</td><td>LEGO SPIKE Essential</td><td>語音助理、Quick, Draw!</td><td>滑鼠、小畫家、拍照錄音</td></tr>
+      <tr><td class="age"><span class="dot" style="background:var(--l3)"></span>中年級 8–10</td><td>Tinkercad 基本功：對齊、群組、挖孔</td><td>Scratch 入門、Code.org Course D–E</td><td>micro:bit 內建感測器</td><td>Teachable Machine</td><td>打字、Word、Canva、網路安全</td></tr>
+      <tr><td class="age"><span class="dot" style="background:var(--l4)"></span>高年級 10–12</td><td>量尺寸再建模、切片設定、多堂專題</td><td>Scratch 遊戲專題</td><td>mBot、SPIKE Prime</td><td>教育部「和 AI 做朋友」</td><td>影音編輯、簡報、資料查證</td></tr>
+      <tr><td class="age"><span class="dot" style="background:var(--l5)"></span>國中 12+</td><td>Fusion 360、Onshape、公差與迭代</td><td>Python、App Inventor</td><td>Arduino、物聯網</td><td>家長陪同使用生成式 AI</td><td>試算表、個資保護</td></tr>
+    </tbody>
+  </table></div>
+  <p class="src">其他四條路線的細節之後依同樣格式補充，每條路線會是一個分頁。</p>
+</section>
+
+<!-- ============ 3D ROUTE ============ -->
+<section id="print3d">
+  <h2>3D 建模與列印：五層路線</h2>
+  <p class="lead">像列印一樣由下往上疊：每一層都建立在前一層上。判斷一堂課好不好，看孩子自己設計的比例，而不是成品漂不漂亮。</p>
+  <div class="stack" role="list">
+    <div class="nozzle" aria-hidden="true"><svg viewBox="0 0 28 30"><rect x="4" y="0" width="20" height="14" rx="2" fill="var(--muted)"/><path d="M8 14h12l-4 12h-4z" fill="var(--ink)"/><circle cx="14" cy="28" r="2" fill="var(--warn)"/></svg></div>
+    <a class="layer" role="listitem" href="#s1" style="--c:var(--l1);--i:4"><div class="a">幼兒<small>3–6 歲 · 第 1 層</small></div><div class="d"><b>看與摸</b>：平面變立體、一層一層疊。大人操作機器，孩子上色、組裝。</div></a>
+    <a class="layer" role="listitem" href="#s2" style="--c:var(--l2);--i:3"><div class="a">低年級<small>6–8 歲 · 第 2 層</small></div><div class="d"><b>拼形狀</b>：3–5 個基本形狀做成一件作品，一堂課完成。</div></a>
+    <a class="layer" role="listitem" href="#s3" style="--c:var(--l3);--i:2"><div class="a">中年級<small>8–10 歲 · 第 3 層</small></div><div class="d"><b>Tinkercad 基本功</b>：對齊、群組、挖孔、工作平面；認識「設計 → 切片 → 列印」。</div></a>
+    <a class="layer" role="listitem" href="#s4" style="--c:var(--l4);--i:1"><div class="a">高年級<small>10–12 歲 · 第 4 層</small></div><div class="d"><b>量了再畫</b>：用尺量實物、考慮列印方向、自己調切片，做多堂專題。</div></a>
+    <a class="layer" role="listitem" href="#s5" style="--c:var(--l5);--i:0"><div class="a">國中<small>12 歲以上 · 第 5 層</small></div><div class="d"><b>解決真實問題</b>：草圖與參數化建模、公差、設計迭代、估時間與成本。</div></a>
+  </div>
+  <div class="plate" aria-hidden="true"></div>
+  <p class="stack-cap">點任一層，會切到「分齡細節」分頁的該年齡段</p>
+</section>
+
+<!-- ============ STAGES ============ -->
+<section id="stages">
+  <h2>分齡細節</h2>
+  <div class="subtabs" role="tablist" aria-label="年齡段">
+    <button role="tab" data-stage="s1" style="--c:var(--l1)">幼兒<small>3–6 歲</small></button>
+    <button role="tab" data-stage="s2" style="--c:var(--l2)">低年級<small>6–8 歲</small></button>
+    <button role="tab" data-stage="s3" style="--c:var(--l3)">中年級<small>8–10 歲</small></button>
+    <button role="tab" data-stage="s4" style="--c:var(--l4)">高年級<small>10–12 歲</small></button>
+    <button role="tab" data-stage="s5" style="--c:var(--l5)">國中<small>12 歲以上</small></button>
+  </div>
+
+  <article class="stage" id="s1" style="--c:var(--l1)">
+    <header><h3>幼兒 3–6 歲</h3><span class="tag">第 1 層 · 不碰機器</span></header>
+    <div class="cols">
+      <div><div class="k">學習目標</div><ul><li>知道「立體」和「平面」的差別</li><li>看懂東西是一層一層疊出來的</li><li>建立「先想 → 做出來」的概念</li></ul></div>
+      <div><div class="k">活動與作品</div><ul><li>用黏土或積木先捏出形狀，再對照印好的同款模型</li><li>看列印縮時影片，數一數有幾層</li><li>幫印好的小動物上色、組裝</li></ul></div>
+      <div><div class="k">課堂安排</div><ul><li>每次 15–20 分鐘，以手作為主</li><li>印表機由大人全程操作，孩子在安全距離外觀察</li></ul></div>
+    </div>
+    <p class="next"><b>升級訊號：</b>能穩定用手指或滑鼠拖曳、旋轉螢幕上的物件。</p>
+  </article>
+
+  <article class="stage" id="s2" style="--c:var(--l2)">
+    <header><h3>低年級 6–8 歲</h3><span class="tag">第 2 層 · 單堂作品</span></header>
+    <div class="cols">
+      <div><div class="k">要教的操作</div><ul><li>從形狀庫拖出方塊、圓柱、文字</li><li>移動、旋轉、縮放、改顏色</li><li>每件作品只用 3–5 個基本形狀</li></ul></div>
+      <div><div class="k">第一個作品：名牌（約 15 分鐘）</div><ul><li>底板 <span class="spec">60 × 20 × 2 mm</span></li><li>文字高度 <span class="spec">3 mm</span>，四周留邊 <span class="spec">5 mm</span></li><li>練到對齊、群組、配色三件事</li></ul><div class="k" style="margin-top:8px">之後的作品</div><ul><li>鑰匙圈、筆筒、簡單玩具車</li></ul></div>
+      <div><div class="k">課堂安排</div><ul><li>每週固定一次，每次約 30 分鐘設計時間</li><li>換料、調平、取件都由大人負責</li><li>目標是「印出一件完成品」，不求完美</li></ul></div>
+    </div>
+    <p class="next"><b>升級訊號：</b>不看示範就能組合出想要的形狀，開始問「怎麼挖洞」。</p>
+    <p class="src">來源：<a href="https://nozzledown.com/tinkercad-kids-tutorial-parent-guide/">Nozzle Down 家長指南</a>（6–8 歲段）</p>
+  </article>
+
+  <article class="stage" id="s3" style="--c:var(--l3)">
+    <header><h3>中年級 8–10 歲</h3><span class="tag">第 3 層 · Tinkercad 基本功</span></header>
+    <div class="cols">
+      <div><div class="k">Tinkercad 核心功能</div><ul><li><b>對齊工具</b>（快捷鍵 <span class="spec">L</span>）：讓物件中心對中心</li><li><b>群組</b>（<span class="spec">Ctrl+G</span>）：多個形狀合成一個</li><li><b>挖孔</b>：放圓柱 → 設為「孔」→ 對齊 → 和實體群組</li><li><b>工作平面</b>：在斜面或側面上加東西</li></ul></div>
+      <div><div class="k">建議單元順序</div><ol style="margin:0;padding-left:1.3em"><li>介面、視角與主要工作區</li><li>基本形狀與屬性</li><li>多個物件的操作與對齊</li><li>群組與挖孔</li><li>文字與印章（文字要鏡像）</li><li>完成作品並匯出 STL</li></ol></div>
+      <div><div class="k">作品</div><ul><li>印章、筆筒、有蓋小盒</li></ul><div class="k" style="margin-top:8px">認識列印流程</div><ul><li>設計 → 切片 → 列印三步驟</li><li>三種檔案：<span class="spec">STL</span> 模型、<span class="spec">G-code</span> 列印指令、專案檔</li><li>用切片軟體看每一層的樣子</li></ul></div>
+    </div>
+    <p class="next"><b>升級訊號：</b>想做「要剛好放得下某樣東西」的作品，開始需要量尺寸。</p>
+    <p class="src">搭配：<a href="https://www.youtube.com/playlist?list=PLvd9ZUvYuLVrCCKaI2ikVRcstCscwqPfz">蔡依帆「Tinkercad 教學」播放清單</a>（8 部）、<a href="https://sites.google.com/view/raeseclass/%E5%9B%9B%E5%B9%B4%E7%B4%9A/3d%E5%88%97%E5%8D%B0/tinkercad%E6%95%99%E5%AD%B8">仁愛國小四年級 Tinkercad 單元</a>、<a href="https://learn.hnps.tn.edu.tw/modules/tad_book3/page.php?tbsn=21&amp;tbdsn=513">新南國小 Tinkercad 教材</a>（鑰匙圈、筆筒、齒輪、獎盃等作品）；想結合程式可試 <a href="https://www.scopesdf.org/scopesdf_lesson/coding-3d-models-using-tinkercad-codeblocks/">Tinkercad Codeblocks</a></p>
+  </article>
+
+  <article class="stage" id="s4" style="--c:var(--l4)">
+    <header><h3>高年級 10–12 歲</h3><span class="tag">第 4 層 · 量了再畫</span></header>
+    <div class="cols">
+      <div><div class="k">建模</div><ul><li>用尺或卡尺量實物，用 Tinkercad 尺規工具精準標尺寸</li><li>多零件設計：拆件、卡榫、組裝</li><li>2D 圖片轉成立體浮雕</li></ul></div>
+      <div><div class="k">切片（對應 CREATE 基礎級）</div><ul><li>匯入模型，調整大小、位置、方向</li><li>多個模型排版、複製</li><li>平台附著：何時加 Brim 或 Raft</li><li>用層檢視確認每一層</li><li>初步認識：懸空、支撐材、填充率</li></ul></div>
+      <div><div class="k">專題作品（多堂完成）</div><ul><li>手機架、客製桌遊棋子</li><li>依實際尺寸做的收納盒</li><li>幫機器人或 micro:bit 做外殼（串接其他路線）</li></ul></div>
+    </div>
+    <p class="next"><b>升級訊號：</b>覺得 Tinkercad「做不出想要的形狀」，通常是規律使用 8–12 個月後。</p>
+    <p class="src">來源：<a href="https://nozzledown.com/tinkercad-kids-tutorial-parent-guide/">Nozzle Down</a>（9–11 歲段）、<a href="https://www.createeducation.com/wp-content/uploads/2024/09/3D-Printing-Skills-Progression.pdf">CREATE Education 基礎級</a>、<a href="https://sites.google.com/bhes.ntpc.edu.tw/maker/3d%E5%88%97%E5%8D%B0%E8%88%873d%E5%BB%BA%E6%A8%A1">碧華國小</a>（拆件、卡榫）</p>
+  </article>
+
+  <article class="stage" id="s5" style="--c:var(--l5)">
+    <header><h3>國中 12 歲以上</h3><span class="tag">第 5 層 · 解決真實問題</span></header>
+    <div class="cols">
+      <div><div class="k">建模（Fusion 360 / Onshape）</div><ul><li>草圖、尺寸與約束、圓角、陣列</li><li>鏡像、合併實體、拆成零件</li><li>參考照片建模、曲線</li><li>管理設計版本，做「設計 → 測試 → 修改」</li><li>想做生物或造型類：改學 Blender 雕塑</li></ul></div>
+      <div><div class="k">切片與機器（對應 CREATE 中級）</div><ul><li>支撐材何時需要、怎麼減少</li><li>懸空與架橋、用擺放方向減少支撐</li><li>外殼厚度與填充率對強度的影響</li><li>層高、噴嘴、設定對時間與品質的影響</li><li>估算列印成本</li><li>換料、處理不黏床；平台校正</li></ul></div>
+      <div><div class="k">專題作品</div><ul><li>理線器、工具架</li><li>家中損壞零件的替換件</li><li>會動的機構（鉸鏈、齒輪）</li></ul></div>
+    </div>
+    <p class="src">來源：<a href="https://nozzledown.com/tinkercad-kids-tutorial-parent-guide/">Nozzle Down</a>（12 歲以上）、<a href="https://www.createeducation.com/wp-content/uploads/2024/09/3D-Printing-Skills-Progression.pdf">CREATE Education 中級</a>。中文教材：<a href="https://maker.hhjh.tn.edu.tw/modules/tad_book3/index.php?op=list_docs&amp;tbsn=17">臺南新興國中 Fusion 360 教學</a>（41 單元：手指虎、外帶杯、工具筆）</p>
+  </article>
+</section>
+
+<!-- ============ FRAMEWORK ============ -->
+<section id="framework">
+  <h2>能力框架對照：CREATE Education</h2>
+  <p class="lead">英國 CREATE Education 把 3D 列印能力分成三條主軸、三個等級。英國 Year 7 約等於台灣小六到國一，所以基礎級對應到本路線的高年級到國中。</p>
+  <div class="tbl"><table>
+    <thead><tr><th>等級（英國學制）</th><th>對應本路線</th><th>積層製造與列印流程</th><th>列印設計與切片</th><th>3D 建模</th></tr></thead>
+    <tbody>
+      <tr><td class="age">基礎級<br><span class="muted mono" style="font-weight:400">Year 7–8，<br>有經驗的 KS2 高年級</span></td><td>高年級 → 國中</td><td>什麼是積層製造、和切削加工的差別；FDM 原理；設計→切片→列印；STL/OBJ/G-code；安全守則；開始與中止列印、取件</td><td>匯入、縮放、擺放方向；多件排版；Brim/Raft；層檢視；存檔與輸出 G-code；2D 圖片擠出</td><td>介面與視角；用基本形體組合；簡單草圖與尺寸；圓角、陣列；存成可列印的封閉 STL；分享設計</td></tr>
+      <tr><td class="age">中級<br><span class="muted mono" style="font-weight:400">Year 9–10</span></td><td>國中</td><td>環境與永續；七種積層製造製程；雙噴頭；PLA 特性與保存；換料；不黏床排除；平台校正；暫停與續印；檔案版本管理</td><td>支撐材與減少支撐；懸空與架橋；擺放方向；外殼與填充；層高、噴嘴等設定；時間與品質取捨；成本計算</td><td>草圖約束；參考圖；曲線；雕塑與對稱；鏡像；合併與拆件；設計迭代</td></tr>
+      <tr><td class="age">進階級<br><span class="muted mono" style="font-weight:400">Year 10 以上</span></td><td>高中以後（延伸）</td><td>對產業與社會的影響；製程選擇；客製化量產；其他線材；換噴嘴、保養、故障排除</td><td>速度、回抽、冷卻、溫度；雙色切片；公差；擺放方向與結構強度；為積層製造而設計（DfAM）</td><td>組件與組裝；材質外觀；渲染、工程圖、爆炸圖；雙色模型；應力模擬；生成式設計</td></tr>
+    </tbody>
+  </table></div>
+  <p class="src">來源：<a href="https://www.createeducation.com/wp-content/uploads/2024/09/3D-Printing-Skills-Progression.pdf">CREATE Education, 3D Printing Knowledge &amp; Skills Progression Framework</a>（以 Cura 和 Fusion 360 為例，其他軟體大致可通用）</p>
+</section>
+
+<!-- ============ SOFTWARE ============ -->
+<section id="software">
+  <h2>軟體階梯</h2>
+  <p class="lead">主線是 Tinkercad → Fusion 360 / Onshape。碧華國小網站介紹的部分軟體已經停止更新，排新課時建議用右欄的替代品。</p>
+  <div class="tbl"><table>
+    <thead><tr><th>軟體</th><th>類型</th><th>適合</th><th>現況</th><th>說明</th></tr></thead>
+    <tbody>
+      <tr><td><b>Tinkercad</b></td><td>積木式建模（網頁）</td><td>6–12 歲</td><td><span class="status ok">持續更新</span></td><td>主力入門工具，免安裝、有中文介面</td></tr>
+      <tr><td><b>Makers Empire</b></td><td>兒童建模 App</td><td>5–14 歲</td><td><span class="status ok">持續更新</span></td><td>比 Tinkercad 更好上手，適合低年級；進階功能需訂閱</td></tr>
+      <tr><td><b>Tinkercad Codeblocks</b></td><td>程式建模（積木）</td><td>8–11 歲起</td><td><span class="status ok">持續更新</span></td><td>用迴圈、變數產生形狀，串接程式路線</td></tr>
+      <tr><td><b>BlocksCAD</b></td><td>程式建模（積木）</td><td>8 歲以上</td><td><span class="status ok">持續更新</span></td><td>教案涵蓋三年級到高三，教育版付費</td></tr>
+      <tr><td><b>Fusion 360</b></td><td>參數化 CAD</td><td>12 歲以上</td><td><span class="status ok">持續更新</span></td><td>教育版免費；CREATE 框架的範例軟體</td></tr>
+      <tr><td><b>Onshape</b></td><td>參數化 CAD（網頁）</td><td>12 歲以上</td><td><span class="status ok">持續更新</span></td><td>瀏覽器即可用，適合學校電腦</td></tr>
+      <tr><td><b>Blender</b></td><td>雕塑、造型</td><td>12 歲以上</td><td><span class="status ok">持續更新</span></td><td>做角色、生物等有機造型</td></tr>
+      <tr><td><b>SketchUp</b></td><td>快速建模</td><td>10 歲以上</td><td><span class="status ok">網頁版可用</span></td><td>碧華國小用於平面圖、建築、螺旋梯</td></tr>
+      <tr><td><b>Cura / Bambu Studio</b></td><td>切片</td><td>8 歲以上（大人陪同）</td><td><span class="status ok">持續更新</span></td><td>依印表機品牌選擇</td></tr>
+      <tr><td><b>123D Design</b></td><td>建模</td><td>—</td><td><span class="status old">已停止</span></td><td>碧華國小有收納盒、高跟鞋、摩艾範例；新課改用 Tinkercad 或 Fusion 360</td></tr>
+      <tr><td><b>Meshmixer</b></td><td>模型修復、拆件</td><td>—</td><td><span class="status old">停止更新</span></td><td>碧華國小教布林運算、拆件、卡榫；拆件可改在 Tinkercad 或 Fusion 360 做</td></tr>
+      <tr><td><b>Sculptris</b></td><td>雕塑</td><td>—</td><td><span class="status old">停止更新</span></td><td>可改用 Blender</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ============ SAFETY ============ -->
+<section id="safety">
+  <h2>安全守則與列印前檢查</h2>
+  <div class="two">
+    <div class="box warn">
+      <h3>安全守則</h3>
+      <ul>
+        <li>PLA 列印時噴頭約 <span class="spec">200–220 °C</span>，碰到會立刻燙傷</li>
+        <li>不論幾歲，列印時都要有大人在場</li>
+        <li>換料、調平、取件由大人負責</li>
+        <li>孩子在離機器約 <span class="spec">60 cm</span> 外觀察</li>
+        <li>印完等 <span class="spec">10–15 分鐘</span> 冷卻再取件</li>
+        <li>只用 PLA；ABS、PETG 等需要密閉機殼與良好通風</li>
+        <li>第一層印的時候盯著看有沒有黏好，手不要伸進去</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>可列印設計檢查表</h3>
+      <div class="check" id="checklist">
+        <label><input type="checkbox" id="c1"><span>所有牆面至少 2 mm 厚</span></label>
+        <label><input type="checkbox" id="c2"><span>底部是平的，貼在工作平面上</span></label>
+        <label><input type="checkbox" id="c3"><span>沒有懸空、沒接到主體的零件</span></label>
+        <label><input type="checkbox" id="c4"><span>形狀都對齊好，並已群組</span></label>
+        <label><input type="checkbox" id="c5"><span>尺寸放得進印表機平台</span></label>
+        <label><input type="checkbox" id="c6"><span>匯出成 STL 並在切片軟體看過層檢視</span></label>
+      </div>
+      <div class="progress" id="prog" aria-live="polite">已完成 0 / 6 項</div>
+    </div>
+  </div>
+  <div class="box">
+    <h3>建議的入門列印設定</h3>
+    <div class="settings">
+      <div><b>0.2 mm</b><span>層高</span></div>
+      <div><b>20 %</b><span>填充率</span></div>
+      <div><b>50 mm/s</b><span>列印速度</span></div>
+      <div><b>PLA</b><span>線材</span></div>
+    </div>
+    <p class="src">來源：<a href="https://nozzledown.com/tinkercad-kids-tutorial-parent-guide/">Nozzle Down 家長指南</a></p>
+  </div>
+  <details>
+    <summary>常見錯誤</summary>
+    <ul>
+      <li>零件懸空，沒有支撐</li>
+      <li>沒對齊就群組，結果歪掉</li>
+      <li>底部不平，印不起來</li>
+      <li>牆太薄（小於 2 mm），一拿就斷</li>
+      <li>讓孩子自己操作印表機</li>
+      <li>入門就用難印的線材</li>
+    </ul>
+  </details>
+</section>
+
+<!-- ============ RESOURCES ============ -->
+<section id="resources">
+  <h2>3D 列印教材資源</h2>
+  <p class="lead">國內以學校自編的 Tinkercad 和 Cura 教材為主，中文、免費，大多停在國小程度。國外資源補上教案庫、程式結合建模，以及給大人學機器操作的課程。</p>
+  <div class="filters" role="group" aria-label="篩選教材">
+    <div class="fgroup"><span class="k">地區</span>
+      <button class="chip" data-f="region" data-v="all" aria-pressed="true">全部</button>
+      <button class="chip" data-f="region" data-v="tw" aria-pressed="false">國內</button>
+      <button class="chip" data-f="region" data-v="intl" aria-pressed="false">國外</button>
+    </div>
+    <div class="fgroup"><span class="k">對象</span>
+      <button class="chip" data-f="lv" data-v="all" aria-pressed="true">全部</button>
+      <button class="chip" data-f="lv" data-v="s2" aria-pressed="false">低年級</button>
+      <button class="chip" data-f="lv" data-v="s3" aria-pressed="false">中年級</button>
+      <button class="chip" data-f="lv" data-v="s4" aria-pressed="false">高年級</button>
+      <button class="chip" data-f="lv" data-v="s5" aria-pressed="false">國中</button>
+      <button class="chip" data-f="lv" data-v="adult" aria-pressed="false">老師與家長</button>
+    </div>
+  </div>
+  <p class="progress" id="rescount" aria-live="polite"></p>
+
+  <h3 class="rh" data-region-head="tw">國內</h3>
+  <div class="res" data-region-grid="tw">
+    <a class="card" data-region="tw" data-lv="s3 s4" href="https://learn.hnps.tn.edu.tw/modules/tad_book3/page.php?tbsn=21&amp;tbdsn=513"><span class="t">新南國小 Tinkercad 3D 軟體</span><span class="m">臺南新南國小 · 圖文 · 免費</span><span class="d">16 節：登入與加入班級 → 鑰匙圈、馬克杯與筆筒、齒輪與南瓜燈、容器、獎盃、匯入 SVG → Cura 切片與 CR-20 列印。從建模到列印最完整的中文國小教材。</span><span class="tags"><i>中年級</i><i>高年級</i></span></a>
+    <a class="card" data-region="tw" data-lv="s3 s4" href="https://sites.google.com/ssps.tp.edu.tw/mobile-learning/%E8%87%AA%E9%80%A0%E6%95%99%E8%82%B2/3d%E5%BB%BA%E6%A8%A1%E5%8F%8A%E5%88%97%E5%8D%B0"><span class="t">松山國小 3D 建模及列印</span><span class="m">臺北松山國小 · 影片清單 · 免費</span><span class="d">Tinkercad、Cura；作品有單手閱讀神器、雪人、南瓜糖果盒，主題涵蓋教具、物品維修、人物建模。另介紹 AI 影片轉 3D 模型，以及 Printables、MakerWorld 等模型庫。</span><span class="tags"><i>中年級</i><i>高年級</i></span></a>
+    <a class="card" data-region="tw" data-lv="s3" href="https://sites.google.com/view/raeseclass/%E5%9B%9B%E5%B9%B4%E7%B4%9A/3d%E5%88%97%E5%8D%B0/tinkercad%E6%95%99%E5%AD%B8"><span class="t">仁愛國小四年級 3D 列印</span><span class="m">電腦教室教材網 · 圖文 · 免費</span><span class="d">四年級資訊課的 Tinkercad、123D Design 單元，可以看出學校實際排在哪個年級。</span><span class="tags"><i>中年級</i></span></a>
+    <a class="card" data-region="tw" data-lv="s3" href="https://www.youtube.com/playlist?list=PLvd9ZUvYuLVrCCKaI2ikVRcstCscwqPfz"><span class="t">Tinkercad 教學（蔡依帆）</span><span class="m">YouTube · 8 部 · 免費</span><span class="d">中文影片，適合孩子跟著做，或老師課前看。</span><span class="tags"><i>中年級</i></span></a>
+    <a class="card" data-region="tw" data-lv="s3 s4 s5" href="https://sites.google.com/bhes.ntpc.edu.tw/maker/3d%E5%88%97%E5%8D%B0%E8%88%873d%E5%BB%BA%E6%A8%A1"><span class="t">碧華國小創客教育中心</span><span class="m">新北碧華國小 · 影片與圖文 · 免費</span><span class="d">列印原理影片、Cura 4.7/4.8、Meshmixer 拆件與卡榫、SketchUp。部分軟體已停止更新，取「原理」和「拆件觀念」來用。</span><span class="tags"><i>中年級</i><i>高年級</i><i>國中</i></span></a>
+    <a class="card" data-region="tw" data-lv="s5" href="https://maker.hhjh.tn.edu.tw/modules/tad_book3/index.php?op=list_docs&amp;tbsn=17"><span class="t">新興國中 Fusion 360 教學</span><span class="m">臺南新興自造教育及科技中心 · 圖文 · 免費</span><span class="d">41 單元，用三個專題帶完：手指虎、咖啡外帶杯（杯身、杯蓋、組裝）、工具筆組件（筆身、起子、筆蓋）。適合已會 Tinkercad、要升到參數化建模的孩子。</span><span class="tags"><i>國中</i></span></a>
+    <a class="card" data-region="tw" data-lv="s3 s4" href="https://tkdbook.jyic.net/PN059"><span class="t">《從 3D 列印輕鬆動手玩創意》</span><span class="m">台科大圖書「輕課程」第二版 · 書籍 · 付費</span><span class="d">Tinkercad、123D Design、Paint.NET，有評量。123D 已停止，買前留意書中比例。</span><span class="tags"><i>中年級</i><i>高年級</i></span></a>
+    <a class="card" data-region="tw" data-lv="s2 s3" href="https://hackmd.io/@webduino/ctrlp_fbpost"><span class="t">Webduino 3D 列印小學堂</span><span class="m">文章集 · 免費</span><span class="d">3D 列印應用新聞、設計思維故事、3D 筆安全，適合當課堂開場的閱讀素材。</span><span class="tags"><i>低年級</i><i>中年級</i></span></a>
+  </div>
+
+  <h3 class="rh" data-region-head="intl">國外</h3>
+  <div class="res" data-region-grid="intl">
+    <a class="card" data-region="intl" data-lv="s3 s4" href="https://www.tinkercad.com/teachers/3d-printing"><span class="t">Tinkercad 官方 3D 列印課程</span><span class="m">Autodesk · 英文（介面有中文）· 免費</span><span class="d">官方逐步課程，可開班級帳號讓孩子登入。</span><span class="tags"><i>中年級</i><i>高年級</i></span></a>
+    <a class="card" data-region="intl" data-lv="s3 s4" href="https://www.scopesdf.org/scopesdf_lesson/coding-3d-models-using-tinkercad-codeblocks/"><span class="t">Tinkercad Codeblocks 教案</span><span class="m">SCOPES-DF · 英文 · 免費</span><span class="d">用積木程式產生 3D 模型，8–11 歲。迴圈、變數直接變成形狀，是 3D 路線和程式路線的交會點。</span><span class="tags"><i>中年級</i><i>高年級</i></span></a>
+    <a class="card" data-region="intl" data-lv="s3 s4 s5" href="https://www.blockscad3d.com/educators"><span class="t">BlocksCAD</span><span class="m">英文 · 基本免費，教育版付費（30 天試用）</span><span class="d">積木式程式建模，教案涵蓋三年級到高三，附教師筆記、學生講義和解答，對齊數學課綱。</span><span class="tags"><i>中年級</i><i>高年級</i><i>國中</i></span></a>
+    <a class="card" data-region="intl" data-lv="s3 s4 s5" href="https://www.thingiverse.com/education"><span class="t">Thingiverse Education</span><span class="m">英文 · 免費</span><span class="d">600 個以上跨科教案（數學、科學、歷史、藝術），附可下載模型。MakerBot 另有免費的教師指南 PDF。</span><span class="tags"><i>中年級</i><i>高年級</i><i>國中</i></span></a>
+    <a class="card" data-region="intl" data-lv="s2 s3 s4" href="https://www.makersempire.com/"><span class="t">Makers Empire</span><span class="m">App · 英文 · 免費教案＋付費訂閱</span><span class="d">專為幼兒園到國二設計的建模 App 和對齊課綱的教案，有月賽和挑戰關卡。比 Tinkercad 更適合低年級。</span><span class="tags"><i>低年級</i><i>中年級</i><i>高年級</i></span></a>
+    <a class="card" data-region="intl" data-lv="s4 s5" href="https://www.learnbylayers.com/"><span class="t">Learn by Layers</span><span class="m">英文 · 有免費樣本，完整版付費</span><span class="d">約 430 份可下載的完整教案，使用 Tinkercad、Fusion 360、Onshape，也有 Bambu Lab 印表機專用課程。</span><span class="tags"><i>高年級</i><i>國中</i></span></a>
+    <a class="card" data-region="intl" data-lv="adult" href="https://makerworld.com/en/community/post/1761645"><span class="t">Bambu Lab Academy</span><span class="m">MakerWorld · 免費</span><span class="d">初、中、高級課程：第一次列印、線材、軟體設定、保養。給大人先把機器摸熟。</span><span class="tags"><i>老師與家長</i></span></a>
+    <a class="card" data-region="intl" data-lv="adult" href="https://www.prusa3d.com/category/prusa-academy/"><span class="t">Prusa Academy</span><span class="m">英文 · 付費（入門課約 5 美元起）</span><span class="d">PrusaSlicer 切片、Fusion 建模、列印件設計原則、後處理上色。</span><span class="tags"><i>老師與家長</i></span></a>
+    <a class="card" data-region="intl" data-lv="adult s4 s5" href="https://www.createeducation.com/wp-content/uploads/2024/09/3D-Printing-Skills-Progression.pdf"><span class="t">CREATE Education 能力進程框架</span><span class="m">PDF · 英文 · 免費</span><span class="d">排課時對照用，詳見「能力框架」分頁。</span><span class="tags"><i>老師與家長</i></span></a>
+    <a class="card" data-region="intl" data-lv="adult s2 s3 s4" href="https://nozzledown.com/tinkercad-kids-tutorial-parent-guide/"><span class="t">Nozzle Down 家長指南</span><span class="m">英文 · 免費</span><span class="d">分齡建議、名牌作品尺寸、安全守則與入門列印設定。</span><span class="tags"><i>老師與家長</i></span></a>
+  </div>
+  <p class="empty" id="resempty" hidden>沒有符合的教材，換個篩選條件看看。</p>
+  <details>
+    <summary>其他路線的資源</summary>
+    <ul>
+      <li>程式：<a href="https://www.scratchjr.org/">ScratchJr</a>（5–7 歲）、<a href="https://scratch.mit.edu/">Scratch</a>（8–16 歲）、<a href="https://code.org/student/elementary">Code.org 基礎課程</a></li>
+      <li>實體運算：<a href="https://microbit.org/">micro:bit</a></li>
+      <li>AI：<a href="https://teachablemachine.withgoogle.com/">Teachable Machine</a>、<a href="https://market.cloud.edu.tw/resources/web/1798164">教育部「和 AI 做朋友」</a>、<a href="https://www.junyiacademy.org/topics/cs-ai">均一 AI 課</a>、<a href="https://ai4k12.org/gradeband-progression-charts/">AI4K12 年級進程表</a></li>
+      <li>綜合：<a href="https://sites.google.com/view/raeseclass">仁愛國小電腦教室教材網</a></li>
+    </ul>
+  </details>
+</section>
+
+<footer>
+  <span>年齡建議彙整自上列來源，實際依孩子程度調整。</span>
+  <span>軟體現況以 2026 年 10 月為準。</span>
+</footer>
+</div>
+
+<script>
+(function(){
+  var boxes = document.querySelectorAll('#checklist input');
+  var prog = document.getElementById('prog');
+  function upd(){
+    var n = 0; boxes.forEach(function(b){ if(b.checked) n++; });
+    prog.textContent = n === boxes.length ? '全部完成，可以送去切片了' : '已完成 ' + n + ' / ' + boxes.length + ' 項';
+  }
+  boxes.forEach(function(b){ b.addEventListener('change', upd); });
+  upd();
+
+  /* hash update: some viewers (sandboxed srcdoc frames) refuse history changes */
+  function setHash(h){ try { history.replaceState(null, '', '#' + h); } catch(e){} }
+
+  /* main tabs */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('nav.top [data-tab]'));
+  var ids = tabs.map(function(t){ return t.dataset.tab; });
+  var panels = ids.map(function(id){ var p = document.getElementById(id); p.setAttribute('role','tabpanel'); p.setAttribute('aria-labelledby','t-'+id); p.tabIndex = -1; return p; });
+  function show(id, focus){
+    if (ids.indexOf(id) < 0) id = 'overview';
+    tabs.forEach(function(t){ var on = t.dataset.tab === id; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; if (on) t.scrollIntoView({block:'nearest',inline:'nearest'}); });
+    panels.forEach(function(p){ p.hidden = p.id !== id; });
+    try { localStorage.setItem('tab', id); } catch(e){}
+    if (focus) { var nav = document.querySelector('nav.top'); if (nav.getBoundingClientRect().top < 0 || window.scrollY > nav.offsetTop) window.scrollTo({top: nav.offsetTop}); }
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ show(t.dataset.tab, true); setHash(t.dataset.tab); });
+    t.addEventListener('keydown', function(e){
+      var k = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!k) return; e.preventDefault();
+      var n = tabs[(i + k + tabs.length) % tabs.length]; n.focus(); n.click();
+    });
+  });
+
+  /* stage sub-tabs */
+  var sbtn = Array.prototype.slice.call(document.querySelectorAll('[data-stage]'));
+  function stage(id){
+    sbtn.forEach(function(b){ b.setAttribute('aria-selected', b.dataset.stage === id); });
+    ['s1','s2','s3','s4','s5'].forEach(function(s){ document.getElementById(s).hidden = s !== id; });
+    try { localStorage.setItem('stage', id); } catch(e){}
+  }
+  sbtn.forEach(function(b){ b.addEventListener('click', function(){ stage(b.dataset.stage); }); });
+
+  /* layer stack jumps into a stage */
+  document.querySelectorAll('.layer').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault(); var s = a.getAttribute('href').slice(1);
+      stage(s); show('stages', true); setHash(s);
+    });
+  });
+
+  /* resource filters */
+  var fstate = {region:'all', lv:'all'};
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#resources .card'));
+  function filter(){
+    var n = 0;
+    cards.forEach(function(c){
+      var ok = (fstate.region === 'all' || c.dataset.region === fstate.region) &&
+               (fstate.lv === 'all' || c.dataset.lv.split(' ').indexOf(fstate.lv) >= 0);
+      c.hidden = !ok; if (ok) n++;
+    });
+    ['tw','intl'].forEach(function(r){
+      var any = cards.some(function(c){ return c.dataset.region === r && !c.hidden; });
+      document.querySelector('[data-region-head="'+r+'"]').hidden = !any;
+      document.querySelector('[data-region-grid="'+r+'"]').hidden = !any;
+    });
+    document.getElementById('rescount').textContent = '顯示 ' + n + ' / ' + cards.length + ' 項';
+    document.getElementById('resempty').hidden = n > 0;
+  }
+  document.querySelectorAll('.chip').forEach(function(b){
+    b.addEventListener('click', function(){
+      fstate[b.dataset.f] = b.dataset.v;
+      document.querySelectorAll('.chip[data-f="'+b.dataset.f+'"]').forEach(function(x){ x.setAttribute('aria-pressed', x === b); });
+      filter();
+    });
+  });
+  filter();
+
+  /* initial state: hash > remembered > default */
+  var h = location.hash.slice(1), savedTab = null, savedStage = null;
+  try { savedTab = localStorage.getItem('tab'); savedStage = localStorage.getItem('stage'); } catch(e){}
+  if (/^s[1-5]$/.test(h)) { stage(h); show('stages'); }
+  else { stage(savedStage && /^s[1-5]$/.test(savedStage) ? savedStage : 's3'); show(ids.indexOf(h) >= 0 ? h : (savedTab || 'overview')); }
+})();
+</script>
+
+</body>
+</html>
