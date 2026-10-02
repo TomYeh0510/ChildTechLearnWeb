@@ -58,9 +58,17 @@ const norm = (u) => u.replace(/&amp;/g, '&').replace(/\/$/, '');
     return { rows, bars };
   });
   const expectBars = (html.match(/"group":/g) || []).length;
-  const expectRows = (html.match(/\{"name":/g) || []).length;
+  const expectRows = (html.match(/"checked":/g) || []).length;
   ok('軟體表格列數 = 資料筆數（' + expectRows + '）', sw.rows === expectRows, sw.rows + ' vs ' + expectRows);
   ok('軟體圖表色條數 = 有分組的資料筆數（' + expectBars + '）', sw.bars === expectBars, sw.bars + ' vs ' + expectBars);
+
+  /* ---- 證據標籤：圖例有的三種，頁面內容裡都要真的用到 ---- */
+  const tagUse = await page.evaluate(() => {
+    const out = {};
+    for (const k of ['doc', 'ex', 'ed']) out[k] = [...document.querySelectorAll('.ev.' + k)].filter((e) => !e.closest('.evkey')).length;
+    return out;
+  });
+  ok('證據標籤都有實際使用（官方文件 ' + tagUse.doc + '、教學實例 ' + tagUse.ex + '、編者建議 ' + tagUse.ed + '）', tagUse.doc > 0 && tagUse.ex > 0 && tagUse.ed > 0);
 
   /* ---- 網址、返回鍵 ---- */
   await page.goto(url + '#s1'); await page.waitForTimeout(300);
