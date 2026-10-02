@@ -135,7 +135,7 @@ MakerWorld 說明（上傳時直接貼在說明最前面）：
 | 4 | **6–8 歲「蓋」＝ 3D 筆；Tinkercad 為選配**（第三節） | 已改：低年級卡新增「螢幕時間怎麼抓」，Tinkercad 與名牌活動卡標「選配（螢幕）」；總覽矩陣與五層路線同步 | 已解決（Tom 決定 (b) 改良版：保留、選配、標明螢幕時間，2026-10-02） | 第三節的「Tinkercad 從 8–10 歲開始」仍待同步改成「6–8 歲選配、8–10 歲主線」 | 部分完成 |
 | 5 | AI（10–12）：「同上，比較 AI 做的和自己做的」 | 高年級卡沒有 AI | 缺 | 高年級加簡述區塊（標「即將推出」） | 待做 |
 | 6 | AI（13 起）：自己操作、比較引擎、修模型；看懂參數化程式碼的變數 | 國中卡只有一行 13 歲起自己操作 AI | 部分 | 國中補一行比較引擎與修模型、看懂參數化程式碼 | 待做 |
-| 7 | 以 Bambu Lab／MakerWorld 為主（第一節） | 軟體階梯沒有 MakerWorld、Bambu Handy、MakerLab（Image to 3D、Parametric Model Maker）；教材資源只有 Bambu Lab Academy | 缺 | 軟體階梯加 MakerWorld／MakerLab 項目（13 歲帳號、Image to 3D 點數、一鍵列印）；教材資源加 MakerWorld 卡片 | 待做 |
+| 7 | 以 Bambu Lab／MakerWorld 為主（第一節） | 軟體階梯沒有 MakerWorld、Bambu Handy、MakerLab（Image to 3D、Parametric Model Maker）；教材資源只有 Bambu Lab Academy | 部分完成（Bambu Studio、MakerLab 已加，2026-10-02；MakerWorld 本身、教材卡待做） | 軟體階梯加 MakerWorld／MakerLab 項目（13 歲帳號、Image to 3D 點數、一鍵列印）；教材資源加 MakerWorld 卡片 | 待做 |
 | 8 | 「五層路線」頁說明 | 寫「判斷一堂課好不好，看孩子自己設計的比例」 | 與幼兒「重過程、不設計」不符 | 改成「看孩子在過程中學到什麼，而不是成品漂不漂亮」 | 待做 |
 | 9 | 授權 Standard（第七節） | 網頁沒寫 | 待檔案上架 | 填入 MakerWorld 連結時，教具檔案旁寫「檔案僅供個人列印使用」 | 等 Tom 上傳 |
 | 10 | 教具庫分頁（第九節 3） | 無 | Claude 建議：第二套教具決定時再開 | — | 待決定 |
