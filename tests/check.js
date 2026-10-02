@@ -122,6 +122,51 @@ const norm = (u) => u.replace(/&amp;/g, '&').replace(/\/$/, '');
 
   ok('沒有程式錯誤', errs.length === 0, errs.join(' | '));
 
+  /* ---- 選取狀態：整個反色（底色改變），且文字對比足夠 ---- */
+  for (const scheme of ['light', 'dark']) {
+    const q = await browser.newPage({ viewport: { width: 1100, height: 900 }, colorScheme: scheme });
+    await q.goto(url + '#s1'); await q.waitForTimeout(300);
+    const res = await q.evaluate(() => {
+      const lum = (rgb) => { const [r, g, b] = rgb.match(/[\d.]+/g).slice(0, 3).map((v) => { v = v / 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); }); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+      const cr = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); };
+      const out = [];
+      const test = (name, sel, textSel) => {
+        const els = [...document.querySelectorAll(sel)];
+        els.forEach((el) => {
+          const bg = getComputedStyle(el).backgroundColor, fg = getComputedStyle(textSel ? el.querySelector(textSel) || el : el).color;
+          out.push({ name, bg, fg, ratio: cr(bg, fg) });
+        });
+      };
+      // age tabs: select each stage in turn
+      ['s1', 's2', 's3', 's4', 's5'].forEach((st) => {
+        document.querySelector('[data-stage="' + st + '"]').click();
+        const el = document.querySelector('[data-stage="' + st + '"]');
+        const other = document.querySelector('[data-stage="' + (st === 's1' ? 's2' : 's1') + '"]');
+        const bg = getComputedStyle(el).backgroundColor, fg = getComputedStyle(el).color;
+        out.push({ name: '年齡分頁 ' + st, bg, fg, ratio: cr(bg, fg), differs: bg !== getComputedStyle(other).backgroundColor });
+      });
+      document.querySelector('[data-tab="overview"]').click();
+      ['s1', 's2', 's3', 's4', 's5'].forEach((st) => {
+        const el = document.querySelector('[data-start="' + st + '"]'); el.click();
+        const other = document.querySelector('[data-start="' + (st === 's1' ? 's2' : 's1') + '"]');
+        const bg = getComputedStyle(el).backgroundColor, fg = getComputedStyle(el).color;
+        out.push({ name: '從這裡開始 ' + st, bg, fg, ratio: cr(bg, fg), differs: bg !== getComputedStyle(other).backgroundColor });
+      });
+      const nav = document.querySelector('nav.top [aria-selected="true"]'), navOther = document.querySelector('nav.top [role="tab"][aria-selected="false"]');
+      out.push({ name: '導覽列選取', bg: getComputedStyle(nav).backgroundColor, fg: getComputedStyle(nav).color, ratio: cr(getComputedStyle(nav).backgroundColor, getComputedStyle(nav).color), differs: getComputedStyle(nav).backgroundColor !== getComputedStyle(navOther).backgroundColor });
+      document.querySelector('[data-tab="resources"]').click();
+      document.querySelector('.chip[data-f="lv"][data-v="s2"]').click();
+      const chip = document.querySelector('.chip[aria-pressed="true"][data-v="s2"]'), chipOther = document.querySelector('.chip[data-f="lv"][data-v="s3"]');
+      out.push({ name: '篩選按鈕', bg: getComputedStyle(chip).backgroundColor, fg: getComputedStyle(chip).color, ratio: cr(getComputedStyle(chip).backgroundColor, getComputedStyle(chip).color), differs: getComputedStyle(chip).backgroundColor !== getComputedStyle(chipOther).backgroundColor });
+      const rl = document.querySelector('[data-lvgo][aria-pressed="true"] .rl');
+      out.push({ name: '教材圖表選取列', bg: getComputedStyle(rl).backgroundColor, fg: getComputedStyle(rl).color, ratio: cr(getComputedStyle(rl).backgroundColor, getComputedStyle(rl).color), differs: true });
+      return out;
+    });
+    const weak = res.filter((r) => r.differs === false || r.ratio < 4.3);
+    ok(scheme + '：選取狀態都整個反色且對比 ≥ 4.3（共 ' + res.length + ' 項）', weak.length === 0, weak.map((r) => r.name + ' ' + r.ratio.toFixed(1) + (r.differs === false ? ' 底色沒變' : '')).join('；'));
+    await q.close();
+  }
+
   /* ---- 窄螢幕：每個分頁都不橫向溢出 ---- */
   for (const w of [320, 360, 390, 768, 1100]) {
     for (const scheme of ['light', 'dark']) {
