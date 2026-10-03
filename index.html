@@ -394,16 +394,16 @@ html{scroll-behavior:smooth}
   <div class="start" id="start">
     <h3>孩子幾歲？點一個，直接看適合的路線</h3>
     <div class="start-opts" role="radiogroup" aria-label="孩子的年齡或年級">
-      <button type="button" role="radio" aria-checked="false" data-start="s1" style="--c:var(--l1)">幼兒<small>3–6 歲 · 幼兒園</small></button>
-      <button type="button" role="radio" aria-checked="false" data-start="s2" style="--c:var(--l2)">低年級<small>6–8 歲 · 小一、小二</small></button>
-      <button type="button" role="radio" aria-checked="false" data-start="s3" style="--c:var(--l3)">中年級<small>8–10 歲 · 小三、小四</small></button>
-      <button type="button" role="radio" aria-checked="false" data-start="s4" style="--c:var(--l4)">高年級<small>10–12 歲 · 小五、小六</small></button>
-      <button type="button" role="radio" aria-checked="false" data-start="s5" style="--c:var(--l5)">國中<small>12 歲以上 · 國一以上</small></button>
+      <button type="button" role="radio" aria-checked="false" data-start="s1" style="--c:var(--l1)">幼兒園<small>3–6 歲 · 家長操作</small></button>
+      <button type="button" role="radio" aria-checked="false" data-start="s2" style="--c:var(--l2)">國小低年級<small>6–8 歲 · 家長操作、孩子旁觀</small></button>
+      <button type="button" role="radio" aria-checked="false" data-start="s3" style="--c:var(--l3)">國小中年級<small>8–10 歲 · 要先修</small></button>
+      <button type="button" role="radio" aria-checked="false" data-start="s4" style="--c:var(--l4)">國小高年級<small>10–12 歲 · 要先修</small></button>
+      <button type="button" role="radio" aria-checked="false" data-start="s5" style="--c:var(--l5)">國中<small>12 歲以上 · 要先修</small></button>
     </div>
     <div class="start-out" id="startout" aria-live="polite" hidden></div>
   </div>
   <h2>總覽：年齡段 × 路線</h2>
-  <p class="lead">幼兒以不插電和動手為主，三年級開始用電腦，高年級用專題把各條路線串起來。<b>低年級最多只做到家長操作、孩子旁觀</b>，孩子用實物和動手做；孩子自己用螢幕從中年級開始，一次 30 分鐘內、大人陪同。年齡只是參考，實際看識字量和會不會用鍵盤滑鼠。</p>
+  <p class="lead">這條路線是從小到大循序學習的：幼兒園和國小低年級由家長操作、孩子動手，不需要先修；從中年級起孩子自己操作，每個階段都有「先修」，沒有前面階段經驗的孩子要先補修，不能直接跳關。<b>低年級最多只做到家長操作、孩子旁觀</b>，孩子自己用螢幕從中年級開始，一次 30 分鐘內、大人陪同。</p>
   <div class="mx-wrap"><div class="mx" id="matrix"></div></div>
   <div class="mxcards" id="mxcards"></div>
   <details>
@@ -835,6 +835,21 @@ html{scroll-behavior:smooth}
     k.insertAdjacentHTML('afterbegin', icon(n));
   });
 
+  /* prerequisites: the route is sequential; s1 and s2 are parent-operated, so they have none */
+  var PREREQ = {
+    s3:['低年級的「挑」「調」「蓋」各做過一次：家長操作，孩子從印好的實物挑一個、說出想改什麼、看到印出來','用低溫 3D 筆做出一件三層以上的立體作品','會用滑鼠或觸控拖曳、旋轉（先在大人陪同下練）'],
+    s4:['中年級的 Tinkercad 基本功：對齊、群組、挖孔，並完成「做一張名牌」','自己建模、印出至少一件作品','認識「設計 → 切片 → 列印」三步驟，看過大人切片'],
+    s5:['高年級的「量了再畫」：量實物尺寸再建模，完成一件有尺寸要求的作品（例如收納盒）','做過一次「測試 → 修改 → 再印」','懂切片基本設定（方向、支撐）；自己用 MakerWorld、Fusion 帳號須滿 13 歲']
+  };
+
+  /* 先修 section at the top of s3-s5, built from PREREQ so it never disagrees with the start panel */
+  Object.keys(PREREQ).forEach(function(id){
+    var secs = document.querySelector('#' + id + ' .secs'); if (!secs) return;
+    var d = document.createElement('details'); d.className = 'sec prereq';
+    d.innerHTML = '<summary><span class="k">先修：進來之前要先完成<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul>' + PREREQ[id].map(function(t){ return '<li>' + esc(t) + '</li>'; }).join('') + '</ul><p class="muted">沒有前面階段經驗的孩子，要先補修再進來；不能直接跳關。</p>';
+    var first = secs.querySelector('.safecard'); secs.insertBefore(d, first ? first.nextSibling : secs.firstChild);
+  });
+
   /* quieter evidence tags: inside one block a type is shown once; the title row already carries its own */
   document.querySelectorAll('details.sec, details.activity').forEach(function(d){
     var sum = d.querySelector('summary'), seen = {};
@@ -1056,10 +1071,10 @@ html{scroll-behavior:smooth}
 
   /* "start here": pick the child's level, get a next step */
   var ACT = {
-    s1:{name:'幼兒', age:'3–6 歲', what:'活動卡「疊漸縮塔」，印好的蒙特梭利教具，不用螢幕，約 15 分鐘', card:true},
-    s2:{name:'低年級', age:'6–8 歲', what:'用低溫 3D 筆親手擠出第一件作品，用實物挑與調，孩子不自己操作螢幕', card:false},
-    s3:{name:'中年級', age:'8–10 歲', what:'活動卡「做一張名牌」，第一次用 Tinkercad，一次 30 分鐘內', card:true},
-    s4:{name:'高年級', age:'10–12 歲', what:'挑一件專題：手機架、依實際尺寸的收納盒或棋子'},
+    s1:{name:'幼兒園', age:'3–6 歲', what:'活動卡「疊漸縮塔」，印好的蒙特梭利教具，不用螢幕，約 15 分鐘', card:true},
+    s2:{name:'國小低年級', age:'6–8 歲', what:'用低溫 3D 筆親手擠出第一件作品，用實物挑與調，孩子不自己操作螢幕', card:false},
+    s3:{name:'國小中年級', age:'8–10 歲', what:'活動卡「做一張名牌」，第一次用 Tinkercad，一次 30 分鐘內', card:true},
+    s4:{name:'國小高年級', age:'10–12 歲', what:'挑一件專題：手機架、依實際尺寸的收納盒或棋子'},
     s5:{name:'國中', age:'12 歲以上', what:'挑一件專題：理線器、工具架或家中損壞零件的替換件'}
   };
   var startBtns = Array.prototype.slice.call(document.querySelectorAll('[data-start]'));
@@ -1069,7 +1084,8 @@ html{scroll-behavior:smooth}
     startBtns.forEach(function(b){ b.setAttribute('aria-checked', b.dataset.start === id); b.tabIndex = b.dataset.start === id ? 0 : -1; });
     var up = nextTxt ? nextTxt.textContent.replace(/^\s*編者建議\s*/, '') : '';
     startOut.innerHTML = '<div class="so-h">適合從<b>' + a.name + '（' + a.age + '）</b>開始</div>' +
-      '<p><b>今天可以做：</b>' + esc(a.what) + '</p>' + (up ? '<p class="muted">' + esc(up) + '</p>' : '') +
+      '<p><b>今天可以做：</b>' + esc(a.what) + '</p>' +
+      (PREREQ[id] ? '<p><b>先修（要先完成）：</b></p><ul>' + PREREQ[id].map(function(t){ return '<li>' + esc(t) + '</li>'; }).join('') + '</ul><p class="muted">沒有前面階段經驗的孩子，要先補修再進來；年紀大的新手可以走快一點，但不跳過。</p>' : '<p class="muted">這個階段由家長操作，不需要先修。</p>') + (up ? '<p class="muted">' + esc(up) + '</p>' : '') +
       '<div class="so-btns"><button type="button" class="btn primary" data-so="stage">去看' + a.name + '的路線</button>' +
       (a.card ? '<button type="button" class="btn" data-so="card">打開活動卡</button>' : '') +
       '<button type="button" class="btn" data-so="res">找適合的教材</button></div>';
