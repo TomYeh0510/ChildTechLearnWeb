@@ -366,6 +366,7 @@
 ### 尚缺來源（之後要補）
 
 - SketchUp 10 歲以上、切片軟體 8 歲以上：依學校實例與本路線安排，沒有官方年齡建議。
+- Gemini 未滿 13 歲由 Family Link 監管帳號開啟：依第三次審查者查證，尚待對照 Google 官方原文。
 - 各階段「先修」內容（`PREREQ`）：依本路線的學習順序整理，沒有外部課程標準，待試帶。
 - Bambu Studio 10 歲起（8–10 歲只旁觀）、MakerLab 的建議年齡：依 `PLAN.md` 的挑調蓋 AI 與 13 歲帳號規則推算，沒有學校課程或官方年齡建議，待試帶。
 - Quick, Draw!、Teachable Machine、App Inventor、不插電活動的年齡：官方沒有標示，是本路線的安排（見第七節）。
@@ -468,3 +469,4 @@ Tom 指出：除了螢幕時間，大部分分齡是為了配合兒童發展。�
 | 2026-10-03 | 更新 `README.md`、`CLAUDE.md`（進度與待辦）、`REVIEW.md`（目前進度）、`PLAN.md`（第十節對照） | 無新來源 |
 | 2026-10-03 | `PLAN.md`：Bambu Handy 需手機，國小暫不列入，僅家長監看用；網頁未改 | 無新來源 |
 | 2026-10-03 | 軟體階梯新增 MakerWorld（6 歲起、13 歲前家長操作；Customize 併入說明）；MakerLab 說明拆成範本與 AI 兩類；中年級「挑與調」註明 Customize 是模型頁功能；教材資源加 MakerWorld 卡 | MakerWorld 首頁加入第十二節；年齡與帳號用第十二節既有來源；Image to 3D 點數不寫數字 |
+| 2026-10-03 | 第三次審查 C-1～C-6：幼兒數位素養改不插電；教具安全與 3D 筆敘述去掉保證語氣；生成式 AI 拆成本站安排／ChatGPT／Gemini；發展依據改為支持安排的寫法；`--l2`、`--l4` 調深、對比門檻 4.5；`go()` 焦點、`details` min-width 修正；`tests/check.js` 加 4 項 | Gemini 的 Family Link 監管帳號說法依審查者查證，尚待對照 Google 官方原文（列入尚缺來源） |

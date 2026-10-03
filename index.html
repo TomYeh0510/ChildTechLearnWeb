@@ -13,7 +13,7 @@
 :root{
   --bg:#f4f6f4; --surface:#ffffff; --ink:#1c2420; --muted:#5a6560; --line:#d6ddd8; --grid:rgba(28,36,32,.05);
   --accent:#0d7a69; --accent-soft:#dcefe9; --warn:#b4471f; --warn-soft:#fbe9e1;
-  --l1:#c98f1f; --l2:#d6405e; --l3:#3a8fd6; --l4:#00876c; --l5:#7a55b3;
+  --l1:#c98f1f; --l2:#c93552; --l3:#3a8fd6; --l4:#007a62; --l5:#7a55b3;
   --on1:#1c2420; --on2:#ffffff; --on3:#1c2420; --on4:#ffffff; --on5:#ffffff;
   --f-display:"LXGW WenKai TC","Kaiti TC","STKaiti",serif;
   --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
@@ -73,7 +73,7 @@ nav.top .sub button[aria-selected="true"]{background:var(--accent);color:var(--s
 .subtabs button[data-stage="s4"],.start-opts button[data-start="s4"]{--on:var(--on4)}
 .subtabs button[data-stage="s5"],.start-opts button[data-start="s5"]{--on:var(--on5)}
 .subtabs button[aria-selected="true"]{background:var(--c);color:var(--on);border-color:var(--c);border-left-color:color-mix(in srgb,var(--on) 40%,var(--c));font-weight:700}
-.subtabs button[aria-selected="true"] small{color:inherit;opacity:.85}
+.subtabs button[aria-selected="true"] small{color:inherit}
 
 /* hero */
 header.hero{padding-block:40px 24px;display:grid;gap:16px}
@@ -138,10 +138,10 @@ li .ev{margin-right:6px}
 .start-opts button{font:inherit;text-align:left;cursor:pointer;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-left:6px solid var(--c);border-radius:8px;padding:8px 12px;display:grid;gap:2px;line-height:1.4;font-size:.92rem}
 .start-opts button small{color:var(--muted);font-size:.76rem}
 .start-opts button[aria-checked="true"]{background:var(--c);color:var(--on);border-color:var(--c);border-left-color:color-mix(in srgb,var(--on) 40%,var(--c));font-weight:700}
-.start-opts button[aria-checked="true"] small{color:inherit;opacity:.85}
+.start-opts button[aria-checked="true"] small{color:inherit}
 .mx button.h{font:inherit;color:var(--ink);text-align:left;cursor:pointer}
 .mx button.h[aria-checked="true"]{background:var(--c);color:var(--on);border-color:var(--c)}
-.mx button.h[aria-checked="true"] small{color:inherit;opacity:.85}
+.mx button.h[aria-checked="true"] small{color:inherit}
 .mxhint{margin:0 0 6px;color:var(--muted);font-size:.85rem;max-width:none}
 #startout{margin-top:8px;background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:10px;padding:16px 20px;margin-bottom:8px}
 .mxcards .start-out{border-top:1px dashed var(--line);margin-top:10px}
@@ -229,7 +229,7 @@ details.safecard summary .k{color:var(--warn)}
 .chip{font:inherit;font-size:.88rem;cursor:pointer;padding:4px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
 .chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface);font-weight:700}
 .empty{color:var(--muted)}
-details{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px;min-width:0;max-width:100%}
 summary{cursor:pointer;font-weight:700}
 details[open] summary{margin-bottom:10px}
 footer{padding-top:40px;font-size:.85rem;color:var(--muted);display:grid;gap:6px}
@@ -409,7 +409,7 @@ html{scroll-behavior:smooth}
   <div class="tbl"><table id="ovtable">
     <thead><tr><th>年齡段</th><th>3D 建模與列印</th><th>程式設計</th><th>實體運算與機器人</th><th>AI 素養</th><th>軟體應用與數位素養</th></tr></thead>
     <tbody>
-      <tr><td class="age"><span class="dot" style="background:var(--l1)"></span>幼兒 3–6</td><td>印好的蒙特梭利漸縮塔、平面與立體、幫印好的件上色（不用螢幕）</td><td>不插電：指令卡、走格子</td><td>按鍵式地板機器人</td><td>分類遊戲</td><td>平板基本操作、使用時間規則</td></tr>
+      <tr><td class="age"><span class="dot" style="background:var(--l1)"></span>幼兒 3–6</td><td>印好的蒙特梭利漸縮塔、平面與立體、幫印好的件上色（不用螢幕）</td><td>不插電：指令卡、走格子</td><td>按鍵式地板機器人</td><td>分類遊戲</td><td>認識生活中的科技用品、用之前先問大人、用完收好的規則</td></tr>
       <tr><td class="age"><span class="dot" style="background:var(--l2)"></span>低年級 6–8</td><td>低溫 3D 筆；用實物挑與調（家長操作、孩子旁觀）</td><td>不插電：指令卡、走格子</td><td>LEGO 積木動手搭、按鍵式地板機器人</td><td>不插電：分類遊戲、猜猜看</td><td>紙筆畫畫、口頭說明自己做了什麼</td></tr>
       <tr><td class="age"><span class="dot" style="background:var(--l3)"></span>中年級 8–10</td><td>Tinkercad 基本功：對齊、群組、挖孔；名牌</td><td>ScratchJr、Scratch 入門、Code.org Course B–E</td><td>LEGO SPIKE Essential、micro:bit 內建感測器</td><td>語音助理、Quick, Draw!、Teachable Machine</td><td>滑鼠、小畫家、拍照錄音、打字、Word、Canva、網路安全</td></tr>
       <tr><td class="age"><span class="dot" style="background:var(--l4)"></span>高年級 10–12</td><td>量尺寸再建模、切片設定、多堂專題</td><td>Scratch 遊戲專題</td><td>mBot、SPIKE Prime</td><td>教育部「和 AI 做朋友」</td><td>影音編輯、簡報、資料查證</td></tr>
@@ -422,7 +422,7 @@ html{scroll-behavior:smooth}
   <div class="tbl"><table>
     <thead><tr><th>路線</th><th>工具</th><th>年齡</th><th>費用</th><th>說明</th></tr></thead>
     <tbody>
-      <tr><td>3D 列印</td><td><b>低溫 3D 筆（PCL，如 3Doodler Start+）</b></td><td>6–13 歲</td><td><span class="status paid">需購買</span></td><td>筆頭沒有外露熱源；線材約 60–100 °C 融化，碰到不燙；教育套組附教案</td></tr>
+      <tr><td>3D 列印</td><td><b>低溫 3D 筆（PCL，如 3Doodler Start+）</b></td><td>6–13 歲</td><td><span class="status paid">需購買</span></td><td>筆頭沒有外露熱源；能不能安全觸碰，依具體筆款、原廠指定耗材與操作說明判斷，不同品牌不通用；教育套組附教案</td></tr>
       <tr><td>3D 列印</td><td><b>高溫 3D 筆（PLA，如 3Doodler Create+）</b></td><td>14 歲以上</td><td><span class="status paid">需購買</span></td><td>筆頭與擠出的塑膠約 200 °C，有燙傷風險；不給國小使用</td></tr>
       <tr><td>程式</td><td><b>不插電：指令卡、走格子</b></td><td>幼兒</td><td><span class="status ok">免費</span></td><td>自製卡片和地墊即可</td></tr>
       <tr><td>程式</td><td><b>ScratchJr</b></td><td>官方 5–7 歲；本站安排中年級起</td><td><span class="status ok">免費</span></td><td>iPad、Android、Chromebook App</td></tr>
@@ -438,7 +438,9 @@ html{scroll-behavior:smooth}
       <tr><td>AI</td><td><b>Quick, Draw!</b></td><td>中年級起（本站安排）</td><td><span class="status ok">免費</span></td><td>免帳號、免下載</td></tr>
       <tr><td>AI</td><td><b>Teachable Machine</b></td><td>中年級起</td><td><span class="status ok">免費</span></td><td>免帳號，在瀏覽器訓練圖片、聲音、姿勢辨識</td></tr>
       <tr><td>AI</td><td><b>教育部「和 AI 做朋友」系列</b></td><td>國小版《我和AI一起學》為三至六年級</td><td><span class="status ok">免費</span></td><td>教育大市集免費下載</td></tr>
-      <tr><td>AI</td><td><b>生成式 AI（ChatGPT、Gemini）</b></td><td>13 歲以上；13–17 歲需家長同意；未滿 13 歲不適合自行使用，如需接觸請由成人操作</td><td><span class="status mix">部分免費</span></td><td>有免費版；未滿 18 歲自動套用青少年保護</td></tr>
+      <tr><td>AI</td><td><b>生成式 AI：本站安排</b></td><td>未滿 13 歲一律由成人操作，孩子負責決定；帳號資格依各服務官方規定分別確認</td><td><span class="status mix">部分免費</span></td><td>多數有免費版</td></tr>
+      <tr><td>AI</td><td><b>ChatGPT</b></td><td>官方：13 歲以上；13–17 歲需家長同意；未滿 13 歲由成人進行實際互動</td><td><span class="status mix">部分免費</span></td><td>有免費版；未滿 18 歲套用青少年保護</td></tr>
+      <tr><td>AI</td><td><b>Gemini</b></td><td>官方：13 歲以上可自己用；未滿 13 歲只能由家長透過 Family Link 的監管帳號開啟，受地區、帳號與裝置限制</td><td><span class="status mix">部分免費</span></td><td>有免費版；本站仍安排由成人操作</td></tr>
       <tr><td>軟體應用</td><td><b>Canva 教育版</b></td><td>中小學</td><td><span class="status ok">免費</span></td><td>中小學師生免費含進階功能；學生需由老師邀請加入</td></tr>
       <tr><td>軟體應用</td><td><b>Word、Excel、PowerPoint</b></td><td>中小學</td><td><span class="status mix">部分免費</span></td><td>學校教育帳號可免費用網頁版（Office 365 A1）；桌面版另購</td></tr>
     </tbody>
@@ -487,13 +489,13 @@ html{scroll-behavior:smooth}
           <li><b>教具檔案</b>：即將在 MakerWorld 提供下載</li>
         </ul></details>
       <details class="sec"><summary><span class="k">課堂安排<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul><li>每次 15–20 分鐘，以手作為主</li><li><b>不用螢幕、不需要印表機在場</b>，教具由大人事先印好</li><li>一次只拿出一套教具，結束由孩子自己收</li><li>幫印好的小動物上色、組裝，當作品帶走</li></ul></details>
-      <details class="sec devbasis"><summary><span class="k">為什麼是這個年齡：發展依據<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul><li><b>手：</b>3–4 歲能剪直線、搭較複雜的積木，5 歲能串珠、拼拼圖，所以教具用抓握、疊放</li><li><b>專注力：</b>3 歲約 6–15 分鐘、6 歲約 12–30 分鐘，所以一次活動只排 15–20 分鐘</li><li><b>空間：</b>3D 的心像旋轉對 7 歲前的孩子很難，所以先摸得到的實物，不看螢幕上的立體圖</li><li><b>安全：</b>3 歲以上才符合美國小零件規範，見教具安全</li></ul></details>
+      <details class="sec devbasis"><summary><span class="k">為什麼是這個年齡：發展依據<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul><li><b>手：</b>3–4 歲能剪直線、搭較複雜的積木，5 歲能串珠、拼拼圖，所以教具用抓握、疊放</li><li><b>專注力：</b>3 歲約 6–15 分鐘、6 歲約 12–30 分鐘，所以一次活動只排 15–20 分鐘</li><li><b>空間：</b>幼兒先用摸得到、轉得動的實物建立空間概念；研究顯示 3D 心像旋轉測驗對多數 7 歲前的孩子偏難，本站因此把螢幕上的立體模型留到後面</li><li><b>安全：</b>本站只建議 3 歲以上使用，年齡分界參考美國小零件規範；不代表教具已通過玩具安全檢驗，見教具安全</li></ul></details>
     </div>
     <div class="box warn toysafe" id="toysafe-s1">
       <h3>教具安全：交給孩子之前</h3>
       <ul>
-        <li><b>家庭教學用的 3D 列印教具，不是經過檢驗的玩具。</b>玩的時候大人在旁<span class="ev ed" title="編者整理的建議">編者建議</span></li>
-        <li><b>只建議 3 歲以上，且不適合還會把東西放進嘴裡的孩子。</b>3 歲是美國玩具小零件規範的年齡分界<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>；家裡有 3 歲以下的弟妹時，玩完要收好<span class="ev ed" title="編者整理的建議">編者建議</span></li>
+        <li><b>家庭教學用的 3D 列印教具，不是經過檢驗的玩具。</b>到了某個年齡或尺寸，不等於保證安全；每次玩之前檢查有沒有鬆脫的零件、裂痕與尖銳邊緣，玩的時候大人在旁<span class="ev ed" title="編者整理的建議">編者建議</span></li>
+        <li><b>本站只建議 3 歲以上、已經不會把東西放進嘴裡的孩子使用。</b>3 歲這條線參考美國玩具小零件規範的年齡分界，不代表教具已通過檢驗<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>；家裡有 3 歲以下的弟妹時，玩完要收好<span class="ev ed" title="編者整理的建議">編者建議</span></li>
         <li><b>每一片都不能是「小零件」：</b>放不進直徑 31.7 mm 的圓筒，這是判斷 3 歲以下窒息風險的尺寸<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>；所以漸縮塔最小一層也要約 3.5 cm</li>
         <li><b>不刮手：</b>邊角做圓角（半徑建議 2 mm 以上）、表面用砂紙磨過，摸起來沒有毛邊或尖角<span class="ev ed" title="編者整理的建議">編者建議</span></li>
         <li><b>先試強度：</b>從桌面高度摔到硬地板幾次、用手扭一扭，不能裂開或掉碎片；之後每次玩完看一下，有裂痕就換新的<span class="ev ed" title="編者整理的建議">編者建議</span></li>
@@ -541,10 +543,10 @@ html{scroll-behavior:smooth}
       <details class="sec"><summary><span class="k">為什麼低年級最多只旁觀螢幕<span class="ev doc" title="來自官方規範或產品文件">官方文件</span></span></summary><ul><li><b>本站原則：</b>低年級最多只做到家長操作、孩子旁觀，能用實物做的先用實物；孩子自己用螢幕從中年級開始<span class="ev ed" title="編者整理的建議">編者建議</span></li><li><b>台灣國健署：</b>2 歲以上每天螢幕時間不超過 1 小時，每用 30 分鐘休息 10 分鐘；學校用掉的時間也算進去</li><li><b>教育部「護眼 123」：</b>每天戶外活動累計 2 小時，用眼 30 分鐘、休息 10 分鐘</li><li><b>國際：</b>世界衛生組織建議限制休閒性螢幕時間；美國兒科醫學會建議全家訂媒體使用計畫，重視內容品質，不只看時數</li><li><b>台灣課綱：</b>國小沒有訂科技領綱，多數縣市從三年級才排資訊課</li></ul></details>
       <details class="sec"><summary><span class="k">挑：從印好的實物裡挑一個<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul><li>大人事先在 MakerWorld 找好 3–5 個簡單模型（小動物、名牌底座、鑰匙圈），印好放在桌上；沒有小零件</li><li>孩子拿起來看、摸、比一比，選一個，說說為什麼選它</li><li>13 歲以前 MakerWorld 的帳號和操作都是大人的<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>；選模型、送出列印由家長操作，孩子可以在旁看，但不自己操作</li><li>想要的顏色，從線材色卡或實際的線材裡挑</li></ul></details>
       <details class="sec"><summary><span class="k">調：說出想改什麼，大人動手<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul><li>孩子決定名牌上要寫什麼字、用什麼顏色、大一點還是小一點</li><li>家長用 MakerLab 的名牌、鑰匙圈範本照著做，孩子可以旁觀，不自己操作</li><li>印出來後一起看：和想的一樣嗎？下次想改哪一個？一次只改一樣</li></ul></details>
-      <details class="sec"><summary><span class="k">蓋：第一次列印，低溫 3D 筆</span></summary><ul><li>用低溫 PCL 線材的 3D 筆（如 3Doodler Start+，官方 6–13 歲<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>），筆頭沒有外露熱源，碰到不燙</li><li>先在紙上描一條線 → 疊第二層、第三層 → 做一個小立體（例如小籃子或眼鏡）</li><li>高溫 PLA 筆（約 200 °C，官方 14 歲以上<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>）不給這個階段用</li><li>大人在旁，用完拔插頭</li></ul></details>
+      <details class="sec"><summary><span class="k">蓋：第一次列印，低溫 3D 筆</span></summary><ul><li>用低溫 PCL 線材的 3D 筆（如 3Doodler Start+，官方 6–13 歲<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>），筆頭沒有外露熱源；只用原廠指定耗材，能不能安全觸碰依該筆款的原廠說明，不同品牌不通用</li><li>先在紙上描一條線 → 疊第二層、第三層 → 做一個小立體（例如小籃子或眼鏡）</li><li>高溫 PLA 筆（約 200 °C，官方 14 歲以上<span class="ev doc" title="來自官方規範或產品文件">官方文件</span>）不給這個階段用</li><li>大人在旁，用完拔插頭</li></ul></details>
       <details class="sec"><summary><span class="k">先想再做<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul><li>先說一句想做什麼，用蠟筆在紙上畫一畫，再開始做</li><li>做完和圖比一比：哪裡一樣、哪裡不一樣</li><li>每件作品用 3–5 個簡單形狀組成</li></ul></details>
       <details class="sec"><summary><span class="k">課堂安排<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul><li>每週固定一次，每次約 30 分鐘，以手作為主，<b>孩子不自己操作螢幕</b></li><li>先用 3D 筆；換料、取件都由大人負責</li><li>目標是「做出一件完成品」，不求完美</li></ul></details>
-      <details class="sec devbasis"><summary><span class="k">為什麼是這個年齡：發展依據<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul><li><b>手：</b>6 歲起眼手協調大致成熟，能控制小物件，所以可以用 3D 筆描線、疊層</li><li><b>專注力：</b>6–7 歲約 12–35 分鐘，所以一次約 30 分鐘</li><li><b>空間：</b>3D 心像旋轉約 7–8 歲才有一半多的孩子做得到，所以不用螢幕上的 3D 建模，改用實物</li><li><b>思考：</b>約 7 歲以前還不太能用邏輯處理看不到的東西，所以只放能摸、能看的活動</li></ul></details>
+      <details class="sec devbasis"><summary><span class="k">為什麼是這個年齡：發展依據<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul><li><b>手：</b>6 歲起眼手協調大致成熟，能控制小物件，所以可以用 3D 筆描線、疊層</li><li><b>專注力：</b>6–7 歲約 12–35 分鐘，所以一次約 30 分鐘</li><li><b>空間：</b>研究裡 7–8 歲約半數孩子能通過 3D 心像旋轉測驗，個別差異大；本站選擇這個階段仍用實物，螢幕建模安排在中年級起，再逐步加入尺寸與視角</li><li><b>思考：</b>約 7 歲以前還不太能用邏輯處理看不到的東西，所以只放能摸、能看的活動</li></ul></details>
     </div>
     <p class="next"><span class="ev ed" title="編者整理的建議">編者建議</span><b>升級訊號：</b>能把想做的東西說清楚、用 3D 筆做出三層以上的立體，開始問「可不可以用電腦做」。</p>
   </article>
@@ -1019,7 +1021,12 @@ html{scroll-behavior:smooth}
     sbtn.forEach(function(b){ var on = b.dataset.stage === cur.stage; b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1; });
     STAGE_IDS.forEach(function(s){ document.getElementById(s).hidden = s !== cur.stage; });
     try { localStorage.setItem('tab', id); localStorage.setItem('stage', cur.stage); if (in3d) localStorage.setItem('sub3d', id); } catch(e){}
-    if (focus) { var nav = document.querySelector('nav.top'); if (nav.getBoundingClientRect().top < 0 || window.scrollY > nav.offsetTop) window.scrollTo({top: nav.offsetTop}); }
+    if (focus) {
+      var nav = document.querySelector('nav.top'); if (nav.getBoundingClientRect().top < 0 || window.scrollY > nav.offsetTop) window.scrollTo({top: nav.offsetTop});
+      /* keyboard focus must not stay on a now-hidden button: land on the visible panel (or stage card) */
+      var target = in3d && id === 'stages' ? document.getElementById(cur.stage) : document.getElementById(id);
+      if (target && !target.contains(document.activeElement)) { target.tabIndex = -1; try { target.focus({preventScroll:true}); } catch(e){ target.focus(); } }
+    }
   }
   /* opts: push (default true) adds a history entry; focus scrolls back to the nav */
   function go(tab, stg, opts){

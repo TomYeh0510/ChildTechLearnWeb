@@ -127,6 +127,35 @@ const norm = (u) => u.replace(/&amp;/g, '&').replace(/\/$/, '');
   await page.click("#startout [data-so=card]"); await page.waitForTimeout(150);
   ok('從這裡開始：打開幼兒活動卡', (await st()).stage === 's1' && (await page.evaluate(() => document.getElementById('act-s1').open)));
 
+  /* ---- 跨頁焦點：從首頁按鈕跳頁後，焦點不留在已隱藏的元素上 ---- */
+  await page.click('[data-tab="overview"]'); await page.click('[data-start="s3"]'); await page.click('#startout [data-so="stage"]'); await page.waitForTimeout(100);
+  ok('跳頁後焦點落在可見面板內', await page.evaluate(() => { const a = document.activeElement; return !!a && a !== document.body && !a.closest('[hidden]') && !!a.closest('#stages'); }));
+
+  /* ---- 手機卡片：展開年齡卡 → 打開活動卡 ---- */
+  {
+    const m = await browser.newPage({ viewport: { width: 390, height: 800 } });
+    await m.goto(url + '#overview');
+    await m.locator('#mxcards details').nth(2).locator('summary').click();
+    await m.locator('#mxcards [data-card="s3"] [data-so="card"]').click(); await m.waitForTimeout(150);
+    const r = await m.evaluate(() => { const d = document.getElementById('act-s3'); const h = location.hash; const nav = document.querySelector('nav.top').getBoundingClientRect(); const top = d.getBoundingClientRect().top; return { open: d.open, hash: h, clear: top >= nav.bottom - 1 }; });
+    ok('手機：年齡卡 → 打開活動卡（正確階段、已展開、標題沒被導覽列遮住）', r.open && r.hash === '#s3' && r.clear, JSON.stringify(r));
+    /* expand everything on every tab and make sure nothing overflows */
+    let bad = [];
+    for (const tab of ['overview', 'print3d', 'stages', 'software', 'safety', 'resources']) {
+      if (tab !== 'overview' && await m.evaluate(() => document.getElementById('sub-print3d').hidden)) await m.click('.route-tab');
+      await m.click('[data-tab="' + tab + '"]');
+      for (const stg of (tab === 'stages' ? ['s1', 's2', 's3', 's4', 's5'] : [null])) {
+        if (stg) await m.click('[data-stage="' + stg + '"]');
+        await m.evaluate(() => document.querySelectorAll('details').forEach((d) => { d.open = true; }));
+        const w = await m.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+        if (w > 1) bad.push(tab + (stg ? '/' + stg : '') + ' 溢出 ' + w + 'px');
+        await m.evaluate(() => document.querySelectorAll('details').forEach((d) => { d.open = false; }));
+      }
+    }
+    ok('手機 390px：全部展開後各分頁都不橫向溢出', bad.length === 0, bad.join('；'));
+    await m.close();
+  }
+
   /* ---- 篩選：結果和資料屬性一致 ---- */
   await page.click('[data-tab="resources"]');
   const visible = () => page.evaluate(() => [...document.querySelectorAll('#resources .card')].filter((c) => !c.hidden).length);
@@ -174,6 +203,7 @@ const norm = (u) => u.replace(/&amp;/g, '&').replace(/\/$/, '');
         const other = document.querySelector('[data-start="' + (st === 's1' ? 's2' : 's1') + '"]');
         const bg = getComputedStyle(el).backgroundColor, fg = getComputedStyle(el).color;
         out.push({ name: '從這裡開始 ' + st, bg, fg, ratio: cr(bg, fg), differs: bg !== getComputedStyle(other).backgroundColor });
+        const sm = el.querySelector('small'); if (sm) { const sfg = getComputedStyle(sm).color; const op = parseFloat(getComputedStyle(sm).opacity); out.push({ name: '年齡入口小字 ' + st, bg, fg: sfg, ratio: cr(bg, sfg) * (op < 1 ? op : 1), differs: true }); }
       });
       const nav = document.querySelector('nav.top [aria-selected="true"]'), navOther = document.querySelector('nav.top [role="tab"][aria-selected="false"]');
       out.push({ name: '導覽列選取', bg: getComputedStyle(nav).backgroundColor, fg: getComputedStyle(nav).color, ratio: cr(getComputedStyle(nav).backgroundColor, getComputedStyle(nav).color), differs: getComputedStyle(nav).backgroundColor !== getComputedStyle(navOther).backgroundColor });
@@ -185,8 +215,8 @@ const norm = (u) => u.replace(/&amp;/g, '&').replace(/\/$/, '');
       out.push({ name: '教材圖表選取列', bg: getComputedStyle(rl).backgroundColor, fg: getComputedStyle(rl).color, ratio: cr(getComputedStyle(rl).backgroundColor, getComputedStyle(rl).color), differs: true });
       return out;
     });
-    const weak = res.filter((r) => r.differs === false || r.ratio < 4.3);
-    ok(scheme + '：選取狀態都整個反色且對比 ≥ 4.3（共 ' + res.length + ' 項）', weak.length === 0, weak.map((r) => r.name + ' ' + r.ratio.toFixed(1) + (r.differs === false ? ' 底色沒變' : '')).join('；'));
+    const weak = res.filter((r) => r.differs === false || r.ratio < 4.5);
+    ok(scheme + '：選取狀態都整個反色且對比 ≥ 4.5（共 ' + res.length + ' 項）', weak.length === 0, weak.map((r) => r.name + ' ' + r.ratio.toFixed(1) + (r.differs === false ? ' 底色沒變' : '')).join('；'));
     await q.close();
   }
 
