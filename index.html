@@ -157,8 +157,12 @@ details.activity{border-left:6px solid var(--c);background:color-mix(in srgb,var
 details.activity summary{display:flex;flex-wrap:wrap;align-items:center;gap:4px 0}
 details.activity .cols{margin-top:4px}
 details.activity li b{font-weight:700}
-details.activity.lessons .tbl{margin-top:4px}
-details.activity.lessons table{font-size:.86rem;min-width:720px}
+details.activity.lessons .secs{margin-top:4px}
+details.activity.lessons dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;margin:0;font-size:.92rem}
+details.activity.lessons dt{font-weight:700;color:var(--muted);white-space:nowrap}
+details.activity.lessons dd{margin:0}
+@media (max-width:560px){details.activity.lessons dl{grid-template-columns:1fr;gap:0}details.activity.lessons dd{margin-bottom:6px}}
+details.activity.lessons p.note{margin:10px 0 0;font-size:.9rem;color:var(--muted)}
 .toysafe ul{display:grid;gap:4px}
 .toysafe li .ev{margin-left:4px;margin-right:0}
 .secs{display:grid;gap:8px}
@@ -512,19 +516,7 @@ html{scroll-behavior:smooth}
         <div><div class="k">觀察與調整</div><ul><li><b>達成：</b>能自己由大到小疊對，或疊錯後自己發現</li><li><b>太難：</b>先只用最大的 4 層</li><li><b>太簡單：</b>閉眼排序、兩套混在一起分開、找出少的一層</li></ul></div>
       </div>
     </details>
-    <details class="activity lessons" id="les-s1">
-      <summary>分成 4 堂的課表 <span class="ev ed" title="編者整理的建議">編者建議</span></summary>
-      <div class="tbl"><table>
-        <thead><tr><th>堂</th><th>主題</th><th>目標</th><th>材料（事先印好）</th><th>流程（15–20 分）</th><th>觀察訊號</th></tr></thead>
-        <tbody>
-          <tr><td>1</td><td>平的還是立體的</td><td>分辨立體與平面</td><td>同一輪廓的一片薄片和一個立體件；布袋</td><td>布袋摸摸看 → 轉一圈 → 在家找 3 平 3 立體分兩堆</td><td>能說出「會滾／站得起來」這類理由</td></tr>
-          <tr><td>2</td><td>疊漸縮塔</td><td>由大到小的順序</td><td>方形漸縮塔 8 層</td><td>活動卡「疊漸縮塔」</td><td>能自己疊對或疊錯後自己發現</td></tr>
-          <tr><td>3</td><td>疊高與摸層紋</td><td>一層一層疊起來</td><td>同輪廓薄片 10–15 片；一個印好的對照件</td><td>疊 3 片和 8 片比高矮 → 摸側面層紋 → 和對照件比</td><td>能說出「越多片越高」、會主動摸側面</td></tr>
-          <tr><td>4</td><td>我的作品</td><td>完成並帶走一件作品</td><td>印好的小動物或小玩具；顏料</td><td>上色 → 組裝 → 放在自己的塔旁邊合照</td><td>能專注完成、願意介紹自己的作品</td></tr>
-        </tbody>
-      </table></div>
-      <p>3–4 歲上第 1、2、4 堂就完整；5–6 歲四堂全上。每堂開場用上一堂的作品回顧 2 分鐘。</p>
-    </details>
+    <details class="activity lessons" id="les-s1"><summary>分成 4 堂的課表 <span class="ev ed" title="編者整理的建議">編者建議</span></summary><div class="secs"></div></details>
     <p class="next"><span class="ev ed" title="編者整理的建議">編者建議</span><b>升級訊號：</b>能自己把 8 層由大到小疊對並收好，開始問「這個可以做成別的形狀嗎」。</p>
   </article>
 
@@ -548,6 +540,7 @@ html{scroll-behavior:smooth}
       <details class="sec"><summary><span class="k">課堂安排<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul><li>每週固定一次，每次約 30 分鐘，以手作為主，<b>孩子不自己操作螢幕</b></li><li>先用 3D 筆；換料、取件都由大人負責</li><li>目標是「做出一件完成品」，不求完美</li></ul></details>
       <details class="sec devbasis"><summary><span class="k">為什麼是這個年齡：發展依據<span class="ev ed" title="編者整理的建議">編者建議</span></span></summary><ul><li><b>手：</b>6 歲起眼手協調大致成熟，能控制小物件，所以可以用 3D 筆描線、疊層</li><li><b>專注力：</b>6–7 歲約 12–35 分鐘，所以一次約 30 分鐘</li><li><b>空間：</b>研究裡 7–8 歲約半數孩子能通過 3D 心像旋轉測驗，個別差異大；本站選擇這個階段仍用實物，螢幕建模安排在中年級起，再逐步加入尺寸與視角</li><li><b>思考：</b>約 7 歲以前還不太能用邏輯處理看不到的東西，所以只放能摸、能看的活動</li></ul></details>
     </div>
+    <details class="activity lessons" id="les-s2"><summary>分成 4 堂的課表 <span class="ev ed" title="編者整理的建議">編者建議</span></summary><div class="secs"></div></details>
     <p class="next"><span class="ev ed" title="編者整理的建議">編者建議</span><b>升級訊號：</b>能把想做的東西說清楚、用 3D 筆做出三層以上的立體，開始問「可不可以用電腦做」。</p>
   </article>
 
@@ -585,6 +578,7 @@ html{scroll-behavior:smooth}
         <li>只用孩子自己畫的圖或大人準備的圖，不上傳孩子的照片，也不用卡通角色</li>
       </ul>
     </details>
+    <details class="activity lessons" id="les-s3"><summary>分成 6 堂的課表 <span class="ev ed" title="編者整理的建議">編者建議</span></summary><div class="secs"></div></details>
     <p class="next"><span class="ev ed" title="編者整理的建議">編者建議</span><b>升級訊號：</b>想做「要剛好放得下某樣東西」的作品，開始需要量尺寸。</p>
   </article>
 
@@ -612,6 +606,7 @@ html{scroll-behavior:smooth}
         <div><div class="k">3D 建模</div><ul><li>介面與視角</li><li>用基本形體組合</li><li>簡單草圖與尺寸</li><li>圓角、陣列</li><li>存成可列印的封閉 STL</li><li>分享設計</li></ul></div>
       </div>
     </details>
+    <details class="activity lessons" id="les-s4"><summary>分成 4 堂的課表 <span class="ev ed" title="編者整理的建議">編者建議</span></summary><div class="secs"></div></details>
     <p class="next"><span class="ev ed" title="編者整理的建議">編者建議</span><b>升級訊號：</b>覺得 Tinkercad「做不出想要的形狀」，通常是規律使用 8–12 個月後。</p>
   </article>
 
@@ -646,6 +641,7 @@ html{scroll-behavior:smooth}
         <div><div class="k">3D 建模</div><ul><li>組件與組裝</li><li>材質外觀</li><li>渲染、工程圖、爆炸圖</li><li>雙色模型</li><li>應力模擬</li><li>生成式設計</li></ul></div>
       </div>
     </details>
+    <details class="activity lessons" id="les-s5"><summary>分成 4 堂的課表 <span class="ev ed" title="編者整理的建議">編者建議</span></summary><div class="secs"></div></details>
   </article>
 </section>
 
@@ -839,6 +835,54 @@ html{scroll-behavior:smooth}
       /安全/.test(t) ? 'adult' : /目標/.test(t) ? 'target' : /順序/.test(t) ? 'list' : /安排/.test(t) ? 'clock' :
       /作品/.test(t) ? 'star' : /流程/.test(t) ? 'printer' : /切片|機器/.test(t) ? 'sliders' : /活動/.test(t) ? 'hand' : 'cube';
     k.insertAdjacentHTML('afterbegin', icon(n));
+  });
+
+  /* lesson plans: one block per stage; each lesson becomes a collapsed row */
+  var LESSONS = {
+    s1:{note:'3–4 歲上第 1、2、4 堂就完整；5–6 歲四堂全上。每堂開場用上一堂的作品回顧 2 分鐘。', rows:[
+      {t:'平的還是立體的', goal:'分辨立體與平面', mat:'同一輪廓的一片薄片和一個立體件；布袋', flow:'布袋摸摸看 → 轉一圈 → 在家找 3 平 3 立體分兩堆', sign:'能說出「會滾／站得起來」這類理由', time:'15–20 分鐘'},
+      {t:'疊漸縮塔', goal:'由大到小的順序', mat:'方形漸縮塔 8 層', flow:'活動卡「疊漸縮塔」', sign:'能自己疊對或疊錯後自己發現', time:'15–20 分鐘'},
+      {t:'疊高與摸層紋', goal:'一層一層疊起來', mat:'同輪廓薄片 10–15 片；一個印好的對照件', flow:'疊 3 片和 8 片比高矮 → 摸側面層紋 → 和對照件比', sign:'能說出「越多片越高」、會主動摸側面', time:'15–20 分鐘'},
+      {t:'我的作品', goal:'完成並帶走一件作品', mat:'印好的小動物或小玩具；顏料', flow:'上色 → 組裝 → 放在自己的塔旁邊合照', sign:'能專注完成、願意介紹自己的作品', time:'15–20 分鐘'}
+    ], files:['自製：方形漸縮塔（8 層、每層 5 mm、底約 8 cm）；同輪廓薄片與立體件','挑的規則：每一片放不進 31.7 mm 筒、圓角、單色、摔不裂']},
+    s2:{note:'孩子全程動手做實物；家長在螢幕上操作時，孩子最多旁觀，示範控制在 5 分鐘內。', rows:[
+      {t:'挑一個印出來', kid:'從桌上 5–10 種印好的實物挑一個、選顏色、說為什麼；然後在旁邊看家長把它從網頁上找出來、下載、送印（旁觀，不操作）', adult:'事先印出 5–10 種；孩子選完後，當著孩子的面示範搜尋 → 下載 → 列印一次，印孩子選的顏色', time:'20 分鐘示範＋等列印'},
+      {t:'3D 筆描線', kid:'在紙上的輪廓描線 → 疊第二、三層 → 撕下來拿在手上', adult:'預熱、換料、拔插頭；準備描圖底稿', time:'30 分鐘'},
+      {t:'3D 筆迷你塔', kid:'用 3D 筆疊一座 4 層的小漸縮塔，每層比上一層小', adult:'畫好 4 個由大到小的方框當底稿', time:'30 分鐘'},
+      {t:'調一個自己的', kid:'口頭決定名牌上的字和顏色；拿到印好的成品比較「和想的一樣嗎」', adult:'用 MakerLab 範本照孩子說的做、送印；孩子最多旁觀', time:'20 分鐘＋等列印'}
+    ], files:['自製：方形漸縮塔（幼兒園同一套，第 3 堂當範本）；3D 筆描線底稿','MakerWorld：小動物、恐龍類，單色、無支撐、列印 20–30 分鐘內、最小尺寸放不進 31.7 mm 筒；名牌底座','挑的規則：無小零件、無尖角、單色、不需支撐、列印 30 分鐘內']},
+    s3:{note:'剛接觸電腦就先用 MakerLab（會打字、選顏色就夠）；Tinkercad 要先上兩堂基本課，第 5 堂才自己畫名牌。「挑 → 調 → 蓋 → AI」在這個階段第一次完整走一輪：第 1、2 堂調，第 3–5 堂蓋，第 6 堂 AI。每次螢幕 30 分鐘內、大人陪同。', rows:[
+      {t:'印兩種尺寸比較', kid:'在 MakerWorld 參數化模型頁上決定兩個尺寸的數值；印出後比較哪個好拿', adult:'操作 Customize 與送印；孩子第一次自己拉滑桿', time:'螢幕 15 分鐘＋等列印'},
+      {t:'MakerLab 名牌', kid:'用 Make My Sign 範本自己打名字、選字體與顏色、按預覽；印出來留著，第 5 堂要比', adult:'家長登入、送印；孩子操作範本', time:'螢幕 15 分鐘＋等列印'},
+      {t:'Tinkercad 基本操作', kid:'介面、轉視角、放大縮小；從形狀庫拖出方塊、圓柱、球；移動、旋轉、縮放、改顏色', adult:'開好帳號（13 歲以下家長同意或班級代碼）、先自己做一次', time:'螢幕 30 分鐘'},
+      {t:'用 Tinkercad 疊漸縮塔', kid:'用 4–8 個方塊疊一座漸縮塔：縮放到指定尺寸、對齊中心、群組；印出來和幼兒園那座放在一起', adult:'準備每層尺寸表（8 層、每層 5 mm、底 8 cm）', time:'螢幕 30 分鐘＋等列印'},
+      {t:'Tinkercad 名牌：和第 2 堂比一比', kid:'活動卡「做一張名牌」：底板、文字、對齊、群組、挖孔；完成後和第 2 堂的 MakerLab 名牌放在一起，說說哪個快、哪個能改的東西多、下次想用哪個', adult:'先做過一次；兩張名牌都在手邊', time:'螢幕 30 分鐘＋等列印'},
+      {t:'把圖變成 3D', kid:'畫一張簡單側影，家長用 Image to 3D 生成；一起判斷能不能印、要不要修。延伸：孩子說想要什麼圖，家長用 AI 生圖工具產生幾張讓孩子挑，再用 MakerLab 轉成列印檔', adult:'操作 MakerLab 與 AI 生圖（帳號 13 歲以上，全程家長操作）、判斷懸空與厚度', time:'畫 15 分鐘＋螢幕 15 分鐘'}
+    ], files:['自製：漸縮塔（第 4 堂的對照實物）','MakerWorld：有 Customize 的參數化模型，例如可調尺寸的杯墊、小盒、鑰匙圈（第 1 堂）；MakerLab Make My Sign（第 2 堂）；印章、筆筒','挑的規則：有 Customize、至少一個尺寸參數、不需支撐']},
+    s4:{note:'每個作品都走一次「量 → 畫 → 印 → 試 → 改」。第 2 堂第一次接觸切片：先旁觀，再決定擺放方向。', rows:[
+      {t:'量實物、設定收納盒', kid:'量一樣要收的東西（筆、積木、耳機），寫下長寬高加一點空隙；在參數化收納盒填入尺寸', adult:'操作 Customize 與送印', time:'螢幕 15 分鐘＋等列印'},
+      {t:'試裝與公差', kid:'放放看太緊或太鬆、差多少；改一次再印；把兩次差多少記下來', adult:'送印；陪孩子看切片預覽（第一次接觸 Bambu Studio：旁觀 → 決定擺放）', time:'螢幕 20 分鐘＋等列印'},
+      {t:'漸縮塔改層數、做圓柱嵌合', kid:'Tinkercad 自己畫：改成 6 層或 10 層；再做一組能套進去的圓柱（孔比柱大 0.3–0.5 mm）', adult:'準備卡尺；第一次嵌合失敗是預期內', time:'螢幕 30 分鐘 × 2'},
+      {t:'專題', kid:'手機架或棋子：量、畫、切片、印、測、改一次', adult:'陪切片、確認安全', time:'多堂'}
+    ], files:['自製：彩色圓柱／嵌合練習件（第 3 堂範本）','MakerWorld：參數化收納盒（可設長寬高、牆厚）；公差測試件（一組孔與柱，先印一次找出自家機器的間隙）','挑的規則：參數含內部尺寸與牆厚；公差測試件有刻度或標示']},
+    s5:{note:'13 歲起自己開帳號（家長同意）；13 歲前仍由大人登入。', rows:[
+      {t:'Fusion／Onshape 草圖與約束', kid:'畫一個有尺寸約束的矩形，拉伸；改尺寸看整體跟著變', adult:'開教育版帳號（13 歲前由大人）', time:'45 分鐘'},
+      {t:'參數化漸縮塔', kid:'用參數（層數、底邊、層厚）建模；改一個參數看整座塔變化', adult:'—', time:'45 分鐘'},
+      {t:'看懂參數化程式碼', kid:'打開 MakerWorld 參數化模型的 OpenSCAD 程式碼，找到變數、改一個、看預覽', adult:'13 歲前大人登入', time:'30 分鐘'},
+      {t:'測試 → 修改 → 再印的專題', kid:'理線器、工具架或家中損壞零件的替換件：量、建模、印、測、改兩輪', adult:'確認受力件與接觸食物件的安全', time:'多堂'}
+    ], files:['自製：參數化漸縮塔（OpenSCAD 版），同時是第 2、3 堂的教材','MakerWorld：有公開 OpenSCAD 程式碼的參數化模型（第 3 堂）；替換零件類（掛鉤、旋鈕、腳墊）當第 4 堂範例']}
+  };
+  Object.keys(LESSONS).forEach(function(id){
+    var box = document.querySelector('#les-' + id + ' .secs'); if (!box) return;
+    var L = LESSONS[id], h = '';
+    L.rows.forEach(function(r, i){
+      var dl = '';
+      [['目標', r.goal], ['材料', r.mat], ['流程', r.flow], ['孩子做', r.kid], ['家長做', r.adult], ['時間', r.time], ['觀察訊號', r.sign]].forEach(function(f){ if (f[1]) dl += '<dt>' + f[0] + '</dt><dd>' + esc(f[1]) + '</dd>'; });
+      h += '<details class="sec"><summary><span class="k">第 ' + (i+1) + ' 堂：' + esc(r.t) + '</span></summary><dl>' + dl + '</dl></details>';
+    });
+    if (L.files) h += '<details class="sec"><summary><span class="k">建議列印檔</span></summary><ul>' + L.files.map(function(f){ return '<li>' + esc(f) + '</li>'; }).join('') + '</ul></details>';
+    box.innerHTML = h;
+    if (L.note) box.insertAdjacentHTML('afterend', '<p class="note">' + esc(L.note) + '</p>');
   });
 
   /* prerequisites: the route is sequential; s1 and s2 are parent-operated, so they have none */
@@ -1085,10 +1129,10 @@ html{scroll-behavior:smooth}
   /* "start here": pick the child's level, get a next step */
   var ACT = {
     s1:{name:'幼兒園', age:'3–6 歲', what:'活動卡「疊漸縮塔」，印好的蒙特梭利教具，不用螢幕，約 15 分鐘', card:true},
-    s2:{name:'國小低年級', age:'6–8 歲', what:'用低溫 3D 筆親手擠出第一件作品，用實物挑與調，孩子不自己操作螢幕', card:false},
-    s3:{name:'國小中年級', age:'8–10 歲', what:'活動卡「做一張名牌」，第一次用 Tinkercad，一次 30 分鐘內', card:true},
-    s4:{name:'國小高年級', age:'10–12 歲', what:'挑一件專題：手機架、依實際尺寸的收納盒或棋子'},
-    s5:{name:'國中', age:'12 歲以上', what:'挑一件專題：理線器、工具架或家中損壞零件的替換件'}
+    s2:{name:'國小低年級', age:'6–8 歲', what:'4 堂課表：挑一個印出來、3D 筆描線、3D 筆迷你塔、口頭調一個；孩子不自己操作螢幕', card:false},
+    s3:{name:'國小中年級', age:'8–10 歲', what:'6 堂課表：從 MakerLab 名牌到 Tinkercad 名牌、疊漸縮塔、把圖變成 3D；一次螢幕 30 分鐘內', card:true},
+    s4:{name:'國小高年級', age:'10–12 歲', what:'4 堂課表：量實物做收納盒、試裝與公差、漸縮塔改層數與嵌合、專題'},
+    s5:{name:'國中', age:'12 歲以上', what:'4 堂課表：草圖與約束、參數化漸縮塔、看懂參數化程式碼、測試修改再印的專題'}
   };
   var startBtns = Array.prototype.slice.call(document.querySelectorAll('[data-start]'));
   var startOut = document.getElementById('startout');
