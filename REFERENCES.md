@@ -322,6 +322,7 @@
 
 | 主題 | 來源 | 採用的內容 | 用在哪裡 |
 | --- | --- | --- | --- |
+| MakerWorld 首頁 | https://makerworld.com/en | 模型庫；教材資源卡、軟體階梯「MakerWorld」 | 教材資源、軟體階梯 |
 | MakerWorld 年齡 | 使用條款 https://makerworld.com/en/user-agreement | 未滿 13 歲不得使用；13 歲至成年由法定監護人同意條款 | 中年級 AI 活動卡、國中卡片（官方文件）；`PLAN.md` |
 | UNESCO 生成式 AI 指引（2023） | https://www.unesco.org/en/articles/unesco-governments-must-quickly-regulate-generative-ai-schools ；UN News https://news.un.org/en/story/2023/09/1140477 ；Euronews https://www.euronews.com/next/2023/09/07/first-guide-on-ai-in-education-recommends-13-years-as-minimum-age | 建議課堂使用 AI 工具最低年齡 13 歲 | 同上 |
 | MakerLab 工具 | https://makerworld.com/en/makerlab ；https://33d.ch/en/blog/makerlab | Image to 3D、Image to Keychain、Lightbox Maker、Make My Sign、Make My Vase、Pixel Puzzle Maker、Parametric Model Maker 等 | `PLAN.md` |
@@ -466,3 +467,4 @@ Tom 指出：除了螢幕時間，大部分分齡是為了配合兒童發展。�
 | 2026-10-03 | 總覽合併重複的年齡：移除上方年齡按鈕，矩陣表頭（手機為年齡卡）兼作入口 | 無新來源 |
 | 2026-10-03 | 更新 `README.md`、`CLAUDE.md`（進度與待辦）、`REVIEW.md`（目前進度）、`PLAN.md`（第十節對照） | 無新來源 |
 | 2026-10-03 | `PLAN.md`：Bambu Handy 需手機，國小暫不列入，僅家長監看用；網頁未改 | 無新來源 |
+| 2026-10-03 | 軟體階梯新增 MakerWorld（6 歲起、13 歲前家長操作；Customize 併入說明）；MakerLab 說明拆成範本與 AI 兩類；中年級「挑與調」註明 Customize 是模型頁功能；教材資源加 MakerWorld 卡 | MakerWorld 首頁加入第十二節；年齡與帳號用第十二節既有來源；Image to 3D 點數不寫數字 |
