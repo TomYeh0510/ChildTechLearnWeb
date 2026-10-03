@@ -397,6 +397,22 @@
 
 ---
 
+## 十五、分齡的兒童發展依據（2026-10-03）
+
+Tom 指出：除了螢幕時間，大部分分齡是為了配合兒童發展。以下是頁面各階段「為什麼是這個年齡：發展依據」的來源。**多數是搜尋摘要或第三方整理，尚待對照原始研究與官方文件**；網頁上都標「編者建議」。
+
+| 主題 | 來源 | 採用的內容 | 用在哪裡 |
+| --- | --- | --- | --- |
+| 精細動作 | https://www.physio-pedia.com/The_Development_of_Fine_Motor_Skills_in_Children ；https://www.theottoolbox.com/fine-motor-milestones/ ；https://www.theottoolbox.com/development-of-eye-hand-coordination/ ；https://circlecare4kids.com/fine-motor-skills-development-timeline-in-childhood/ | 3–4 歲剪直線、搭複雜積木；5 歲前後串珠、拼圖、寫名字；6 歲起眼手協調大致成熟；9–10 歲書寫更流暢 | 幼兒園、低年級、中年級的「手」 |
+| 專注力時間 | 台灣兒童青少年精神醫學會說法，整理於 https://kid-pro.com/early-intervention-attention02/ ；https://parents.hsin-yi.org.tw/Library/Article/9781 | 學前幼兒專心時間約為年齡 × 2–5 分鐘：3 歲 6–15、6 歲 12–30、7 歲 14–35 分鐘；9 歲約 45 分鐘；10–12 歲接近成人 | 各階段的「專注力」、活動時間 |
+| 3D 心像旋轉 | Frontiers in Psychology 2019 https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2019.00107/epub ；PMC https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6364576/ ；4–8 歲實物旋轉研究 https://www.academia.edu/104393065/ | 7 歲前 3D 心像旋轉對多數孩子困難；7–8 歲約 57% 成功；7–12 歲 3D 心像旋轉與數學表現相關 | 幼兒園、低年級「空間」；高年級 |
+| 皮亞傑認知發展 | https://www.simplypsychology.org/piaget.html ；https://www.simplypsychology.org/formal-operational.html ；https://link.springer.com/article/10.1007/s10798-024-09906-5 | 約 7–11 歲具體運思期（邏輯用在具體可見的事物）；約 11–12 歲起形式運思（抽象、假設性思考） | 低年級、中年級、高年級、國中「思考」；用實物對照、先量尺寸再改 |
+| 兒童發展篩檢 | 國民健康署 https://www.hpa.gov.tw/Pages/List.aspx?nodeid=4856 | 未滿 7 歲有 6 次兒童發展篩檢（113 年 7 月起） | 僅參考，頁面未引用 |
+
+注意：皮亞傑的年齡分期是理論框架，個別差異大，頁面只把它當「一般趨勢」，不當發展診斷；3D 心像旋轉的比例是特定研究樣本的結果。年齡安排的最後決定是編者建議，待試帶。
+
+---
+
 ## 更新紀錄
 
 | 日期 | 改動 | 新增或改動的來源 |
@@ -446,3 +462,4 @@
 | 2026-10-03 | 「從這裡開始」改成依「做過什麼」而不是「會什麼技能」，並說明沒碰過繪圖軟體或 3D 列印的新手不論幾歲都從中年級的第一次建模開始 | 無新來源（編者建議） |
 | 2026-10-03 | 首頁入口取消「孩子現在到哪一步」，改成直接選年齡或年級（幼兒園、小一至小二…國一以上） | 無新來源；年級對照見 CLAUDE.md 年齡段定義 |
 | 2026-10-03 | 加入「循序學習、先修補修」：總覽說明、入口結果與 s3–s5「先修」區塊（`PREREQ`）；入口與結果改稱幼兒園、國小低中高年級、國中 | 無新來源；先修內容是編者建議，列「尚缺來源」，待試帶 |
+| 2026-10-03 | 新增第十五節：分齡的兒童發展依據；各階段卡片加「為什麼是這個年齡：發展依據」；總覽說明加「分齡主要依兒童發展」 | 新增來源見第十五節，多為搜尋摘要，尚待對照原文 |
