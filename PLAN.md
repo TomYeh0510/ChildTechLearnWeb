@@ -104,6 +104,8 @@ MakerWorld 說明（上傳時直接貼在說明最前面）：
 
 ## 七、MakerWorld 經營（已確認部分）
 
+**Bambu Handy（2026-10-03 Tom 決定）：** 需要手機，國小階段暫不列入課程；家長只拿來監看列印進度與遠端暫停，不當作孩子的操作工具。網頁上不列 Handy。
+
 - **分齡收藏夾（Tom 同意建立）**：例如「6–8 歲可以挑的模型」「8–10 歲可以調的參數化模型」，孩子只從收藏夾裡挑。MakerWorld 的未成年保護模式尚未推出，收藏夾就是篩選。
 - **授權（已確認）：MakerWorld Standard Digital File License。** 內容：下載者只能用自己的印表機印給自己用；不能賣列印品、不能改作後再發布、不能把檔案放到 MakerWorld 以外的地方。（來源見 `REFERENCES.md` 第十二節）
   - 影響一：網站上的教具只能**連到 MakerWorld 頁面**，不能在網站或其他平台放檔案。
@@ -153,7 +155,7 @@ MakerWorld 說明（上傳時直接貼在說明最前面）：
 | 4 | **6–8 歲「蓋」＝ 3D 筆；Tinkercad 為選配**（第三節） | 已改：低年級最多只家長操作、孩子旁觀，Tinkercad 與名牌活動卡移到中年級；低年級卡有原則提示與「為什麼低年級最多只旁觀螢幕」；總覽矩陣、工具表、軟體階梯同步 | 已解決（Tom 決定，2026-10-03） | — | 完成 |
 | 5 | AI（10–12）：「同上，比較 AI 做的和自己做的」 | 高年級卡沒有 AI | 缺 | 高年級加簡述區塊（標「即將推出」） | 待做 |
 | 6 | AI（13 起）：自己操作、比較引擎、修模型；看懂參數化程式碼的變數 | 國中卡只有一行 13 歲起自己操作 AI | 部分 | 國中補一行比較引擎與修模型、看懂參數化程式碼 | 待做 |
-| 7 | 以 Bambu Lab／MakerWorld 為主（第一節） | 軟體階梯沒有 MakerWorld、Bambu Handy、MakerLab（Image to 3D、Parametric Model Maker）；教材資源只有 Bambu Lab Academy | 部分完成（Bambu Studio、MakerLab 已加，2026-10-02；MakerWorld 本身、教材卡待做） | 軟體階梯加 MakerWorld／MakerLab 項目（13 歲帳號、Image to 3D 點數、一鍵列印）；教材資源加 MakerWorld 卡片 | 待做 |
+| 7 | 以 Bambu Lab／MakerWorld 為主（第一節） | 軟體階梯沒有 MakerWorld、MakerLab（Image to 3D、Parametric Model Maker）；Bambu Handy 已決定不列（第七節）；教材資源只有 Bambu Lab Academy | 部分完成（Bambu Studio、MakerLab 已加，2026-10-02；MakerWorld 本身、教材卡待做） | 軟體階梯加 MakerWorld／MakerLab 項目（13 歲帳號、Image to 3D 點數、一鍵列印）；教材資源加 MakerWorld 卡片 | 待做 |
 | 8 | 「五層路線」頁說明 | 寫「判斷一堂課好不好，看孩子自己設計的比例」 | 與幼兒「重過程、不設計」不符 | 改成「看孩子在過程中學到什麼，而不是成品漂不漂亮」 | 待做 |
 | 9 | 授權 Standard（第七節） | 網頁沒寫 | 待檔案上架 | 填入 MakerWorld 連結時，教具檔案旁寫「檔案僅供個人列印使用」 | 等 Tom 上傳 |
 | 10 | 教具庫分頁（第九節 3） | 無 | Claude 建議：第二套教具決定時再開 | — | 待決定 |
