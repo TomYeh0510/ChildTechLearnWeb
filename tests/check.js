@@ -124,7 +124,7 @@ const norm = (u) => u.replace(/&amp;/g, '&').replace(/\/$/, '');
   await page.click('[data-tab="overview"]');
   await page.click('[data-start="s1"]');
   ok('從這裡開始：顯示幼兒建議', /幼兒/.test(await page.textContent('#startout')));
-  await page.click('[data-so="card"]'); await page.waitForTimeout(150);
+  await page.click("#startout [data-so=card]"); await page.waitForTimeout(150);
   ok('從這裡開始：打開幼兒活動卡', (await st()).stage === 's1' && (await page.evaluate(() => document.getElementById('act-s1').open)));
 
   /* ---- 篩選：結果和資料屬性一致 ---- */

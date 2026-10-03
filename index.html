@@ -139,6 +139,13 @@ li .ev{margin-right:6px}
 .start-opts button small{color:var(--muted);font-size:.76rem}
 .start-opts button[aria-checked="true"]{background:var(--c);color:var(--on);border-color:var(--c);border-left-color:color-mix(in srgb,var(--on) 40%,var(--c));font-weight:700}
 .start-opts button[aria-checked="true"] small{color:inherit;opacity:.85}
+.mx button.h{font:inherit;color:var(--ink);text-align:left;cursor:pointer}
+.mx button.h[aria-checked="true"]{background:var(--c);color:var(--on);border-color:var(--c)}
+.mx button.h[aria-checked="true"] small{color:inherit;opacity:.85}
+.mxhint{margin:0 0 6px;color:var(--muted);font-size:.85rem;max-width:none}
+#startout{margin-top:8px;background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:10px;padding:16px 20px;margin-bottom:8px}
+.mxcards .start-out{border-top:1px dashed var(--line);margin-top:10px}
+@media (max-width:640px){.mxhint{display:none}#startout{display:none}}
 .start-out{display:grid;gap:8px;border-top:1px dashed var(--line);padding-top:12px}
 .start-out .so-h{font-family:var(--f-display);font-size:1.15rem}
 .start-out p{max-width:none}
@@ -391,21 +398,12 @@ html{scroll-behavior:smooth}
 
 <!-- ============ OVERVIEW ============ -->
 <section id="overview">
-  <div class="start" id="start">
-    <h3>孩子幾歲？點一個，直接看適合的路線</h3>
-    <div class="start-opts" role="radiogroup" aria-label="孩子的年齡或年級">
-      <button type="button" role="radio" aria-checked="false" data-start="s1" style="--c:var(--l1)">幼兒園<small>3–6 歲 · 家長操作</small></button>
-      <button type="button" role="radio" aria-checked="false" data-start="s2" style="--c:var(--l2)">國小低年級<small>6–8 歲 · 家長操作、孩子旁觀</small></button>
-      <button type="button" role="radio" aria-checked="false" data-start="s3" style="--c:var(--l3)">國小中年級<small>8–10 歲 · 要先修</small></button>
-      <button type="button" role="radio" aria-checked="false" data-start="s4" style="--c:var(--l4)">國小高年級<small>10–12 歲 · 要先修</small></button>
-      <button type="button" role="radio" aria-checked="false" data-start="s5" style="--c:var(--l5)">國中<small>12 歲以上 · 要先修</small></button>
-    </div>
-    <div class="start-out" id="startout" aria-live="polite" hidden></div>
-  </div>
   <h2>總覽：年齡段 × 路線</h2>
   <p class="lead">分齡主要依兒童發展（手部動作、專注力、空間與抽象思考），螢幕時間另外限制。這條路線是從小到大循序學習的：幼兒園和國小低年級由家長操作、孩子動手，不需要先修；從中年級起孩子自己操作，每個階段都有「先修」，沒有前面階段經驗的孩子要先補修，不能直接跳關。<b>低年級最多只做到家長操作、孩子旁觀</b>，孩子自己用螢幕從中年級開始，一次 30 分鐘內、大人陪同。</p>
-  <div class="mx-wrap"><div class="mx" id="matrix"></div></div>
+  <p class="mxhint">點年齡，看這個年齡的路線、先修與今天可以做什麼</p>
+  <div class="mx-wrap"><div class="mx" id="matrix" role="radiogroup" aria-label="孩子的年齡或年級"></div></div>
   <div class="mxcards" id="mxcards"></div>
+  <div class="start-out" id="startout" aria-live="polite" hidden></div>
   <details>
   <summary>表格檢視</summary>
   <div class="tbl"><table id="ovtable">
@@ -872,7 +870,8 @@ html{scroll-behavior:smooth}
     var rows = Array.prototype.slice.call(document.querySelectorAll('#ovtable tbody tr'));
     var icons = ['cube','code','robot','ai','app'];
     var h = '<div class="corner" aria-hidden="true"></div>';
-    STAGES.forEach(function(s, i){ h += '<div class="h" style="--c:var(--l' + (i+1) + ')"><b>' + s.name + '</b><small>' + s.age + '</small></div>'; });
+    var NAMES = ['幼兒園','國小低年級','國小中年級','國小高年級','國中'];
+    STAGES.forEach(function(s, i){ h += '<button type="button" role="radio" aria-checked="false" class="h" data-start="' + s.id + '" style="--c:var(--l' + (i+1) + ');--on:var(--on' + (i+1) + ')"><b>' + NAMES[i] + '</b><small>' + s.age + '</small></button>'; });
     heads.forEach(function(th, r){
       var done = r === 0;
       h += '<div class="rh2' + (done ? ' done' : '') + '">' + icon(icons[r]) + esc(th.textContent) + '<small>' + (done ? '✓ 已推出' : '即將推出') + '</small></div>';
@@ -886,7 +885,7 @@ html{scroll-behavior:smooth}
     document.getElementById('mxcards').innerHTML = STAGES.map(function(s, i){
       var tr = rows[i], dl = '';
       heads.forEach(function(th, r){ dl += '<dt>' + esc(th.textContent) + (r ? '（即將推出）' : '') + '</dt><dd>' + esc(tr.cells[r+1].textContent) + '</dd>'; });
-      return '<details style="--c:var(--l' + (i+1) + ');--on:var(--on' + (i+1) + ')"><summary>' + s.name + '<small>' + s.age + '</small></summary><dl>' + dl + '</dl><button type="button" class="go" data-go="' + s.id + '">看' + s.name + '的 3D 建模與列印</button></details>';
+      return '<details style="--c:var(--l' + (i+1) + ');--on:var(--on' + (i+1) + ')"><summary>' + NAMES[i] + '<small>' + s.age + '</small></summary><dl>' + dl + '</dl><div class="start-out" data-card="' + s.id + '"></div></details>';
     }).join('');
   })();
 
@@ -1084,18 +1083,18 @@ html{scroll-behavior:smooth}
   };
   var startBtns = Array.prototype.slice.call(document.querySelectorAll('[data-start]'));
   var startOut = document.getElementById('startout');
-  function startPick(id){
+  function startHtml(id){
     var a = ACT[id], nextTxt = document.querySelector('#' + id + ' .next');
-    startBtns.forEach(function(b){ b.setAttribute('aria-checked', b.dataset.start === id); b.tabIndex = b.dataset.start === id ? 0 : -1; });
     var up = nextTxt ? nextTxt.textContent.replace(/^\s*編者建議\s*/, '') : '';
-    startOut.innerHTML = '<div class="so-h">適合從<b>' + a.name + '（' + a.age + '）</b>開始</div>' +
+    return '<div class="so-h">適合從<b>' + a.name + '（' + a.age + '）</b>開始</div>' +
       '<p><b>今天可以做：</b>' + esc(a.what) + '</p>' +
       (PREREQ[id] ? '<p><b>先修（要先完成）：</b></p><ul>' + PREREQ[id].map(function(t){ return '<li>' + esc(t) + '</li>'; }).join('') + '</ul><p class="muted">沒有前面階段經驗的孩子，要先補修再進來；年紀大的新手可以走快一點，但不跳過。</p>' : '<p class="muted">這個階段由家長操作，不需要先修。</p>') + (up ? '<p class="muted">' + esc(up) + '</p>' : '') +
       '<div class="so-btns"><button type="button" class="btn primary" data-so="stage">去看' + a.name + '的路線</button>' +
       (a.card ? '<button type="button" class="btn" data-so="card">打開活動卡</button>' : '') +
       '<button type="button" class="btn" data-so="res">找適合的教材</button></div>';
-    startOut.hidden = false;
-    startOut.querySelectorAll('[data-so]').forEach(function(b){
+  }
+  function bindSo(box, id){
+    box.querySelectorAll('[data-so]').forEach(function(b){
       b.addEventListener('click', function(){
         if (b.dataset.so === 'res') { setFilter('lv', id); go('resources', null, {focus:true}); }
         else {
@@ -1105,6 +1104,15 @@ html{scroll-behavior:smooth}
       });
     });
   }
+  function startPick(id){
+    startBtns.forEach(function(b){ b.setAttribute('aria-checked', b.dataset.start === id); b.tabIndex = b.dataset.start === id ? 0 : -1; });
+    startOut.innerHTML = startHtml(id);
+    startOut.hidden = false;
+    bindSo(startOut, id);
+    try { startOut.scrollIntoView({block:"nearest"}); } catch (e) {}
+  }
+  /* phone cards carry the same panel inside each age */
+  document.querySelectorAll('#mxcards [data-card]').forEach(function(box){ box.innerHTML = startHtml(box.dataset.card); bindSo(box, box.dataset.card); });
   startBtns.forEach(function(b, i){
     b.tabIndex = i === 0 ? 0 : -1;
     b.addEventListener('click', function(){ startPick(b.dataset.start); });
