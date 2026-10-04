@@ -163,6 +163,46 @@ details.activity.lessons dt{font-weight:700;color:var(--muted);white-space:nowra
 details.activity.lessons dd{margin:0}
 @media (max-width:560px){details.activity.lessons dl{grid-template-columns:1fr;gap:0}details.activity.lessons dd{margin-bottom:6px}}
 details.activity.lessons p.note{margin:10px 0 0;font-size:.9rem;color:var(--muted)}
+/* lesson kit: videos + step sheet */
+.kit-h{font-weight:700;font-size:.92rem;margin:14px 0 6px;color:var(--ink)}
+.vids{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.vids li{display:flex;flex-wrap:wrap;gap:2px 10px;align-items:baseline}
+.vids a{color:var(--accent);font-weight:700;overflow-wrap:anywhere}
+.vids small{color:var(--muted);font-size:.8rem}
+.sheet{background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:10px;padding:14px 18px;max-width:640px}
+.sheet .sh-top{margin:0;font-size:.78rem;color:var(--muted);letter-spacing:.04em}
+.sheet .sh-t{font-family:var(--f-display);font-size:1.3rem;margin:2px 0 4px}
+.sheet .sh-meta{margin:0 0 6px;font-size:.88rem;max-width:none}
+.sheet .sh-h{font-weight:700;font-size:.85rem;margin:10px 0 4px;color:var(--muted)}
+.sheet .sh-box{list-style:none;padding:0;margin:0;display:grid;gap:4px}
+.sheet .sh-box li{padding-left:1.6em;position:relative}
+.sheet .sh-box li::before{content:"";position:absolute;left:0;top:.25em;width:.95em;height:.95em;border:2px solid var(--muted);border-radius:3px}
+.sheet .sh-steps{list-style:none;counter-reset:st;padding:0;margin:0;display:grid;gap:8px}
+.sheet .sh-steps li{counter-increment:st;padding-left:2.4em;position:relative;font-size:1.02rem;line-height:1.55}
+.sheet .sh-steps li::before{content:counter(st);position:absolute;left:0;top:0;width:1.7em;height:1.7em;border-radius:50%;background:var(--c);color:var(--on);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+.sheet .sh-tip{margin:10px 0 0;font-size:.88rem;background:color-mix(in srgb,var(--c) 12%,var(--surface));border-radius:8px;padding:6px 10px;max-width:none}
+.kit-btns{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.kit-btns a.btn{text-decoration:none}
+#printhost{display:none}
+.sheet .sh-notes{display:none}
+@media print{
+  body.print-one>*:not(#printhost){display:none!important}
+  body.print-one #printhost{display:block}
+  body.print-one{background:#fff}
+  #printhost .sheet{max-width:none;border:none;border-top:8px solid var(--c);border-radius:0;padding:0 0 0;font-size:13pt;color:#111;background:#fff;break-after:page;page-break-after:always}
+  #printhost .sheet:last-child{break-after:auto;page-break-after:auto}
+  #printhost .sheet .sh-top{color:#555;padding-top:8px}
+  #printhost .sheet .sh-t{font-size:22pt;color:#111}
+  #printhost .sheet .sh-h{color:#555;font-size:11pt;margin-top:14px}
+  #printhost .sheet .sh-steps{gap:12px}
+  #printhost .sheet .sh-steps li{font-size:14pt}
+  #printhost .sheet .sh-box li::before{border-color:#555}
+  #printhost .sheet .sh-tip{background:#f1f1f1}
+  #printhost .sheet .sh-notes{display:block}
+  #printhost .sheet .sh-notes p{margin:0;padding:16px 0 4px;border-bottom:1px solid #999;font-size:11pt;color:#555;max-width:none}
+  #printhost .sheet *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@page{size:A4;margin:16mm}
 .toysafe ul{display:grid;gap:4px}
 .toysafe li .ev{margin-left:4px;margin-right:0}
 .secs{display:grid;gap:8px}
@@ -873,17 +913,112 @@ html{scroll-behavior:smooth}
       {t:'測試 → 修改 → 再印的專題', kid:'理線器、工具架或家中損壞零件的替換件：量、建模、印、測、改兩輪', adult:'確認受力件與接觸食物件的安全', time:'多堂'}
     ], files:['自製：參數化漸縮塔（OpenSCAD 版），同時是第 2、3 堂的教材','MakerWorld：有公開 OpenSCAD 程式碼的參數化模型（第 3 堂）；替換零件類（掛鉤、旋鈕、腳墊）當第 4 堂範例']}
   };
+  /* lesson kits: videos for the parent + a one-page step sheet (printable, and bundled as a PDF per stage).
+     key = stage-lesson number. Videos are watched by the parent first; children never watch in s1. */
+  var KIT_WHO = {s1:'家長先看，再當面示範給孩子', s2:'家長先看，再當面示範給孩子', s3:'家長先看，也可以和孩子一起看（30 分鐘內）'};
+  var KIT_STAGE = {s1:'幼兒園 3–6 歲', s2:'國小低年級 6–8 歲', s3:'國小中年級 8–10 歲'};
+  var KITS = {
+    's1-1':{prep:['同一個輪廓的薄片和立體件各一（照「教具安全」檢查過）','不透明的布袋','兩個淺盤：一個放平的、一個放立體的'],
+      videos:[{t:'神祕袋活動 1：摸一摸、找成對',src:'Global Montessori Network · 英文',url:'https://theglobalmontessorinetwork.org/resource/guides-and-administrators/the-mystery-bag-activity-1-feel-and-find-the-pair-english/'},{t:'神祕袋活動 4：摸一摸、說說看',src:'YouTube · 英文',url:'https://www.youtube.com/watch?v=RCYhBHT550M'}],
+      steps:['薄片和立體件放進布袋。大人先示範：手伸進去摸一個，慢慢說「這個扁扁的」，再拿出來看','換孩子摸：先猜「扁扁的還是胖胖的」，再拿出來看猜對沒有','兩個都放桌上，推一推、轉一圈：哪個會滾？哪個站得起來？','在家裡找 3 樣平的、3 樣立體的，分到兩個盤子','請孩子說一個理由，再一起收回盒子'],
+      check:['能說出「會滾」「站得起來」「扁扁的」這類理由','分錯時願意再摸一次，自己改過來'],
+      tip:'大人話少、動作慢；分錯了不糾正，讓孩子自己發現。'},
+    's1-2':{prep:['方形漸縮塔 8 層（照「教具安全」檢查過）','一塊地墊或桌墊','裝教具的盒子'],
+      videos:[{t:'粉紅塔示範（蒙特梭利原版是 10 塊方塊，做法相同）',src:'YouTube · My Works Montessori · 英文',url:'https://www.youtube.com/watch?v=PccJvhRZXr0'},{t:'粉紅塔：視覺感官教具示範',src:'YouTube · 英文',url:'https://www.youtube.com/watch?v=3Wfo28SvgLg'}],
+      steps:['鋪好地墊，和孩子一起把每一層搬到墊子上，散開放','大人示範一次：先找最大的放中間，再找「剩下裡面最大的」，一層一層疊上去；不說話，讓孩子看手','拆開散回墊子，換孩子疊','疊好後一起從上往下摸邊緣：每一層都比下面小一點','孩子自己把教具放回盒子'],
+      check:['自己由大到小疊對，或疊錯後自己發現、改過來','玩完會自己收好'],
+      tip:'太難：先只用最大的 4 層。太簡單：閉上眼睛摸著排、找出大人偷偷拿走的那一層。'},
+    's1-3':{prep:['同一個輪廓的薄片 10–15 片','一個印好、側面摸得到條紋的立體件'],
+      steps:['大人疊 3 片、孩子疊 8 片，並排比一比誰高','問孩子：「怎麼讓它更高？」讓孩子自己再加','拿出立體件，用指尖從下往上慢慢摸側面：「摸到一條一條的嗎？」','把疊高的薄片放在立體件旁邊，兩個都摸摸看','一起收回盒子'],
+      check:['能說出「越多片越高」','會主動去摸側面的條紋'],
+      tip:'重點在摸和比，不用數有幾片。'},
+    's1-4':{prep:['印好的小動物或小玩具（照「教具安全」檢查過）','兒童用水性顏料、筆刷、圍兜','報紙或桌墊'],
+      steps:['讓孩子挑一個今天要完成的作品','上色：一次用一種顏色，畫完放旁邊晾乾','有分件的作品一起組裝：大人扶著、孩子壓','放在自己疊好的漸縮塔旁邊，請孩子介紹「這是什麼、用了什麼顏色」','一起收拾畫具'],
+      check:['專注做完一件作品','願意介紹自己的作品'],
+      tip:'顏料乾了才拿來玩；還會把東西放進嘴裡的孩子先不用顏料。'},
+    's2-1':{prep:['事先印好 5–10 種小物：單色、沒有小零件、沒有尖角','電腦開好 MakerWorld（家長帳號）','印表機裝好孩子可能選的顏色'],
+      videos:[{t:'MakerWorld 一鍵列印圖文教學',src:'Bambu Lab 官方部落格 · 英文',url:'https://blog.bambulab.com/makerworld-one-step-printing/'},{t:'Bambu Lab Academy：第一次列印',src:'MakerWorld · 英文',url:'https://makerworld.com/en/community/post/1761645'}],
+      steps:['把印好的小物排在桌上，請孩子摸一摸、挑一個','請孩子說為什麼選它、想要什麼顏色','孩子坐在旁邊看：家長找到同一個模型，選顏色、按列印（5 分鐘內）','一起看印表機印出第一層，然後先去做別的事','印好由家長取下、放涼，交給孩子和原本那個比一比'],
+      check:['能說出選它的理由','比較時能說出哪裡一樣、哪裡不一樣'],
+      tip:'螢幕由家長操作，孩子只在旁邊看，不超過 5 分鐘。'},
+    's2-2':{prep:['低溫 PCL 3D 筆（例如 3Doodler Start+）和線材','描線底稿：圓形、星星、愛心這類簡單輪廓','透明資料夾（底稿放進去，作品比較好撕下來）'],
+      videos:[{t:'3Doodler Start+ 入門',src:'3Doodler 官方 · 英文',url:'https://learn.the3doodler.com/getting-started/videos/getting-started-with-your-3doodler-start-pen/'},{t:'開始畫第一條線',src:'3Doodler 官方 · 英文',url:'https://learn.the3doodler.com/getting-started/videos/how-to-start-doodling/'}],
+      steps:['家長開機、裝好線材，示範一次：筆尖貼著紙，慢慢沿線走','孩子描第一圈：慢慢走，線斷了就從斷的地方接上','沿著同一條線再疊第二圈、第三圈','等一下，從資料夾上撕下來，拿在手上看','家長關機、拔插頭、收好筆'],
+      check:['線條連在一起，沒有大斷點','撕下來不會散開'],
+      tip:'換料、拔插頭都由家長做；用完一定拔插頭。'},
+    's2-3':{prep:['低溫 3D 筆和線材','底稿：4 個由大到小的方框（例如 6、5、4、3 cm）','幼兒園那套漸縮塔當範本'],
+      videos:[{t:'用平面片組出立體（以方塊為例）',src:'3Doodler 官方 · 英文',url:'https://learn.the3doodler.com/blog/how-to-draw-in-3d/'},{t:'方塊底稿',src:'3Doodler 官方 · 英文',url:'https://learn.the3doodler.com/stencils/cube/'}],
+      steps:['先拿漸縮塔疊一次：每一層都比下面小一點','4 個方框各描框、再填滿，做成 4 片','撕下 4 片，排成大到小','從最大的開始疊，在四個角點一點線材黏住（家長扶著）','和漸縮塔放在一起比一比'],
+      check:['4 層由大到小','拿起來不會散開'],
+      tip:'太難：只做 3 層。太簡單：每層換一種顏色，或在頂端加一個小裝飾。'},
+    's2-4':{prep:['紙和筆：先把孩子想寫的字記下來','電腦開好 MakerLab 的 Make My Sign（家長帳號）','印表機'],
+      videos:[{t:'Make My Sign：幾分鐘做出自己的名牌',src:'YouTube · 英文',url:'https://www.youtube.com/watch?v=j03rcJRdVmQ'},{t:'Make My Sign：設計、配色、列印',src:'YouTube · 英文',url:'https://www.youtube.com/watch?v=uIEOQupaK60'}],
+      steps:['孩子說名牌上要寫什麼、什麼顏色、大一點還是小一點；家長寫在紙上','家長照紙上做；孩子坐旁邊看預覽（5 分鐘內）','問孩子：「和你想的一樣嗎？要改哪裡？」家長照著改一次','送印；印好、放涼後交給孩子','拿成品和紙上寫的對一對'],
+      check:['能說出自己決定了哪些地方','能說出成品和想的哪裡一樣、哪裡不同'],
+      tip:'孩子負責決定，家長負責操作。'},
+    's3-3':{prep:['電腦和有滾輪的滑鼠','Tinkercad 帳號（未滿 13 歲：家長同意，或老師的班級代碼）','計時器：30 分鐘'],
+      videos:[{t:'Tinkercad 官方互動教學「Learn the Moves」',src:'Tinkercad 官方 · 英文',url:'https://www.tinkercad.com/learn/overview/OPC41AJJKIKDWDV'},{t:'一分鐘入門 Tinkercad',src:'YouTube · 中文',url:'https://www.youtube.com/watch?v=wXuN8roDeOQ'},{t:'Tinkercad 單個物件操作',src:'YouTube · 中文',url:'https://www.youtube.com/watch?v=m0GObfPhI9A'}],
+      steps:['開一個新設計：中間是工作平面，右邊是形狀庫','轉視角：按住右鍵拖曳轉動、滾輪放大縮小；點左上角的方塊回到正面','拖出一個方塊、一個圓柱、一個球放到平面上','移動：直接拖；旋轉：拉彎彎的箭頭；縮放：拉白色角點（按住 Shift 會等比例）','點一個形狀，在右上角的面板改顏色','點左上角的設計名稱，取一個自己的名字（會自動存檔）'],
+      check:['能把畫面轉回正面','三個形狀都換了顏色、大小都不一樣'],
+      tip:'時間到就停，下次從存好的設計接著做。'},
+    's3-4':{prep:['每層尺寸表：80、74、67、61、54、48、41、35 mm（正方形，每層厚 5 mm）','幼兒園那套漸縮塔','Tinkercad'],
+      videos:[{t:'Tinkercad 官方互動教學（看「Group It」「Align It」兩段）',src:'Tinkercad 官方 · 英文',url:'https://www.tinkercad.com/learn/overview/OPC41AJJKIKDWDV'},{t:'Tinkercad 群組教學',src:'YouTube · 中文',url:'https://www.youtube.com/watch?v=dQfAofcMz3U'}],
+      steps:['拖出一個方塊，在尺寸欄打 80 × 80、高 5：這是第 1 層','選方塊按 Ctrl+D 複製一個，改成 74 × 74，拉頂端的黑色小箭頭往上，高度打 5','照尺寸表一層一層做到第 8 層（35 × 35，離地 35）','全選（Ctrl+A），按 L 對齊，點中間的兩個點，讓每層都在正中','按 Ctrl+G 群組、存檔，交給家長列印','印好和幼兒園那座放在一起，看每層是不是在正中'],
+      check:['從上往下看，每一層都在正中','從側面看，層和層之間沒有縫、也沒有重疊'],
+      tip:'離地高度 = 下面所有層加起來：第 2 層 5、第 3 層 10，每層加 5。'},
+    's3-5':{prep:['一樣要放的小東西（橡皮擦、小車、耳機殼）','尺；紙筆','Tinkercad'],
+      videos:[{t:'製作空心物件',src:'YouTube · 中文',url:'https://www.youtube.com/watch?v=pvIhms6852U'}],
+      steps:['量東西的長、寬、高，寫下來；長和寬各加 1 mm 空隙','外框方塊：長、寬再各加 4 mm（兩邊牆各 2 mm）；高度 = 東西高度的一半 + 2 mm 底','凹槽方塊：用第 1 步的長寬，右上角改成「孔」，抬高 2 mm，高度做得比外框高','兩個一起選，按 L 對齊中間，再按 Ctrl+G 群組：凹槽挖出來了','交給家長列印，放放看：太緊還是太鬆？差幾 mm？','改數字再印一次，把兩次差多少記下來'],
+      check:['東西放得進去，也拿得出來','記下第一次差了幾 mm'],
+      tip:'第一次太緊很正常，這就是下一個階段要學的「公差」。'},
+    's3-6':{prep:['鑰匙圈環','第 2 堂的 MakerLab 名牌','Tinkercad'],
+      videos:[{t:'用 Tinkercad 設計名牌',src:'YouTube · 中文',url:'https://www.youtube.com/watch?v=p0UJoM6cUdE'}],
+      steps:['拖出方塊當底板，改成 60 × 20 × 2 mm','拖出圓柱，改成直徑 5 mm、設成「孔」，高度比底板高，放在底板左邊、離邊約 3 mm','拖出「文字」，打自己的名字，高 3 mm，抬高 2 mm 放在孔的右邊，四周留邊','全選，按 Ctrl+G 群組，換顏色、存檔，交給家長列印','印好穿上鑰匙圈環','和 MakerLab 名牌放一起：哪個快？哪個能改的地方多？下次想用哪個？'],
+      check:['文字貼在底板上，沒有超出邊','孔是穿透的，鑰匙圈穿得進去'],
+      tip:'太難：先不挖孔，只放文字。太簡單：加第二層文字或一個小裝飾。'}
+  };
+  function kitSheet(id, n, r, k){
+    var sid = 'sheet-' + id + '-' + n;
+    return '<div class="sheet" id="' + sid + '" style="--c:var(--l' + id.slice(1) + ');--on:var(--on' + id.slice(1) + ')">' +
+      '<p class="sh-top">一起玩科技 · ' + KIT_STAGE[id] + ' · 第 ' + n + ' 堂</p>' +
+      '<h4 class="sh-t">' + esc(r.t) + '</h4>' +
+      '<p class="sh-meta">' + (r.goal ? '<b>目標</b> ' + esc(r.goal) + '　' : '') + '<b>時間</b> ' + esc(r.time) + '</p>' +
+      '<div class="sh-h">準備</div><ul class="sh-box">' + k.prep.map(function(t){ return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+      '<div class="sh-h">步驟</div><ol class="sh-steps">' + k.steps.map(function(t){ return '<li>' + esc(t) + '</li>'; }).join('') + '</ol>' +
+      '<div class="sh-h">做對了嗎</div><ul class="sh-box">' + k.check.map(function(t){ return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>' +
+      (k.tip ? '<p class="sh-tip"><b>小提醒</b> ' + esc(k.tip) + '</p>' : '') +
+      '<div class="sh-notes"><div class="sh-h">今天的紀錄</div><p>卡住的地方：</p><p>最有興趣的一步：</p><p>下次想調整：</p></div></div>';
+  }
   Object.keys(LESSONS).forEach(function(id){
     var box = document.querySelector('#les-' + id + ' .secs'); if (!box) return;
-    var L = LESSONS[id], h = '';
+    var L = LESSONS[id], h = '', hasKit = false;
     L.rows.forEach(function(r, i){
-      var dl = '';
+      var dl = '', k = KITS[id + '-' + (i+1)], kit = '';
       [['目標', r.goal], ['材料', r.mat], ['流程', r.flow], ['孩子做', r.kid], ['家長做', r.adult], ['時間', r.time], ['觀察訊號', r.sign]].forEach(function(f){ if (f[1]) dl += '<dt>' + f[0] + '</dt><dd>' + esc(f[1]) + '</dd>'; });
-      h += '<details class="sec"><summary><span class="k">第 ' + (i+1) + ' 堂：' + esc(r.t) + '</span></summary><dl>' + dl + '</dl></details>';
+      if (k) {
+        hasKit = true;
+        if (k.videos) kit += '<div class="kit-h">影片（' + KIT_WHO[id] + '）</div><ul class="vids">' + k.videos.map(function(v){ return '<li><a href="' + esc(v.url) + '" target="_blank" rel="noopener">' + esc(v.t) + '</a><small>' + esc(v.src) + '</small></li>'; }).join('') + '</ul>';
+        kit += '<div class="kit-h">步驟卡</div>' + kitSheet(id, i+1, r, k) + '<p class="kit-btns"><button type="button" class="btn" data-print="sheet-' + id + '-' + (i+1) + '">列印這張步驟卡</button></p>';
+      }
+      h += '<details class="sec"><summary><span class="k">第 ' + (i+1) + ' 堂：' + esc(r.t) + '</span></summary><dl>' + dl + '</dl>' + kit + '</details>';
     });
     if (L.files) h += '<details class="sec"><summary><span class="k">建議列印檔</span></summary><ul>' + L.files.map(function(f){ return '<li>' + esc(f) + '</li>'; }).join('') + '</ul></details>';
     box.innerHTML = h;
+    if (hasKit) box.insertAdjacentHTML('afterend', '<p class="kit-btns kit-all"><a class="btn primary" href="cheatsheets/tech-together-' + id + '.pdf" download>下載整套步驟卡（PDF）</a><button type="button" class="btn" data-printall="' + id + '">列印整套步驟卡</button></p>');
     if (L.note) box.insertAdjacentHTML('afterend', '<p class="note">' + esc(L.note) + '</p>');
+  });
+  /* printing: copy the chosen sheets into #printhost; print CSS shows only that. Also used by tools/build-cheatsheets.js */
+  window.ttPrepPrint = function(ids){
+    var host = document.getElementById('printhost');
+    if (!host) { host = document.createElement('div'); host.id = 'printhost'; document.body.appendChild(host); }
+    host.innerHTML = ids.map(function(s){ var el = document.getElementById(s); return el ? el.outerHTML.replace(' id="' + s + '"', '') : ''; }).join('');
+    document.body.classList.add('print-one');
+  };
+  window.addEventListener('afterprint', function(){ document.body.classList.remove('print-one'); });
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('[data-print],[data-printall]'); if (!b) return;
+    var ids = b.dataset.print ? [b.dataset.print] : [].map.call(document.querySelectorAll('#les-' + b.dataset.printall + ' .sheet'), function(s){ return s.id; });
+    window.ttPrepPrint(ids); window.print();
   });
 
   /* prerequisites: the route is sequential; s1 and s2 are parent-operated, so they have none */

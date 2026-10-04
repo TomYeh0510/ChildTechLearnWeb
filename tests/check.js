@@ -26,6 +26,11 @@ const norm = (u) => u.replace(/&amp;/g, '&').replace(/\/$/, '');
   const missing = hrefs.filter((h) => !refs.includes(h) && !refsNorm.includes(h));
   ok('頁面上 ' + hrefs.length + ' 個外部連結都記錄在 REFERENCES.md', missing.length === 0, missing.join('\n    '));
 
+  /* 課程套裝的影片連結寫在 JS 資料裡（url:'...'），也要記在 REFERENCES.md */
+  const kitUrls = [...new Set([...html.matchAll(/url:'(https?:[^']+)'/g)].map((m) => norm(m[1])))];
+  const kitMissing = kitUrls.filter((h) => !refs.includes(h) && !refsNorm.includes(h));
+  ok('課程套裝 ' + kitUrls.length + ' 個影片連結都記錄在 REFERENCES.md', kitUrls.length > 0 && kitMissing.length === 0, kitMissing.join('\n    '));
+
   /* ---- 靜態檢查：頁面不放備註 ---- */
   ok('沒有備註用的 class（src / mx-note / stack-cap / footer）', !/class="(src|mx-note|stack-cap)"|<footer/.test(html));
   for (const w of ['來源：', '查詢', '本路線建議', '整理於', '規劃中']) {
@@ -171,6 +176,23 @@ const norm = (u) => u.replace(/&amp;/g, '&').replace(/\/$/, '');
   await page.click('.chip[data-f="lv"][data-v="all"]');
   await page.click('.chip[data-f="eq"][data-v="printer"]');
   ok('設備：需要印表機', (await visible()) === (await expect(() => [...document.querySelectorAll('#resources .card')].filter((c) => c.dataset.eq === 'printer').length)));
+
+  /* ---- 課程套裝：幼兒園、低年級、中年級第 3–6 堂有步驟卡；PDF 和網頁內容一致 ---- */
+  {
+    const want = ['s1-1', 's1-2', 's1-3', 's1-4', 's2-1', 's2-2', 's2-3', 's2-4', 's3-3', 's3-4', 's3-5', 's3-6'];
+    const have = await page.evaluate((w) => w.filter((k) => { const s = document.getElementById('sheet-' + k); return s && s.querySelectorAll('.sh-steps li').length >= 3 && !!s.closest('details.sec'); }), want);
+    ok('課程套裝：' + want.length + ' 堂都有步驟卡（收在該堂的收折列裡）', have.length === want.length, want.filter((k) => !have.includes(k)).join('、'));
+    const crypto = require('crypto');
+    let hashes = {}; try { hashes = JSON.parse(fs.readFileSync(path.join(root, 'cheatsheets/hash.json'), 'utf8')); } catch (e) {}
+    const stale = [];
+    for (const id of ['s1', 's2', 's3']) {
+      const text = await page.evaluate((id) => { window.ttPrepPrint([...document.querySelectorAll('#les-' + id + ' .sheet')].map((s) => s.id)); return document.getElementById('printhost').innerText; }, id);
+      const h = crypto.createHash('sha256').update(text).digest('hex').slice(0, 16);
+      if (h !== hashes[id] || !fs.existsSync(path.join(root, 'cheatsheets/tech-together-' + id + '.pdf'))) stale.push(id);
+    }
+    await page.evaluate(() => document.body.classList.remove('print-one'));
+    ok('整套步驟卡 PDF 與網頁內容一致（不一致就執行 tools/build-cheatsheets.js）', stale.length === 0, stale.join('、'));
+  }
 
   ok('沒有程式錯誤', errs.length === 0, errs.join(' | '));
 

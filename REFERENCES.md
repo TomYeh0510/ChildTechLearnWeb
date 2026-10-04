@@ -365,6 +365,7 @@
 
 ### 尚缺來源（之後要補）
 
+- 課程套裝的 18 個影片與圖文連結（第十六節）：只確認標題，內容尚未看過，待 Tom 確認採用段落。
 - SketchUp 10 歲以上、切片軟體 8 歲以上：依學校實例與本路線安排，沒有官方年齡建議。
 - Gemini 未滿 13 歲由 Family Link 監管帳號開啟：依第三次審查者查證，尚待對照 Google 官方原文。
 - 各階段「先修」內容（`PREREQ`）：依本路線的學習順序整理，沒有外部課程標準，待試帶。
@@ -414,6 +415,37 @@ Tom 指出：除了螢幕時間，大部分分齡是為了配合兒童發展。�
 注意：皮亞傑的年齡分期是理論框架，個別差異大，頁面只把它當「一般趨勢」，不當發展診斷；3D 心像旋轉的比例是特定研究樣本的結果。年齡安排的最後決定是編者建議，待試帶。
 
 ---
+
+## 十六、課程套裝的影片與圖文教學（2026-10-04）
+
+用在「分齡細節 → 各階段課表 → 第 N 堂」展開後的「影片」清單（JS 的 `KITS`）。影片給家長先看，再當面示範；幼兒不看影片。只放連結，不轉載內容。
+
+**查核狀態：** 工作環境無法連到 YouTube、3Doodler 與新南國小網站，以下連結都只從搜尋結果確認標題與頻道，**影片內容尚未看過**；要由 Tom 看過，確認要用哪一段（可以寫成「看 0:30–3:00」），不適合的換掉。自製影片拍好後逐一替換。
+
+| 名稱 | 連結 | 用在哪裡 | 採用的內容 | 加入日期 |
+| --- | --- | --- | --- | --- |
+| Global Montessori Network：The Mystery Bag Activity 1: Feel and Find the Pair | https://theglobalmontessorinetwork.org/resource/guides-and-administrators/the-mystery-bag-activity-1-feel-and-find-the-pair-english/ | 幼兒園第 1 堂 | 神祕袋（觸覺辨識）示範，3–5 歲；五支系列影片之一 | 2026-10-04 |
+| Stereognostic (Mystery) Bag Activity 4: Touch and Describe | https://www.youtube.com/watch?v=RCYhBHT550M | 幼兒園第 1 堂 | 摸了再說出形狀特徵 | 2026-10-04 |
+| Montessori Sensorial Lesson - Pink Tower（My Works Montessori） | https://www.youtube.com/watch?v=PccJvhRZXr0 | 幼兒園第 2 堂 | 粉紅塔給家長與 3–6 歲孩子的示範；原版 10 塊，本站漸縮塔 8 層，示範方式相同 | 2026-10-04 |
+| Montessori - Sensorial - Visual Sense - Pink Tower | https://www.youtube.com/watch?v=3Wfo28SvgLg | 幼兒園第 2 堂 | 粉紅塔示範 | 2026-10-04 |
+| Bambu Lab Blog：MakerWorld: A Guide to One-Step Printing | https://blog.bambulab.com/makerworld-one-step-printing/ | 低年級第 1 堂 | MakerWorld 一鍵列印流程（圖文） | 2026-10-04 |
+| Bambu Lab Academy（MakerWorld） | https://makerworld.com/en/community/post/1761645 | 低年級第 1 堂 | 見第三節 | 2026-10-04 |
+| 3Doodler：Getting Started with Your 3Doodler Start+ Pen | https://learn.the3doodler.com/getting-started/videos/getting-started-with-your-3doodler-start-pen/ | 低年級第 2 堂 | 官方入門影片 | 2026-10-04 |
+| 3Doodler：How To Start Doodling | https://learn.the3doodler.com/getting-started/videos/how-to-start-doodling/ | 低年級第 2 堂 | 官方：第一條線怎麼畫 | 2026-10-04 |
+| 3Doodler Blog：How To Draw In 3D with a 3D pen | https://learn.the3doodler.com/blog/how-to-draw-in-3d/ | 低年級第 3 堂 | 先畫 6 片 3×3 cm 平面，再在接縫點線材組成立體方塊；本站改成 4 片由大到小疊成迷你塔 | 2026-10-04 |
+| 3Doodler：Cube 3D Pen Stencil | https://learn.the3doodler.com/stencils/cube/ | 低年級第 3 堂 | 方塊底稿 | 2026-10-04 |
+| Make My Sign. Make custom signs in a flash with MakerWorld | https://www.youtube.com/watch?v=j03rcJRdVmQ | 低年級第 4 堂 | Make My Sign 操作 | 2026-10-04 |
+| Design, Color, 3D Print, your own SIGN, with Bambu Lab "MAKE MY SIGN" | https://www.youtube.com/watch?v=uIEOQupaK60 | 低年級第 4 堂 | Make My Sign 設計、配色、匯出列印 | 2026-10-04 |
+| Tinkercad：Learn the Moves（官方互動教學） | https://www.tinkercad.com/learn/overview/OPC41AJJKIKDWDV | 中年級第 3、4 堂 | 10 段：Place、View、Move、Rotate、Size、Group、Copy、Duplicate、Hide、Align | 2026-10-04 |
+| 【Tinkercad系列】一分鐘入門3D軟體「Tinkercad」 | https://www.youtube.com/watch?v=wXuN8roDeOQ | 中年級第 3 堂 | 中文入門 | 2026-10-04 |
+| 【Tinkercad系列】Tinkercad「單個物件操作」-單元4 | https://www.youtube.com/watch?v=m0GObfPhI9A | 中年級第 3 堂 | 中文：移動、旋轉、縮放 | 2026-10-04 |
+| tinkercad群組 教學3 | https://www.youtube.com/watch?v=dQfAofcMz3U | 中年級第 4 堂 | 中文：群組 | 2026-10-04 |
+| [TinkerCAD教學] 第十章：製作空心物件 | https://www.youtube.com/watch?v=pvIhms6852U | 中年級第 5 堂 | 中文：用「孔」挖出空心 | 2026-10-04 |
+| 3D列印教學 用Tinkercad設計名牌 | https://www.youtube.com/watch?v=p0UJoM6cUdE | 中年級第 6 堂 | 中文：名牌建模 | 2026-10-04 |
+
+步驟卡內容（`KITS` 的準備、步驟、做對了嗎、小提醒）是編者依既有活動卡、課表與上列來源改寫，標在課表的「編者建議」之下。數字沿用既有來源：名牌 60 × 20 × 2 mm、文字 3 mm（第一節 Nozzle Down）；漸縮塔底約 8 cm、最小一層約 3.5 cm、每層 5 mm（`PLAN.md`、第十二節）；中年級漸縮塔各層 80、74、67、61、54、48、41、35 mm 是編者把 80→35 mm 平均分成 8 層的結果。Tinkercad 操作（右鍵轉視角、Shift 等比例、L 對齊、Ctrl+D 複製、Ctrl+G 群組、「孔」）依官方 Learn the Moves 與現有中年級「核心功能」區塊。
+
+整套 PDF（`cheatsheets/tech-together-s1.pdf` 等）由 `tools/build-cheatsheets.js` 從網頁同一份資料產生，不另外維護內容。
 
 ## 更新紀錄
 
@@ -475,3 +507,4 @@ Tom 指出：除了螢幕時間，大部分分齡是為了配合兒童發展。�
 | 2026-10-03 | `PLAN.md` 第十一節中年級改為 6 堂：MakerLab 名牌提前到第 2 堂（剛接觸電腦即可），Tinkercad 先上基本操作與漸縮塔兩堂，第 5 堂才做 Tinkercad 名牌並與第 2 堂比較 | 無新來源 |
 | 2026-10-03 | 五個階段的課表上網頁（`LESSONS`）：幼兒園課表由表格改成收折列；低年級 4 堂、中年級 6 堂、高年級 4 堂、國中 4 堂，各含「建議列印檔」；入口結果的「今天可以做」同步 | 無新來源；課程內容為編者建議（`PLAN.md` 第十一節），待試帶 |
 | 2026-10-03 | 中年級課表改 7 堂：新增第 5 堂「合身小托」（第一件有檢查點的 CAD 作品），名牌改為鑰匙圈名牌移到第 6 堂；作品進程參考新南國小 Tinkercad 教材（第一節既有來源，標教學實例）；「作品」區塊同步 | 無新來源；新南國小頁面本機連不到，單元順序依第一節既有摘要（鑰匙圈、馬克杯與筆筒、齒輪與南瓜燈、容器、獎盃、匯入 SVG），尚待對照原文 |
+| 2026-10-04 | 課程套裝第一批：幼兒園 4 堂、低年級 4 堂、中年級第 3–6 堂（Tinkercad 入門）展開後有影片清單與步驟卡（`KITS`）；步驟卡可單張列印、整套列印，或下載整套 PDF（`tools/build-cheatsheets.js` 產生）；印出版多一欄「今天的紀錄」 | 新增第十六節（18 個影片與圖文連結，內容待 Tom 看過確認） |
