@@ -1015,6 +1015,17 @@ html{scroll-behavior:smooth}
     document.body.classList.add('print-one');
   };
   window.addEventListener('afterprint', function(){ document.body.classList.remove('print-one'); });
+  /* inside the Claude viewer a plain download link does nothing; hand the PDF over through the downloads capability there */
+  var saver = null;
+  if (window.claude && typeof window.claude.use === 'function') window.claude.use('downloads').then(function(n){ saver = n; }, function(){});
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[download]'); if (!a || !saver) return;
+    e.preventDefault();
+    var href = a.getAttribute('href');
+    fetch(href).then(function(r){ if (!r.ok) throw new Error(r.status); return r.blob(); })
+      .then(function(b){ return saver.save({filename: href.split('/').pop(), data: b}); })
+      .catch(function(){});
+  });
   document.addEventListener('click', function(e){
     var b = e.target.closest('[data-print],[data-printall]'); if (!b) return;
     var ids = b.dataset.print ? [b.dataset.print] : [].map.call(document.querySelectorAll('#les-' + b.dataset.printall + ' .sheet'), function(s){ return s.id; });
