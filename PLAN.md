@@ -113,6 +113,35 @@ MakerWorld 說明（上傳時直接貼在說明最前面）：
   - 影響二：「從玩到做」裡孩子做自己的版本，是在 Tinkercad 自己重做或用 MakerWorld 上的參數化模型，不是改作 Tom 的檔案，不受影響。
   - 待確認：幼兒園或老師印給全班用，是否算「個人使用」，條款沒有寫明；有老師詢問時再查證或個別授權。
 
+### MakerWorld 介紹範本（精簡版，2026-10-06 Tom 確認「介紹不要太多」）
+
+原則：一段說玩什麼、一行年齡、四步玩法、一個影片連結、三行安全；學習意義和細節放網站，不放 MakerWorld。範例（構成三角形）：
+
+```
+Montessori Constructive Triangles – Triangular Box
+
+A 3D-printable version of the Montessori triangular box, with rounded corners.
+Children discover that 2 green, 3 yellow, or 4 red triangles can each form the same large triangle as the grey one.
+
+Age: about 4+, depending on the child's readiness.
+(Learning guidance only – not a toy safety certification.)
+
+How to use
+1. Show the grey triangle.
+2. Build with green, then yellow, then red.
+3. Lay the grey triangle on top to compare.
+4. Let the child try on their own.
+
+Demo video (for adults): Vietnam Montessori Institute – https://youtu.be/AJjvzQUqjp4
+
+Safety
+- Sand every edge and corner before use; the rounded corners in the model are not enough on their own.
+- Adult supervision. Not for children under 3 or who still put objects in their mouths.
+- Stop using any piece that cracks.
+
+More activities: 一起玩科技 Tech Together – https://tomyeh0510.github.io/ChildTechLearnWeb/
+```
+
 ## 八、教學影片
 
 ### 定位（已確認，2026-10-02）
