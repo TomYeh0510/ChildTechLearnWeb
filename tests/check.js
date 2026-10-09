@@ -50,6 +50,11 @@ const norm = (u) => u.replace(/&amp;/g, '&').replace(/\/$/, '');
   page.on('console', (m) => { if (m.type() === 'error' && !/CERT|ERR_/.test(m.text())) errs.push(m.text()); });
   await page.goto(url); await page.waitForTimeout(400);
 
+  const LEARN = ['overview', 'print3d', 'stages', 'software', 'safety', 'resources'];
+  const goTab = async (p, tab) => {
+    if (LEARN.includes(tab) && (await p.evaluate(() => document.getElementById('sub-learning').hidden))) await p.click('.route-tab');
+    await p.click('[data-tab="' + tab + '"]');
+  };
   const st = () => page.evaluate(() => ({
     hash: location.hash,
     tab: [...document.querySelectorAll('section')].filter((x) => !x.hidden).map((x) => x.id)[0],
@@ -105,14 +110,14 @@ const norm = (u) => u.replace(/&amp;/g, '&').replace(/\/$/, '');
   ok('點國中後網址同步', t.hash === '#s5' && t.stage === 's5');
   await page.reload(); await page.waitForTimeout(300); t = await st();
   ok('重新整理仍在國中', t.stage === 's5' && t.tab === 'stages');
-  await page.click('[data-stage="s2"]'); await page.click('[data-tab="software"]');
+  await page.click('[data-stage="s2"]'); await goTab(page, 'software');
   await page.goBack(); await page.waitForTimeout(150); t = await st();
   ok('上一頁回到低年級', t.tab === 'stages' && t.stage === 's2' && t.hash === '#s2');
   await page.goForward(); await page.waitForTimeout(150); t = await st();
   ok('下一頁回到軟體階梯', t.tab === 'software');
 
   /* ---- 鍵盤與 ARIA ---- */
-  await page.click('[data-tab="stages"]');
+  await goTab(page, 'stages');
   await page.focus('[data-stage="s2"]'); await page.keyboard.press('ArrowRight'); t = await st();
   ok('年齡分頁：→ 移到中年級並移焦點', t.stage === 's3' && (await page.evaluate(() => document.activeElement.dataset.stage)) === 's3');
   await page.keyboard.press('End'); t = await st(); ok('年齡分頁：End 到國中', t.stage === 's5');
@@ -126,15 +131,49 @@ const norm = (u) => u.replace(/&amp;/g, '&').replace(/\/$/, '');
   ok('年齡分頁 ARIA 關聯完整', aria);
 
   /* ---- 從這裡開始 ---- */
-  await page.click('[data-tab="overview"]');
+  await goTab(page, 'overview');
   await page.click('[data-start="s1"]');
   ok('從這裡開始：顯示幼兒建議', /幼兒/.test(await page.textContent('#startout')));
   await page.click("#startout [data-so=card]"); await page.waitForTimeout(150);
   ok('從這裡開始：打開幼兒活動卡', (await st()).stage === 's1' && (await page.evaluate(() => document.getElementById('act-s1').open)));
 
   /* ---- 跨頁焦點：從首頁按鈕跳頁後，焦點不留在已隱藏的元素上 ---- */
-  await page.click('[data-tab="overview"]'); await page.click('[data-start="s3"]'); await page.click('#startout [data-so="stage"]'); await page.waitForTimeout(100);
+  await goTab(page, 'overview'); await page.click('[data-start="s3"]'); await page.click('#startout [data-so="stage"]'); await page.waitForTimeout(100);
   ok('跳頁後焦點落在可見面板內', await page.evaluate(() => { const a = document.activeElement; return !!a && a !== document.body && !a.closest('[hidden]') && !!a.closest('#stages'); }));
+
+  /* ---- 首頁、作品、親子活動 ---- */
+  {
+    const q = await browser.newPage({ viewport: { width: 1100, height: 900 } });
+    const qerr = []; q.on('pageerror', (e) => qerr.push(e.message));
+    await q.goto(url); await q.waitForTimeout(250);
+    let s0 = await q.evaluate(() => ({ tab: [...document.querySelectorAll('section')].filter((x) => !x.hidden).map((x) => x.id)[0], hash: location.hash }));
+    ok('沒有網址片段時，預設開首頁', s0.tab === 'home' && s0.hash === '#home', JSON.stringify(s0));
+    const hw = await q.evaluate(() => ({ feat: document.querySelectorAll('#homeworks .wcard').length, works: document.querySelectorAll('#worklist .wcard').length }));
+    ok('首頁有精選作品，作品頁有作品卡', hw.feat > 0 && hw.works > 0, JSON.stringify(hw));
+    const bad = await q.evaluate(() => [...document.querySelectorAll('#home a[href], #works a[href], #activities a[href]')].filter((a) => {
+      const h = a.getAttribute('href');
+      if (!h || h === '#') return true;
+      if (/^https?:/.test(h)) return a.getAttribute('target') !== '_blank' || !/noopener/.test(a.rel);
+      return a.hasAttribute('data-goto') ? !document.getElementById(a.dataset.goto) : !document.querySelector(h);
+    }).map((a) => a.textContent.trim() + ' → ' + a.getAttribute('href')));
+    ok('首頁、作品、活動的連結都有目的地（沒有空連結、外連都另開並加 noopener）', bad.length === 0, bad.join('；'));
+    const priceish = await q.evaluate(() => /NT\$|\$\s?\d|元\s*\/|售價|定價/.test(document.querySelector('#home').textContent + document.querySelector('#works').textContent));
+    ok('首頁與作品頁不放價格', !priceish);
+    await q.click('#feat-tri a[data-goto="activities"]'); await q.waitForTimeout(150);
+    s0 = await q.evaluate(() => ({ tab: [...document.querySelectorAll('section')].filter((x) => !x.hidden).map((x) => x.id)[0], open: document.getElementById('act-tri').open }));
+    ok('作品 → 玩法：切到親子活動並展開該活動', s0.tab === 'activities' && s0.open, JSON.stringify(s0));
+    await q.click('#act-tri a[data-st="s1"]'); await q.waitForTimeout(150);
+    s0 = await q.evaluate(() => ({ tab: [...document.querySelectorAll('section')].filter((x) => !x.hidden).map((x) => x.id)[0], stage: [...document.querySelectorAll('article.stage')].filter((x) => !x.hidden).map((x) => x.id)[0], open: document.getElementById('act-s1-tri').open }));
+    ok('活動 → 完整活動卡：進分齡細節幼兒並展開活動卡', s0.tab === 'stages' && s0.stage === 's1' && s0.open, JSON.stringify(s0));
+    for (const [h, tab] of [['#overview', 'overview'], ['#print3d', 'print3d'], ['#software', 'software'], ['#safety', 'safety'], ['#resources', 'resources'], ['#works', 'works'], ['#activities', 'activities']]) {
+      await q.goto(url + h); await q.waitForTimeout(120);
+      const cur = await q.evaluate(() => [...document.querySelectorAll('section')].filter((x) => !x.hidden).map((x) => x.id)[0]);
+      if (cur !== tab) { ok('舊網址 ' + h + ' 仍能開對應內容', false, cur); break; }
+    }
+    ok('舊網址（#overview、#print3d、#software、#safety、#resources）與新入口都能開', true);
+    ok('首頁、作品、活動頁沒有程式錯誤', qerr.length === 0, qerr.join('；'));
+    await q.close();
+  }
 
   /* ---- 手機卡片：展開年齡卡 → 打開活動卡 ---- */
   {
@@ -146,8 +185,8 @@ const norm = (u) => u.replace(/&amp;/g, '&').replace(/\/$/, '');
     ok('手機：年齡卡 → 打開活動卡（正確階段、已展開、標題沒被導覽列遮住）', r.open && r.hash === '#s3' && r.clear, JSON.stringify(r));
     /* expand everything on every tab and make sure nothing overflows */
     let bad = [];
-    for (const tab of ['overview', 'print3d', 'stages', 'software', 'safety', 'resources']) {
-      if (tab !== 'overview' && await m.evaluate(() => document.getElementById('sub-print3d').hidden)) await m.click('.route-tab');
+    for (const tab of ['home', 'works', 'activities', ...LEARN]) {
+      if (LEARN.includes(tab) && await m.evaluate(() => document.getElementById('sub-learning').hidden)) await m.click('.route-tab');
       await m.click('[data-tab="' + tab + '"]');
       for (const stg of (tab === 'stages' ? ['s1', 's2', 's3', 's4', 's5'] : [null])) {
         if (stg) await m.click('[data-stage="' + stg + '"]');
@@ -162,7 +201,7 @@ const norm = (u) => u.replace(/&amp;/g, '&').replace(/\/$/, '');
   }
 
   /* ---- 篩選：結果和資料屬性一致 ---- */
-  await page.click('[data-tab="resources"]');
+  await goTab(page, 'resources');
   const visible = () => page.evaluate(() => [...document.querySelectorAll('#resources .card')].filter((c) => !c.hidden).length);
   const expect = (fn) => page.evaluate(fn);
   await page.evaluate(() => { document.querySelector('.morefilters').open = true; });
@@ -219,7 +258,7 @@ const norm = (u) => u.replace(/&amp;/g, '&').replace(/\/$/, '');
         const bg = getComputedStyle(el).backgroundColor, fg = getComputedStyle(el).color;
         out.push({ name: '年齡分頁 ' + st, bg, fg, ratio: cr(bg, fg), differs: bg !== getComputedStyle(other).backgroundColor });
       });
-      document.querySelector('[data-tab="overview"]').click();
+      document.querySelector('.route-tab').click(); document.querySelector('[data-tab="overview"]').click();
       ['s1', 's2', 's3', 's4', 's5'].forEach((st) => {
         const el = document.querySelector('[data-start="' + st + '"]'); el.click();
         const other = document.querySelector('[data-start="' + (st === 's1' ? 's2' : 's1') + '"]');
